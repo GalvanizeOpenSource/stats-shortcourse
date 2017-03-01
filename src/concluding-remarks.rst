@@ -35,6 +35,7 @@ Datascience Immersive
 | 12   | Career services and Special topics|
 +------+-----------------------------------+
 
+
 Typical day
 ^^^^^^^^^^^^^^^
 
@@ -53,10 +54,12 @@ Throughout the cohort
 Where do we want to be with machine learning algorithms
 --------------------------------------------------------
 
-  * Algorithms are not just use black boxes
-  * Provide the tools you need to understand what each algorithm you call is doing
-  * Can you explain what the algorithm is doing in plain English?
-  * Can you implement a simple version from the ground up?
+**Algorithms are not just black boxes**
+
+  * Know when is it appropriate to use the algorithms/tools
+  * Provide enough resources so that:
+     * Can you explain what the algorithm is doing in plain English?
+     * Can you implement a simple version from the ground up?
 	    
 .. note:: the last point may be more difficult for some algorithms, but we will provide you with the resources to follow up on this.
 	      

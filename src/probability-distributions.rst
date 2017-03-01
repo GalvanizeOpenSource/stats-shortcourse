@@ -43,7 +43,7 @@ Mean: :math:`E[x] = p`
 
 Variance: :math:`Var(x) = p(1-p)`
 
-:download:`bernoulli-distn.py`
+.. plot:: bernoulli-distn.py
 
 Binomial:
 ------------
@@ -101,7 +101,7 @@ Mean: :math:`\lambda`
 
 Variance: :math:`\lambda`
 
-:download:`poisson-distn.py`
+.. plot:: poisson-distn.py
 
 Exponential
 ----------------
@@ -118,7 +118,7 @@ MEAN: :math:`\frac{1}{\lambda}`
 
 VARIANCE: :math:`\frac{1}{\lambda^2}`
 
-:download:`exponential-distn.py`
+.. plot:: exponential-distn.py
 
 Uniform
 ------------
@@ -146,7 +146,7 @@ VARIANCE: :math:`\sigma^2`
 
 The inverse of the variance is known as the **precision** (:math:`\tau = 1/\sigma^{2}`).
 
-:download:`gaussian-distn.py`
+.. plot:: gaussian-distn.py
 	  
 Distributions are related
 ----------------------------

@@ -80,15 +80,16 @@ Day 1
 
    getting-started
    probability-concepts
-   probability-examples
+   combinatorics
+   probability	      
    probability-distributions
-   paradigms
-
+      
 Day 2
     
 .. toctree::
    :maxdepth: 1
 
+   paradigms	      
    random-variables
    statistical-inference
    regression-classification-metrics
