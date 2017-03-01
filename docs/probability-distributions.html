@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Probability distributions &mdash; stats-shortcourse 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Bayesian Inference" href="paradigms.html"/>
+        <link rel="prev" title="Probability" href="probability.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Probability distributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#properties-of-distributions">Properties of distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rules-for-choosing-a-good-distribution">Rules for choosing a good distribution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main-questions">Main questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-questions-to-keep-in-mind">Other questions to keep in mind</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bernoulli">Bernoulli:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#binomial">Binomial:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geometric">Geometric:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hypergeometric">Hypergeometric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poisson">Poisson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exponential">Exponential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uniform">Uniform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#normal-aka-gaussian">Normal aka Gaussian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distributions-are-related">Distributions are related</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Probability distributions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/probability-distributions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="probability-distributions">
+<h1>Probability distributions<a class="headerlink" href="#probability-distributions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html">The SciPy docs for statistics</a> is quite useful.</p>
+<div class="section" id="properties-of-distributions">
+<h2>Properties of distributions<a class="headerlink" href="#properties-of-distributions" title="Permalink to this headline">¶</a></h2>
+<p>These are common properties used to characterize a distribution:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Expectation/mean</li>
+<li>Variance/standard deviation</li>
+<li>Skewness (asymmetry)</li>
+<li>Kurtosis (fat tails)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="rules-for-choosing-a-good-distribution">
+<h2>Rules for choosing a good distribution<a class="headerlink" href="#rules-for-choosing-a-good-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="main-questions">
+<h3>Main questions<a class="headerlink" href="#main-questions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Are my data discrete or continuous?</li>
+<li>Are my data symmetric?</li>
+<li>What limits are there on possible values for my data?</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="other-questions-to-keep-in-mind">
+<h3>Other questions to keep in mind<a class="headerlink" href="#other-questions-to-keep-in-mind" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>How likely are extreme values?</li>
+<li>Are there missing values?</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="bernoulli">
+<h2>Bernoulli:<a class="headerlink" href="#bernoulli" title="Permalink to this headline">¶</a></h2>
+<p>A Bernoulli distribution is a discrete probability distribution for a Bernoulli trial.  The distribution takes the value 1 with success probability of <span class="math">\(p\)</span> and the value 0 with failure.   Success could be heads on a coin flip.</p>
+<p>PMF = <span class="math">\(P[success] = p\)</span> , <span class="math">\(P[failure] = 1-p\)</span></p>
+<p>Mean: <span class="math">\(E[x] = p\)</span></p>
+<p>Variance: <span class="math">\(Var(x) = p(1-p)\)</span></p>
+<p>(<a class="reference external" href=".//bernoulli-distn.py">Source code</a>, <a class="reference external" href=".//bernoulli-distn.png">png</a>, <a class="reference external" href=".//bernoulli-distn.hires.png">hires.png</a>, <a class="reference external" href=".//bernoulli-distn.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/bernoulli-distn.png" src="_images/bernoulli-distn.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Lets say that I polled all first graders in the state of colorado and asked the question do you like/dislike your teacher.  The answers are discrete values.</p>
+</div>
+<p>See this <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-proportions/v/mean-and-variance-of-bernoulli-distribution-example">khan academy video to get a better intuition</a></p>
+</div>
+<div class="section" id="binomial">
+<h2>Binomial:<a class="headerlink" href="#binomial" title="Permalink to this headline">¶</a></h2>
+<p>The Binomial distribution gives the discrete probability distribution of obtaining exactly <cite>p</cite> successes out of <cite>n</cite> trials</p>
+<p>PMF: <span class="math">\(P[X=k] = {n \choose k}p^k(1-p)^{n-k}, \forall k \in \{0, 1,..., n\}\)</span></p>
+<p>Mean: <span class="math">\(np\)</span></p>
+<p>Var: <span class="math">\(np(1-p)\)</span></p>
+<p>(<a class="reference external" href=".//binomial-distn.py">Source code</a>, <a class="reference external" href=".//binomial-distn.png">png</a>, <a class="reference external" href=".//binomial-distn.hires.png">hires.png</a>, <a class="reference external" href=".//binomial-distn.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/binomial-distn.png" src="_images/binomial-distn.png" />
+</div>
+</div>
+<div class="section" id="geometric">
+<h2>Geometric:<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h2>
+<p>The probability of some number (<cite>X</cite>) of Bernoulli trials needed to get one success.  It also refers to probability of (<cite>X-1</cite>) failures before the first success.</p>
+<p>PMF: <span class="math">\(P[X=k] = p (1-p)^{k-1}, \forall k \in \{0, 1,...\}\)</span></p>
+<p>Mean: <span class="math">\(\frac{1}{p}\)</span></p>
+<p>Variance: :<cite>frac{1-p}{p^2}</cite></p>
+</div>
+<div class="section" id="hypergeometric">
+<h2>Hypergeometric<a class="headerlink" href="#hypergeometric" title="Permalink to this headline">¶</a></h2>
+<p>Hypergeometric distribution is a discrete probability distribution
+that describes the probability of <cite>k</cite> successes in <cite>n</cite> draws, without
+replacement.</p>
+<p>The hypergeometric test uses the hypergeometric distribution to
+calculate the statistical significance of having drawn a specific k
+successes n total draws</p>
+<p>Think of an urn with two types of marbles, red ones and green ones. Define drawing a green marble as a success and drawing a red marble as a failure (analogous to the binomial distribution).</p>
+<p>Did I draw the <strong>expected</strong> number of green marbles?</p>
+<p>The data are not accurately modeled by the binomial distribution,
+because the probability of success on each trial is not the same.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Think Texas Hold em</p>
+</div>
+</div>
+<div class="section" id="poisson">
+<h2>Poisson<a class="headerlink" href="#poisson" title="Permalink to this headline">¶</a></h2>
+<p>If a mean of an event happening per unit time is observed and you need the probability of <cite>n</cite> events happening</p>
+<p>PMF: <span class="math">\(P[X=k] = \frac{\lambda^k e^{-\lambda}}{k!},\forall k \in \{0,1,2,...\}\)</span></p>
+<p>Mean: <span class="math">\(\lambda\)</span></p>
+<p>Variance: <span class="math">\(\lambda\)</span></p>
+<p>(<a class="reference external" href=".//poisson-distn.py">Source code</a>, <a class="reference external" href=".//poisson-distn.png">png</a>, <a class="reference external" href=".//poisson-distn.hires.png">hires.png</a>, <a class="reference external" href=".//poisson-distn.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/poisson-distn.png" src="_images/poisson-distn.png" />
+</div>
+</div>
+<div class="section" id="exponential">
+<h2>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h2>
+<p>A good way to model the time between events for a poisson
+process.  It is a particular case of the gamma distribution.
+It is governed by a rate parameter <span class="math">\(\lambda\)</span>.</p>
+<p>SUPPORT: <span class="math">\(x \in (0, \inf)\)</span>.</p>
+<p>PDF: <span class="math">\(\lambda e^{-\lambda x}\)</span></p>
+<p>MEAN: <span class="math">\(\frac{1}{\lambda}\)</span></p>
+<p>VARIANCE: <span class="math">\(\frac{1}{\lambda^2}\)</span></p>
+<p>(<a class="reference external" href=".//exponential-distn.py">Source code</a>, <a class="reference external" href=".//exponential-distn.png">png</a>, <a class="reference external" href=".//exponential-distn.hires.png">hires.png</a>, <a class="reference external" href=".//exponential-distn.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/exponential-distn.png" src="_images/exponential-distn.png" />
+</div>
+</div>
+<div class="section" id="uniform">
+<h2>Uniform<a class="headerlink" href="#uniform" title="Permalink to this headline">¶</a></h2>
+<p>PDF: <span class="math">\(f(x) = \frac{1}{b-a}, \forall x\in[a, b]\)</span>,  0 otherwise</p>
+<p>MEAN: <span class="math">\(\frac{a+b}{2}\)</span></p>
+<p>VARIANCE: <span class="math">\(\frac{(b-a)^2}{2}\)</span></p>
+</div>
+<div class="section" id="normal-aka-gaussian">
+<h2>Normal aka Gaussian<a class="headerlink" href="#normal-aka-gaussian" title="Permalink to this headline">¶</a></h2>
+<p>The Gaussian is the most widely used distribution for continuous
+variables. The distribution is governed by the mean <span class="math">\(\mu\)</span> and variance :<cite>sigma^2</cite>.</p>
+<p>SUPPORT <span class="math">\(x \in (-\inf, \inf)\)</span></p>
+<p>PDF: <span class="math">\(\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{(x - \mu)^2}{2\sigma^2})\)</span></p>
+<p>MEAN: <span class="math">\(\mu\)</span></p>
+<p>VARIANCE: <span class="math">\(\sigma^2\)</span></p>
+<p>The inverse of the variance is known as the <strong>precision</strong> (<span class="math">\(\tau = 1/\sigma^{2}\)</span>).</p>
+<p>(<a class="reference external" href=".//gaussian-distn.py">Source code</a>, <a class="reference external" href=".//gaussian-distn.png">png</a>, <a class="reference external" href=".//gaussian-distn.hires.png">hires.png</a>, <a class="reference external" href=".//gaussian-distn.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/gaussian-distn.png" src="_images/gaussian-distn.png" />
+</div>
+</div>
+<div class="section" id="distributions-are-related">
+<h2>Distributions are related<a class="headerlink" href="#distributions-are-related" title="Permalink to this headline">¶</a></h2>
+<p>There are many more distributions than the ones mentioned above.  Here is an illustration from <em>Casella and Berger</em> that does a pretty good job making that point.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/statistical-inference-distns.jpg"><img alt="distns" src="_images/statistical-inference-distns.jpg" style="width: 1029.35px; height: 1235.85px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="paradigms.html" class="btn btn-neutral float-right" title="Bayesian Inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="probability.html" class="btn btn-neutral" title="Probability" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Galvanize DSI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

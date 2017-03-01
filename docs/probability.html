@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Probability &mdash; stats-shortcourse 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Probability distributions" href="probability-distributions.html"/>
+        <link rel="prev" title="Combinatorics" href="combinatorics.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Probability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#formalization">Formalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#independence">Independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-problem">A problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conditional-probability">Conditional probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#probability-chain-rule">Probability Chain Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#law-of-total-probability">Law of Total Probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bayes-rule">Bayes Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bayesian-statistics">Bayesian statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#further-resources">Further resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Probability</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/probability.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="probability">
+<h1>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h1>
+<p>Probability provides the mathematical tools we use to model randomness:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Probability tells us how likely an event (Frequentist) or what
+our degree of beliefs in an event is (Bayesian)</li>
+<li>Provides the foundation for statistics and machine learning</li>
+<li>Often our intuitions about randomness are incorrect because we live
+only one realization</li>
+<li>Enumerating all possible outcomes (using combinatorics) can help us
+compute the probability of an event</li>
+</ul>
+</div></blockquote>
+<div class="section" id="formalization">
+<h2>Formalization<a class="headerlink" href="#formalization" title="Permalink to this headline">¶</a></h2>
+<p>Lets lay out some rules.</p>
+<p>For some sample space <cite>S</cite>, a probability function <cite>P</cite> has three properties:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">The probability is positive and less than or equal to 1.</p>
+</li>
+<li><p class="first">The probability of a sure event is 1</p>
+</li>
+<li><p class="first">If A and B are mutually exclusive, then:</p>
+<p><span class="math">\(P(A \cup B) = P(A) \times P(B)\)</span></p>
+</li>
+<li><p class="first">The sum of the probabilities of an event and its complement is 1</p>
+</li>
+<li><p class="first">The probability of an impossible event is zero.</p>
+</li>
+</ol>
+</div></blockquote>
+<p>NOTE: Two events are <strong>mutually exclusive</strong> or disjoint if they cannot both be true</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>QUESTION</strong></p>
+<ol class="last arabic simple">
+<li>What is the probability of a Queen in a 52 card deck?</li>
+<li>What is the probability of a Queen or a spade?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="independence">
+<h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
+<p>Events are independent (notation <span class="math">\(A\bot B\)</span>) if:</p>
+<div class="math">
+\[P(A\cap B) = P(A)P(B)\]</div>
+<p>or</p>
+<div class="math">
+\[P(A|B) = P(A)\]</div>
+<p>The above is known as <strong>conditional probability</strong>.</p>
+<p>With respect to independence ask yourself&#8212;<strong>Does it it provides information about A</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>How could we use the definition of independence to test whether two events are independent?</li>
+<li>What does knowing that B has occurred tell us about the likelihood of A?</li>
+<li>Under independence?</li>
+<li>Without independence?</li>
+</ul>
+</div></blockquote>
+<p>The <span class="math">\(P(A\cap B) = P(A)P(B)\)</span> is known as the multiplication rule</p>
+</div>
+<div class="section" id="a-problem">
+<h2>A problem<a class="headerlink" href="#a-problem" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>HOMEWORK</strong></p>
+<p>Take a moment to <em>think about</em> this question:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Three types of fair coins are in an urn: HH, HT, and TT</li>
+<li>You pull a coin out of the urn, flip it, and it comes up H</li>
+<li>Q: what is the probability it comes up H if you flip it a second time?</li>
+</ul>
+</div></blockquote>
+</div>
+<p>If you expect that this event provides information then a conditional
+probability may be appropriate.</p>
+</div>
+<div class="section" id="conditional-probability">
+<h2>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h2>
+<p><span class="math">\(P(B|A) = P(A \cap B) / P(A)\)</span></p>
+</div>
+<div class="section" id="probability-chain-rule">
+<h2>Probability Chain Rule<a class="headerlink" href="#probability-chain-rule" title="Permalink to this headline">¶</a></h2>
+<p>In probability theory, the chain rule (also called the general product
+rule) permits the calculation of any member of the joint distribution
+of a set of random variables using only conditional probabilities.</p>
+<p>We can rearrange the formula for conditional probability to get the product rule:</p>
+<blockquote>
+<div><span class="math">\(P(A,B) = P(A|B)P(B)\)</span></div></blockquote>
+<p>We can extend this for three or more variables:</p>
+<blockquote>
+<div><span class="math">\(P(A,B,C) = P(A| B,C) P(B,C) = P(A|B,C) P(B|C) P(C)\)</span></div></blockquote>
+<p>More generally:</p>
+<blockquote>
+<div><span class="math">\(P(\cap_{i}^nX_i) = \prod_i^n P(X_i | \cap_k^{i-1} X_k)\)</span></div></blockquote>
+</div>
+<div class="section" id="law-of-total-probability">
+<h2>Law of Total Probability<a class="headerlink" href="#law-of-total-probability" title="Permalink to this headline">¶</a></h2>
+<p>If <span class="math">\(\{B_n\}\)</span> is a partition of a sample space <cite>A</cite>, meaning <span class="math">\(\cup_i B_i = A\)</span> and <span class="math">\(B_i \cap B_j=\emptyset \forall i, j\)</span></p>
+<p>Then</p>
+<p><span class="math">\(P(A) = \sum P(A\cap B_i)\)</span></p>
+<p>or</p>
+<p><span class="math">\(P(A) = \sum P(A|B_i) P(B_i)\)</span></p>
+<p>And we call A the <strong>marginal distribution</strong> of B</p>
+</div>
+<div class="section" id="bayes-rule">
+<h2>Bayes Rule<a class="headerlink" href="#bayes-rule" title="Permalink to this headline">¶</a></h2>
+<p>Use Bayes’s Rule when you need to compute conditional probability for <span class="math">\(A|B\)</span>
+but only have probability for <span class="math">\(B|A\)</span>:</p>
+<p><span class="math">\(P(A|B) = \frac{P(B|A)P(A)}{P(B)}\)</span></p>
+<p><span class="math">\(P(\theta|x) = \frac{P(x|\theta)P(\theta)}{P(x)}\)</span></p>
+<p>Proof: use the definition of conditional probability</p>
+<p>Recall that</p>
+<blockquote>
+<div><span class="math">\(P(A,B) = P(B,A)\)</span></div></blockquote>
+<p>Lets start with the conditional probability</p>
+<blockquote>
+<div><span class="math">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></div></blockquote>
+<p>If we write the reverse of that</p>
+<blockquote>
+<div><span class="math">\(P(B|A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)}\)</span></div></blockquote>
+<p>Then multiply by <span class="math">\(P(A)\)</span></p>
+<blockquote>
+<div><span class="math">\(P(A \cap B) = P(B|A)P(A)\)</span></div></blockquote>
+<p>Then plug this back into the conditional probability.</p>
+</div>
+<div class="section" id="bayesian-statistics">
+<h2>Bayesian statistics<a class="headerlink" href="#bayesian-statistics" title="Permalink to this headline">¶</a></h2>
+<p>Bayesian inference works by combining information about parameters <span class="math">\(\theta\)</span> contained in the observed data <span class="math">\(x\)</span> as quantified in the likelihood function <span class="math">\(p(x|\theta)\)</span>.  Classical statistics works by making inference about a single point, while Bayesian inference works on the whole distribution.  Parameters through the Bayesian lens are treated as random variables described by distributions.</p>
+<p>Lets put Bayesian inference on hold and first look at and example of Bayes Rule.</p>
+<dl class="docutils">
+<dt><strong>Predictive value positive</strong> - Prob. person has disease given the test was positive.</dt>
+<dd><span class="math">\(PV^{+} = P (D^{+} |T^{+})\)</span></dd>
+<dt><strong>Predicitve value negative</strong> - Prob. person does not have diease given test was negative</dt>
+<dd><span class="math">\(PV^{-} = P (D^{-} |T^{-} )\)</span></dd>
+<dt><strong>Sensitivity</strong> - Prob. that test positive given person has disease</dt>
+<dd><span class="math">\(P (T^{+} |D^{+})\)</span></dd>
+<dt><strong>Specificity</strong> - Prob. that test negative given person does not have disease</dt>
+<dd><span class="math">\(P (T^{-} |D^{-})\)</span></dd>
+</dl>
+<p><strong>Prevalance</strong> - <span class="math">\(d = P(D^{+})\)</span></p>
+<p>Note that: <span class="math">\(P (T + |D - ) = 1 - \textrm{specificity}\)</span></p>
+<p>Lets say we wanted to know <span class="math">\(PV^{+}\)</span>.</p>
+<blockquote>
+<div><div class="math">
+\begin{eqnarray}
+P (D^{+} |T^{+}) &amp;=&amp; \frac{P(T^{+}|D^{+}) P(D^{+})}{P(D^{+})P(T^{+}|D{+})+P(D^{-})P(T^{+}|D^{-})} \\
+                 &amp;=&amp; \frac{d \times \textrm{sensitivity}}{d \times \textrm{sensitivity}+(1-d) \times (1-\textrm{specificity})}
+\end{eqnarray}</div></div></blockquote>
+<p>So if we were given</p>
+<p>Sensitivity = 0.84, specificity = 0.77, prevalence = 0.20</p>
+<p>Then</p>
+<blockquote>
+<div><div class="math">
+\[\begin{split}PV^{+} = \frac{(0.2)(0.84)}{(0.2)(0.84)+(0.8)(0.23)}  = 0.48 \\
+PV^{-} = \frac{(0.8)(0.77)}{(0.8)(0.77)+(0.2)(0.16)}  = 0.95\end{split}\]</div>
+</div></blockquote>
+</div>
+<div class="section" id="further-resources">
+<h2>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://www.khanacademy.org/math/probability/probability-geometry/probability-basics/a/probability-the-basics">https://www.khanacademy.org/math/probability/probability-geometry/probability-basics/a/probability-the-basics</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="probability-distributions.html" class="btn btn-neutral float-right" title="Probability distributions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="combinatorics.html" class="btn btn-neutral" title="Combinatorics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Galvanize DSI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

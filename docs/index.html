@@ -1,23 +1,326 @@
-<!doctype html>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-      <title>The Galvanize Welcome Page</title>
 
-      <meta name="description" content="The galvanize welcome page">
-      <meta name="author" content="SitePoint">
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Statistics short-course &mdash; stats-shortcourse 1.0 documentation</title>
+  
 
-      <link rel="stylesheet" href="css/styles.css?v=1.0">
+  
+  
 
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-  </head>
+  
 
-  <body>
-  The galvanize welcome page	
-  <script src="js/scripts.js"></script>
-	  
-  </body>
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="stats-shortcourse 1.0 documentation" href="#"/>
+        <link rel="next" title="Getting started" href="getting-started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">stats-shortcourse</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Statistics short-course</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="align-center figure">
+<a class="reference internal image-reference" href="_images/galvanize-logo.png"><img alt="galvanize-logo" src="_images/galvanize-logo.png" style="width: 669.55px; height: 167.64999999999998px;" /></a>
+</div>
+<div class="section" id="statistics-short-course">
+<h1>Statistics short-course<a class="headerlink" href="#statistics-short-course" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="where-are-we-going">
+<h2>Where are we going?<a class="headerlink" href="#where-are-we-going" title="Permalink to this headline">¶</a></h2>
+<p>Within data science and perhaps at its core is the field of <a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">Machine learning</a>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Supervised learning</strong> - learn a mapping from inputs <span class="math">\(x\)</span> to outputs <span class="math">\(y\)</span> (given <span class="math">\(\mathcal{D}\)</span>)</li>
+<li><strong>Unsupervised learning</strong> - given only <span class="math">\(x\)</span> the goal is to find interesting patterns</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Machine learning is a type of artificial intelligence that enables
+a machine to learn without programming it explicitly.</p>
+<p class="last">Machine learning makes extensive use of <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a>&#8212;The branch of
+mathematics that works directly with matrices</p>
+</div>
+</div>
+<div class="section" id="on-machine-learning-and-statistics">
+<h2>On machine learning and statistics<a class="headerlink" href="#on-machine-learning-and-statistics" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.quora.com/What-is-the-difference-between-statistics-and-machine-learning">What is the difference between statistics and machine learning?</a></p>
+<blockquote>
+<div><ul class="simple">
+<li>none really</li>
+<li>statistics focuses more on confidence intervals, hypothesis tests and optimal estimators</li>
+<li>machine learning focuses on empirical and computational techniques</li>
+<li>ML tends to have more nonparametrics, less asymptotics, more
+computationally techniques, and more dimensionality</li>
+</ul>
+</div></blockquote>
+<div class="section" id="what-kind-of-statistics-are-out-there">
+<h3>What kind of statistics are out there?<a class="headerlink" href="#what-kind-of-statistics-are-out-there" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">Descriptive statistics</a> - mean, median, skewness etc.</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_inference">Inferential statistics</a>  - hypothesis testing</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Predictive_analytics">Predictive analytics</a> - focused on prediction</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Prescriptive_analytics">Prescriptive analytics</a> - i.e. recommenders</li>
+</ul>
+</div></blockquote>
+<p>There are many examples of where these areas of statistics blend into one and other.</p>
+</div>
+</div>
+<div class="section" id="course-contents">
+<h2>Course contents<a class="headerlink" href="#course-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="objectives">
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<p>We will dig into the basics.  These materials survey the areas of
+probability and statistics that will be covered in the statistics
+interview. In addition to the overview there are resources for further
+study that are meant to reinforce the most important topics.</p>
+<p>We well begin in the first day with a gentle introduction to
+probability and the major distributions used in statistics. We will
+finish with a concept-driven explanation of frequentist and Bayesian
+statistics.</p>
+<p>On the second day we will dive a bit further into how to make use of
+probability distributions for inference and hypothesis testing. We
+will then introduce regression and classification through the use of
+examples. Finally, we will discuss some of the commonly use methods of
+evaluating model results.</p>
+<p>Day 1</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+</ul>
+</div>
+<p>Day 2</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="resources-for-further-study">
+<h2>Resources for further study<a class="headerlink" href="#resources-for-further-study" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/zipfian/self-study-resources">Galvanize self study resources</a></li>
+<li><a class="reference external" href="http://www.cram.com/flashcards/probability-for-data-science-8215075">Useful flashcards</a></li>
+<li><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability">Khan Academy - statistics and srobability</a></li>
+<li><a class="reference external" href="http://www.dataschool.io/15-hours-of-expert-machine-learning-videos">15 hours of machine learning videos</a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="works-cited">
+<h3>Works cited<a class="headerlink" href="#works-cited" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+</div>
+<p>To view/download the source of these materials visit the GitHub repository.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/GalvanizeOpenSource/stats-shortcourse">https://github.com/GalvanizeOpenSource/stats-shortcourse</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Galvanize DSI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

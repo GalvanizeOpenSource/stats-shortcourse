@@ -1,6 +1,8 @@
 Statistics short-course
 ==========================
 
+Course website: `<https://galvanizeopensource.github.io/stats-shortcourse/>`_
+
 As part of the admissions process for the `Galvanize immersive program
 in data science <http://www.galvanize.com/courses/data-science/>`_
 there are two interviews: Python and statistics.  These materials
@@ -33,4 +35,5 @@ knowledge of Python or any other language is required.
 Resources
 -------------
 
-  * `Admissions data science FAQ page <http://www.galvanize.com/faq/data-science>`_
+   * `Admissions data science FAQ page <http://www.galvanize.com/faq/data-science>`_
+   * `DSI self-study materials <https://github.com/zipfian/self-study-resources>`_

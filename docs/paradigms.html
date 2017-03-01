@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bayesian Inference &mdash; stats-shortcourse 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Random Variables" href="random-variables.html"/>
+        <link rel="prev" title="Probability distributions" href="probability-distributions.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bayesian Inference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bayes-theorem">Bayes Theorem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#but-why">But why?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#then-why-isn-t-everyone-a-bayesian">Then why isn&#8217;t everyone a Bayesian?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-tale-of-two-philosophies">A tale of two philosophies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-pieces">The pieces</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Bayesian Inference</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/paradigms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bayesian-inference">
+<h1>Bayesian Inference<a class="headerlink" href="#bayesian-inference" title="Permalink to this headline">¶</a></h1>
+<p>Mini-bbjectives:</p>
+<ol class="arabic simple">
+<li>Discuss the philosophy</li>
+<li>Review conditional probability</li>
+<li>Bayes Rule</li>
+<li>Discuss Bayesian inference</li>
+</ol>
+<div class="section" id="bayes-theorem">
+<h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><span class="math">\(P(A|B) = \frac{P(B|A)P(A)}{P(B)}\)</span></p>
+<p><span class="math">\(P(\theta|x) = \frac{P(x|\theta)P(\theta)}{P(x)}\)</span></p>
+</div></blockquote>
+<p>The <strong>posterior</strong> is proportional to the <strong>likelihood</strong> times the <strong>prior</strong> distribution</p>
+<p>Bayesian inference works by combining information about parameters <span class="math">\(\theta\)</span> contained in the observed data <span class="math">\(x\)</span> as quantified in the likelihood function <span class="math">\(p(x|\theta)\)</span>.  Classical statistics works by making inference about a single point, while Bayesian inference works on the whole distribution.  Parameters through the Bayesian lens are treated as random variables described by distributions.</p>
+<p>The Philosophy of Bayesian Inference</p>
+<p>You are a skilled programmer, but bugs still slip into your code. After a particularly difficult implementation of an algorithm, you decide to test your code on a trivial example. It passes. You test the code on a harder problem. It passes once again. And it passes the next, <em>even more difficult</em>, test too! You are starting to believe that there may be no bugs in this code...</p>
+<div class="section" id="but-why">
+<h3>But why?<a class="headerlink" href="#but-why" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Numerical Tractability</strong> - can make hard problems <em>easier</em></li>
+<li><strong>Absence of Asymptotics</strong> - What <em>really</em> is a large number?</li>
+<li><strong>Ease of Error Propagation</strong> - Dealing in uncertainty</li>
+<li><strong>Formal framework for combining information</strong> - prior</li>
+<li><strong>Intuitive appeal</strong> - intrepretation is more intuitive</li>
+<li><strong>Coherence and intellectual beauty</strong></li>
+</ul>
+</div>
+<div class="section" id="then-why-isn-t-everyone-a-bayesian">
+<h3>Then why isn&#8217;t everyone a Bayesian?<a class="headerlink" href="#then-why-isn-t-everyone-a-bayesian" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Subjective</strong> by nature</li>
+<li><strong>Amazing for complex models, but</strong> are they necessary for simpler ones?</li>
+<li><strong>Accessablility</strong> - Many of the books out there are difficult reads</li>
+<li>Requires a deeper understanding of your model</li>
+<li>Implementation tools</li>
+</ul>
+</div>
+<div class="section" id="a-tale-of-two-philosophies">
+<h3>A tale of two philosophies<a class="headerlink" href="#a-tale-of-two-philosophies" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>Frequentist</strong> assumes that probability of an event is the long-run frequency of events</p>
+</li>
+<li><p class="first"><strong>Bayesian</strong> assigns a degree of belief to event</p>
+</li>
+<li><p class="first">Which one seems like a <strong>better</strong> choice for car accidents, predicting elections, predicting user behaivor, predicting test scores?</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/26454611">Breast cancer subtype and ethnicity?</a></p>
+</li>
+<li><p class="first">Are we making conclusions about a population in nature or about an individual?</p>
+</li>
+<li><p class="first">Neither of these philosophies are better in all cases</p>
+<blockquote>
+<div><p>&#8220;All models are wrong, but some are useful&#8221; &#8211;George Box</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Is the Bayesian paradigm more naturally aligned with the way we think?</p>
+<ul class="simple">
+<li>Flip a coin, but I saw how it was going to land</li>
+<li>Code has a bug or not&#8212;are you certain?</li>
+<li>A doctor has a <strong>belief</strong> about a diagnosis based on symptoms and experience</li>
+</ul>
+<div class="section" id="the-pieces">
+<h4>The pieces<a class="headerlink" href="#the-pieces" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>prior</strong> - <span class="math">\(P(\theta)\)</span> - one&#8217;s beliefs about a quantity before presented with evidence</li>
+<li><strong>posterior</strong> - <span class="math">\(P(\theta|x)\)</span> - probability of the parameters given the evidence</li>
+<li><strong>likelihood</strong> - <span class="math">\(P(x|\theta)\)</span>  - probability of the evidence given the parameters</li>
+<li><strong>normalizing constant</strong> - <span class="math">\(P(x)\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>Before I go any further I want to mention that many of these materials
+come from a number of places and there is so much more to learn.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers">Probabilistic Programming and Bayesian Methods for Hackers</a> by <a class="reference external" href="https://github.com/CamDavidsonPilon">Cameron Davidson-Pilon</a></li>
+<li><a class="reference external" href="http://www.kdnuggets.com/2016/12/datascience-introduction-bayesian-inference.html">nice intro</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="random-variables.html" class="btn btn-neutral float-right" title="Random Variables" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="probability-distributions.html" class="btn btn-neutral" title="Probability distributions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Galvanize DSI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
