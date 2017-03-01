@@ -45,8 +45,8 @@ nosetests.xml
 *.ipynb_checkpoints/
 
 ## restructured text
-*_build
-*_static
+src/_build
+src/_static
 
 ## latex
 *.bak
