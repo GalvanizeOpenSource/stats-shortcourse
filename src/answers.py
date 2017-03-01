@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import sys
 
 ##########################################################################
 ## Can you prove that De Morgan's laws work in Python?
@@ -36,18 +36,18 @@ def comb(n, k):
     return factorial(n) / (factorial(k) * factorial(n - k))
 
 print("There are %s combinations"%comb(n,k))
-    
+
 ## Print a list of these pairs so we can identify the bad ones?
 for c in combinations(lefthand_beers,4):
     print(c)
-
+    
 ## on a team of 12 baseball players how many batting orders?    
-print("batting orders: %s"%count)
-
 def permu(n,k):
     return factorial(n) / factorial(n - k)
 
 print(permu(12,9))
+
+sys.exit()
 
 ##########################################################################
 ## probability
