@@ -47,8 +47,6 @@ def permu(n,k):
 
 print(permu(12,9))
 
-sys.exit()
-
 ##########################################################################
 ## probability
 ##########################################################################
@@ -56,3 +54,24 @@ sys.exit()
 ## probability of a queen
 p_queen = 1.0/52 + 1.0/52 + 1.0/52 + 1.0/52
 p_queen_or_spade = 4.0/52 + 13/52 - 1.0/52 
+
+## conditional probability problem
+#print("prob of tails: %s"%1 - ((1./3 + (1./3 * 1./4)) / (1. / 2)))
+print("prob of heads: %s"%((1./3 + (1./3 * 1./4)) / (1. / 2)))
+
+import random
+import pandas as pd
+
+coins = ['HH', 'HT', 'TT']
+results = []
+for i in range(10):
+    coin = random.choice(coins)
+    results.append([random.choice(coin) for j in [1,2]])
+
+print(results)    
+
+df = pd.DataFrame(results, columns=['first', 'second']) == 'H'
+#print df
+df.groupby('first').mean()
+
+sys.exit()

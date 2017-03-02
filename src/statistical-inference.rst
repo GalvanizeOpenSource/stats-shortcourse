@@ -1,152 +1,165 @@
-.. linear algebra, linear regression
-   
+.. stats-shortcourse
 
-NumPy - Basics
-=======================================
+Statistical inference
+===============================
 
-`NumPy <numpy.scipy.org>`_ is the *de facto* standard for numerical computing in Python.  It is 
-`highly optimized <http://www.scipy.org/PerformancePython>`_ and extremely useful
-for working with matrices.  The standard matrix class in NumPy is called an 
-`array <http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html>`_. 
-We will first get comfortable with working with arrays the we will cover a number of useful 
-functions.  Then we will touch on the linear algebra capabilities of NumPy and finally we will 
-use a few examples to tie together key concepts.     
+A motivating example
+------------------------
 
-Arrays
--------------
+Starting with some data we want to use statsitics to answer certain kinds of questions:
 
-The main object in NumPy is the *homogeneous*, *multidimensional* array.  An 
-`array <http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html>`_ is 
-a table of elements.  An example is a matrix :math:`x`  
+  * How well does the data match some assumed (null) distribution [hypotehsis testing]?
+  * If it doesn’t match well can we estiamte the parameters to approximate it [point estimate]?
+  * How accurate are the parameter estimates [interval estimates]?
+  * Can we estimate the entire distribution [function estimation or approximation]?
 
-.. math::
+Most commonly, the computational approaches used to address these questions will involve
 
-    x =
-    \begin{pmatrix}
-    1 & 2 & 3  \\
-    4 & 5 & 6  \\
-    7 & 8 & 9
-    \end{pmatrix} 
+  * Least squeares
+  * Numerical optimization
+  * maximum likelihood
+  * Numerical optimization
+  * Expectation maximization (EM)
+  * Monte Carlo methods
+  * Variational methods
+  * Simulation of null distribution (bootstrap, permutation)
+  * Estimation of posterior density (Monte Carlo integration, MCMC, EM)
+
+**Is my coin fair?**
+    
+:download:`coin-flip.py`
+
+.. code-block:: python
+
+   import numpy as np
+   import matplotlib.pyplot as plt
+   import scipy.stats as st
+
+   n = 100
+   pcoin = 0.62 # actual value of p for coin
+   results = st.bernoulli(pcoin).rvs(n)
+   h = sum(results)
+   print("we observed %s heads out of %s"%(h,n))
+
  
-can be represented as
+.. code-block:: none
 
->>> import numpy as np
->>> x = np.array([[1,2,3],[4,5,6],[7,8,9]])
->>> x
-array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
->>> x.shape
-(3, 3)
+   we observed 67 heads out of 100
+   The expected distribution for a fair coin is mu=50.0, sd=5.0
 
-The array :math:`x` has 2 dimensions.  In NumPy the number of dimensions is
-referred to as **rank**.  The ndim is the same as the number of axes or the
-length of the output of x.shape
+The **Expected distribution** for fair coin
 
->>> x.ndim
-2
+.. code-block:: python
 
->>> x.size
-9
-
-Arrays are convenient because of built in methods.
-
->>> x.sum(axis=0)
-array([12, 15, 18])
->>> x.sum(axis=1)
-array([ 6, 15, 24]) 
-
->>> x.mean(axis=0)
-array([ 4.,  5.,  6.])
->>> x.mean(axis=1)
-array([ 2.,  5.,  8.])
-
-But arrays are also useful because they interact with other NumPy functions as 
-well as being central to other package functionality. To make a sequence of numbers, 
-similar to *range* in the Python standard library, we use 
-`arange <http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html>`_.
-
->>> np.arange(10)
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
->>> np.arange(5,10)
-array([5, 6, 7, 8, 9])
->>> np.arange(5,10,0.5)
-array([ 5. ,  5.5,  6. ,  6.5,  7. ,  7.5,  8. ,  8.5,  9. ,  9.5])
-
-Also we can recreate the first matrix by **reshaping** the output of arange.
-
->>> x = np.arange(1,10).reshape(3,3)
->>> x
-array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-
-Another similar function to arange is `linspace <http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html>`_
-which fills a vector with evenly spaced variables for a specified interval.
-
->>> x = np.linspace(0,5,5)
->>> x
-array([ 0.  ,  1.25,  2.5 ,  3.75,  5.  ])
-
-As a reminder you may access the documentation at anytime using
+   p = 0.5
+   rv = st.binom(n,p)
+   mu = rv.mean()
+   sd = rv.std()
+   print("The expected distribution for a fair coin is mu=%s, sd=%s"%(mu,sd))
 
 .. code-block:: none
 
-    ~$ pydoc numpy.linspace
+   The expected distribution for a fair coin is mu=50.0, sd=5.0
+
+**Hypothesis testing**
+
+If we move into a hypothesis testing framework we can use the **binomial test**
+
+.. code-block:: python
+
+   print("binomial test - %s"%st.binom_test(h, n, p))
+
+.. code-block:: none
+
+   binomial test - 0.000873719836912
+   
+or a **normal approximation for binomal** (Z-test with continuity correction)
+
+.. code-block:: python
+
+   z = (h-0.5-mu)/sd
+   print("normal approx for binomial - %s"%(2*(1 - st.norm.cdf(z))))
+
+.. code-block:: none
+
+   normal approx for binomial - 0.000966848284768
+
+**Simulation**
+   
+We **can use simulation** to test things as well
+
+.. code-block:: python
+
+   nsamples = 100000
+   xs = np.random.binomial(n, p, nsamples)
+   print("simulation p-value - %s"%(2*np.sum(xs >= h)/(xs.size + 0.0)))
+
+.. code-block:: none   
+
+   simulation p-value - 0.00062
+
+**Maximum likelihood estimation (MLE)**
+
+.. code-block:: python
+
+   print("Maximum likelihood %s"%(np.sum(results)/float(len(results))))
+   bs_samples = np.random.choice(results, (nsamples, len(results)), replace=True)
+   bs_ps = np.mean(bs_samples, axis=1)
+   bs_ps.sort()
+   print("Bootstrap CI: (%.4f, %.4f)" % (bs_ps[int(0.025*nsamples)], bs_ps[int(0.975*nsamples)]))
+
+.. code-block:: none
+
+   Maximum likelihood 0.67
+   Bootstrap CI: (0.5800, 0.7600)
+
+**Bayesian estimation**
+   
+The **Bayesian approach** directly estimates the posterior
+distribution, from which all other point/interval statistics can be
+estimated.
+
+.. code-block:: python
+		
+   fig  = plt.figure()
+   ax = fig.add_subplot(111)
+
+   a, b = 10, 10
+   prior = st.beta(a, b)
+   post = st.beta(h+a, n-h+b)
+   ci = post.interval(0.95)
+   map_ =(h+a-1.0)/(n+a+b-2.0)
+
+   xs = np.linspace(0, 1, 100)
+   ax.plot(prior.pdf(xs), label='Prior')
+   ax.plot(post.pdf(xs), label='Posterior')
+   ax.axvline(mu, c='red', linestyle='dashed', alpha=0.4)
+   ax.set_xlim([0, 100])
+   ax.axhline(0.3, ci[0], ci[1], c='black', linewidth=2, label='95% CI');
+   ax.axvline(n*map_, c='blue', linestyle='dashed', alpha=0.4)
+   ax.legend()
+   plt.savefig("coin-toss.png")
+   
+.. figure:: coin-toss.png
+   :scale: 75%
+   :align: center
+   :alt: coin-toss
+   :figclass: align-center
 
 
-Arrays may be made of different types of data.
+The above calculations have simple `analytic solutions
+<https://en.wikipedia.org/wiki/Closed-form_expression>`_. For most
+real life problems an appropriate model is generally more complex and
+more complex models statistical models make use of more qadvanced
+numerical methods and simulations.
 
->>> x = np.array([1,2,3])
->>> x.dtype
-dtype('int64')
->>> x = np.array([0.1,0.2,0.3])
->>> x
-array([ 0.1,  0.2,  0.3])
->>> x.dtype
-dtype('float64')
->>> x = np.array([1,2,3],dtype='float64')
->>> x.dtype
-dtype('float64')
+.. note::
 
-There are several convenience functions for making arrays that are worth mentioning:
-    * `zeros <http://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html>`_
-    * `ones <http://docs.scipy.org/doc/numpy/reference/generated/numpy.ones.html>`_
+   **DISCUSSION**
 
->>> x = np.zeros([3,4])
->>> x
-array([[ 0.,  0.,  0.,  0.],
-       [ 0.,  0.,  0.,  0.],
-       [ 0.,  0.,  0.,  0.]])
->>> x = np.ones([3,4])
->>> x
-array([[ 1.,  1.,  1.,  1.],
-       [ 1.,  1.,  1.,  1.],
-       [ 1.,  1.,  1.,  1.]])
-
-.. admonition:: Exercise
-
-    1. Create the following array (1 line)
-
-    .. math::
-
-        a =
-        \begin{pmatrix}
-        1       & 2      & \cdots & 10      \\
-        11      & 12     & \cdots & 20      \\
-        \vdots  & \ddots & \ddots & \vdots  \\
-        91      & 92     & \cdots & 100 
-        \end{pmatrix}
-
-    2. Use the array object to get the number of elements, rows and columns
-    3. Get the mean of the rows and columns
-    4. What do you get when you do this?
-    
-        >>> a[4,:]
-    5. [extra] If you have time you can get familiar try 
-        * np.log(a) 
-        * np.cumsum(a)
-        * np.power(a,2)
-
-    6. [extra] How do you create a vector that has exactly 50 points and spans the range 11 to 23?
-
+   1. How were the Bernoulli and binomial distributions used here?
+   2. Explain the underlying hypothesis and the tests used to investigate
+   3. Can you interpret this p-value based on this level of significance (assuming :math:`\alpha=0.05`)
+   4. Compare and contrast the Bayesian and Frequentist paradigms for estimation?
+   5. Are there any other examples besides the coin-flip where you might apply what you have learned here?
+   

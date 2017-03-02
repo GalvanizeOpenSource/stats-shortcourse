@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Datascience Immersive" href="concluding-remarks.html"/>
-        <link rel="prev" title="NumPy - Basics" href="statistical-inference.html"/> 
+        <link rel="prev" title="Statistical inference" href="statistical-inference.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -94,7 +94,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regression, Classification, Evaluation metrics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#many-ways-to-say-the-same-thing">Many ways to say the same thing</a></li>
@@ -105,7 +105,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#notation">Notation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#assumptions">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assumptions">Assumptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#evaluation-metrics">Evaluation metrics</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
@@ -232,7 +235,7 @@
 <li>Example: 1/0, Yes/No, Treated/Control, High/Medium/Low</li>
 </ul>
 </li>
-<li>Missing<ul>
+<li>Missing variables<ul>
 <li>May require estimation</li>
 </ul>
 </li>
@@ -252,7 +255,7 @@ features from the ones we have (<strong>feature engineering</strong>)</p>
 <h2>Size of data<a class="headerlink" href="#size-of-data" title="Permalink to this headline">¶</a></h2>
 <p>The size of your data plays a role in how you go about your analysis</p>
 <ul>
-<li><p class="first">For associative studies:</p>
+<li><p class="first">For <strong>associative studies</strong>:</p>
 <blockquote>
 <div><ul class="simple">
 <li>May require large <span class="math">\(N\)</span> so that estimator is asymptotically normal</li>
@@ -269,19 +272,22 @@ features from the ones we have (<strong>feature engineering</strong>)</p>
 <li>What is large?</li>
 <li>Must check model via <strong>cross-validation</strong></li>
 <li>Can run at scale</li>
-<li>May need <strong>regularization</strong> (tomorrow)</li>
+<li>May need <strong>regularization</strong></li>
 </ul>
 </dd>
 </dl>
 </li>
+<li><p class="first"><a class="reference external" href="https://www.youtube.com/watch?v=LvaTokhYnDw&amp;list=PL5-da3qGB5ICcUhueCyu25slvsGp8IDTa">Hastie and Rob Tibshirani (Supervised and Unsupervised learning)</a></p>
+</li>
 </ul>
-<p>There are probabilistic versions under both paradigms</p>
 <div class="section" id="linear-regression">
 <h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h3>
-<p>With just one feature simple linear regression is as follows:</p>
-<div class="math">
-\[ \begin{align}\begin{aligned}Y = \beta_{0} + \beta_{1}\mathbf{X} + \epsilon\\* :math:`\beta_{0}` and :math:`\beta_{1}` are the unknown constants
-* :math:`\epsilon` is the error term and it is i.i.d. as well as :math:`\sim N(0,\sigma^{2})`\end{aligned}\end{align} \]</div>
+<p>With just one feature simple linear regression can be specified as follows:</p>
+<ul class="simple">
+<li><span class="math">\(Y = \beta_{0} + \beta_{1} \mathbf{X} + \epsilon\)</span></li>
+<li><span class="math">\(\beta_{0}\)</span> and <span class="math">\(\beta_{1}\)</span> are the unknown constants</li>
+<li><span class="math">\(\epsilon\)</span> is the error term and it is i.i.d. as well as <span class="math">\(\sim N(0,\sigma^{2})\)</span></li>
+</ul>
 <p>So we train the model using <span class="math">\(\mathbf{X}=\mathbf{x}\)</span> to get:</p>
 <div class="math">
 \[\hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1}\]</div>
@@ -354,6 +360,18 @@ features from the ones we have (<strong>feature engineering</strong>)</p>
 </ul>
 </dd>
 </dl>
+<ul class="simple">
+<li><a class="reference external" href="https://www.youtube.com/watch?v=WjyuiK5taS8&amp;list=PL5-da3qGB5IDvuFPNoSqheihPOQNJpzyy">Hastie and Rob Tibshirani (Linear Regression)</a></li>
+</ul>
+<div class="section" id="evaluation-metrics">
+<h3>Evaluation metrics<a class="headerlink" href="#evaluation-metrics" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>MSE, RMSE</li>
+<li>Accuracy, F-Score, Precision, Recall</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -367,7 +385,7 @@ features from the ones we have (<strong>feature engineering</strong>)</p>
         <a href="concluding-remarks.html" class="btn btn-neutral float-right" title="Datascience Immersive" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="statistical-inference.html" class="btn btn-neutral" title="NumPy - Basics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="statistical-inference.html" class="btn btn-neutral" title="Statistical inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

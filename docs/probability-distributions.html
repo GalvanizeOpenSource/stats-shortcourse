@@ -96,14 +96,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#other-questions-to-keep-in-mind">Other questions to keep in mind</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#bernoulli">Bernoulli:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#binomial">Binomial:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#geometric">Geometric:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#hypergeometric">Hypergeometric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#poisson">Poisson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exponential">Exponential</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uniform">Uniform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#normal-aka-gaussian">Normal aka Gaussian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#essential-distributions">Essential distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bernoulli">Bernoulli:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#binomial">Binomial:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#poisson">Poisson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uniform">Uniform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#normal-aka-gaussian">Normal aka Gaussian</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#less-essential-distributions">Less essential distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geometric">Geometric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hypergeometric">Hypergeometric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exponential">Exponential</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#distributions-are-related">Distributions are related</a></li>
 </ul>
 </li>
@@ -111,7 +117,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
 </ul>
@@ -198,9 +204,14 @@
 </div></blockquote>
 </div>
 </div>
+<div class="section" id="essential-distributions">
+<h2>Essential distributions<a class="headerlink" href="#essential-distributions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="bernoulli">
-<h2>Bernoulli:<a class="headerlink" href="#bernoulli" title="Permalink to this headline">¶</a></h2>
-<p>A Bernoulli distribution is a discrete probability distribution for a Bernoulli trial.  The distribution takes the value 1 with success probability of <span class="math">\(p\)</span> and the value 0 with failure.   Success could be heads on a coin flip.</p>
+<h3>Bernoulli:<a class="headerlink" href="#bernoulli" title="Permalink to this headline">¶</a></h3>
+<p>A Bernoulli distribution is a discrete probability distribution for a
+Bernoulli trial.  The distribution takes the value 1 with success
+probability of <span class="math">\(p\)</span> and the value 0 with failure.  Success could
+be heads on a coin flip.</p>
 <p>PMF = <span class="math">\(P[success] = p\)</span> , <span class="math">\(P[failure] = 1-p\)</span></p>
 <p>Mean: <span class="math">\(E[x] = p\)</span></p>
 <p>Variance: <span class="math">\(Var(x) = p(1-p)\)</span></p>
@@ -210,13 +221,18 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Lets say that I polled all first graders in the state of colorado and asked the question do you like/dislike your teacher.  The answers are discrete values.</p>
+<p>Lets say that I polled all first graders in the state of
+colorado and asked the question do you like/dislike your teacher.
+The answers are discrete values and the distribution of those
+answers could be modelled with a Bernoulli.</p>
+<p class="last">Can you think of another example?</p>
 </div>
-<p>See this <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-proportions/v/mean-and-variance-of-bernoulli-distribution-example">khan academy video to get a better intuition</a></p>
+<p>See this <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-proportions/v/mean-and-variance-of-bernoulli-distribution-example">khan academy video on the Bernoulli to get a better intuition</a></p>
 </div>
 <div class="section" id="binomial">
-<h2>Binomial:<a class="headerlink" href="#binomial" title="Permalink to this headline">¶</a></h2>
-<p>The Binomial distribution gives the discrete probability distribution of obtaining exactly <cite>p</cite> successes out of <cite>n</cite> trials</p>
+<h3>Binomial:<a class="headerlink" href="#binomial" title="Permalink to this headline">¶</a></h3>
+<p>The Binomial distribution gives the discrete probability distribution
+of obtaining exactly <cite>p</cite> successes out of <cite>n</cite> trials</p>
 <p>PMF: <span class="math">\(P[X=k] = {n \choose k}p^k(1-p)^{n-k}, \forall k \in \{0, 1,..., n\}\)</span></p>
 <p>Mean: <span class="math">\(np\)</span></p>
 <p>Var: <span class="math">\(np(1-p)\)</span></p>
@@ -224,33 +240,15 @@
 <div class="figure">
 <img alt="_images/binomial-distn.png" src="_images/binomial-distn.png" />
 </div>
-</div>
-<div class="section" id="geometric">
-<h2>Geometric:<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h2>
-<p>The probability of some number (<cite>X</cite>) of Bernoulli trials needed to get one success.  It also refers to probability of (<cite>X-1</cite>) failures before the first success.</p>
-<p>PMF: <span class="math">\(P[X=k] = p (1-p)^{k-1}, \forall k \in \{0, 1,...\}\)</span></p>
-<p>Mean: <span class="math">\(\frac{1}{p}\)</span></p>
-<p>Variance: :<cite>frac{1-p}{p^2}</cite></p>
-</div>
-<div class="section" id="hypergeometric">
-<h2>Hypergeometric<a class="headerlink" href="#hypergeometric" title="Permalink to this headline">¶</a></h2>
-<p>Hypergeometric distribution is a discrete probability distribution
-that describes the probability of <cite>k</cite> successes in <cite>n</cite> draws, without
-replacement.</p>
-<p>The hypergeometric test uses the hypergeometric distribution to
-calculate the statistical significance of having drawn a specific k
-successes n total draws</p>
-<p>Think of an urn with two types of marbles, red ones and green ones. Define drawing a green marble as a success and drawing a red marble as a failure (analogous to the binomial distribution).</p>
-<p>Did I draw the <strong>expected</strong> number of green marbles?</p>
-<p>The data are not accurately modeled by the binomial distribution,
-because the probability of success on each trial is not the same.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Think Texas Hold em</p>
+<p>The number of heads that from flipping a coin 10 times can be modeled with a binomial</p>
+<p>Can you think of another example?</p>
+<p class="last">See this <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/binomial-random-variables/v/binomial-distribution">khan academy video on the binomial distribution to get a better intuition</a></p>
 </div>
 </div>
 <div class="section" id="poisson">
-<h2>Poisson<a class="headerlink" href="#poisson" title="Permalink to this headline">¶</a></h2>
+<h3>Poisson<a class="headerlink" href="#poisson" title="Permalink to this headline">¶</a></h3>
 <p>If a mean of an event happening per unit time is observed and you need the probability of <cite>n</cite> events happening</p>
 <p>PMF: <span class="math">\(P[X=k] = \frac{\lambda^k e^{-\lambda}}{k!},\forall k \in \{0,1,2,...\}\)</span></p>
 <p>Mean: <span class="math">\(\lambda\)</span></p>
@@ -259,9 +257,72 @@ because the probability of success on each trial is not the same.</p>
 <div class="figure">
 <img alt="_images/poisson-distn.png" src="_images/poisson-distn.png" />
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The probability that one,two,..., <span class="math">\(n\)</span> uber cars pass in front of my building in an hour</p>
+<p class="last">Can you think of another example?</p>
+</div>
+<p>See this <a class="reference external" href="https://www.youtube.com/watch?v=3z-M6sbGIZ0">How does the binomial relate to the poisson (khan academy) video</a></p>
+<p>Then check out the <a class="reference external" href="https://www.youtube.com/watch?v=Jkr4FSrNEVY">example on the poisson distribution (khan academy) video</a></p>
+<p>Some <a class="reference external" href="https://www.umass.edu/wsp/resources/poisson">poisson examples are discussed here</a></p>
+</div>
+<div class="section" id="uniform">
+<h3>Uniform<a class="headerlink" href="#uniform" title="Permalink to this headline">¶</a></h3>
+<p>PDF: <span class="math">\(f(x) = \frac{1}{b-a}, \forall x\in[a, b]\)</span>,  0 otherwise</p>
+<p>MEAN: <span class="math">\(\frac{a+b}{2}\)</span></p>
+<p>VARIANCE: <span class="math">\(\frac{(b-a)^2}{2}\)</span></p>
+</div>
+<div class="section" id="normal-aka-gaussian">
+<h3>Normal aka Gaussian<a class="headerlink" href="#normal-aka-gaussian" title="Permalink to this headline">¶</a></h3>
+<p>The Gaussian is the most widely used distribution for continuous
+variables. The distribution is governed by the mean <span class="math">\(\mu\)</span> and variance :<cite>sigma^2</cite>.</p>
+<p>SUPPORT <span class="math">\(x \in (-\inf, \inf)\)</span></p>
+<p>PDF: <span class="math">\(\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{(x - \mu)^2}{2\sigma^2})\)</span></p>
+<p>MEAN: <span class="math">\(\mu\)</span></p>
+<p>VARIANCE: <span class="math">\(\sigma^2\)</span></p>
+<p>The inverse of the variance is known as the <strong>precision</strong> (<span class="math">\(\tau = 1/\sigma^{2}\)</span>).</p>
+<p>(<a class="reference external" href=".//gaussian-distn.py">Source code</a>, <a class="reference external" href=".//gaussian-distn.png">png</a>, <a class="reference external" href=".//gaussian-distn.hires.png">hires.png</a>, <a class="reference external" href=".//gaussian-distn.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/gaussian-distn.png" src="_images/gaussian-distn.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">test scores, IQs, heights, finishing times from the boston marathons (almost)</p>
+</div>
+<p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/normal-distributions-library/v/introduction-to-the-normal-distribution">Khan academy intro</a></p>
+<p>This is a really important distribution because it appears over and over in nature.  It is extremely useful in statistical inference and it is a key component of <a class="reference external" href="https://en.wikipedia.org/wiki/Central_limit_theorem">the central limit theorem</a>.</p>
+</div>
+</div>
+<div class="section" id="less-essential-distributions">
+<h2>Less essential distributions<a class="headerlink" href="#less-essential-distributions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="geometric">
+<h3>Geometric<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h3>
+<p>The probability of some number (<cite>X</cite>) of Bernoulli trials needed to get one success.  It also refers to probability of (<cite>X-1</cite>) failures before the first success.</p>
+<p>PMF: <span class="math">\(P[X=k] = p (1-p)^{k-1}, \forall k \in \{0, 1,...\}\)</span></p>
+<p>Mean: <span class="math">\(\frac{1}{p}\)</span></p>
+<p>Variance: :<cite>frac{1-p}{p^2}</cite></p>
+</div>
+<div class="section" id="hypergeometric">
+<h3>Hypergeometric<a class="headerlink" href="#hypergeometric" title="Permalink to this headline">¶</a></h3>
+<p>Hypergeometric distribution is a discrete probability distribution
+that describes the probability of <cite>k</cite> successes in <cite>n</cite> draws, without
+replacement.</p>
+<p>The hypergeometric test uses the hypergeometric distribution to
+calculate the statistical significance of having drawn a specific k
+successes n total draws</p>
+<p>Think of an urn with two types of marbles, red ones and green
+ones. Define drawing a green marble as a success and drawing a red
+marble as a failure (analogous to the binomial distribution).</p>
+<p>Did I draw the <strong>expected</strong> number of green marbles?</p>
+<p>The data are not accurately modeled by the binomial distribution,
+because the probability of success on each trial is not the same.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Think Texas Hold em</p>
+</div>
 </div>
 <div class="section" id="exponential">
-<h2>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h2>
+<h3>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h3>
 <p>A good way to model the time between events for a poisson
 process.  It is a particular case of the gamma distribution.
 It is governed by a rate parameter <span class="math">\(\lambda\)</span>.</p>
@@ -273,25 +334,6 @@ It is governed by a rate parameter <span class="math">\(\lambda\)</span>.</p>
 <div class="figure">
 <img alt="_images/exponential-distn.png" src="_images/exponential-distn.png" />
 </div>
-</div>
-<div class="section" id="uniform">
-<h2>Uniform<a class="headerlink" href="#uniform" title="Permalink to this headline">¶</a></h2>
-<p>PDF: <span class="math">\(f(x) = \frac{1}{b-a}, \forall x\in[a, b]\)</span>,  0 otherwise</p>
-<p>MEAN: <span class="math">\(\frac{a+b}{2}\)</span></p>
-<p>VARIANCE: <span class="math">\(\frac{(b-a)^2}{2}\)</span></p>
-</div>
-<div class="section" id="normal-aka-gaussian">
-<h2>Normal aka Gaussian<a class="headerlink" href="#normal-aka-gaussian" title="Permalink to this headline">¶</a></h2>
-<p>The Gaussian is the most widely used distribution for continuous
-variables. The distribution is governed by the mean <span class="math">\(\mu\)</span> and variance :<cite>sigma^2</cite>.</p>
-<p>SUPPORT <span class="math">\(x \in (-\inf, \inf)\)</span></p>
-<p>PDF: <span class="math">\(\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{(x - \mu)^2}{2\sigma^2})\)</span></p>
-<p>MEAN: <span class="math">\(\mu\)</span></p>
-<p>VARIANCE: <span class="math">\(\sigma^2\)</span></p>
-<p>The inverse of the variance is known as the <strong>precision</strong> (<span class="math">\(\tau = 1/\sigma^{2}\)</span>).</p>
-<p>(<a class="reference external" href=".//gaussian-distn.py">Source code</a>, <a class="reference external" href=".//gaussian-distn.png">png</a>, <a class="reference external" href=".//gaussian-distn.hires.png">hires.png</a>, <a class="reference external" href=".//gaussian-distn.pdf">pdf</a>)</p>
-<div class="figure">
-<img alt="_images/gaussian-distn.png" src="_images/gaussian-distn.png" />
 </div>
 </div>
 <div class="section" id="distributions-are-related">

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>NumPy - Basics &mdash; stats-shortcourse 1.0 documentation</title>
+  <title>Statistical inference &mdash; stats-shortcourse 1.0 documentation</title>
   
 
   
@@ -94,8 +94,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">NumPy - Basics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#arrays">Arrays</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Statistical inference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-motivating-example">A motivating example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
@@ -133,7 +133,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>NumPy - Basics</li>
+    <li>Statistical inference</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -147,162 +147,139 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="numpy-basics">
-<h1>NumPy - Basics<a class="headerlink" href="#numpy-basics" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="numpy.scipy.org">NumPy</a> is the <em>de facto</em> standard for numerical computing in Python.  It is
-<a class="reference external" href="http://www.scipy.org/PerformancePython">highly optimized</a> and extremely useful
-for working with matrices.  The standard matrix class in NumPy is called an
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html">array</a>.
-We will first get comfortable with working with arrays the we will cover a number of useful
-functions.  Then we will touch on the linear algebra capabilities of NumPy and finally we will
-use a few examples to tie together key concepts.</p>
-<div class="section" id="arrays">
-<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
-<p>The main object in NumPy is the <em>homogeneous</em>, <em>multidimensional</em> array.  An
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html">array</a> is
-a table of elements.  An example is a matrix <span class="math">\(x\)</span></p>
-<div class="math">
-\[\begin{split}x =
-\begin{pmatrix}
-1 &amp; 2 &amp; 3  \\
-4 &amp; 5 &amp; 6  \\
-7 &amp; 8 &amp; 9
-\end{pmatrix}\end{split}\]</div>
-<p>can be represented as</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">array([[1, 2, 3],</span>
-<span class="go">       [4, 5, 6],</span>
-<span class="go">       [7, 8, 9]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
-<span class="go">(3, 3)</span>
-</pre></div>
-</div>
-<p>The array <span class="math">\(x\)</span> has 2 dimensions.  In NumPy the number of dimensions is
-referred to as <strong>rank</strong>.  The ndim is the same as the number of axes or the
-length of the output of x.shape</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
-<span class="go">2</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">size</span>
-<span class="go">9</span>
-</pre></div>
-</div>
-<p>Arrays are convenient because of built in methods.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">array([12, 15, 18])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">array([ 6, 15, 24])</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">array([ 4.,  5.,  6.])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">array([ 2.,  5.,  8.])</span>
-</pre></div>
-</div>
-<p>But arrays are also useful because they interact with other NumPy functions as
-well as being central to other package functionality. To make a sequence of numbers,
-similar to <em>range</em> in the Python standard library, we use
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html">arange</a>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="go">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="go">array([5, 6, 7, 8, 9])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="go">array([ 5. ,  5.5,  6. ,  6.5,  7. ,  7.5,  8. ,  8.5,  9. ,  9.5])</span>
-</pre></div>
-</div>
-<p>Also we can recreate the first matrix by <strong>reshaping</strong> the output of arange.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">array([[1, 2, 3],</span>
-<span class="go">       [4, 5, 6],</span>
-<span class="go">       [7, 8, 9]])</span>
-</pre></div>
-</div>
-<p>Another similar function to arange is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html">linspace</a>
-which fills a vector with evenly spaced variables for a specified interval.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">array([ 0.  ,  1.25,  2.5 ,  3.75,  5.  ])</span>
-</pre></div>
-</div>
-<p>As a reminder you may access the documentation at anytime using</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>~$ pydoc numpy.linspace
-</pre></div>
-</div>
-<p>Arrays may be made of different types of data.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">dtype(&#39;int64&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">array([ 0.1,  0.2,  0.3])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">dtype(&#39;float64&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">dtype(&#39;float64&#39;)</span>
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>There are several convenience functions for making arrays that are worth mentioning:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html">zeros</a></li>
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ones.html">ones</a></li>
+  <div class="section" id="statistical-inference">
+<h1>Statistical inference<a class="headerlink" href="#statistical-inference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-motivating-example">
+<h2>A motivating example<a class="headerlink" href="#a-motivating-example" title="Permalink to this headline">¶</a></h2>
+<p>Starting with some data we want to use statsitics to answer certain kinds of questions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>How well does the data match some assumed (null) distribution [hypotehsis testing]?</li>
+<li>If it doesn’t match well can we estiamte the parameters to approximate it [point estimate]?</li>
+<li>How accurate are the parameter estimates [interval estimates]?</li>
+<li>Can we estimate the entire distribution [function estimation or approximation]?</li>
 </ul>
-</dd>
-</dl>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">array([[ 0.,  0.,  0.,  0.],</span>
-<span class="go">       [ 0.,  0.,  0.,  0.],</span>
-<span class="go">       [ 0.,  0.,  0.,  0.]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">array([[ 1.,  1.,  1.,  1.],</span>
-<span class="go">       [ 1.,  1.,  1.,  1.],</span>
-<span class="go">       [ 1.,  1.,  1.,  1.]])</span>
-</pre></div>
-</div>
-<div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
-<ol class="arabic simple">
-<li>Create the following array (1 line)</li>
-</ol>
-<div class="math">
-\[\begin{split}a =
-\begin{pmatrix}
-1       &amp; 2      &amp; \cdots &amp; 10      \\
-11      &amp; 12     &amp; \cdots &amp; 20      \\
-\vdots  &amp; \ddots &amp; \ddots &amp; \vdots  \\
-91      &amp; 92     &amp; \cdots &amp; 100
-\end{pmatrix}\end{split}\]</div>
-<ol class="last arabic" start="2">
-<li><p class="first">Use the array object to get the number of elements, rows and columns</p>
-</li>
-<li><p class="first">Get the mean of the rows and columns</p>
-</li>
-<li><p class="first">What do you get when you do this?</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">,:]</span>
-</pre></div>
-</div>
-</li>
-<li><dl class="first docutils">
-<dt>[extra] If you have time you can get familiar try</dt>
-<dd><ul class="first last simple">
-<li>np.log(a)</li>
-<li>np.cumsum(a)</li>
-<li>np.power(a,2)</li>
+</div></blockquote>
+<p>Most commonly, the computational approaches used to address these questions will involve</p>
+<blockquote>
+<div><ul class="simple">
+<li>Least squeares</li>
+<li>Numerical optimization</li>
+<li>maximum likelihood</li>
+<li>Numerical optimization</li>
+<li>Expectation maximization (EM)</li>
+<li>Monte Carlo methods</li>
+<li>Variational methods</li>
+<li>Simulation of null distribution (bootstrap, permutation)</li>
+<li>Estimation of posterior density (Monte Carlo integration, MCMC, EM)</li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><p class="first">[extra] How do you create a vector that has exactly 50 points and spans the range 11 to 23?</p>
-</li>
+</div></blockquote>
+<p><strong>Is my coin fair?</strong></p>
+<p><a class="reference download internal" href="_downloads/coin-flip.py" download=""><code class="xref download docutils literal"><span class="pre">coin-flip.py</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">st</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">pcoin</span> <span class="o">=</span> <span class="mf">0.62</span> <span class="c1"># actual value of p for coin</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span><span class="n">pcoin</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;we observed </span><span class="si">%s</span><span class="s2"> heads out of </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>we observed 67 heads out of 100
+The expected distribution for a fair coin is mu=50.0, sd=5.0
+</pre></div>
+</div>
+<p>The <strong>Expected distribution</strong> for fair coin</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">rv</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">binom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;The expected distribution for a fair coin is mu=</span><span class="si">%s</span><span class="s2">, sd=</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sd</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>The expected distribution for a fair coin is mu=50.0, sd=5.0
+</pre></div>
+</div>
+<p><strong>Hypothesis testing</strong></p>
+<p>If we move into a hypothesis testing framework we can use the <strong>binomial test</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;binomial test - </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">st</span><span class="o">.</span><span class="n">binom_test</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>binomial test - 0.000873719836912
+</pre></div>
+</div>
+<p>or a <strong>normal approximation for binomal</strong> (Z-test with continuity correction)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="mf">0.5</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">sd</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;normal approx for binomial - </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">z</span><span class="p">))))</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>normal approx for binomial - 0.000966848284768
+</pre></div>
+</div>
+<p><strong>Simulation</strong></p>
+<p>We <strong>can use simulation</strong> to test things as well</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nsamples</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;simulation p-value - </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xs</span> <span class="o">&gt;=</span> <span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="mf">0.0</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>simulation p-value - 0.00062
+</pre></div>
+</div>
+<p><strong>Maximum likelihood estimation (MLE)</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Maximum likelihood </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">))))</span>
+<span class="n">bs_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="p">(</span><span class="n">nsamples</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)),</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">bs_ps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bs_samples</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">bs_ps</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Bootstrap CI: (</span><span class="si">%.4f</span><span class="s2">, </span><span class="si">%.4f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bs_ps</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.025</span><span class="o">*</span><span class="n">nsamples</span><span class="p">)],</span> <span class="n">bs_ps</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.975</span><span class="o">*</span><span class="n">nsamples</span><span class="p">)]))</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Maximum likelihood 0.67
+Bootstrap CI: (0.5800, 0.7600)
+</pre></div>
+</div>
+<p><strong>Bayesian estimation</strong></p>
+<p>The <strong>Bayesian approach</strong> directly estimates the posterior
+distribution, from which all other point/interval statistics can be
+estimated.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">fig</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">post</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">h</span><span class="o">+</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">h</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="n">ci</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">map_</span> <span class="o">=</span><span class="p">(</span><span class="n">h</span><span class="o">+</span><span class="n">a</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prior</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Posterior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;95% CI&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">map_</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;coin-toss.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/coin-toss.png"><img alt="coin-toss" src="_images/coin-toss.png" style="width: 600.0px; height: 450.0px;" /></a>
+</div>
+<p>The above calculations have simple <a class="reference external" href="https://en.wikipedia.org/wiki/Closed-form_expression">analytic solutions</a>. For most
+real life problems an appropriate model is generally more complex and
+more complex models statistical models make use of more qadvanced
+numerical methods and simulations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>DISCUSSION</strong></p>
+<ol class="last arabic simple">
+<li>How were the Bernoulli and binomial distributions used here?</li>
+<li>Explain the underlying hypothesis and the tests used to investigate</li>
+<li>Can you interpret this p-value based on this level of significance (assuming <span class="math">\(\alpha=0.05\)</span>)</li>
+<li>Compare and contrast the Bayesian and Frequentist paradigms for estimation?</li>
+<li>Are there any other examples besides the coin-flip where you might apply what you have learned here?</li>
 </ol>
 </div>
 </div>

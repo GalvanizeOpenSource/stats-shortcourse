@@ -104,7 +104,6 @@ We can extend this for three or more variables:
 
    :math:`P(A,B,C) = P(A| B,C) P(B,C) = P(A|B,C) P(B|C) P(C)`
 
-
 More generally:
 
    :math:`P(\cap_{i}^nX_i) = \prod_i^n P(X_i | \cap_k^{i-1} X_k)`

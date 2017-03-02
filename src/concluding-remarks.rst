@@ -67,6 +67,7 @@ Resources for further study
 -----------------------------
 
   * `Galvanize self study resources <https://github.com/zipfian/self-study-resources>`_
+  * `Hypothesis testing <https://www.youtube.com/watch?v=J6AdoiNUyWI&list=PL5-da3qGB5IBSSCPANhTgrw82ws7w_or9>`_
   * `Useful flashcards <http://www.cram.com/flashcards/probability-for-data-science-8215075>`_
-  * `Khan Academy - statistics and srobability <https://www.khanacademy.org/math/statistics-probability>`_
+  * `Khan Academy - statistics and probability <https://www.khanacademy.org/math/statistics-probability>`_
   * `15 hours of machine learning videos <http://www.dataschool.io/15-hours-of-expert-machine-learning-videos>`_

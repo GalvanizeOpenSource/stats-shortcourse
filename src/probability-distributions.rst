@@ -1,4 +1,4 @@
-.. probability lecturexc
+.. probability lecture
 
 Probability distributions
 =============================
@@ -30,11 +30,17 @@ Other questions to keep in mind
      
    * How likely are extreme values?
    * Are there missing values?
-   
-Bernoulli:
----------------
 
-A Bernoulli distribution is a discrete probability distribution for a Bernoulli trial.  The distribution takes the value 1 with success probability of :math:`p` and the value 0 with failure.   Success could be heads on a coin flip.
+Essential distributions
+--------------------------
+     
+Bernoulli:
+^^^^^^^^^^^
+
+A Bernoulli distribution is a discrete probability distribution for a
+Bernoulli trial.  The distribution takes the value 1 with success
+probability of :math:`p` and the value 0 with failure.  Success could
+be heads on a coin flip.
 
 PMF = :math:`P[success] = p` , :math:`P[failure] = 1-p`
 
@@ -44,15 +50,20 @@ Variance: :math:`Var(x) = p(1-p)`
 
 .. plot:: bernoulli-distn.py
 
-.. note:: Lets say that I polled all first graders in the state of colorado and asked the question do you like/dislike your teacher.  The answers are discrete values.
+.. note:: Lets say that I polled all first graders in the state of
+   colorado and asked the question do you like/dislike your teacher.
+   The answers are discrete values and the distribution of those
+   answers could be modelled with a Bernoulli.
 
-See this `khan academy video to get a better intuition <https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-proportions/v/mean-and-variance-of-bernoulli-distribution-example>`_	  
+   Can you think of another example?
 
-	  
+See this `khan academy video on the Bernoulli to get a better intuition <https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-proportions/v/mean-and-variance-of-bernoulli-distribution-example>`_	  
+
 Binomial:
-------------
+^^^^^^^^^^^
 
-The Binomial distribution gives the discrete probability distribution of obtaining exactly `p` successes out of `n` trials
+The Binomial distribution gives the discrete probability distribution
+of obtaining exactly `p` successes out of `n` trials
 
 PMF: :math:`P[X=k] = {n \choose k}p^k(1-p)^{n-k}, \forall k \in \{0, 1,..., n\}`
 
@@ -62,40 +73,17 @@ Var: :math:`np(1-p)`
 
 .. plot:: binomial-distn.py
 
-Geometric:
--------------
+.. note::
 
-The probability of some number (`X`) of Bernoulli trials needed to get one success.  It also refers to probability of (`X-1`) failures before the first success. 
+   The number of heads that from flipping a coin 10 times can be modeled with a binomial
 
-PMF: :math:`P[X=k] = p (1-p)^{k-1}, \forall k \in \{0, 1,...\}`
+   Can you think of another example?
 
-Mean: :math:`\frac{1}{p}`
+   See this `khan academy video on the binomial distribution to get a better intuition <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/binomial-random-variables/v/binomial-distribution>`_
 
-Variance: :`\frac{1-p}{p^2}`
-
-
-Hypergeometric
------------------
-
-Hypergeometric distribution is a discrete probability distribution
-that describes the probability of `k` successes in `n` draws, without
-replacement.
-
-The hypergeometric test uses the hypergeometric distribution to
-calculate the statistical significance of having drawn a specific k
-successes n total draws
-
-Think of an urn with two types of marbles, red ones and green ones. Define drawing a green marble as a success and drawing a red marble as a failure (analogous to the binomial distribution).
-
-Did I draw the **expected** number of green marbles?
-
-The data are not accurately modeled by the binomial distribution,
-because the probability of success on each trial is not the same.
-
-.. note:: Think Texas Hold em
 
 Poisson
-------------
+^^^^^^^^^^^
 
 If a mean of an event happening per unit time is observed and you need the probability of `n` events happening
 
@@ -107,25 +95,20 @@ Variance: :math:`\lambda`
 
 .. plot:: poisson-distn.py
 
-Exponential
-----------------
+.. note::
 
-A good way to model the time between events for a poisson
-process.  It is a particular case of the gamma distribution.
-It is governed by a rate parameter :math:`\lambda`.
+   The probability that one,two,..., :math:`n` uber cars pass in front of my building in an hour
 
-SUPPORT: :math:`x \in (0, \inf)`.
+   Can you think of another example?
+   
+See this `How does the binomial relate to the poisson (khan academy) video <https://www.youtube.com/watch?v=3z-M6sbGIZ0>`_
 
-PDF: :math:`\lambda e^{-\lambda x}`
+Then check out the `example on the poisson distribution (khan academy) video <https://www.youtube.com/watch?v=Jkr4FSrNEVY>`_
 
-MEAN: :math:`\frac{1}{\lambda}`
-
-VARIANCE: :math:`\frac{1}{\lambda^2}`
-
-.. plot:: exponential-distn.py
+Some `poisson examples are discussed here <https://www.umass.edu/wsp/resources/poisson>`_ 
 
 Uniform
-------------
+^^^^^^^^^^^
 
 PDF: :math:`f(x) = \frac{1}{b-a}, \forall x\in[a, b]`,  0 otherwise
 
@@ -135,7 +118,7 @@ VARIANCE: :math:`\frac{(b-a)^2}{2}`
 
 
 Normal aka Gaussian
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The Gaussian is the most widely used distribution for continuous
 variables. The distribution is governed by the mean :math:`\mu` and variance :`\sigma^2`.
@@ -151,12 +134,73 @@ VARIANCE: :math:`\sigma^2`
 The inverse of the variance is known as the **precision** (:math:`\tau = 1/\sigma^{2}`).
 
 .. plot:: gaussian-distn.py
+
+.. note::
+   test scores, IQs, heights, finishing times from the boston marathons (almost)
+	  
+`Khan academy intro <https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/normal-distributions-library/v/introduction-to-the-normal-distribution>`_
+
+This is a really important distribution because it appears over and over in nature.  It is extremely useful in statistical inference and it is a key component of `the central limit theorem <https://en.wikipedia.org/wiki/Central_limit_theorem>`_.
+
+Less essential distributions
+--------------------------------
+	  
+Geometric
+^^^^^^^^^^^^^
+
+The probability of some number (`X`) of Bernoulli trials needed to get one success.  It also refers to probability of (`X-1`) failures before the first success. 
+
+PMF: :math:`P[X=k] = p (1-p)^{k-1}, \forall k \in \{0, 1,...\}`
+
+Mean: :math:`\frac{1}{p}`
+
+Variance: :`\frac{1-p}{p^2}`
+
+
+Hypergeometric
+^^^^^^^^^^^^^^^^
+
+Hypergeometric distribution is a discrete probability distribution
+that describes the probability of `k` successes in `n` draws, without
+replacement.
+
+The hypergeometric test uses the hypergeometric distribution to
+calculate the statistical significance of having drawn a specific k
+successes n total draws
+
+Think of an urn with two types of marbles, red ones and green
+ones. Define drawing a green marble as a success and drawing a red
+marble as a failure (analogous to the binomial distribution).
+
+Did I draw the **expected** number of green marbles?
+
+The data are not accurately modeled by the binomial distribution,
+because the probability of success on each trial is not the same.
+
+.. note:: Think Texas Hold em
+	  
+Exponential
+^^^^^^^^^^^^^^^
+
+A good way to model the time between events for a poisson
+process.  It is a particular case of the gamma distribution.
+It is governed by a rate parameter :math:`\lambda`.
+
+SUPPORT: :math:`x \in (0, \inf)`.
+
+PDF: :math:`\lambda e^{-\lambda x}`
+
+MEAN: :math:`\frac{1}{\lambda}`
+
+VARIANCE: :math:`\frac{1}{\lambda^2}`
+
+.. plot:: exponential-distn.py
+
 	  
 Distributions are related
 ----------------------------
 
 There are many more distributions than the ones mentioned above.  Here is an illustration from *Casella and Berger* that does a pretty good job making that point.
-
 	  
 .. figure:: statistical-inference-distns.jpg
    :scale: 35%

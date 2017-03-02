@@ -1,6 +1,5 @@
 .. linear algebra, linear regression
    
-
 Regression, Classification, Evaluation metrics
 ================================================
 
@@ -13,7 +12,6 @@ Objectives
   3. Evaluate a linear regression model
   4. Look at the R and Bayesian ways of implementing linear regression
 
-     
 Lets imagine there is some true model
  
    .. math::
@@ -67,7 +65,7 @@ Features may be:
    * Also called a factor
    * Example: 1/0, Yes/No, Treated/Control, High/Medium/Low
 
-3. Missing
+3. Missing variables
 
    * May require estimation
 
@@ -84,7 +82,7 @@ Size of data
 
 The size of your data plays a role in how you go about your analysis
 
-* For associative studies:
+* For **associative studies**:
 
    * May require large :math:`N` so that estimator is asymptotically normal
    * Power is a function of :math:`N` 
@@ -96,25 +94,23 @@ The size of your data plays a role in how you go about your analysis
    * What is large?
    * Must check model via **cross-validation**
    * Can run at scale
-   * May need **regularization** (tomorrow)
+   * May need **regularization**
 
-There are probabilistic versions under both paradigms
-     
+* `Hastie and Rob Tibshirani (Supervised and Unsupervised learning) <https://www.youtube.com/watch?v=LvaTokhYnDw&list=PL5-da3qGB5ICcUhueCyu25slvsGp8IDTa>`_
+
 Linear regression
-------------------
+-------------------
 
-With just one feature simple linear regression is as follows:
+With just one feature simple linear regression can be specified as follows:
 
-.. math::   
+* :math:`Y = \beta_{0} + \beta_{1} \mathbf{X} + \epsilon`
+* :math:`\beta_{0}` and :math:`\beta_{1}` are the unknown constants
+* :math:`\epsilon` is the error term and it is i.i.d. as well as :math:`\sim N(0,\sigma^{2})`  
 
-   Y = \beta_{0} + \beta_{1}\mathbf{X} + \epsilon
-
-   * :math:`\beta_{0}` and :math:`\beta_{1}` are the unknown constants
-   * :math:`\epsilon` is the error term and it is i.i.d. as well as :math:`\sim N(0,\sigma^{2})`  
-
+    
 So we train the model using :math:`\mathbf{X}=\mathbf{x}` to get:
 
-.. math::   
+.. math::
 
    \hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1}
 
@@ -157,7 +153,6 @@ Notation
 Assumptions
 ^^^^^^^^^^^^^^^^^
 
-
 1. Linearity: :math:`y = x^{T} \beta + \epsilon`
 2. **Full rank**: :math:`X` has full rank (rank = K)
 3. **Exogeneity** of regressors: :math:`E[\epsilon|X] = 0`
@@ -180,3 +175,11 @@ Homoscedastic errors mean the variance of the shock is constant:
    * Often fails in practice because variance of shock depends on covariates
    * Can correct by estimating a regression with ‘robust’ standard errors:
 
+* `Hastie and Rob Tibshirani (Linear Regression) <https://www.youtube.com/watch?v=WjyuiK5taS8&list=PL5-da3qGB5IDvuFPNoSqheihPOQNJpzyy>`_
+
+     
+Evaluation metrics
+----------------------
+
+   * MSE, RMSE
+   * Accuracy, F-Score, Precision, Recall

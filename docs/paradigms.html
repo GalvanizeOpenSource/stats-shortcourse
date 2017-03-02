@@ -93,20 +93,24 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Bayesian Inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#bayes-theorem">Bayes Theorem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#but-why">But why?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#probability-review">Probability review</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conditional-probability">Conditional probability</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-tale-of-two-philosophies">A tale of two philosophies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bayes-theorem">Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-philosophy-of-bayesian-inference">The Philosophy of Bayesian Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#but-why">But why?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#then-why-isn-t-everyone-a-bayesian">Then why isn&#8217;t everyone a Bayesian?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a-tale-of-two-philosophies">A tale of two philosophies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-pieces">The pieces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-the-bayesian-paradigm-more-naturally-aligned-with-the-way-we-think">Is the Bayesian paradigm more naturally aligned with the way we think?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-pieces">The pieces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">NumPy - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
 </ul>
@@ -158,13 +162,118 @@
             
   <div class="section" id="bayesian-inference">
 <h1>Bayesian Inference<a class="headerlink" href="#bayesian-inference" title="Permalink to this headline">¶</a></h1>
-<p>Mini-bbjectives:</p>
+<p>Mini-objectives:</p>
 <ol class="arabic simple">
-<li>Discuss the philosophy</li>
-<li>Review conditional probability</li>
-<li>Bayes Rule</li>
+<li>Review Probability</li>
+<li>Discuss the philosophies</li>
+<li>Bayes Rule again</li>
 <li>Discuss Bayesian inference</li>
 </ol>
+<div class="section" id="probability-review">
+<h2>Probability review<a class="headerlink" href="#probability-review" title="Permalink to this headline">¶</a></h2>
+<p>I think it is helpful to keep in mind the major types of probabilities</p>
+<blockquote>
+<div><ul class="simple">
+<li>Joint - <span class="math">\(P(A \cap B)\)</span></li>
+<li>Conditional - <span class="math">\(P(A | B)\)</span></li>
+<li>Marginal - <span class="math">\(P(A)\)</span></li>
+</ul>
+</div></blockquote>
+<p>Check out <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">this nicely written page on the topic</a></p>
+<p>Recall that</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="math">\(P(A \cup B)\)</span> is the probability of A or B</li>
+<li><span class="math">\(P(A \cap B)\)</span> is the probability of A and B</li>
+</ul>
+</div></blockquote>
+<p><a class="reference external" href="http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html">Try out these problems to get a better feel for things</a></p>
+<div class="section" id="conditional-probability">
+<h3>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\(\textrm{conditional} = \textrm{joint} / \textrm{marginal}\)</span></p>
+<p><span class="math">\(P(B|A) = P(A \cap B) / P(A)\)</span></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>FROM LAST CLASS</strong></p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Three types of fair coins are in an urn: HH, HT, and TT</li>
+<li>You pull a coin out of the urn, flip it, and it comes up H</li>
+<li>Q: what is the probability it comes up H if you flip it a second time?</li>
+</ul>
+</div></blockquote>
+</div>
+<ol class="arabic simple">
+<li>Figure out <span class="math">\(P(A \cap B)\)</span></li>
+<li>Figure out <span class="math">\(P(A)\)</span></li>
+<li>plug em in</li>
+</ol>
+<p><span class="math">\(P(X_2 = H \cap X_1 = H)\)</span> is probability that <span class="math">\(X_1 = H\)</span> <strong>and</strong> <span class="math">\(X_2 = H\)</span></p>
+<p>If you grab HH coin two head flips have probability: 1
+but you could also grab HT coin and flip heads twice, probability:
+<span class="math">\(\frac{1}{2} * \frac{1}{2} = \frac{1}{4}\)</span></p>
+<p>Each of those has probability <span class="math">\(\frac{1}{3}\)</span></p>
+<p>So <span class="math">\(P(X_2 = H \cap X_1 = H) = \frac{1}{3} * (1 + \frac{1}{4}) = \frac{5}{12}\)</span></p>
+<p>Finally <span class="math">\(P{X_1 = H}\)</span> is <span class="math">\(\frac{1}{2}\)</span></p>
+<p>Therefore <span class="math">\(P(X_2 = H | X_1 = H) = \frac{\frac{5}{12}}{\frac{1}{2}} = \frac{5}{6}\)</span></p>
+<p>Don&#8217;t believe it we can show this by simulation...</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">coins</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HH&#39;</span><span class="p">,</span> <span class="s1">&#39;HT&#39;</span><span class="p">,</span> <span class="s1">&#39;TT&#39;</span><span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">coin</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">coins</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>       second
+first
+False  0.168256
+True   0.838502
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>ANOTHER ONE</strong></p>
+<p>Given that it is a red card what is the probability that we draw a 4?</p>
+<p class="last"><a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">Answer explained here</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="a-tale-of-two-philosophies">
+<h2>A tale of two philosophies<a class="headerlink" href="#a-tale-of-two-philosophies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Frequentist</strong> - assumes that the probability of an event is result of a long-run frequency of events</li>
+<li><strong>Bayesian</strong> - assigns a degree of belief to an event</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>DISCUSSION</strong></p>
+<p>Which one seems like a <strong>better</strong> choice for:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Probability of a car accident given a city</li>
+<li>Predicting the result of an election</li>
+<li>Predicting user behavior (e.g. A/B testing)</li>
+<li>Identifying students with low test scores</li>
+</ul>
+</div></blockquote>
+</div>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/26454611">Breast cancer subtype and ethnicity?</a></p>
+</li>
+<li><p class="first"><em>TO REMEMBER</em> &#8211; Are we making conclusions about a population in nature or about an individual?</p>
+</li>
+<li><p class="first"><em>TO REMEMBER</em> &#8211; Neither of these philosophies are better in all cases</p>
+<blockquote>
+<div><p>&#8220;All models are wrong, but some are useful&#8221; &#8211;George Box</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
 <div class="section" id="bayes-theorem">
 <h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -173,72 +282,68 @@
 </div></blockquote>
 <p>The <strong>posterior</strong> is proportional to the <strong>likelihood</strong> times the <strong>prior</strong> distribution</p>
 <p>Bayesian inference works by combining information about parameters <span class="math">\(\theta\)</span> contained in the observed data <span class="math">\(x\)</span> as quantified in the likelihood function <span class="math">\(p(x|\theta)\)</span>.  Classical statistics works by making inference about a single point, while Bayesian inference works on the whole distribution.  Parameters through the Bayesian lens are treated as random variables described by distributions.</p>
-<p>The Philosophy of Bayesian Inference</p>
+</div>
+<div class="section" id="the-philosophy-of-bayesian-inference">
+<h2>The Philosophy of Bayesian Inference<a class="headerlink" href="#the-philosophy-of-bayesian-inference" title="Permalink to this headline">¶</a></h2>
 <p>You are a skilled programmer, but bugs still slip into your code. After a particularly difficult implementation of an algorithm, you decide to test your code on a trivial example. It passes. You test the code on a harder problem. It passes once again. And it passes the next, <em>even more difficult</em>, test too! You are starting to believe that there may be no bugs in this code...</p>
+</div>
 <div class="section" id="but-why">
-<h3>But why?<a class="headerlink" href="#but-why" title="Permalink to this headline">¶</a></h3>
+<h2>But why?<a class="headerlink" href="#but-why" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>Numerical Tractability</strong> - can make hard problems <em>easier</em></li>
 <li><strong>Absence of Asymptotics</strong> - What <em>really</em> is a large number?</li>
 <li><strong>Ease of Error Propagation</strong> - Dealing in uncertainty</li>
 <li><strong>Formal framework for combining information</strong> - prior</li>
-<li><strong>Intuitive appeal</strong> - intrepretation is more intuitive</li>
-<li><strong>Coherence and intellectual beauty</strong></li>
+<li><strong>Intuitive appeal</strong> - interpretation is more intuitive</li>
+<li><strong>Everything is probabilities</strong></li>
 </ul>
-</div>
 <div class="section" id="then-why-isn-t-everyone-a-bayesian">
 <h3>Then why isn&#8217;t everyone a Bayesian?<a class="headerlink" href="#then-why-isn-t-everyone-a-bayesian" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>Subjective</strong> by nature</li>
-<li><strong>Amazing for complex models, but</strong> are they necessary for simpler ones?</li>
-<li><strong>Accessablility</strong> - Many of the books out there are difficult reads</li>
+<li><strong>Great for complex models, but</strong> is the overhead necessary?</li>
+<li><strong>Accessibility</strong> - Many of the books out there are difficult reads</li>
 <li>Requires a deeper understanding of your model</li>
-<li>Implementation tools</li>
+<li>Implementations can quickly get hairy</li>
 </ul>
 </div>
-<div class="section" id="a-tale-of-two-philosophies">
-<h3>A tale of two philosophies<a class="headerlink" href="#a-tale-of-two-philosophies" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first"><strong>Frequentist</strong> assumes that probability of an event is the long-run frequency of events</p>
-</li>
-<li><p class="first"><strong>Bayesian</strong> assigns a degree of belief to event</p>
-</li>
-<li><p class="first">Which one seems like a <strong>better</strong> choice for car accidents, predicting elections, predicting user behaivor, predicting test scores?</p>
-</li>
-<li><p class="first"><a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/26454611">Breast cancer subtype and ethnicity?</a></p>
-</li>
-<li><p class="first">Are we making conclusions about a population in nature or about an individual?</p>
-</li>
-<li><p class="first">Neither of these philosophies are better in all cases</p>
-<blockquote>
-<div><p>&#8220;All models are wrong, but some are useful&#8221; &#8211;George Box</p>
-</div></blockquote>
-</li>
-</ul>
-<p>Is the Bayesian paradigm more naturally aligned with the way we think?</p>
+<div class="section" id="is-the-bayesian-paradigm-more-naturally-aligned-with-the-way-we-think">
+<h3>Is the Bayesian paradigm more naturally aligned with the way we think?<a class="headerlink" href="#is-the-bayesian-paradigm-more-naturally-aligned-with-the-way-we-think" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Flip a coin, but I saw how it was going to land</li>
 <li>Code has a bug or not&#8212;are you certain?</li>
 <li>A doctor has a <strong>belief</strong> about a diagnosis based on symptoms and experience</li>
 </ul>
+</div>
+</div>
 <div class="section" id="the-pieces">
-<h4>The pieces<a class="headerlink" href="#the-pieces" title="Permalink to this headline">¶</a></h4>
+<h2>The pieces<a class="headerlink" href="#the-pieces" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>prior</strong> - <span class="math">\(P(\theta)\)</span> - one&#8217;s beliefs about a quantity before presented with evidence</li>
 <li><strong>posterior</strong> - <span class="math">\(P(\theta|x)\)</span> - probability of the parameters given the evidence</li>
 <li><strong>likelihood</strong> - <span class="math">\(P(x|\theta)\)</span>  - probability of the evidence given the parameters</li>
 <li><strong>normalizing constant</strong> - <span class="math">\(P(x)\)</span></li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p>Without looking...</p>
+<p class="last">Write Bayes formula and talk about the pieces in terms of parameters and evidence</p>
 </div>
+<p>Don&#8217;t forget about the <a class="reference internal" href="probability.html"><span class="doc">Bayes example in the previous section</span></a></p>
 </div>
-</div>
-<div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
-<p>Before I go any further I want to mention that many of these materials
-come from a number of places and there is so much more to learn.</p>
+<div class="section" id="further-study">
+<h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
+<p>There is a lot so try not to get overwhelmed.  I feel that these two
+resources are excellent entry points.  The thrid resource is a good
+place to start if you want to start working with Bayesian models.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers">Probabilistic Programming and Bayesian Methods for Hackers</a> by <a class="reference external" href="https://github.com/CamDavidsonPilon">Cameron Davidson-Pilon</a></li>
-<li><a class="reference external" href="http://www.kdnuggets.com/2016/12/datascience-introduction-bayesian-inference.html">nice intro</a></li>
+<li><a class="reference external" href="http://www.kdnuggets.com/2016/12/datascience-introduction-bayesian-inference.html">Entry level intro posted through kdnuggets</a></li>
+</ul>
+<p>Programming in the Bayesian landscape has become easier as a result of the use of probabilistic programming.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/GalvanizeOpenSource/probabilistic-programming-intro">A repository introducing probabilistic programming in Python</a></li>
 </ul>
 </div>
 </div>
