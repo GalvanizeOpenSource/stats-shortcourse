@@ -21,7 +21,6 @@ PDFs and CDFs
 * **Probability density function (PDF)** -- a function of a continuous random variable, whose integral across an interval gives the probability that the value of the variable lies within the same interval. 
 * **Probability mass function (PMF)** -- a function of a discrete variable that gives the probability that a discrete random variable is exactly equal to some value.
 * **Cumulative distribution function (CDF)** -- defines the the probability that a continuous variable :math:`X` will take a value less than or equal to :math:`x`.
-* **Cumulative mass function (CMF)** -- defines the the probability that a discrete variable :math:`X` will take a value less than or equal to :math:`x`.
 
 What does that mean in code talk?  Take a look at how the following plot was created.
   
