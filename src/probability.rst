@@ -202,3 +202,4 @@ Further resources
 -----------------
 
   * `<https://www.khanacademy.org/math/probability/probability-geometry/probability-basics/a/probability-the-basics>`_
+  * `Visual introduction to probability and statistics <http://students.brown.edu/seeing-theory/basic-probability/index.html>`_

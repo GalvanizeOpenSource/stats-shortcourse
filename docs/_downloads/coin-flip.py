@@ -8,8 +8,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as st
 
-n = 1000
-pcoin = 0.5 # actual value of p for coin
+n = 100
+pcoin = 0.62 # actual value of p for coin
 results = st.bernoulli(pcoin).rvs(n)
 h = sum(results)
 print results
