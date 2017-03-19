@@ -26,7 +26,7 @@ For some sample space `S`, a probability function `P` has three properties:
       
    3. If A and B are mutually exclusive, then:
 
-      :math:`P(A \cup B) = P(A) \times P(B)`
+      :math:`P(A \cup B) = P(A) + P(B)`
 
    4. The sum of the probabilities of an event and its complement is 1
      	    

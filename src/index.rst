@@ -36,8 +36,8 @@ On machine learning and statistics
 `What is the difference between statistics and machine learning? <https://www.quora.com/What-is-the-difference-between-statistics-and-machine-learning>`_
 
   * none really
-  * statistics focuses more on confidence intervals, hypothesis tests and optimal estimators
-  * machine learning focuses on empirical and computational techniques
+  * statistics - confidence intervals, hypothesis tests and optimal estimators
+  * machine learning - empirical and computational techniques
   * ML tends to have more nonparametrics, less asymptotics, more
     computationally techniques, and more dimensionality
  
@@ -90,7 +90,7 @@ Day 2
    :maxdepth: 1
 
    paradigms	      
-   random-variables
+   statistics-concepts
    statistical-inference
    regression-classification-metrics
    concluding-remarks
@@ -103,12 +103,13 @@ Resources for further study
   * `Khan Academy - statistics and srobability <https://www.khanacademy.org/math/statistics-probability>`_
   * `15 hours of machine learning videos <http://www.dataschool.io/15-hours-of-expert-machine-learning-videos>`_
   
-Works cited
-^^^^^^^^^^^^^^^
+Reference materials
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
 
+   helpful-math	      
    references
 
 To view/download the source of these materials visit the GitHub repository.

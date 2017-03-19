@@ -19,6 +19,13 @@ part1 = sample_space.difference(b).union(sample_space.difference(a))
 part2 = sample_space.difference(a.intersection(b))
 print(part1==part2)
 
+## A = (X < 90) and B  is between 90 and 95
+
+# The union or  (A \cap C) = (250 \leq chol \leq 280)
+    
+# `P(250 \leq chol \leq 299) + P(chol \geq 300) = 0.2 + 0.1 = 0.3`. chol \leq 280)
+    
+
 ##########################################################################
 ## combinations and permutations
 ##########################################################################

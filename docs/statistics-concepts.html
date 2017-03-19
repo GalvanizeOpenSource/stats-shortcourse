@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Statistics concepts &mdash; stats-shortcourse 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Statistics concepts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/statistics-concepts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="statistics-concepts">
+<h1>Statistics concepts<a class="headerlink" href="#statistics-concepts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pdfs-and-cdfs">
+<h2>PDFs and CDFs<a class="headerlink" href="#pdfs-and-cdfs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Probability density function (PDF)</strong> &#8211; a function of a continuous random variable, whose integral across an interval gives the probability that the value of the variable lies within the same interval.</li>
+<li><strong>Probability mass function (PMF)</strong> &#8211; a function of a discrete variable that gives the probability that a discrete random variable is exactly equal to some value.</li>
+<li><strong>Cumulative distribution function (CDF)</strong> &#8211; defines the the probability that a continuous variable <span class="math">\(X\)</span> will take a value less than or equal to <span class="math">\(x\)</span>.</li>
+</ul>
+<p>What does that mean in code talk?  Take a look at how the following plot was created.</p>
+<p>(<a class="reference external" href=".//pdf-cdf-plot.py">Source code</a>, <a class="reference external" href=".//pdf-cdf-plot.png">png</a>, <a class="reference external" href=".//pdf-cdf-plot.hires.png">hires.png</a>, <a class="reference external" href=".//pdf-cdf-plot.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="_images/pdf-cdf-plot.png" src="_images/pdf-cdf-plot.png" />
+</div>
+<div class="section" id="cumulative-distribution-function">
+<h3>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\(F_X(x) = P(X &lt; x)\)</span></p>
+<blockquote>
+<div><ul class="simple">
+<li>What kinds of bounds can we put on this function?</li>
+<li>This works for both continuous and discrete functions.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="probability-mass-function-pmf">
+<h3>Probability mass function, PMF<a class="headerlink" href="#probability-mass-function-pmf" title="Permalink to this headline">¶</a></h3>
+<p>For discrete variables:</p>
+<p><span class="math">\(f_X(x) = P(X = x), \forall x\)</span></p>
+<p>For continuous variables, think of it as the derivative of the CDF:</p>
+<p><span class="math">\(f_X(x)dx = P(x &lt; X &lt; x+dx)\)</span></p>
+<p><span class="math">\(f_X(x) = \frac{dF_X(x)}{dx}\)</span></p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/probability-density-functions">PDF (Khan academy)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="expectation">
+<h2>Expectation<a class="headerlink" href="#expectation" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="docutils">
+<dt>Discrete:</dt>
+<dd><span class="math">\(E[X] = \sum_{s\in S} X(s) f_X(s)\)</span></dd>
+<dt>Continuous:</dt>
+<dd><span class="math">\(E[X] = \int_{-\infty}^{\infty}X(s) f_X(s)ds\)</span></dd>
+</dl>
+<p>A measure, but not the only one, of the central tendecy of a distribution. Alternatives?</p>
+<blockquote>
+<div><p>Note, the sample mean is:</p>
+<p><span class="math">\(\bar{x} = \frac{1}{n}\sum_j^n x_j\)</span></p>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">Expectation (Khan academy)</a></li>
+</ul>
+</div>
+<div class="section" id="variance">
+<h2>Variance<a class="headerlink" href="#variance" title="Permalink to this headline">¶</a></h2>
+<p><span class="math">\(Var[x] = E[(x - E[X])^2]\)</span></p>
+<p>Note, the sample variance is:</p>
+<p><span class="math">\(s^2 = \frac{1}{n-1} \sum_j^n (x_j - \bar{x})^2\)</span></p>
+<div class="section" id="standard-deviation">
+<h3>Standard deviation<a class="headerlink" href="#standard-deviation" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\(\sigma(x) = \sqrt{Var[x]}\)</span></p>
+<p>Useful because its units are in units of our original RV.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/v/range-variance-and-standard-deviation-as-measures-of-dispersion">Measures of spread (Khan academy)</a></li>
+</ul>
+</div>
+<div class="section" id="covariance">
+<h3>Covariance<a class="headerlink" href="#covariance" title="Permalink to this headline">¶</a></h3>
+<p>We can also compute the covariance between two different variables:</p>
+<p><span class="math">\(Cov[X,Y] = E[(x - E[X])(y - E[Y])]\)</span></p>
+<p>Which is related to the</p>
+</div>
+<div class="section" id="correlation">
+<h3>Correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\(Corr[X,Y] = \frac{E[(x - E[X])(y - E[Y])]}{\sigma(X)\sigma(Y)} = \frac{Cov[X,Y]}{\sigma(X)\sigma(Y)}\)</span></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Correlation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>spurious relationship</strong> is a relationship where two or more events, that are not causally related to each other have a relationship.  This may be due to a &#8220;common response variable&#8221; or a &#8220;confounding factor&#8221;.</p>
+<p>Correlation coefficients vary between -1 and +1 with 0 implying no correlation.</p>
+<div class="section" id="pearson">
+<h3>Pearson<a class="headerlink" href="#pearson" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">pearsonr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pearsonr</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="go">(0.83205029433784372, 0.080509573298498519)</span>
+</pre></div>
+</div>
+<p>The Pearson correlation coefficient measures the linear relationship
+between two datasets.  The p-value roughly indicates the probability
+of an uncorrelated system producing datasets that have a Pearson
+correlation at least as extreme as the one computed from these dataset.</p>
+<p>In other words null hypothesis is that two sets of data are uncorrelated.</p>
+</div>
+<div class="section" id="spearman">
+<h3>Spearman<a class="headerlink" href="#spearman" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">spearmanr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spearmanr</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="go">(0.82078268166812329, 0.088587005313543812)</span>
+</pre></div>
+</div>
+<p>The Spearman correlation is a nonparametric measure of the monotonicity of the relationship between two datasets. Unlike the Pearson correlation, the Spearman correlation does not assume that both datasets are normally distributed.</p>
+</div>
+</div>
+<div class="section" id="marginal-distributions">
+<h2>Marginal Distributions<a class="headerlink" href="#marginal-distributions" title="Permalink to this headline">¶</a></h2>
+<p>Marginal distribution takes a&#8211;possibly not independent&#8211;multivariate distribution. And considers only a single dimension.</p>
+<p>Accomplished by summing (discrete) or integrating (continuous).</p>
+<div class="math">
+\[f_X(x) = \int_{-\infty}^\infty f_{XY}(x,s) ds\]</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/MultivariateNormal.png"><img alt="coin-toss" src="_images/MultivariateNormal.png" style="width: 631.5px; height: 477.75px;" /></a>
+</div>
+</div>
+<div class="section" id="further-study">
+<h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
+<p>A major goal of for the content on this page is not mastery.  You should be able to talk briefly about each of these concepts.  If you were to see a scatter plot of some data could you talk about it in terms of the concepts listed here?</p>
+<p>Most major statistical textbooks will begin with an overview of these topics.</p>
+<p>For example <a class="reference external" href="https://statweb.stanford.edu/~tibs/ElemStatLearn/">Elements of Statistical Learning</a> (Free)</p>
+<p>Reading the opening chapters in these types of books will provide you with a perspective that is difficult to get across in a short lecture or on a single webpage.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Galvanize DSI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

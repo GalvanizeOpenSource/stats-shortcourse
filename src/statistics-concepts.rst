@@ -1,19 +1,7 @@
 .. probability lecture
 
-Random Variables
+Statistics concepts
 ==================================
-
-Random variables formalize a mapping we have been implicitly using already:
-
-:math:`X(s) : S\Rightarrow \Re`
-
-   * Capital letters refer to random variables.
-   * Lowercase to refer to specific realization.
-   * :math:`P(X=x) = P(\{s\in S : X(s) = x\})`
-   * :math:`X \sim XYZ(\alpha, \beta, ...)` means X is distributed as, XYZ with parameters.
-   * "i.i.d."
-
-`Random variables (Khan academy) <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/random-variables>`_
      
 PDFs and CDFs
 -----------------------------

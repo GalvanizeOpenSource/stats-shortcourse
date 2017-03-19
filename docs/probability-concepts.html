@@ -91,6 +91,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#sample-space">Sample space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-operations">Set Operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demorgan-s-law-s">DeMorgan&#8217;s Law&#8217;s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#random-variables">Random variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#putting-it-together">Putting it together</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
@@ -102,12 +106,13 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="random-variables.html">Random Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a></li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
 </ul>
 
@@ -179,7 +184,11 @@ above examples</p>
 <div class="section" id="set-operations">
 <h3>Set Operations<a class="headerlink" href="#set-operations" title="Permalink to this headline">¶</a></h3>
 <p>Union: <span class="math">\(A \cup B = \{x: x \in A \vee x\in B\}\)</span></p>
+<blockquote>
+<div>It is the event that <strong>either</strong> <span class="math">\(A\)</span> or <span class="math">\(B\)</span> or both occurs.</div></blockquote>
 <p>Intersection: <span class="math">\(A \cap B = \{x: x \in A \wedge x\in B\}\)</span></p>
+<blockquote>
+<div>It is the event that <strong>both</strong> <span class="math">\(A\)</span> and <span class="math">\(B\)</span> simultaneously.</div></blockquote>
 <p>Difference: <span class="math">\(A \setminus B = \{x: x \in A \wedge x \notin B\}\)</span></p>
 <p>Complement: <span class="math">\(A^C = \{x: x\notin A\}\)</span></p>
 <p>The null (empty) set: <span class="math">\(\emptyset\)</span></p>
@@ -223,6 +232,51 @@ negation logic operator (NOT)</p>
 </pre></div>
 </div>
 <p class="last">Can you show that De Morgan&#8217;s laws work in Python?</p>
+</div>
+</div>
+<div class="section" id="random-variables">
+<h3>Random variables<a class="headerlink" href="#random-variables" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Random variables formalize a mapping we have been implicitly using already</li>
+<li><dl class="first docutils">
+<dt>The set for a random variable occurs in real space</dt>
+<dd><span class="math">\(X(s) : S\Rightarrow \Re\)</span></dd>
+</dl>
+</li>
+<li>Capital letters refer to random variables.</li>
+<li><dl class="first docutils">
+<dt>Lowercase to refer to specific realization.</dt>
+<dd><span class="math">\(P(X=x) = P(\{s\in S : X(s) = x\})\)</span></dd>
+</dl>
+</li>
+<li><span class="math">\(X \sim XYZ(\alpha, \beta, ...)\)</span> means X is distributed as, XYZ with parameters.</li>
+<li>&#8220;i.i.d.&#8221;</li>
+<li>We denote the probability of X as P(X)</li>
+</ul>
+</div></blockquote>
+<p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/random-variables">Random variables (Khan academy)</a></p>
+<div class="section" id="putting-it-together">
+<h4>Putting it together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h4>
+<p>Lets see how well we can put these concepts together.  This exercise also introduce the idea of mutual exclusivity.  If outcomes A and B cannot happen at the same time then <span class="math">\(P (A \cap B) = P (A) + P (B)\)</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p>Lets use cholesterol ranges as an example.  Given that,</p>
+<div class="math">
+\[A = (250 \leq chol \leq 299)\]</div>
+<div class="math">
+\[B = (chol \geq 300)\]</div>
+<div class="math">
+\[C = (chol \leq 280)\]</div>
+<p><span class="math">\(A\)</span> and <span class="math">\(B\)</span> are <strong>mutually exclusive</strong>, but <span class="math">\(A\)</span> and <span class="math">\(C\)</span> are not.</p>
+<ol class="last arabic simple">
+<li>Discuss what it means to be mutually exclusive</li>
+<li>What is the union of sets <span class="math">\(A\)</span> and <span class="math">\(C\)</span>?
+<span class="math">\((A \cup B)\)</span> = ?</li>
+<li>If <span class="math">\(P(A) = 0.2\)</span>, and <span class="math">\(P(B) = 0.1\)</span> then <span class="math">\(P(chol \geq 250)\)</span> = ?</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

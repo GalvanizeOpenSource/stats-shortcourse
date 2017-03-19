@@ -75,12 +75,12 @@ Number of ways to choose things when order does matter.
 
 .. note::
 
-   **SUMMARIZING QUESTION**
+   **QUICK DISCUSSION**
 
    Explain to the person next to you the difference between
    permutations and combinations. Include in your explanation which
    one results in more possibilities.
-
+   
 Further study
 ------------------
 

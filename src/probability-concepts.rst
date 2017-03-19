@@ -30,7 +30,11 @@ Set Operations
 
 Union: :math:`A \cup B = \{x: x \in A \vee x\in B\}`
 
+  It is the event that **either** :math:`A` or :math:`B` or both occurs.
+
 Intersection: :math:`A \cap B = \{x: x \in A \wedge x\in B\}`
+
+  It is the event that **both** :math:`A` and :math:`B` simultaneously.
 
 Difference: :math:`A \setminus B = \{x: x \in A \wedge x \notin B\}`
 
@@ -86,6 +90,51 @@ Another useful notation is :math:`\mathbf{card}(A)` which is the *cardinality* o
    
    Can you show that De Morgan's laws work in Python?
 
+Random variables
+---------------------
+   
+   * Random variables formalize a mapping we have been implicitly using already
+   * The set for a random variable occurs in real space 
+      :math:`X(s) : S\Rightarrow \Re`
+   * Capital letters refer to random variables.
+   * Lowercase to refer to specific realization. 
+      :math:`P(X=x) = P(\{s\in S : X(s) = x\})`
+   * :math:`X \sim XYZ(\alpha, \beta, ...)` means X is distributed as, XYZ with parameters.
+   * "i.i.d."
+   * We denote the probability of X as P(X)
+     
+`Random variables (Khan academy) <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/random-variables>`_
+
+Putting it together
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Lets see how well we can put these concepts together.  This exercise also introduce the idea of mutual exclusivity.  If outcomes A and B cannot happen at the same time then :math:`P (A \cap B) = P (A) + P (B)`.
+
+.. note::
+
+   **EXERCISE**
+
+   Lets use cholesterol ranges as an example.  Given that,
+
+   .. math::
+      A = (250 \leq chol \leq 299)
+
+   .. math::
+      B = (chol \geq 300)
+
+   .. math::
+      C = (chol \leq 280)
+
+   :math:`A` and :math:`B` are **mutually exclusive**, but :math:`A` and :math:`C` are not.
+
+   1. Discuss what it means to be mutually exclusive
+	 
+   2. What is the union of sets :math:`A` and :math:`C`?
+      :math:`(A \cup B)` = ?
+	 
+   3. If :math:`P(A) = 0.2`, and :math:`P(B) = 0.1` then :math:`P(chol \geq 250)` = ?
+
+      
 Further study
 =============
 
