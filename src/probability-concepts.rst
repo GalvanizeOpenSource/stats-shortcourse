@@ -4,6 +4,17 @@
  Probability Concepts
 ======================
 
+Probability is the discipline of mathematics designed to deal with random pheonomena.
+
+.. note::
+
+   ** EXERCISE **
+
+   Think of an example of a random phenomenon.
+   
+   Talk with somebody next to you about whether it's possible to predict a
+   random phenomenon? 
+
 Sets
 ====
 
