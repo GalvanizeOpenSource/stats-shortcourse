@@ -4,7 +4,7 @@
 Combinatorics
 ====================
 
-   * The mathematics of ordering, choosing sets, etc.
+   * The mathematics of counting, ordering, choosing sets, etc.
    * Useful for counting events in your sample space.
 
 Factorials
