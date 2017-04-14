@@ -126,7 +126,7 @@ Random variables
 Putting it together
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Lets see how well we can put these concepts together.  This exercise also introduce the idea of mutual exclusivity.  If outcomes A and B cannot happen at the same time then :math:`P (A \cap B) = P (A) + P (B)`.
+Lets see how well we can put these concepts together by doing some exercises using the concepts we've learned.  This exercise also introduce the idea of mutual exclusivity.  If outcomes A and B cannot happen at the same time then :math:`P (A \cap B) = P (A) + P (B)`.
 
 .. note::
 
