@@ -21,7 +21,7 @@ Sets
 Sample space
 ------------
 
-The range of all possible outcomes or events, also called the **sample space**.
+A set containing the range of all possible outcomes or events, also called the **sample space**.
 
    * Coin flips, die rolls, cards in deck
    * Cookies, jelly beans, teachers, meetups 
