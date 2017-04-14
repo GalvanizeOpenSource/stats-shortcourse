@@ -39,7 +39,7 @@ On machine learning and statistics
   * statistics - confidence intervals, hypothesis tests and optimal estimators
   * machine learning - empirical and computational techniques
   * ML tends to have more nonparametrics, less asymptotics, more
-    computationally techniques, and more dimensionality
+    computationally intensive techniques, and more dimensionality
  
 What kind of statistics are out there?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
