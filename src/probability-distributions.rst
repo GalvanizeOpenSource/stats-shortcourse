@@ -75,9 +75,9 @@ Var: :math:`np(1-p)`
 
 .. note::
 
-   The number of heads that from flipping a coin 10 times can be modeled with a binomial
+   The number of heads that come from flipping a coin 10 times can be modeled with a binomial
 
-   Can you think of another example?
+   Can you think of another example that might be modeled by a binomial?
 
    See this `khan academy video on the binomial distribution to get a better intuition <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/binomial-random-variables/v/binomial-distribution>`_
 
