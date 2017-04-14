@@ -10,6 +10,8 @@ Combinatorics
 Factorials
 --------------
 
+Count the number of ways to order a set of objects. 
+
 If there are 10 lottery balls and we want draw them all, how many possible orderings are there?
 
 >>> import math
