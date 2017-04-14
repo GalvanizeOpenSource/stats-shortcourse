@@ -104,7 +104,7 @@ Another useful notation is :math:`\mathbf{card}(A)` which is the *cardinality* o
 Random variables
 ---------------------
    
-   * Random variables formalize a mapping we have been implicitly using already
+   * Random variables map events from our sample space into real numbers.
    * The set for a random variable occurs in real space 
       :math:`X(s) : S\Rightarrow \Re`
    * Capital letters refer to random variables.
@@ -113,6 +113,13 @@ Random variables
    * :math:`X \sim XYZ(\alpha, \beta, ...)` means X is distributed as, XYZ with parameters.
    * "i.i.d."
    * We denote the probability of X as P(X)
+
+.. note::
+
+   **QUESTION**
+
+   Does a random variable have a "value" like a variable in python, or an
+   algebraic expression?
      
 `Random variables (Khan academy) <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/random-variables>`_
 
