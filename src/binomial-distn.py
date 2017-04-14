@@ -19,7 +19,7 @@ for n, p in [(5, 0.25), (5, 0.5), (5, 0.75)]:
     splot += 1
     ax = fig.add_subplot(1, 3, splot)
 
-    x = np.arange(scs.binom.ppf(0.01, n, p), scs.binom.ppf(0.99, n, p))
+    x = np.arange(scs.binom.ppf(0.01, n, p), scs.binom.ppf(.99, n, p)+1)
     ax.plot(x, scs.binom.pmf(x, n, p), 'bo', ms=8, label='pmf')
     ax.vlines(x, 0, scs.binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
     rv = scs.binom(n, p)
