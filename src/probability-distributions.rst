@@ -20,7 +20,7 @@ These are common properties used to characterize a distribution:
 Rules for choosing a good distribution
 -----------------------------------------
 
-Main questions for matching a real-world process to a distribution
+Main questions
 ^^^^^^^^^^^^^^^^
 
    * Are my data discrete or continuous?
