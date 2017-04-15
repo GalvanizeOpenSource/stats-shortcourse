@@ -61,7 +61,7 @@ Finally :math:`P{X_1 = H}` is :math:`\frac{1}{2}`
 
 Therefore :math:`P(X_2 = H | X_1 = H) = \frac{\frac{5}{12}}{\frac{1}{2}} = \frac{5}{6}`
 
-Don't believe it we can show this by simulation...
+Don't believe it? We can show this by simulation...
 
 .. code-block:: python
 
