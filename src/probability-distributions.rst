@@ -123,7 +123,7 @@ Normal aka Gaussian
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The Gaussian is the most widely used distribution for continuous
-variables. The distribution is governed by the mean :math:`\mu` and variance :`\sigma^2`.
+variables. The distribution is governed by the mean :math:`\mu` and variance :math:`\sigma^2`.
 
 SUPPORT :math:`x \in (-\inf, \inf)`
 
