@@ -157,7 +157,7 @@ Then plug this back into the conditional probability.
 Bayesian statistics
 ----------------------
 
-Bayesian inference works by combining information about parameters :math:`\theta` contained in the observed data :math:`x` as quantified in the likelihood function :math:`p(x|\theta)`.  Classical statistics works by making inference about a single point, while Bayesian inference works on the whole distribution.  Parameters through the Bayesian lens are treated as random variables described by distributions.
+Bayesian inference works by combining information about parameters :math:`\theta` contained in the observed data :math:`x` as quantified in the likelihood function :math:`p(x|\theta)`.  Classical statistics works by making inference about a single point for our parameter, while Bayesian inference works on the whole distribution of that parameter. Parameters through the Bayesian lens are treated as random variables described by distributions.
 
 Lets put Bayesian inference on hold and first look at and example of Bayes Rule.
 
