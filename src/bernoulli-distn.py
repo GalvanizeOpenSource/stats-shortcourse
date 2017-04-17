@@ -36,5 +36,6 @@ for p in [0.3,0.6,0.9]:
     for t in ax.get_yticklabels():
         t.set_fontsize(font_size-1)
         t.set_fontname(font_name)
-    
+
+plt.savefig("bernoulli-distn.png", dpi=400)
 plt.show()
