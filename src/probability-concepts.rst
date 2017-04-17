@@ -8,7 +8,7 @@ Probability is the discipline of mathematics designed to deal with random pheono
 
 .. note::
 
-   ** EXERCISE **
+   **EXERCISE**
 
    Think of an example of a random phenomenon.
    
