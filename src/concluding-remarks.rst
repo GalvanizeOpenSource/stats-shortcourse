@@ -1,6 +1,6 @@
 .. stats-shortcourse documentation 
 
-Datascience Immersive
+Data Science Immersive
 ========================
 
 +------+-----------------------------------+
