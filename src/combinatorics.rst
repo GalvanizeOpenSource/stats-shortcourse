@@ -7,9 +7,7 @@ Combinatorics
    * The mathematics of counting, ordering, choosing sets, etc.
    * Useful for counting events in your sample space.
 
-Counting is not only fundamental to probability, but also to Data Science, so our interest in counting things will never go away.
-
-`Counting in Data Science <http://daynebatten.com/2016/06/counting-hard-data-science/>`_
+Counting is not only fundamental to probability, but also to Data Science, so our interest in counting things will never go away. For a good industry perspective on the importance and challenge of counting in data science see: `Counting in Data Science <http://daynebatten.com/2016/06/counting-hard-data-science/>`_
      
 Factorials
 --------------
