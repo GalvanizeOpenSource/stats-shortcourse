@@ -152,7 +152,7 @@ Lets see how well we can put these concepts together by doing some exercises usi
 	 
    3. If :math:`P(A) = 0.2`, and :math:`P(B) = 0.1` then :math:`P(chol \geq 250)` = ?
 
-   4. If :math: `P(A) = .3` and :math:`P(C)=.2` then what would you need to know to calculate :math: `P(chol \leq 299)`?
+   4. If :math:`P(A) = .3` and :math:`P(C)=.2` then what would you need to know to calculate :math:`P(chol \leq 299)`?
 
       
 Further study
