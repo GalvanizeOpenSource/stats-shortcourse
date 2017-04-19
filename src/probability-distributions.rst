@@ -65,7 +65,7 @@ Binomial:
 ^^^^^^^^^^^
 
 The Binomial distribution gives the discrete probability distribution
-of obtaining exactly `p` successes out of `n` trials
+of obtaining exactly `k` successes out of `n` trials
 
 PMF: :math:`P[X=k] = {n \choose k}p^k(1-p)^{n-k}, \forall k \in \{0, 1,..., n\}`
 
