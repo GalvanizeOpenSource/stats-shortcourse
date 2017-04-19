@@ -57,7 +57,7 @@ Expectation
 Variance
 ------------
 
-:math:`Var[x] = E[(x - E[X])^2]`
+:math:`Var[X] = E[(X - E[X])^2]`
 
 Note, the sample variance is:
 
