@@ -15,7 +15,7 @@ Probability review
 
 I think it is helpful to keep in mind the major types of probabilities
 
-   * Joint - :math:`P(A \cap B)`
+   * Joint - :math:`P(A, B)`
    * Conditional - :math:`P(A | B)`
    * Marginal - :math:`P(A)`
      
@@ -33,7 +33,7 @@ Conditional probability
 
 :math:`\textrm{conditional} = \textrm{joint} / \textrm{marginal}`
       
-:math:`P(B|A) = P(A \cap B) / P(A)`
+:math:`P(B|A) = P(A, B) / P(A)`
       
 .. note::
 
