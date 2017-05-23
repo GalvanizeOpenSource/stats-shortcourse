@@ -86,7 +86,7 @@ probability may be appropriate.
 Conditional probability	
 ----------------------------
 
-:math:`P(B|A) = P(A \cap B) / P(A)`
+:math:`P(B|A) = P(A, B) / P(A)`
 
 Probability Chain Rule
 --------------------------
