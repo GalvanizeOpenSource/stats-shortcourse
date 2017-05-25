@@ -112,7 +112,7 @@ More generally:
 Law of Total Probability
 ----------------------------
 
-If :math:`\{B_n\}` is a partition of a sample space `A`, meaning :math:`\cup_i B_i = A` and :math:`B_i \cap B_j=\emptyset \forall i, j`
+If :math:`\{B_n\}` is a partition of a sample space B, meaning :math:`B_i \cap B_j=\emptyset \forall i, j` and :math:`\cap_i B_i = B`
 
 Then
 
