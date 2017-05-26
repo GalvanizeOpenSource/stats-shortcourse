@@ -4,7 +4,9 @@
  Probability Concepts
 ======================
 
-Probability is the discipline of mathematics designed to deal with random pheonomena.
+Probability is a discipline of mathematics that studies analytical formulations 
+of uncertainty that can be used characterize random phenomenon.
+
 
 .. note::
 
@@ -18,10 +20,23 @@ Probability is the discipline of mathematics designed to deal with random pheono
 Sets
 ====
 
+Random Variables
+----------------
+A **random variable** can be thought of as a *function* which outputs some 
+"random phenomenon". 
+
+
+
+
 Sample space
 ------------
 
-A set containing the range of all possible outcomes or events, also called the **sample space**.
+The so-called **sample space** :math:`S` of a random variable :math:`X`
+is a mathematical set listing all possible **outcomes** :math:`x^* \in S` 
+that the random variable :math:`X` might actualize. An **event** :math:`E`
+is a set comprised of these outcomes (:math:`E \subseteq S`).
+
+**Outcomes**
 
    * Coin flips, die rolls, cards in deck
    * Cookies, jelly beans, teachers, meetups 
@@ -29,37 +44,81 @@ A set containing the range of all possible outcomes or events, also called the *
    * Number of cups of coffee consumed before before 10 am
    * Number of beers... 
 
+**Events**
+
+   * "Half heads", "Odds", "Spades"
+   * "With Chips", "Licorice", "Boring", "Data Science related meetup"
+   * "Tall people" (>6 ft), "Small people" (<100 lbs), "Not full milk" (<1 G), "Frozen water (<32 F)", "close" (<2 mi)
+   * "<2 cups of coffee before before 10 am"
+   * ">5 beers, bro"...
+
 .. note:: 
 
    **EXERCISE**
    
-   Talk with someone next to you about possible sample spaces for the
+   Talk with your neighbor about possible sample spaces for the
    above examples
   
-Set Operations
---------------
+Set Operations for Building Complex Events
+------------------------------------------
+
+For an actualized (observed) value :math:`x^*` of a 
+random variable :math:`X` and events :math:`A` and :math:`B`
+defined on the sample space :math:`S` of :math:`X`
 
 Union: :math:`A \cup B = \{x: x \in A \vee x\in B\}`
 
-  It is the event that **either** :math:`A` or :math:`B` or both occurs.
+  is the event where :math:`x^*` implies **either** event :math:`A` or event :math:`B` or both occur.
 
 Intersection: :math:`A \cap B = \{x: x \in A \wedge x\in B\}`
 
-  It is the event that **both** :math:`A` and :math:`B` simultaneously.
+  is the event where :math:`x^*` implies **both** the event :math:`A` and the event :math:`B` occur.
 
 Difference: :math:`A \setminus B = \{x: x \in A \wedge x \notin B\}`
 
-Complement: :math:`A^C = \{x: x\notin A\}`
+  is the event where :math:`x` implies **only** the event :math:`A` occurs **but not** the event :math:`B`
 
-The null (empty) set: :math:`\emptyset`
+Complement: :math:`\overline A = A^C = \{x: x\notin A\}`
 
-DeMorgan's Law's
-----------------
+  is the event where :math:`x^*` implies that event :math:`A` **does not** occur
 
-De Morgan's laws says:
+The Null (empty) Set: :math:`\emptyset`
 
-  1. The complement of the union of two sets is the same as the intersection of their complements
-  2. The complement of the intersection of two sets is the same as the union of their complements
+  is the event with no outcomes in it, which is not a possible event
+  since an observed :math:`x^*` is an outcome.
+
+.. note:: 
+
+   **EXERCISE**
+   
+   Break out into groups with the people at your desk and distribute
+   the creation of example *Unions*, *Intersections*, *Differences*, 
+   *Complements*, and *Null Sets* based on events from the examples
+   above and give an example of an *outcome* under which your example 
+   event occurs.
+
+
+DeMorgan's Law's 
+-------------------------------------------------------------
+(The next best thing to Bayes' rule and rum)
+
+De Morgan's laws say:
+
+  1. The complement of the union of two sets is the same as 
+  the intersection of their complements
+
+  :math:`\neg (A \vee B) \iff \neg A \wedge \neg B`
+
+  2. The complement of the intersection of two sets is the same as 
+  the union of their complements
+
+  :math:`\neg (A \wedge B) \iff \neg A \vee \neg B`
+   
+where the expressions utilize the standard logic notation 
+of :math:`\vee` and :math:`\wedge` for the
+`or` and `and` operators, respectively, 
+and :math:`\neg` for the negation operator ("not").
+
 
 .. figure:: Demorganlaws.png
    :scale: 75%
@@ -69,15 +128,9 @@ De Morgan's laws says:
      
 `<https://en.wikipedia.org/wiki/De_Morgan's_laws>`_
 
-:math:`\neg (A \vee B) \iff \neg A \wedge \neg B`
 
-:math:`\neg (A \wedge B) \iff \neg A \vee \neg B`
-   
-The :math:`\vee` and :math:`\wedge` refers to the logical
-`or` and the logical `and`.  Also :math:`\neg` is the
-negation logic operator (NOT)
-
-Another useful notation is :math:`\mathbf{card}(A)` which is the *cardinality* or number of elements in `A` 
+Another useful notation is :math:`\mathbf{card}(A)` which is the *cardinality*,
+or number, of elements in :math:`A`.
 
 .. note::
 
@@ -101,18 +154,38 @@ Another useful notation is :math:`\mathbf{card}(A)` which is the *cardinality* o
    
    Can you show that De Morgan's laws work in Python?
 
-Random variables
----------------------
+Random Variables and Probability Distributions 
+----------------------------------------------
+
    
-   * Random variables map events from our sample space into real numbers.
-   * The set for a random variable occurs in real space 
-      :math:`X(s) : S\Rightarrow \Re`
-   * Capital letters refer to random variables.
-   * Lowercase to refer to specific realization. 
-      :math:`P(X=x) = P(\{s\in S : X(s) = x\})`
-   * :math:`X \sim XYZ(\alpha, \beta, ...)` means X is distributed as, XYZ with parameters.
-   * "i.i.d."
-   * We denote the probability of X as P(X)
+A random variable :math:`X`  maps outcomes :math:`s` from its sample space :math:`S` onto the real numbers :math:`x \in \mathbb{R}`, i.e.,
+
+        :math:`X(s) : S\rightarrow \in \mathbb{R}`
+
+Standard notation utilizes capital letters for random variables, and lowercase letters for observed instantiations (realizations) of random variables. 
+
+The realizations :math:`x` of a random random variable :math:`X` are governed according to the probability of outcomes :math:`s` defined in the sample space :math:`S`, i.e., 
+
+        :math:`Pr(X=x \in E) = Pr(\{s\in S : X(s) \in E\})`
+
+Some distributions -- known as **discrete distributions** -- define positive probabilities for :math:`s\in S`, thus it is meaningful to write 
+
+       :math:`Pr(X=x) = Pr(\{s\in S : X(s)=x\})`
+
+which is a so-called **probability MASS function**.
+
+Perhaps surprisingly, other distributions -- known as **continuous distributions** -- do not define positive probabilities for :math:`s\in S` and instead only define probabilities on special sets :math:`E^* \subset S`.  For these continuous distributions we instead rely upon so-called **probability DENSITY functions** 
+
+        :math:`f(X=x)`
+
+which describes the behavior of realizations :math:`x` of a random random variable :math:`X` in a retaliative rather than absolute manner. Regardless of if a random variable has a discrete or continuous distribution, however, a standard notation for specifying the distribution of the random variable is
+
+        :math:`X \sim XYZ(\alpha, \beta, ...)` 
+
+which states that :math:`X` is distributed according to an :math:`XYZ` distribution with parameters :math:`\alpha` and :math:`\beta` and so on.
+
+A set of random variables that are distributed according to the same probability distribution and do not "interfere" with each other (i.e., the realizations of one random variable do not influence the realizations of another random variable) are called **identically and independently distributed**, or **"i.i.d."**.
+
 
 .. note::
 
@@ -126,33 +199,40 @@ Random variables
 Putting it together
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Lets see how well we can put these concepts together by doing some exercises using the concepts we've learned.  This exercise also introduce the idea of mutual exclusivity.  If outcomes A and B cannot happen at the same time then :math:`P (A \cup B) = P (A) + P (B)`.
+Now let's see how well we've put this all together by doing some  
+exercises using the concepts we've learned along with a new idea 
+called **mutual exclusivity**.  To get you started, here's a hint:
+two events :math:`A` and :math:`B` are said to be *mutually exclusive* 
+if :math:`Pr (A \cup B) = P (A) + P (B)`. Good luck!
 
 .. note::
 
    **EXERCISE**
 
-   Lets use cholesterol ranges as an example.  Given that,
+   Let :math:`X` be a random variable which measures cholesterol 
+   and :math:`x` an actual cholesterol measurement and define
+   the following three events  
 
    .. math::
-      A = (250 \leq chol \leq 299)
+      A = (250 \leq chol \leq 300)
 
    .. math::
-      B = (chol \geq 300)
+      B = (chol > 300)
 
    .. math::
       C = (chol \leq 280)
 
-   :math:`A` and :math:`B` are **mutually exclusive**, but :math:`A` and :math:`C` are not.
+   where :math:`A` and :math:`B` are **mutually exclusive**, but :math:`A` and :math:`C` are not.
 
-   1. Discuss what it means to be mutually exclusive
+   1. Discuss what it means to be mutually exclusive.
 	 
    2. What is the union of sets :math:`A` and :math:`C`?
-      :math:`(A \cup B)` = ?
-	 
-   3. If :math:`P(A) = 0.2`, and :math:`P(B) = 0.1` then :math:`P(chol \geq 250)` = ?
+      And how about :math:`(A \cup B)` = ?
+ 
+   3. If :math:`Pr(X=x\in A) = 0.2` and :math:`Pr(X=x\in B) = 0.1`, 
+   then :math:`Pr(X=x \geq 250)` = ?
 
-   4. If :math:`P(A) = .3` and :math:`P(C)=.2` then what would you need to know to calculate :math:`P(chol \leq 299)`?
+   4. If :math:`P(X=x\in A) = .3` and :math:`P(X=x\in C)=.2`, then what would you need to know to calculate :math:`P(X=x \leq 300)`?
 
       
 Further study
