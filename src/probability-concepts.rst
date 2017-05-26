@@ -203,7 +203,7 @@ Now let's see how well we've put this all together by doing some
 exercises using the concepts we've learned along with a new idea 
 called **mutual exclusivity**.  To get you started, here's a hint:
 two events :math:`A` and :math:`B` are said to be *mutually exclusive* 
-if :math:`Pr (A \cup B) = P (A) + P (B)`. Good luck!
+if :math:`Pr (X=x \in A \cup B) = Pr(X=x \in A) + Pr(X=x \in B)`. Good luck!
 
 .. note::
 
