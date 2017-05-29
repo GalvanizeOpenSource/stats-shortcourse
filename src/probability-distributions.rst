@@ -209,8 +209,8 @@ and the *mean* and *variance* of the random variable
 
 
 
-Normal (or, Gaussian)
-^^^^^^^^^^^^^^^^^^^^^
+Normal/Gaussian
+^^^^^^^^^^^^^^^
 
 The **Gaussian** or **normal distribution**
 is a *continuous probability distribution* whose
@@ -427,7 +427,7 @@ and the *mean* and *variance* of the random variable
    the *shape and rate parameterization*.
 
 	  
-Distributions are Related
+Distributional Relationships
 ----------------------------
 
 We have already come across a couple connections that
@@ -446,17 +446,20 @@ than the ones we covered here.   Here is an illustration from
    :figclass: align-center
 
 
-Data Distribution Considerations
---------------------------------
+Data Modeling Considerations
+----------------------------
 
-In closing, when you're exploring the use of probability distributions 
-to model data, there are a few considerations to keep in mind in 
-assessing the appropriateness of the data model:
+Distributions can be used as models for your data!
+As such, there are a few standard considerations to keep in mind in  
+assessing the appropriateness of a distribution as a potential 
+data model:
 
    * Are my data discrete or continuous?
    * Are my data symmetric?
    * What limits are there on possible values for my data?
-   * Does the data look like a random sample from this distribution?
+   * How likely are extreme values in my data?
+   * Would my data reasonably look like a random sample from this distribution?
+
 
 And finally, when you begin working with actual data, some very
 practical considerations you'll eventually need to take into account and address

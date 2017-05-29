@@ -152,6 +152,17 @@ which is the definition of **conditional probability**.
 
 .. note::
 
+   **EXERCISE**
+
+   Take a moment to think about this question:
+
+      * Three types of fair coins are in an urn: HH, HT, and TT
+      * You pull a coin out of the urn, flip it, and it comes up H
+      * Q: what is the probability it comes up H if you flip it a second time?
+
+   *Hint: write out the sample space!*
+
+   When you're ready, compare your solution to those around you.
 
 
 Chain Rule
