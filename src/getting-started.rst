@@ -26,6 +26,8 @@ you've come to the right place!
 
 `<http://scikit-learn.org/stable/tutorial/machine_learning_map>`_
 
+Industry Leading Tools
+----------------------
 
 The above figure is part of `Scikit-Learn's <http://scikit-learn.org/>`_
 extensive documentation and tutorial collection. Scikit-Learn is the leading open source
@@ -51,7 +53,7 @@ install Python.
 
 `<https://docs.continuum.io/anaconda/install>`_
 
-Installing an editor
+Installing an Editor
 -----------------------
 
 There are many editors to choose from... 

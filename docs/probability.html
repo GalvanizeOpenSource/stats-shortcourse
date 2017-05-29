@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Probability distributions" href="probability-distributions.html"/>
+        <link rel="next" title="Probability Distributions" href="probability-distributions.html"/>
         <link rel="prev" title="Combinatorics" href="combinatorics.html"/> 
 
   
@@ -88,8 +88,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Probability</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#formalization">Formalization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#independence">Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conditional-probability">Conditional probability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#probability-chain-rule">Probability Chain Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conditional-probability">Conditional Probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chain-rule">Chain Rule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#law-of-total-probability">Law of Total Probability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bayes-theorem">Bayes&#8217; Theorem</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#medical-testing">Medical Testing</a></li>
@@ -98,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#further-resources">Further resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability Distributions</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
@@ -161,17 +161,18 @@ and describe randomness. The likeliness of a random event is
 characterized either in terms of</p>
 <blockquote>
 <div><ul class="simple">
-<li>Long term frequency behavior
-(if viewed from a <em>Frequentist</em> perspective)</li>
-<li>Our degree of belief expressed as a probability
-(if viewed from a <em>Bayesian</em> perspective)</li>
+<li>Long term frequency behavior,
+if viewed from a <em>Frequentist</em> perspective</li>
+<li>Our degree of belief expressed as a probability,
+if viewed from a <em>Bayesian</em> perspective</li>
 </ul>
 </div></blockquote>
+<p><em>(We will return to a discussion between these two paradigms later).</em></p>
 <p>Naturally, probability provides the foundation for statistics and machine learning
 as all (good) data analyses seek to identifiy patterns in data
 <em>while accounting for</em> the random sampling and measurement variation
-present in data populations under consideration.</p>
-<p>Perhaps counterintuitively, while probability statements seem easy to express and
+present in data populations under consideration.
+Perhaps counterintuitively, while probability statements seem easy to express and
 interpret, our intuitions about randomness are often incorrect. This is because in
 actual life we only live one realization of the randomness and don&#8217;t experience
 all the <em>counterfactual</em> outcomes that actually could have occured
@@ -181,7 +182,7 @@ objective framework that computes event probabilities by enumerating all
 possible outcomes (using combinatorics).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>QUESTION</strong></p>
+<p><strong>EXERCISE</strong></p>
 <ol class="last arabic simple">
 <li>What is the probability of a Queen in a 52 card deck?</li>
 <li>What is the probability of a Queen or a King?</li>
@@ -190,12 +191,12 @@ possible outcomes (using combinatorics).</p>
 </div>
 <div class="section" id="formalization">
 <h2>Formalization<a class="headerlink" href="#formalization" title="Permalink to this headline">¶</a></h2>
-<p>Lets lay out some rules.  The first three form the <em>axioms of probability</em>,
-and the last two follow from these first three.</p>
-<p>For some sample space <span class="math">\(S\)</span>, with an outcome <span class="math">\(s\)</span>
-and events <span class="math">\(A \subseteq S\)</span> and <span class="math">\(B \subseteq S\)</span>,
+<p>There are three <em>axioms of probability</em>.</p>
+<p>For some sample space <span class="math">\(S\)</span> with
+events <span class="math">\(A \subseteq S\)</span> and <span class="math">\(B \subseteq S\)</span>,
 a probability function <cite>Pr</cite> has these properties:</p>
-<ol class="arabic simple">
+<blockquote>
+<div><ol class="arabic simple">
 <li>The probability of any event is positive and less than or equal to 1, i.e.,</li>
 </ol>
 <div class="math">
@@ -211,51 +212,56 @@ a probability function <cite>Pr</cite> has these properties:</p>
 </ol>
 <div class="math">
 \[Pr(A \cup B) = Pr(A) + Pr(B)\]</div>
-<ol class="arabic simple" start="4">
+<p><em>(Remember that two events are mutually exclusive if they cannot both be true at the same time &#8211; i.e., the two event sets are disjoint).</em></p>
+</div></blockquote>
+<p>From these three axioms all other familiar probability properties can be proven.
+E.g.,</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li>The sum of the probabilities of an event and its complement is 1</li>
 </ol>
 <div class="math">
-\[Pr(A) + Pr(A^C) = Pr(S) = 1\]</div>
-<ol class="arabic simple" start="5">
+\[Pr(A) + Pr\left(A^C\right) = Pr(S) = 1\]</div>
+<ol class="loweralpha simple" start="2">
 <li>The probability of an impossible event is zero.</li>
 </ol>
 <div class="math">
-\[Pr(S^C) = 0\]</div>
-<p>NOTE: Two events are <strong>mutually exclusive</strong>
-if they cannot both be true at the same time. It follows that the two
-event sets are <strong>disjoint</strong>.</p>
+\[Pr\left(S^C\right) = 0\]</div>
+</div></blockquote>
 </div>
 <div class="section" id="independence">
 <h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
-<p>Two events are <strong>independent</strong> (notated as <span class="math">\(A\bot B\)</span>) if:</p>
+<p>Two events are <strong>independent</strong> (notated as <span class="math">\(A\bot B\)</span>) if</p>
 <div class="math">
 \[Pr(A\cap B) = Pr(A, B) = Pr(A)\times Pr(B)\]</div>
 <p>or</p>
 <div class="math">
 \[Pr(A|B) = Pr(A)\]</div>
-<p>where <span class="math">\(Pr(A|B)\)</span> is a so called <strong>conditional probability</strong>, which gives
+<p>where <span class="math">\(Pr(A|B)\)</span> denotes a <strong>conditional probability</strong> which gives
 gives the probability of an event occuring <em>given the knowledge that</em> another
-event as occured.</p>
-<p>With respect to independence ask yourself&#8212;<strong>Does knowing somethign about
-event</strong> <span class="math">\(B\)</span> <strong>provide increased information about the status of event</strong>
-<span class="math">\(A\)</span>?</p>
+event as occured.
+When considering the independence of two events, ask yourself: &#8220;Does knowing
+somethign about event <span class="math">\(A\)</span> provide increased information about the
+likelihood of event <span class="math">\(B\)</span>?</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>PAIRED DISCUSSION</strong></p>
-<p>Discuss with your neighbor what &#8220;knowing that <span class="math">\(B\)</span> has occurred&#8221; tells
-us about the likelihood of <span class="math">\(A\)</span> occuring</p>
-<ol class="arabic simple">
+<p><strong>PAIRED EXERCISE</strong></p>
+<p>Discuss with your neighbor what &#8220;knowing that <span class="math">\(A\)</span> has occurred&#8221; tells
+us about the likelihood of <span class="math">\(B\)</span> occuring</p>
+<ol class="loweralpha simple">
 <li>Under independence?</li>
 <li>Without independence?</li>
 </ol>
-<p>Come up with a strategy (based on the definition of independence)
-to test whether two events are independent</p>
-<p class="last">Agree upon a statement that distinguishes <strong>independence</strong>
-from <strong>mutually exclusivity</strong></p>
+<p class="last">How you go about testing if two events were indeed independent?</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>THOUGHT EXPERIMENT</strong></p>
+<p><strong>QUESTION</strong></p>
+<p class="last">What is the relationship between <strong>independence</strong> and <strong>mutually exclusivity</strong>?</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>TEAM EXERCISE</strong></p>
 <p>Take a moment to <em>think about</em> this question:</p>
 <blockquote>
 <div><ul class="simple">
@@ -264,11 +270,11 @@ from <strong>mutually exclusivity</strong></p>
 <li>Q: what is the probability it comes up H if you flip it a second time?</li>
 </ul>
 </div></blockquote>
-<p class="last">When you&#8217;re ready, compare your solution to those around you</p>
+<p class="last">When you&#8217;re ready, compare your solution to those around you.</p>
 </div>
 </div>
 <div class="section" id="conditional-probability">
-<h2>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h2>
+<h2>Conditional Probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h2>
 <p>It turns out that it is always true that</p>
 <div class="math">
 \[Pr(A \cap B) = Pr(A, B) = Pr(A|B) \times Pr(B)\]</div>
@@ -282,30 +288,38 @@ But for now, rearranging this equation gives us</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Draw a Venn-Diagram for sample space <span class="math">\(S\)</span> with intersecting events
-<span class="math">\(A\)</span> and <span class="math">\(B\)</span> to demonstrate the <em>Conditional Probability</em> formula</p>
+<p class="last">Draw a Venn diagram for sample space <span class="math">\(S\)</span> with intersecting events
+<span class="math">\(A\)</span> and <span class="math">\(B\)</span> to demonstrate the <em>Conditional Probability</em> formula.</p>
 </div>
 </div>
-<div class="section" id="probability-chain-rule">
-<h2>Probability Chain Rule<a class="headerlink" href="#probability-chain-rule" title="Permalink to this headline">¶</a></h2>
-<p>In probability theory, the <em>chain rule</em> defines the <strong>joint distribution</strong>
-of a collection of random variables.  The chain rule can be extended
-to any number of variables according to the following pattern of
-conditional probabilities.</p>
+<div class="section" id="chain-rule">
+<h2>Chain Rule<a class="headerlink" href="#chain-rule" title="Permalink to this headline">¶</a></h2>
+<p>In probability theory, the <strong>chain rule</strong> provides a way to calculate
+probabilities sequentially for any number of events according
+to the pattern of conditional probabilities</p>
 <div class="math">
-\[Pr(A, B, C) = Pr(A| B,C) Pr(B,C) = Pr(A|B,C) Pr(B|C) Pr(C)\]</div>
+\[Pr(A, B, C) = Pr(A| B,C) \times Pr(B,C) = Pr(A|B,C) \times Pr(B|C) \times Pr(C)\]</div>
 <p>where <span class="math">\(Pr(A)\)</span> is a shorthand notational convencience specifying
 <span class="math">\(Pr(X=x \in A)\)</span>.</p>
-<p>More generally, for a set of random variables <span class="math">\(X_i,\)</span> for <span class="math">\(i = 1, \cdots, n\)</span>, we write:</p>
+<p>The chain rule also defines the <strong>joint distribution</strong>
+of a collection of random variables <span class="math">\(X_i, \; i = 1, \cdots, n\)</span> as</p>
 <div class="math">
 \[\displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i | \underset{i=1}{\overset{n}{\cap}} X_i\right)\]</div>
 <p>where <span class="math">\(P\)</span> specifies either</p>
-<blockquote>
-<div><ul class="simple">
-<li>a <strong>probability mass function</strong> defining <span class="math">\(Pr(X=x)\)</span> for outcomes <span class="math">\(x_i\)</span> with <span class="math">\(\sum_{x \in S_X} Pr(X=x) = 1\)</span> , or</li>
-<li>a <strong>probability density function</strong> <span class="math">\(f(X=x)\)</span> defining the <em>relative frequency</em> of potential outcome realizations of <span class="math">\(X_i\)</span> with <span class="math">\(\int_{-\infty}^{\infty} f(X=x) \; dx = 1\)</span></li>
+<ul class="simple">
+<li>a <strong>probability mass function</strong> defining <span class="math">\(Pr(X_i=x)\)</span></li>
+<li>a <strong>probability density function</strong> <span class="math">\(f(X_i=x)\)</span> defining the <em>relative frequency</em> of potential outcome realizations of <span class="math">\(X_i\)</span></li>
 </ul>
-</div></blockquote>
+<p>Notice that if the <span class="math">\(X_i\)</span> are <em>independent</em> of each other, then</p>
+<div class="math">
+\[\displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i\right)\]</div>
+<p><em>(We will return to probability distributions for a thorough discussion later).</em></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p class="last">Calculate the probability of getting a Queen and a King if you draw
+two cards from a standard 52-card deck.</p>
+</div>
 </div>
 <div class="section" id="law-of-total-probability">
 <h2>Law of Total Probability<a class="headerlink" href="#law-of-total-probability" title="Permalink to this headline">¶</a></h2>
@@ -313,55 +327,57 @@ conditional probabilities.</p>
 a set of events such that <span class="math">\(\underset{i=1}{\overset{n}{\cup}}
 A_i = S\)</span> and <span class="math">\(A_i \cap A_j=\emptyset\)</span> for all <span class="math">\(i\)</span> and <span class="math">\(j\)</span>
 such that <span class="math">\(1 \leq i \not = j \leq n\)</span>, and an event <span class="math">\(B \subseteq S\)</span>,
-we have the so called <em>Law of Total Probability</em></p>
+the <strong>Law of Total Probability</strong> guarantees that</p>
 <div class="math">
-\[\displaystyle Pr(B) = \sum^n_{i=1} Pr(B\cap A_i)\]</div>
-<p>or</p>
-<div class="math">
-\[\displaystyle Pr(B) = \sum^n_{i=1} Pr(B|A_i) Pr(A_i)\]</div>
+\[\displaystyle Pr(B) = \sum^n_{i=1} Pr(B\cap A_i) = \sum^n_{i=1} Pr(B|A_i) Pr(A_i)\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Draw a Venn-Diagram for sample space <span class="math">\(S\)</span> partitioned
+<p class="last">Draw a Venn diagram for sample space <span class="math">\(S\)</span> partitioned
 into <span class="math">\(\{A_1, A_2, \cdots A_n\}\)</span> and <span class="math">\(B \subseteq S\)</span>
-to demonstrates the <em>Law of Total Probability</em></p>
+to demonstrates the <em>Law of Total Probability</em>.</p>
 </div>
 <p>Recasting the <em>Law of Total Probability</em> in terms of random variables
-<span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, we have</p>
+<span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, we have for</p>
+<ul class="simple">
+<li><strong>discete distributions</strong></li>
+</ul>
 <div class="math">
 \[\displaystyle Pr(X=x) = \sum_{y \in S_Y} Pr(X=x, Y=y) = \sum_{y \in S_Y} Pr(X=x|Y=y) Pr(Y=y)\]</div>
-<p>for <em>discete distributions</em>, and</p>
+<ul class="simple">
+<li><strong>continuous distributions</strong></li>
+</ul>
 <div class="math">
 \[\displaystyle f(X=x) = \int_{y \in S_Y} f(X=x, Y=y) \;dy = \int_{y \in S_Y} f(X=x|Y=y) f(Y=y) \;dy\]</div>
-<p>for <em>continuous distributions</em>.</p>
 <p>The distributions
 <span class="math">\(Pr(X=x)\)</span> and <span class="math">\(f(X=x)\)</span> are called <strong>marginal distributions</strong>
-of their respective so called <strong>joint distributions</strong>, <span class="math">\(Pr(X, Y)\)</span> and
-<span class="math">\(f(X, Y)\)</span>.</p>
+of their respective <strong>joint distributions</strong>, <span class="math">\(Pr(X, Y)\)</span> and
+<span class="math">\(f(X, Y)\)</span>, respectively.</p>
+<p><em>(We will return to probability distributions for a thorough discussion later).</em></p>
 </div>
 <div class="section" id="bayes-theorem">
 <h2>Bayes&#8217; Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
-<p><strong>Bayes&#8217; Theorem</strong> is a formula for computing the conditional probability
+<p><strong>Bayes&#8217; theorem</strong> is a formula for computing the conditional probability
 (or distribution) of
 <span class="math">\(A|B\)</span> based on the reverse conditional probability (or distribution) of
-<span class="math">\(B|A\)</span>.  Bayes’s Rule follows directly from a re-expression and a subsequent
-application of the chain rule:</p>
+<span class="math">\(B|A\)</span>.  Bayes’s theorem follows directly from a re-expression and a
+subsequent re-application of the chain rule:</p>
 <div class="math">
 \[P(B|A) = \frac{P(A, B)}{P(A)} = \frac{P(A|B)P(B)}{P(A)}\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
 <ol class="last arabic simple">
-<li>Prove <em>Bayes&#8217; Theorem</em> using the <em>Chain Rule</em></li>
-<li>Use the <em>Law of Total Probability</em> to express <span class="math">\(P(A)\)</span> in terms of <span class="math">\(P(A|B_i)P(B_i)\)</span>, where <span class="math">\(B_i\)</span> is a member of a partition of a sample space</li>
+<li>Prove <em>Bayes&#8217; theorem</em> using the <em>Chain Rule</em>.</li>
+<li>Use the <em>Law of Total Probability</em> to express <span class="math">\(P(A)\)</span> in terms of <span class="math">\(P(A|B_i)P(B_i)\)</span>, where <span class="math">\(B_i\)</span> is a partition of the sample space in question.</li>
 </ol>
 </div>
-<p>We will discuss a generalization of <em>Bayes&#8217; Theorem</em> that results in an entire
-branch of statistics known as <strong>Bayesian Statistics</strong> tomorrow.  But for now
-let&#8217;s walk through an example demonstrates the use of <em>Bayes&#8217; Theorem</em>.</p>
+<p><em>(We will discuss a generalization of Bayes&#8217; theorem that results in an entire
+branch of statistics known as Bayesian statistics tomorrow).</em></p>
 <div class="section" id="medical-testing">
 <h3>Medical Testing<a class="headerlink" href="#medical-testing" title="Permalink to this headline">¶</a></h3>
-<p>Suppose we are interested in screening for some condition <span class="math">\(C\)</span> and have
+<p>Suppose we are interested in screening a population
+for some condition <span class="math">\(C\)</span> and have
 a test <span class="math">\(T\)</span> which predicts if the condition is present or not.</p>
 <ul>
 <li><p class="first">The <strong>positive predictive value</strong> of the test is the probability that an individual who tested positive (i.e., <span class="math">\(i.e., T^{+}\)</span>) truly <em>does</em> have the condition (i.e., <span class="math">\(C^{+}\)</span>):</p>
@@ -400,7 +416,7 @@ a test <span class="math">\(T\)</span> which predicts if the condition is presen
 P (C^{+} |T^{+}) &amp;=&amp; \frac{P(T^{+}|C^{+}) P(C^{+})}{P(C^{+})P(T^{+}|C{+})+P(C^{-})P(T^{+}|C^{-})} \\
                  &amp;=&amp; \frac{Pr(C^{+}) \times \textrm{sensitivity}}{Pr(C^{+}) \times \textrm{sensitivity}+(1-Pr(C^{+})) \times (1-\textrm{specificity})}
 \end{eqnarray}\]</div></div></blockquote>
-<p>which is just an example of <em>Bayes&#8217; Theorem</em>.</p>
+<p>which is just an example of <em>Bayes&#8217; theorem</em>.</p>
 <p>So, if we were given a test with sensitivity of 0.84 and specificity of 0.77
 and apply the test to condition with with a prevalence of 0.20 in the
 population under examination, then</p>
@@ -416,7 +432,7 @@ population under examination, then</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Verify the solution given for <span class="math">\(PV^{-}\)</span> above</p>
+<p class="last">Verify the that the answer given for <span class="math">\(PV^{-}\)</span> above is correct.</p>
 </div>
 </div>
 </div>
@@ -438,7 +454,7 @@ population under examination, then</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probability-distributions.html" class="btn btn-neutral float-right" title="Probability distributions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probability-distributions.html" class="btn btn-neutral float-right" title="Probability Distributions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="combinatorics.html" class="btn btn-neutral" title="Combinatorics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -7,16 +7,17 @@ Probability provides the mathematical tools we use to model
 and describe randomness. The likeliness of a random event is 
 characterized either in terms of 
 
-   * Long term frequency behavior 
-     (if viewed from a *Frequentist* perspective)
-   * Our degree of belief expressed as a probability 
-     (if viewed from a *Bayesian* perspective)
+   * Long term frequency behavior, 
+     if viewed from a *Frequentist* perspective
+   * Our degree of belief expressed as a probability, 
+     if viewed from a *Bayesian* perspective
+
+*(We will return to a discussion between these two paradigms later).*
 
 Naturally, probability provides the foundation for statistics and machine learning
 as all (good) data analyses seek to identifiy patterns in data 
 *while accounting for* the random sampling and measurement variation 
 present in data populations under consideration. 
-
 Perhaps counterintuitively, while probability statements seem easy to express and
 interpret, our intuitions about randomness are often incorrect. This is because in
 actual life we only live one realization of the randomness and don't experience
@@ -28,7 +29,7 @@ possible outcomes (using combinatorics).
 
 .. note::
 	 
-   **QUESTION**
+   **EXERCISE**
 
    1. What is the probability of a Queen in a 52 card deck?
    2. What is the probability of a Queen or a King?
@@ -38,50 +39,52 @@ possible outcomes (using combinatorics).
 Formalization
 ---------------
 
-Lets lay out some rules.  The first three form the *axioms of probability*,
-and the last two follow from these first three.
+There are three *axioms of probability*.
 
-For some sample space :math:`S`, with an outcome :math:`s` 
-and events :math:`A \subseteq S` and :math:`B \subseteq S`, 
+For some sample space :math:`S` with 
+events :math:`A \subseteq S` and :math:`B \subseteq S`, 
 a probability function `Pr` has these properties:
 
-1. The probability of any event is positive and less than or equal to 1, i.e.,
+  1. The probability of any event is positive and less than or equal to 1, i.e.,
 
-.. math::
+  .. math::
       0 \leq Pr(s \in A) = Pr(A) \leq 1
 
-where :math:`Pr(A)` is a common shorthand notational convenience
+  where :math:`Pr(A)` is a common shorthand notational convenience
 
-2. The probability of a sure event is 1, i.e.,
+  2. The probability of a sure event is 1, i.e.,
 
-.. math::
+  .. math::
       Pr(S) = 1
       
-3. If A and B are mutually exclusive, then:
+  3. If A and B are mutually exclusive, then:
 
-.. math::
+  .. math::
       Pr(A \cup B) = Pr(A) + Pr(B)
 
-4. The sum of the probabilities of an event and its complement is 1
+  *(Remember that two events are mutually exclusive if they cannot both be true at the same time -- i.e., the two event sets are disjoint).*
 
-.. math::     	    
-      Pr(A) + Pr(A^C) = Pr(S) = 1
+From these three axioms all other familiar probability properties can be proven.
+E.g.,
 
-5. The probability of an impossible event is zero.
+  a. The sum of the probabilities of an event and its complement is 1
 
-.. math::
-      Pr(S^C) = 0
+  .. math::     	    
+      Pr(A) + Pr\left(A^C\right) = Pr(S) = 1
 
-NOTE: Two events are **mutually exclusive**
-if they cannot both be true at the same time. It follows that the two
-event sets are **disjoint**.
+  b. The probability of an impossible event is zero.
+
+  .. math::
+      Pr\left(S^C\right) = 0
+
+
 
 
       
 Independence
 --------------
 
-Two events are **independent** (notated as :math:`A\bot B`) if:
+Two events are **independent** (notated as :math:`A\bot B`) if
 
 .. math::
    
@@ -93,33 +96,35 @@ or
       
    Pr(A|B) = Pr(A)
    
-where :math:`Pr(A|B)` is a so called **conditional probability**, which gives
+where :math:`Pr(A|B)` denotes a **conditional probability** which gives
 gives the probability of an event occuring *given the knowledge that* another 
 event as occured.
-
-With respect to independence ask yourself---**Does knowing somethign about
-event** :math:`B` **provide increased information about the status of event** 
-:math:`A`?
+When considering the independence of two events, ask yourself: "Does knowing 
+somethign about event :math:`A` provide increased information about the 
+likelihood of event :math:`B`?
 
 .. note::
 	 
-   **PAIRED DISCUSSION**
+   **PAIRED EXERCISE**
 
-   Discuss with your neighbor what "knowing that :math:`B` has occurred" tells 
-   us about the likelihood of :math:`A` occuring
+   Discuss with your neighbor what "knowing that :math:`A` has occurred" tells 
+   us about the likelihood of :math:`B` occuring
 
-   1. Under independence?
-   2. Without independence?
+   a. Under independence?
 
-   Come up with a strategy (based on the definition of independence) 
-   to test whether two events are independent
+   b. Without independence?
 
-   Agree upon a statement that distinguishes **independence**
-   from **mutually exclusivity**
+   How you go about testing if two events were indeed independent?
+
+.. note::
+	 
+   **QUESTION**
+
+   What is the relationship between **independence** and **mutually exclusivity**?
 
 .. note::
 
-   **THOUGHT EXPERIMENT**
+   **TEAM EXERCISE**
    
    Take a moment to *think about* this question:
 
@@ -127,10 +132,10 @@ event** :math:`B` **provide increased information about the status of event**
       * You pull a coin out of the urn, flip it, and it comes up H
       * Q: what is the probability it comes up H if you flip it a second time?
 
-   When you're ready, compare your solution to those around you
+   When you're ready, compare your solution to those around you.
 
      
-Conditional probability	
+Conditional Probability	
 ----------------------------
 
 It turns out that it is always true that 
@@ -152,34 +157,54 @@ which is the definition of **conditional probability**.
 
    **EXERCISE**
    
-   Draw a Venn-Diagram for sample space :math:`S` with intersecting events 
-   :math:`A` and :math:`B` to demonstrate the *Conditional Probability* formula
+   Draw a Venn diagram for sample space :math:`S` with intersecting events 
+   :math:`A` and :math:`B` to demonstrate the *Conditional Probability* formula.
+
+.. note::
 
 
-Probability Chain Rule
---------------------------
 
-In probability theory, the *chain rule* defines the **joint distribution**
-of a collection of random variables.  The chain rule can be extended 
-to any number of variables according to the following pattern of 
-conditional probabilities.
+Chain Rule
+----------
+
+In probability theory, the **chain rule** provides a way to calculate 
+probabilities sequentially for any number of events according
+to the pattern of conditional probabilities
 
 .. math::
 
-   Pr(A, B, C) = Pr(A| B,C) Pr(B,C) = Pr(A|B,C) Pr(B|C) Pr(C)
+   Pr(A, B, C) = Pr(A| B,C) \times Pr(B,C) = Pr(A|B,C) \times Pr(B|C) \times Pr(C)
 
 where :math:`Pr(A)` is a shorthand notational convencience specifying
 :math:`Pr(X=x \in A)`.
 
-More generally, for a set of random variables :math:`X_i,` for :math:`i = 1, \cdots, n`, we write:
+The chain rule also defines the **joint distribution**
+of a collection of random variables :math:`X_i, \; i = 1, \cdots, n` as
 
 .. math::
    \displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i | \underset{i=1}{\overset{n}{\cap}} X_i\right)
 
 where :math:`P` specifies either 
 
-      * a **probability mass function** defining :math:`Pr(X=x)` for outcomes :math:`x_i` with :math:`\sum_{x \in S_X} Pr(X=x) = 1` , or
-      * a **probability density function** :math:`f(X=x)` defining the *relative frequency* of potential outcome realizations of :math:`X_i` with :math:`\int_{-\infty}^{\infty} f(X=x) \; dx = 1` 
+* a **probability mass function** defining :math:`Pr(X_i=x)` 
+
+* a **probability density function** :math:`f(X_i=x)` defining the *relative frequency* of potential outcome realizations of :math:`X_i`
+
+Notice that if the :math:`X_i` are *independent* of each other, then
+
+.. math::
+   \displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i\right)
+
+
+*(We will return to probability distributions for a thorough discussion later).*
+
+.. note::
+
+   **EXERCISE**
+   
+   Calculate the probability of getting a Queen and a King if you draw
+   two cards from a standard 52-card deck. 
+
 
 
 Law of Total Probability
@@ -189,51 +214,49 @@ For a partition :math:`\{A_1, A_2, \cdots A_n\}` of a sample space `S`, i.e.,
 a set of events such that :math:`\underset{i=1}{\overset{n}{\cup}} 
 A_i = S` and :math:`A_i \cap A_j=\emptyset` for all :math:`i` and :math:`j`
 such that :math:`1 \leq i \not = j \leq n`, and an event :math:`B \subseteq S`, 
-we have the so called *Law of Total Probability*
+the **Law of Total Probability** guarantees that
 
 .. math::
-   \displaystyle Pr(B) = \sum^n_{i=1} Pr(B\cap A_i)
-
-or
-
-.. math::
-   \displaystyle Pr(B) = \sum^n_{i=1} Pr(B|A_i) Pr(A_i)
+   \displaystyle Pr(B) = \sum^n_{i=1} Pr(B\cap A_i) = \sum^n_{i=1} Pr(B|A_i) Pr(A_i)
 
 .. note::
 
    **EXERCISE**
    
-   Draw a Venn-Diagram for sample space :math:`S` partitioned 
+   Draw a Venn diagram for sample space :math:`S` partitioned 
    into :math:`\{A_1, A_2, \cdots A_n\}` and :math:`B \subseteq S`
-   to demonstrates the *Law of Total Probability*
+   to demonstrates the *Law of Total Probability*.
 
 
 Recasting the *Law of Total Probability* in terms of random variables 
-:math:`X` and :math:`Y`, we have
+:math:`X` and :math:`Y`, we have for
+
+* **discete distributions**
 
 .. math::
    \displaystyle Pr(X=x) = \sum_{y \in S_Y} Pr(X=x, Y=y) = \sum_{y \in S_Y} Pr(X=x|Y=y) Pr(Y=y)
 
-for *discete distributions*, and 
+* **continuous distributions**
 
 .. math::
    \displaystyle f(X=x) = \int_{y \in S_Y} f(X=x, Y=y) \;dy = \int_{y \in S_Y} f(X=x|Y=y) f(Y=y) \;dy
 
-for *continuous distributions*.
 
 The distributions 
 :math:`Pr(X=x)` and :math:`f(X=x)` are called **marginal distributions** 
-of their respective so called **joint distributions**, :math:`Pr(X, Y)` and 
-:math:`f(X, Y)`.
+of their respective **joint distributions**, :math:`Pr(X, Y)` and 
+:math:`f(X, Y)`, respectively.
+
+*(We will return to probability distributions for a thorough discussion later).*
 
 Bayes' Theorem
 ---------------
 
-**Bayes' Theorem** is a formula for computing the conditional probability 
+**Bayes' theorem** is a formula for computing the conditional probability 
 (or distribution) of
 :math:`A|B` based on the reverse conditional probability (or distribution) of
-:math:`B|A`.  Bayes’s Rule follows directly from a re-expression and a subsequent
-application of the chain rule:
+:math:`B|A`.  Bayes’s theorem follows directly from a re-expression and a 
+subsequent re-application of the chain rule:
 
 .. math::
 
@@ -243,18 +266,18 @@ application of the chain rule:
 
    **EXERCISE**
    
-   1. Prove *Bayes' Theorem* using the *Chain Rule*
-   2. Use the *Law of Total Probability* to express :math:`P(A)` in terms of :math:`P(A|B_i)P(B_i)`, where :math:`B_i` is a member of a partition of the sample space in question
+   1. Prove *Bayes' theorem* using the *Chain Rule*.
+   2. Use the *Law of Total Probability* to express :math:`P(A)` in terms of :math:`P(A|B_i)P(B_i)`, where :math:`B_i` is a partition of the sample space in question.
 
-We will discuss a generalization of *Bayes' Theorem* that results in an entire 
-branch of statistics known as **Bayesian Statistics** tomorrow.  But for now 
-let's walk through an example demonstrates the use of *Bayes' Theorem*.  
+*(We will discuss a generalization of Bayes' theorem that results in an entire 
+branch of statistics known as Bayesian statistics tomorrow).*
 
 
 Medical Testing
 ^^^^^^^^^^^^^^^
 
-Suppose we are interested in screening for some condition :math:`C` and have 
+Suppose we are interested in screening a population 
+for some condition :math:`C` and have 
 a test :math:`T` which predicts if the condition is present or not.
 
 * The **positive predictive value** of the test is the probability that an individual who tested positive (i.e., :math:`i.e., T^{+}`) truly *does* have the condition (i.e., :math:`C^{+}`):
@@ -290,7 +313,7 @@ A common measure of the usefulness of a test is its *positive predictive value*
                        &=& \frac{Pr(C^{+}) \times \textrm{sensitivity}}{Pr(C^{+}) \times \textrm{sensitivity}+(1-Pr(C^{+})) \times (1-\textrm{specificity})} 
       \end{eqnarray}
 
-which is just an example of *Bayes' Theorem*.  
+which is just an example of *Bayes' theorem*.  
       
 So, if we were given a test with sensitivity of 0.84 and specificity of 0.77
 and apply the test to condition with with a prevalence of 0.20 in the 
@@ -310,7 +333,7 @@ and
 
    **EXERCISE**
    
-   Verify the solution given for :math:`PV^{-}` above
+   Verify the that the answer given for :math:`PV^{-}` above is correct.
 
 
 Further resources

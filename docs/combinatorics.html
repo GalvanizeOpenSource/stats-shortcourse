@@ -92,7 +92,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability Distributions</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
@@ -151,33 +151,36 @@
   <div class="section" id="combinatorics">
 <h1>Combinatorics<a class="headerlink" href="#combinatorics" title="Permalink to this headline">¶</a></h1>
 <p>Combinatorics is a branch of mathematics dedicated to figuring out how to count
-things!</p>
+things! Specifically, the number of elements contained
+in &#8211; i.e., the <strong>cardinality</strong> &#8211; of event <span class="math">\(A\)</span>:</p>
+<div class="math">
+\[\mathbf{card}(A) = |A|\]</div>
 <p>Counting&#8217;s not so hard, you say? Think again: when it comes to ordering and
 choosing sets in complicated and clever ways things can get tricky in heartbeat.
 Be that as it may, combinatorics plays a fundamental and foundational role
-in probability as it allows us to count outcomes in a sample space and
-subsequently assign probabilities to events. Beyond that, the need to count
+in probability as it forms the basis for assigning probabilities to events
+in many contexts. Beyond that, the need to count
 carefully and correctly is obviously a hugely important part of Data Science,
-and it&#8217;s important to have few of the &#8220;standard tricks&#8221; handy or you might
-make something a whole lot harder than it needs to be.
+and it&#8217;s important to have few of the &#8220;standard counting tricks&#8221; handy or
+you might make something a whole lot harder than it needs to be.
 For a good &#8220;industry perspective&#8221; on the importance and challenge of counting
 in data science check out
 <a class="reference external" href="http://daynebatten.com/2016/06/counting-hard-data-science/">Counting in Data Science</a>.</p>
 <div class="section" id="factorials">
 <h2>Factorials<a class="headerlink" href="#factorials" title="Permalink to this headline">¶</a></h2>
-<p><em>Factorials</em> count the number of ways to order a set of objects.</p>
+<p><strong>Factorials</strong> count the number of ways to order a set of objects.</p>
 <p>E.g., if there are 10 lottery balls (labeled 1-10) and we draw them all,
 how many possible orderings could be drawn? The answer to this question is</p>
 <ul class="simple">
 <li>there are 10 choices for the first ball</li>
-<li>9 choices for the second ball (because we&#8217;ve already drawn the first ball)</li>
-<li>8 choices for the third ball (because we&#8217;ve already drawn the first ball)</li>
+<li>9 choices for the second ball (because we&#8217;ve already drawn the first lottery ball)</li>
+<li>8 choices for the third ball (because we&#8217;ve already drawn the first two lottery balls)</li>
 <li>and so on...</li>
 </ul>
 <p>until there is only one ball left and we must pick it.
-That is, there are <span class="math">\(10*9*8*\cdots*1 = 10!\)</span> possible orderings.</p>
-<p>This number can be calculated in Python, but watch out! Factorials get really
-big really fast...</p>
+That is, there are <span class="math">\(10*9*8*\cdots*1 = 10!\)</span>, i.e.
+<em>10 factorial</em>, possible orderings.</p>
+<p>The number <em>10 factorial</em> can be calculated in Python, but watch out: factorials get really big really fast...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">3628800</span>
@@ -186,25 +189,26 @@ big really fast...</p>
 </div>
 <div class="section" id="combinations">
 <h2>Combinations<a class="headerlink" href="#combinations" title="Permalink to this headline">¶</a></h2>
-<p><em>Combinations</em> count the number of ways to choose things when
+<p><strong>Combinations</strong> count the number of ways to choose things when
 <strong>order does not matter</strong>.  Here&#8217;s an example of all the two character
-<em>combinations</em> from the letters <cite>A</cite>, <cite>B</cite>, and <cite>C</cite>:</p>
+<em>combinations</em> that can be made from the letters <cite>A</cite>, <cite>B</cite>, and <cite>C</cite>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">combinations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[(&#39;A&#39;, &#39;B&#39;), (&#39;A&#39;, &#39;C&#39;), (&#39;B&#39;, &#39;C&#39;)]</span>
 </pre></div>
 </div>
-<p>The &#8220;number of combinations&#8221; problem &#8212;
-where we are counting the number of all possible
+<p>The &#8220;number of combinations&#8221; problem &#8211; i.e.,
+counting the number of all possible
 unordered collections of size <cite>K</cite> from a pool of <cite>N</cite> objects &#8212;
 is often referred to as the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; problem, and the
-solution to the problem is commonly notated as follows:</p>
-<blockquote>
-<div><span class="math">\(\left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}\)</span></div></blockquote>
+solution to the problem is commonly notated as</p>
+<div class="math">
+\[\begin{split}\left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}\end{split}\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>Thought Experiment</strong></p>
-<p class="last">If you think about the solution carefully, you can actually see that it makes
+<p><strong>EXERCISE</strong></p>
+<p class="last">If you think about the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; solution carefully,
+you can actually see that it makes
 sense: the <span class="math">\(K!\)</span> in the denominator is the number of ways to order a list
 of length <span class="math">\(K\)</span>, whereas the <span class="math">\(\frac{N!}{(N-K)!}\)</span> is all possible
 lists of length <span class="math">\(K\)</span> where order matters.  With that in mind, see if you
@@ -212,9 +216,9 @@ can think through why the formula counts the right thing.</p>
 </div>
 <p>If you&#8217;re still a little confused about how the counting actually works,
 don&#8217;t worry, it&#8217;s really easy to calculate combinations Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
-<span class="k">def</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">factorial</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">comb</span>
@@ -239,8 +243,8 @@ don&#8217;t worry, it&#8217;s really easy to calculate combinations Python:</p>
 <div class="section" id="permutations">
 <h2>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h2>
 <p><em>Permutations</em> counts the number of ways subsets can be chosen when
-order <strong>does</strong> matter. If you followed the thought exercise in the <em>combinations
-section</em> above then you won&#8217;t be surprised to learn that the number of ways to
+<strong>order does matter</strong>. If you followed the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; thought exercise
+above then you won&#8217;t be surprised to learn that the number of ways to
 choose <cite>K</cite> things out of <cite>N</cite> things <strong>when order matters</strong> is</p>
 <blockquote>
 <div><span class="math">\(\displaystyle \frac{N!}{(N-K)!}\)</span></div></blockquote>
@@ -260,15 +264,15 @@ course, once again, it&#8217;s easy to do permutations in Python:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">On a baseball team with 12 players, how many different batting lineups are there?
-(Hint: there are 9 people in a batting lineup)</p>
+<p>On a baseball team with 12 players, how many different batting lineups are there?</p>
+<p class="last">Hint: there are 9 players in a lineup.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>QUICK DISCUSSION</strong></p>
+<p><strong>PAIRED EXERCISE</strong></p>
 <p class="last">Face off against the person next to you, pitting permutations against
 combinations, and defending the dignity and honor of your position!
-No low blows allowed, but don&#8217;t be afraid to bring total counts into
+No low blows are allowed, but don&#8217;t be afraid to bring size into
 the argument if you think it helps your case.</p>
 </div>
 </div>

@@ -3,33 +3,72 @@
 Probability Distributions
 =============================
 
-A *probability distribution* is a mathematical formalization that describes a 
+
+A probability distribution is a mathematical formalization that describes a 
 particular type of random process. 
 
 
 Properties of Distributions
 -----------------------------
 
-Probability distributions are classified into two categories:
-
-* **continuous** -- producing *real-valued* outcomes (such as 3.14... or 2.71...)
+Distributions are classified into two categories:
 
 * **discrete** -- producing outcomes that can be mapped to the *integers* (such as 1, 2, ...) 
 
-However, regardless of whether or not a probability distribution is continuous 
-or discrete,
-there are four properties that are often evoked to describe the distribution:
+* **continuous** -- producing *real-valued* outcomes (such as 3.14... or 2.71...)
 
-* **Expectation** or **Mean** characterizes the *location* of a distribution
+*Discrete distributions* are often indicated as :math:`Pr(X=x)`
+and *continuous distributions* as :math:`f(X=x)` both 
+satisfy the *axioms of probability*, e.g., 
 
-* **Variance** or **Standard Deviation** (square root of the variance) characterizes the *spread* of a distribution
+  1. :math:`0 \leq Pr(X=x) \leq 1` and :math:`0 \leq f(X=x) \leq 1`
+
+  ..
+
+  2. :math:`\sum_{x \in S_X} Pr(X_i=x) = 1` and :math:`\int_{-\infty}^{\infty} f(X_i=x) \; dx = 1`
+
+
+If a random variable :math:`X` is distributed according to a
+distribution named :math:`XYZ` with 
+parameters :math:`\alpha` and :math:`\beta`, and so on, 
+then we indicate that as 
+
+.. math::
+   X \sim XYZ(\alpha, \beta, ...)
+
+and if 
+a set of :math:`n` random variables :math:`X_i, \; i=1, 2, \cdots n`
+are **identically and independently distributed (i.i.d)**
+-- i.e., the random variables have *the same distribution*
+and the realization of one *does not influence* the
+realization of another -- then we indicate that as 
+
+.. math::
+   X_i \overset{\small i.i.d.}{\sim} XYZ(\alpha, \beta, ...), \; i=1,2,\cdots n
+
+..
+
+
+
+For both continuous and discrete distributions 
+there are four properties -- 
+*the first through fourth moments* -- 
+of a distribution that are often evoked to describe the distribution:
+
+* **Expectation** (or **Mean**) characterizes the *location* of a distribution
+
+* **Variance** or **Standard Deviation** (square root of the *variance*) characterizes the *spread* of a distribution
 
 * **Skewness** characterizes the *asymmetry* of a distribution
    
 * **Kurtosis** characterizes the *heavy-tailedness* of a distribution (i.e., how ofter extreme outlier events occur under the distribution.
 
-These four parameters are known as to the *first through 
-fourth moments* of a distribution. 
+
+
+
+
+
+
 
 
 Essential Discrete Distributions:
@@ -204,6 +243,17 @@ hypothesis testing tomorrow).*
 
  
 
+.. plot:: gaussian-distn.py
+
+.. note::
+
+   **CLASS DISCUSSION**
+
+   Test scores, IQs, heights, finishing times from the Boston marathons
+   have all been empirically shown to be (almost/approximately) 
+   normally distributed. Are you surprised to learn this?
+	  
+Check out this `khan academy video on the normal distribution <https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/normal-distributions-library/v/introduction-to-the-normal-distribution>`_ if you need some further intuition about normal distributions. 
 
 **Reparameterization**
 
@@ -217,20 +267,6 @@ than the *variance*  :math:`\sigma^{2}`.
 For that matter, is the the Gaussian probability density 
 function specified in terms of the variance :math:`\sigma^{2}`, 
 or the standard deviation :math:`\sigma`?
-
-.. plot:: gaussian-distn.py
-
-.. note::
-
-   **CLASS DISCUSSION**
-
-   Test scores, IQs, heights, finishing times from the Boston marathons
-   have all been empirically shown to be (almost/approximately) 
-   normally distributed. Are you surprised to learn this?
-	  
-Check out this `khan academy video on the normal distribution <https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/normal-distributions-library/v/introduction-to-the-normal-distribution>`_ if you need some further intuition about normal distributions. 
-
-
 
 
 

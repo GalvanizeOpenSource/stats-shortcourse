@@ -166,26 +166,50 @@
             
   <div class="section" id="probability-distributions">
 <h1>Probability Distributions<a class="headerlink" href="#probability-distributions" title="Permalink to this headline">¶</a></h1>
-<p>A <em>probability distribution</em> is a mathematical formalization that describes a
+<p>A probability distribution is a mathematical formalization that describes a
 particular type of random process.</p>
 <div class="section" id="properties-of-distributions">
 <h2>Properties of Distributions<a class="headerlink" href="#properties-of-distributions" title="Permalink to this headline">¶</a></h2>
-<p>Probability distributions are classified into two categories:</p>
+<p>Distributions are classified into two categories:</p>
 <ul class="simple">
-<li><strong>continuous</strong> &#8211; producing <em>real-valued</em> outcomes (such as 3.14... or 2.71...)</li>
 <li><strong>discrete</strong> &#8211; producing outcomes that can be mapped to the <em>integers</em> (such as 1, 2, ...)</li>
+<li><strong>continuous</strong> &#8211; producing <em>real-valued</em> outcomes (such as 3.14... or 2.71...)</li>
 </ul>
-<p>However, regardless of whether or not a probability distribution is continuous
-or discrete,
-there are four properties that are often evoked to describe the distribution:</p>
+<p><em>Discrete distributions</em> are often indicated as <span class="math">\(Pr(X=x)\)</span>
+and <em>continuous distributions</em> as <span class="math">\(f(X=x)\)</span> both
+satisfy the <em>axioms of probability</em>, e.g.,</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><span class="math">\(0 \leq Pr(X=x) \leq 1\)</span> and <span class="math">\(0 \leq f(X=x) \leq 1\)</span></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><span class="math">\(\sum_{x \in S_X} Pr(X_i=x) = 1\)</span> and <span class="math">\(\int_{-\infty}^{\infty} f(X_i=x) \; dx = 1\)</span></li>
+</ol>
+</div></blockquote>
+<p>If a random variable <span class="math">\(X\)</span> is distributed according to a
+distribution named <span class="math">\(XYZ\)</span> with
+parameters <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span>, and so on,
+then we indicate that as</p>
+<div class="math">
+\[X \sim XYZ(\alpha, \beta, ...)\]</div>
+<p>and if
+a set of <span class="math">\(n\)</span> random variables <span class="math">\(X_i, \; i=1, 2, \cdots n\)</span>
+are <strong>identically and independently distributed (i.i.d)</strong>
+&#8211; i.e., the random variables have <em>the same distribution</em>
+and the realization of one <em>does not influence</em> the
+realization of another &#8211; then we indicate that as</p>
+<div class="math">
+\[X_i \overset{\small i.i.d.}{\sim} XYZ(\alpha, \beta, ...), \; i=1,2,\cdots n\]</div>
+<p>For both continuous and discrete distributions
+there are four properties &#8211;
+<em>the first through fourth moments</em> &#8211;
+of a distribution that are often evoked to describe the distribution:</p>
 <ul class="simple">
-<li><strong>Expectation</strong> or <strong>Mean</strong> characterizes the <em>location</em> of a distribution</li>
-<li><strong>Variance</strong> or <strong>Standard Deviation</strong> (square root of the variance) characterizes the <em>spread</em> of a distribution</li>
+<li><strong>Expectation</strong> (or <strong>Mean</strong>) characterizes the <em>location</em> of a distribution</li>
+<li><strong>Variance</strong> or <strong>Standard Deviation</strong> (square root of the <em>variance</em>) characterizes the <em>spread</em> of a distribution</li>
 <li><strong>Skewness</strong> characterizes the <em>asymmetry</em> of a distribution</li>
 <li><strong>Kurtosis</strong> characterizes the <em>heavy-tailedness</em> of a distribution (i.e., how ofter extreme outlier events occur under the distribution.</li>
 </ul>
-<p>These four parameters are known as to the <em>first through
-fourth moments</em> of a distribution.</p>
 </div>
 <div class="section" id="essential-discrete-distributions">
 <h2>Essential Discrete Distributions:<a class="headerlink" href="#essential-discrete-distributions" title="Permalink to this headline">¶</a></h2>
@@ -333,17 +357,6 @@ do appear to be (approximately) normally distributed.  Another reason we come
 across the normal distribution so much in statistics is because the CLT
 phenomenon can be leveraged as part of hypothesis testing. <em>(We will cover
 hypothesis testing tomorrow).</em></p>
-<p><strong>Reparameterization</strong></p>
-<p>The way a distribution is <strong>parameterized</strong> is actually an arbitrary
-choice. I.e., there many ways way in which the parameters of a distribution
-could be be specified.
-For example, the inverse of the variance <span class="math">\(\tau = 1/\sigma^{2}\)</span>
-is known as the <strong>precision</strong> and we could easily specify the
-Gaussian probability density function using the <em>precision</em> <span class="math">\(\tau\)</span> rather
-than the <em>variance</em>  <span class="math">\(\sigma^{2}\)</span>.
-For that matter, is the the Gaussian probability density
-function specified in terms of the variance <span class="math">\(\sigma^{2}\)</span>,
-or the standard deviation <span class="math">\(\sigma\)</span>?</p>
 <p>(<a class="reference external" href=".//gaussian-distn.py">Source code</a>, <a class="reference external" href=".//gaussian-distn.png">png</a>, <a class="reference external" href=".//gaussian-distn.hires.png">hires.png</a>, <a class="reference external" href=".//gaussian-distn.pdf">pdf</a>)</p>
 <div class="figure">
 <img alt="_images/gaussian-distn.png" src="_images/gaussian-distn.png" />
@@ -356,6 +369,17 @@ have all been empirically shown to be (almost/approximately)
 normally distributed. Are you surprised to learn this?</p>
 </div>
 <p>Check out this <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/normal-distributions-library/v/introduction-to-the-normal-distribution">khan academy video on the normal distribution</a> if you need some further intuition about normal distributions.</p>
+<p><strong>Reparameterization</strong></p>
+<p>The way a distribution is <strong>parameterized</strong> is actually an arbitrary
+choice. I.e., there many ways way in which the parameters of a distribution
+could be be specified.
+For example, the inverse of the variance <span class="math">\(\tau = 1/\sigma^{2}\)</span>
+is known as the <strong>precision</strong> and we could easily specify the
+Gaussian probability density function using the <em>precision</em> <span class="math">\(\tau\)</span> rather
+than the <em>variance</em>  <span class="math">\(\sigma^{2}\)</span>.
+For that matter, is the the Gaussian probability density
+function specified in terms of the variance <span class="math">\(\sigma^{2}\)</span>,
+or the standard deviation <span class="math">\(\sigma\)</span>?</p>
 </div>
 </div>
 <div class="section" id="less-essential-distributions">

@@ -5,16 +5,20 @@ Combinatorics
 ====================
 
 Combinatorics is a branch of mathematics dedicated to figuring out how to count
-things! 
+things! Specifically, the number of elements contained 
+in -- i.e., the **cardinality** -- of event :math:`A`:
+
+.. math::
+   \mathbf{card}(A) = |A|
 
 Counting's not so hard, you say? Think again: when it comes to ordering and 
 choosing sets in complicated and clever ways things can get tricky in heartbeat.
 Be that as it may, combinatorics plays a fundamental and foundational role 
-in probability as it allows us to count outcomes in a sample space and 
-subsequently assign probabilities to events. Beyond that, the need to count
+in probability as it forms the basis for assigning probabilities to events
+in many contexts. Beyond that, the need to count
 carefully and correctly is obviously a hugely important part of Data Science,
-and it's important to have few of the "standard tricks" handy or you might 
-make something a whole lot harder than it needs to be.  
+and it's important to have few of the "standard counting tricks" handy or 
+you might make something a whole lot harder than it needs to be.  
 For a good "industry perspective" on the importance and challenge of counting 
 in data science check out 
 `Counting in Data Science <http://daynebatten.com/2016/06/counting-hard-data-science/>`_.  
@@ -24,21 +28,21 @@ in data science check out
 Factorials
 --------------
 
-*Factorials* count the number of ways to order a set of objects. 
+**Factorials** count the number of ways to order a set of objects. 
 
 E.g., if there are 10 lottery balls (labeled 1-10) and we draw them all, 
 how many possible orderings could be drawn? The answer to this question is
 
 * there are 10 choices for the first ball
-* 9 choices for the second ball (because we've already drawn the first ball)
-* 8 choices for the third ball (because we've already drawn the first ball)
+* 9 choices for the second ball (because we've already drawn the first lottery ball)
+* 8 choices for the third ball (because we've already drawn the first two lottery balls)
 * and so on...
 
 until there is only one ball left and we must pick it.
-That is, there are :math:`10*9*8*\cdots*1 = 10!` possible orderings.
+That is, there are :math:`10*9*8*\cdots*1 = 10!`, i.e.
+*10 factorial*, possible orderings.
 
-This number can be calculated in Python, but watch out! Factorials get really 
-big really fast...
+The number *10 factorial* can be calculated in Python, but watch out: factorials get really big really fast...
 
 >>> import math
 >>> math.factorial(10)
@@ -47,27 +51,29 @@ big really fast...
 Combinations
 --------------------------------
 
-*Combinations* count the number of ways to choose things when 
+**Combinations** count the number of ways to choose things when 
 **order does not matter**.  Here's an example of all the two character
-*combinations* from the letters `A`, `B`, and `C`:
+*combinations* that can be made from the letters `A`, `B`, and `C`:
 
 >>> from itertools import combinations
 >>> list(combinations("ABC",2))
 [('A', 'B'), ('A', 'C'), ('B', 'C')]
 
-The "number of combinations" problem --- 
-where we are counting the number of all possible 
+The "number of combinations" problem -- i.e., 
+counting the number of all possible 
 unordered collections of size `K` from a pool of `N` objects --- 
 is often referred to as the "`N` choose `K`" problem, and the 
-solution to the problem is commonly notated as follows: 
+solution to the problem is commonly notated as  
 
-    :math:`\left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}`
+.. math::
+    \left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}
 
 .. note:: 
 
-   **Thought Experiment**
+   **EXERCISE**
 
-   If you think about the solution carefully, you can actually see that it makes
+   If you think about the "`N` choose `K`" solution carefully, 
+   you can actually see that it makes
    sense: the :math:`K!` in the denominator is the number of ways to order a list 
    of length :math:`K`, whereas the :math:`\frac{N!}{(N-K)!}` is all possible
    lists of length :math:`K` where order matters.  With that in mind, see if you
@@ -76,11 +82,9 @@ solution to the problem is commonly notated as follows:
 If you're still a little confused about how the counting actually works,
 don't worry, it's really easy to calculate combinations Python:
 
-.. code-block:: python
-
-   from math import factorial		
-   def comb(n, k):
-       return factorial(n) / (factorial(k) * factorial(n - k))
+>>> from math import factorial		
+>>> def comb(n, k):
+... 	return factorial(n) / (factorial(k) * factorial(n - k))
 
 >>> from scipy.misc import comb
 >>> comb(3,2)
@@ -105,8 +109,8 @@ Permutations
 ----------------
 
 *Permutations* counts the number of ways subsets can be chosen when 
-order **does** matter. If you followed the thought exercise in the *combinations
-section* above then you won't be surprised to learn that the number of ways to 
+**order does matter**. If you followed the "`N` choose `K`" thought exercise 
+above then you won't be surprised to learn that the number of ways to 
 choose `K` things out of `N` things **when order matters** is 
 
     :math:`\displaystyle \frac{N!}{(N-K)!}`
@@ -130,15 +134,16 @@ course, once again, it's easy to do permutations in Python:
    **EXERCISE**
 
    On a baseball team with 12 players, how many different batting lineups are there?
-   (Hint: there are 9 people in a batting lineup)
+   
+   Hint: there are 9 players in a lineup.
 
 .. note::
 
-   **QUICK DISCUSSION**
+   **PAIRED EXERCISE**
 
    Face off against the person next to you, pitting permutations against 
    combinations, and defending the dignity and honor of your position!
-   No low blows allowed, but don't be afraid to bring total counts into
+   No low blows are allowed, but don't be afraid to bring size into
    the argument if you think it helps your case.
 
 
@@ -148,7 +153,7 @@ course, once again, it's easy to do permutations in Python:
 .. one results in more possibilities.
    
 Further study
-------------------
+-------------
 
    * `Khan academy video <https://www.khanacademy.org/math/precalculus/prob-comb/combinations/v/introduction-to-combinations>`_
    * `Khan academy practice <https://www.khanacademy.org/math/precalculus/prob-comb/combinations/e/permutations_and_combinations_2>`_
