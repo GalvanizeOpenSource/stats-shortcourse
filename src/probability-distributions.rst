@@ -270,7 +270,7 @@ or the standard deviation :math:`\sigma`?
 
 
 
-Less essential distributions:
+Less Essential distributions:
 -----------------------------
 	  
 Geometric

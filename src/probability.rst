@@ -124,16 +124,6 @@ likelihood of event :math:`B`?
 
 .. note::
 
-   **TEAM EXERCISE**
-   
-   Take a moment to *think about* this question:
-
-      * Three types of fair coins are in an urn: HH, HT, and TT
-      * You pull a coin out of the urn, flip it, and it comes up H
-      * Q: what is the probability it comes up H if you flip it a second time?
-
-   When you're ready, compare your solution to those around you.
-
      
 Conditional Probability	
 ----------------------------
