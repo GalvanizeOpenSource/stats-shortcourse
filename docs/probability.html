@@ -289,7 +289,7 @@ But for now, rearranging this equation gives us</p>
 <li>Q: what is the probability it comes up H if you flip it a second time?</li>
 </ul>
 </div></blockquote>
-<p><em>Hint: write out the sample space for this problem...</em></p>
+<p><em>Hint: write out the sample space!</em></p>
 <p class="last">When you&#8217;re ready, compare your solution to those around you.</p>
 </div>
 </div>
@@ -302,19 +302,6 @@ to the pattern of conditional probabilities</p>
 \[Pr(A, B, C) = Pr(A| B,C) \times Pr(B,C) = Pr(A|B,C) \times Pr(B|C) \times Pr(C)\]</div>
 <p>where <span class="math">\(Pr(A)\)</span> is a shorthand notational convencience specifying
 <span class="math">\(Pr(X=x \in A)\)</span>.</p>
-<p>The chain rule also defines the <strong>joint distribution</strong>
-of a collection of random variables <span class="math">\(X_i, \; i = 1, \cdots, n\)</span> as</p>
-<div class="math">
-\[\displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i | \underset{i=1}{\overset{n}{\cap}} X_i\right)\]</div>
-<p>where <span class="math">\(P\)</span> specifies either</p>
-<ul class="simple">
-<li>a <strong>probability mass function</strong> defining <span class="math">\(Pr(X_i=x)\)</span></li>
-<li>a <strong>probability density function</strong> <span class="math">\(f(X_i=x)\)</span> defining the <em>relative frequency</em> of potential outcome realizations of <span class="math">\(X_i\)</span></li>
-</ul>
-<p>Notice that if the <span class="math">\(X_i\)</span> are <em>independent</em> of each other, then</p>
-<div class="math">
-\[\displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i\right)\]</div>
-<p><em>(We will return to probability distributions for a thorough discussion later).</em></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -338,23 +325,6 @@ the <strong>Law of Total Probability</strong> guarantees that</p>
 into <span class="math">\(\{A_1, A_2, \cdots A_n\}\)</span> and <span class="math">\(B \subseteq S\)</span>
 to demonstrates the <em>Law of Total Probability</em>.</p>
 </div>
-<p>Recasting the <em>Law of Total Probability</em> in terms of random variables
-<span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, we have for</p>
-<ul class="simple">
-<li><strong>discete distributions</strong></li>
-</ul>
-<div class="math">
-\[\displaystyle Pr(X=x) = \sum_{y \in S_Y} Pr(X=x, Y=y) = \sum_{y \in S_Y} Pr(X=x|Y=y) Pr(Y=y)\]</div>
-<ul class="simple">
-<li><strong>continuous distributions</strong></li>
-</ul>
-<div class="math">
-\[\displaystyle f(X=x) = \int_{y \in S_Y} f(X=x, Y=y) \;dy = \int_{y \in S_Y} f(X=x|Y=y) f(Y=y) \;dy\]</div>
-<p>The distributions
-<span class="math">\(Pr(X=x)\)</span> and <span class="math">\(f(X=x)\)</span> are called <strong>marginal distributions</strong>
-of their respective <strong>joint distributions</strong>, <span class="math">\(Pr(X, Y)\)</span> and
-<span class="math">\(f(X, Y)\)</span>, respectively.</p>
-<p><em>(We will return to probability distributions for a thorough discussion later).</em></p>
 </div>
 <div class="section" id="bayes-theorem">
 <h2>Bayes&#8217; Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>

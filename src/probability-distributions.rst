@@ -17,17 +17,17 @@ Distributions are classified into two categories:
 
 * **continuous** -- producing *real-valued* outcomes (such as 3.14... or 2.71...)
 
-*Discrete distributions* are often indicated as :math:`Pr(X=x)`
-and *continuous distributions* as :math:`f(X=x)` both 
-satisfy the *axioms of probability*, e.g., 
-
-  1. :math:`0 \leq Pr(X=x) \leq 1` and :math:`0 \leq f(X=x) \leq 1`
-
-  ..
-
-  2. :math:`\sum_{x \in S_X} Pr(X_i=x) = 1` and :math:`\int_{-\infty}^{\infty} f(X_i=x) \; dx = 1`
-
-
+**Discrete distributions** are specified using 
+**probability mass functions** and 
+often indicated as :math:`Pr(X=x)`
+while **continuous distributions** 
+are specified using **probability density functions**
+often indicated :math:`f(X=x)` and which specify 
+the behavior of realizations :math:`x` of a random random variable :math:`X`
+in a retaliative rather than absolute manner.
+For example, 
+if :math:`f(X=x_1) = 2f(X=x_2)` then in the long-run 
+:math:`x_2` will occur *twice as frequently* as :math:`x_1`.
 If a random variable :math:`X` is distributed according to a
 distribution named :math:`XYZ` with 
 parameters :math:`\alpha` and :math:`\beta`, and so on, 
@@ -421,7 +421,7 @@ and the *mean* and *variance* of the random variable
    distributions. Play around the specifications of these distributions and
    see (a) how the mean and variance parameters of the random variables change
    and (b) how these characteristics are reflected in the random samples 
-   drawn from the distributions
+   drawn from the distributions.
 
    Note: the SciPy implementation of the gamma distribution uses the `shape and scale parameterization <https://en.wikipedia.org/wiki/Gamma_distribution>`_ rather than
    the *shape and rate parameterization*.
@@ -460,12 +460,5 @@ data model:
    * How likely are extreme values in my data?
    * Would my data reasonably look like a random sample from this distribution?
 
-
-And finally, when you begin working with actual data, some very
-practical considerations you'll eventually need to take into account and address
-are: 
-     
-   * How likely are extreme values and what should be done about them?
-   * Are there missing values and what should be done about them?
 
 

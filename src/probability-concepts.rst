@@ -210,28 +210,7 @@ defined with respect to the random variable :math:`X`
 .. math::
         Pr(X=x \in E) = Pr(\{s\in S : X(s) \in E\})
 
-There are two special cases with respect to the above definition:
 
-* **Discrete distributions** define positive probabilities for individual :math:`s\in S` so correspondingly there are actual probabilities for specific outcomes :math:`x`, i.e.,
-
-.. math::
-       Pr(X=x) = Pr(\{s\in S : X(s)=x\})
-
-..
-
-* **Continuous distributions** on the other hand (perhaps unexpectedly and paradoxically) define :math:`Pr(X=x) = 0` for every :math:`x` but have :math:`Pr(X=x \in E) \geq 0` for certain :math:`E \subseteq \mathbb{R}`.
-
-
-..
-
-*Discrete distributions* therefore utilize **probability mass functions**
-:math:`Pr(X=x)` while *continuous distributions* instead utilize 
-**probability density functions** :math:`f(X=x)` which specify
-the behavior of realizations :math:`x` of a random random variable :math:`X` 
-in a retaliative rather than absolute manner. 
-
-
-*(We will return to probability distributions for a thorough discussion later).*
 
 
 .. note::

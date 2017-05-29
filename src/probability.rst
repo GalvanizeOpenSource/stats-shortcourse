@@ -179,25 +179,7 @@ to the pattern of conditional probabilities
 where :math:`Pr(A)` is a shorthand notational convencience specifying
 :math:`Pr(X=x \in A)`.
 
-The chain rule also defines the **joint distribution**
-of a collection of random variables :math:`X_i, \; i = 1, \cdots, n` as
 
-.. math::
-   \displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i | \underset{i=1}{\overset{n}{\cap}} X_i\right)
-
-where :math:`P` specifies either 
-
-* a **probability mass function** defining :math:`Pr(X_i=x)` 
-
-* a **probability density function** :math:`f(X_i=x)` defining the *relative frequency* of potential outcome realizations of :math:`X_i`
-
-Notice that if the :math:`X_i` are *independent* of each other, then
-
-.. math::
-   \displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i\right)
-
-
-*(We will return to probability distributions for a thorough discussion later).*
 
 .. note::
 
@@ -228,27 +210,6 @@ the **Law of Total Probability** guarantees that
    into :math:`\{A_1, A_2, \cdots A_n\}` and :math:`B \subseteq S`
    to demonstrates the *Law of Total Probability*.
 
-
-Recasting the *Law of Total Probability* in terms of random variables 
-:math:`X` and :math:`Y`, we have for
-
-* **discete distributions**
-
-.. math::
-   \displaystyle Pr(X=x) = \sum_{y \in S_Y} Pr(X=x, Y=y) = \sum_{y \in S_Y} Pr(X=x|Y=y) Pr(Y=y)
-
-* **continuous distributions**
-
-.. math::
-   \displaystyle f(X=x) = \int_{y \in S_Y} f(X=x, Y=y) \;dy = \int_{y \in S_Y} f(X=x|Y=y) f(Y=y) \;dy
-
-
-The distributions 
-:math:`Pr(X=x)` and :math:`f(X=x)` are called **marginal distributions** 
-of their respective **joint distributions**, :math:`Pr(X, Y)` and 
-:math:`f(X, Y)`, respectively.
-
-*(We will return to probability distributions for a thorough discussion later).*
 
 Bayes' Theorem
 ---------------

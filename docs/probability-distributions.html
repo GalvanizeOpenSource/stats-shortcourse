@@ -96,7 +96,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#essential-continuous-distributions">Essential Continuous Distributions:</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#uniform">Uniform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#normal-or-gaussian">Normal (or, Gaussian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#normal-gaussian">Normal/Gaussian</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#less-essential-distributions">Less Essential distributions:</a><ul>
@@ -105,14 +105,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#exponential">Exponential</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#distributions-are-related">Distributions are Related</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-distribution-considerations">Data Distribution Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distributional-relationships">Distributional Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-modeling-considerations">Data Modeling Considerations</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
@@ -175,18 +175,18 @@ particular type of random process.</p>
 <li><strong>discrete</strong> &#8211; producing outcomes that can be mapped to the <em>integers</em> (such as 1, 2, ...)</li>
 <li><strong>continuous</strong> &#8211; producing <em>real-valued</em> outcomes (such as 3.14... or 2.71...)</li>
 </ul>
-<p><em>Discrete distributions</em> are often indicated as <span class="math">\(Pr(X=x)\)</span>
-and <em>continuous distributions</em> as <span class="math">\(f(X=x)\)</span> both
-satisfy the <em>axioms of probability</em>, e.g.,</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><span class="math">\(0 \leq Pr(X=x) \leq 1\)</span> and <span class="math">\(0 \leq f(X=x) \leq 1\)</span></li>
-</ol>
-<ol class="arabic simple" start="2">
-<li><span class="math">\(\sum_{x \in S_X} Pr(X_i=x) = 1\)</span> and <span class="math">\(\int_{-\infty}^{\infty} f(X_i=x) \; dx = 1\)</span></li>
-</ol>
-</div></blockquote>
-<p>If a random variable <span class="math">\(X\)</span> is distributed according to a
+<p><strong>Discrete distributions</strong> are specified using
+<strong>probability mass functions</strong> and
+often indicated as <span class="math">\(Pr(X=x)\)</span>
+while <strong>continuous distributions</strong>
+are specified using <strong>probability density functions</strong>
+often indicated <span class="math">\(f(X=x)\)</span> and which specify
+the behavior of realizations <span class="math">\(x\)</span> of a random random variable <span class="math">\(X\)</span>
+in a retaliative rather than absolute manner.
+For example,
+if <span class="math">\(f(X=x_1) = 2f(X=x_2)\)</span> then in the long-run
+<span class="math">\(x_2\)</span> will occur <em>twice as frequently</em> as <span class="math">\(x_1\)</span>.
+If a random variable <span class="math">\(X\)</span> is distributed according to a
 distribution named <span class="math">\(XYZ\)</span> with
 parameters <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span>, and so on,
 then we indicate that as</p>
@@ -331,8 +331,8 @@ and the <em>mean</em> and <em>variance</em> of the random variable
 <li><span class="math">\(Var(X) = \frac{(b-a)^2}{2}\)</span></li>
 </ul>
 </div>
-<div class="section" id="normal-or-gaussian">
-<h3>Normal (or, Gaussian)<a class="headerlink" href="#normal-or-gaussian" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="normal-gaussian">
+<h3>Normal/Gaussian<a class="headerlink" href="#normal-gaussian" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>Gaussian</strong> or <strong>normal distribution</strong>
 is a <em>continuous probability distribution</em> whose
 <em>probability density function</em> is defined as</p>
@@ -514,14 +514,14 @@ variables, try generating some samples from the other
 distributions. Play around the specifications of these distributions and
 see (a) how the mean and variance parameters of the random variables change
 and (b) how these characteristics are reflected in the random samples
-drawn from the distributions</p>
+drawn from the distributions.</p>
 <p class="last">Note: the SciPy implementation of the gamma distribution uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_distribution">shape and scale parameterization</a> rather than
 the <em>shape and rate parameterization</em>.</p>
 </div>
 </div>
 </div>
-<div class="section" id="distributions-are-related">
-<h2>Distributions are Related<a class="headerlink" href="#distributions-are-related" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="distributional-relationships">
+<h2>Distributional Relationships<a class="headerlink" href="#distributional-relationships" title="Permalink to this headline">¶</a></h2>
 <p>We have already come across a couple connections that
 exist between different distributions
 (i.e., Bernoulli/Biomial, Binomial/Poisson, and Poisson/Exponential).
@@ -534,27 +534,19 @@ than the ones we covered here.   Here is an illustration from
 <a class="reference internal image-reference" href="_images/statistical-inference-distns.jpg"><img alt="distns" src="_images/statistical-inference-distns.jpg" style="width: 1029.35px; height: 1235.85px;" /></a>
 </div>
 </div>
-<div class="section" id="data-distribution-considerations">
-<h2>Data Distribution Considerations<a class="headerlink" href="#data-distribution-considerations" title="Permalink to this headline">¶</a></h2>
-<p>In closing, when you&#8217;re
-exploring the use of probability distributions
-to model data, there are a few considerations to keep in mind for
-assessing the appropriateness of the data model:</p>
+<div class="section" id="data-modeling-considerations">
+<h2>Data Modeling Considerations<a class="headerlink" href="#data-modeling-considerations" title="Permalink to this headline">¶</a></h2>
+<p>Distributions can be used as models for your data!
+As such, there are a few standard considerations to keep in mind in
+assessing the appropriateness of a distribution as a potential
+data model:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Are my data discrete or continuous?</li>
 <li>Are my data symmetric?</li>
 <li>What limits are there on possible values for my data?</li>
-<li>Would my data look like a random sample from this distribution?</li>
-</ul>
-</div></blockquote>
-<p>And finally, when you begin working with actual data, some very
-practical considerations you&#8217;ll eventually need to take into account and address
-are:</p>
-<blockquote>
-<div><ul class="simple">
-<li>How likely are extreme values and what should be done about them?</li>
-<li>Are there missing values and what should be done about them?</li>
+<li>How likely are extreme values in my data?</li>
+<li>Would my data reasonably look like a random sample from this distribution?</li>
 </ul>
 </div></blockquote>
 </div>
