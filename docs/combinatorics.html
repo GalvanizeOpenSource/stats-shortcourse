@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Combinatorics &mdash; stats-shortcourse 1.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -35,7 +35,7 @@
         <link rel="prev" title="Probability Concepts" href="probability-concepts.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,11 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> stats-shortcourse</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,104 +73,43 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#where-are-we-going">Where are we going?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installing-python">Installing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installing-an-editor">Installing an editor</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="probability-concepts.html#sets">Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-concepts.html#further-study">Further study</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Combinatorics</a><ul>
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Combinatorics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#factorials">Factorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Combinatorics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combinations">Combinations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#permutations">Permutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#formalization">Formalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#independence">Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#a-problem">A problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#conditional-probability">Conditional probability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#probability-chain-rule">Probability Chain Rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#law-of-total-probability">Law of Total Probability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#bayes-rule">Bayes Rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#bayesian-statistics">Bayesian statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#further-resources">Further resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#properties-of-distributions">Properties of distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#rules-for-choosing-a-good-distribution">Rules for choosing a good distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#essential-distributions">Essential distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#less-essential-distributions">Less essential distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#distributions-are-related">Distributions are related</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability Distributions</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#probability-review">Probability review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#a-tale-of-two-philosophies">A tale of two philosophies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#bayes-theorem">Bayes Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#the-philosophy-of-bayesian-inference">The Philosophy of Bayesian Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#but-why">But why?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#the-pieces">The pieces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#further-study">Further study</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#pdfs-and-cdfs">PDFs and CDFs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#expectation">Expectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#variance">Variance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#id1">Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#marginal-distributions">Marginal Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#further-study">Further study</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistical-inference.html#a-motivating-example">A motivating example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#objectives">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#many-ways-to-say-the-same-thing">Many ways to say the same thing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#two-main-types-of-machine-learning-models">Two main types of machine learning models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#size-of-data">Size of data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#notation">Notation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#assumptions">Assumptions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Datascience Immersive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concluding-remarks.html#typical-day">Typical day</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concluding-remarks.html#throughout-the-cohort">Throughout the cohort</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="helpful-math.html#algebra">Algebra</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -169,56 +124,104 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Combinatorics</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/combinatorics.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/combinatorics.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="combinatorics">
 <h1>Combinatorics<a class="headerlink" href="#combinatorics" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li>The mathematics of counting, ordering, choosing sets, etc.</li>
-<li>Useful for counting events in your sample space.</li>
-</ul>
-</div></blockquote>
-<p>Counting is not only fundamental to probability, but also to Data Science, so our interest in counting things will never go away. For a good industry perspective on the importance and challenge of counting in data science see: <a class="reference external" href="http://daynebatten.com/2016/06/counting-hard-data-science/">Counting in Data Science</a></p>
+<p>Combinatorics is a branch of mathematics dedicated to figuring out how to count
+things! Specifically, the number of elements contained
+in &#8211; i.e., the <strong>cardinality</strong> &#8211; of event <span class="math">\(A\)</span>:</p>
+<div class="math">
+\[\mathbf{card}(A) = |A|\]</div>
+<p>Counting&#8217;s not so hard, you say? Think again: when it comes to ordering and
+choosing sets in complicated and clever ways things can get tricky in heartbeat.
+Be that as it may, combinatorics plays a fundamental and foundational role
+in probability as it forms the basis for assigning probabilities to events
+in many contexts. Beyond that, the need to count
+carefully and correctly is obviously a hugely important part of Data Science,
+and it&#8217;s important to have few of the &#8220;standard counting tricks&#8221; handy or
+you might make something a whole lot harder than it needs to be.
+For a good &#8220;industry perspective&#8221; on the importance and challenge of counting
+in data science check out
+<a class="reference external" href="http://daynebatten.com/2016/06/counting-hard-data-science/">Counting in Data Science</a>.</p>
 <div class="section" id="factorials">
 <h2>Factorials<a class="headerlink" href="#factorials" title="Permalink to this headline">¶</a></h2>
-<p>Count the number of ways to order a set of objects.</p>
-<p>If there are 10 lottery balls and we want draw them all, how many possible orderings are there?</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<p><strong>Factorials</strong> count the number of ways to order a set of objects.</p>
+<p>E.g., if there are 10 lottery balls (labeled 1-10) and we draw them all,
+how many possible orderings could be drawn? The answer to this question is</p>
+<ul class="simple">
+<li>there are 10 choices for the first ball</li>
+<li>9 choices for the second ball (because we&#8217;ve already drawn the first lottery ball)</li>
+<li>8 choices for the third ball (because we&#8217;ve already drawn the first two lottery balls)</li>
+<li>and so on...</li>
+</ul>
+<p>until there is only one ball left and we must pick it.
+That is, there are <span class="math">\(10*9*8*\cdots*1 = 10!\)</span>, i.e.
+<em>10 factorial</em>, possible orderings.</p>
+<p>The number <em>10 factorial</em> can be calculated in Python, but watch out: factorials get really big really fast...</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">3628800</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Combinatorics<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Number of ways to choose things when <strong>order does not matter</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<div class="section" id="combinations">
+<h2>Combinations<a class="headerlink" href="#combinations" title="Permalink to this headline">¶</a></h2>
+<p><strong>Combinations</strong> count the number of ways to choose things when
+<strong>order does not matter</strong>.  Here&#8217;s an example of all the two character
+<em>combinations</em> that can be made from the letters <cite>A</cite>, <cite>B</cite>, and <cite>C</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">combinations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[(&#39;A&#39;, &#39;B&#39;), (&#39;A&#39;, &#39;C&#39;), (&#39;B&#39;, &#39;C&#39;)]</span>
 </pre></div>
 </div>
-<p>This is also know as <cite>N</cite> choose <cite>K</cite></p>
-<p>It is the number of ways to select <cite>k</cite> objects from a pool of <cite>n</cite> objects</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
-<span class="k">def</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
+<p>The &#8220;number of combinations&#8221; problem &#8211; i.e.,
+counting the number of all possible
+unordered collections of size <cite>K</cite> from a pool of <cite>N</cite> objects &#8212;
+is often referred to as the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; problem, and the
+solution to the problem is commonly notated as</p>
+<div class="math">
+\[\begin{split}\left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}\end{split}\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p class="last">If you think about the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; solution carefully,
+you can actually see that it makes
+sense: the <span class="math">\(K!\)</span> in the denominator is the number of ways to order a list
+of length <span class="math">\(K\)</span>, whereas the <span class="math">\(\frac{N!}{(N-K)!}\)</span> is all possible
+lists of length <span class="math">\(K\)</span> where order matters.  With that in mind, see if you
+can think through why the formula counts the right thing.</p>
+</div>
+<p>If you&#8217;re still a little confused about how the counting actually works,
+don&#8217;t worry, it&#8217;s really easy to calculate combinations Python:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">factorial</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">comb</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">comb</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">comb</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">3.0</span>
 </pre></div>
@@ -226,7 +229,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lefthand_beers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Milk Stout&quot;</span><span class="p">,</span> <span class="s2">&quot;Good Juju&quot;</span><span class="p">,</span> <span class="s2">&quot;Fade to Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Polestar Pilsner&quot;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lefthand_beers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Milk Stout&quot;</span><span class="p">,</span> <span class="s2">&quot;Good Juju&quot;</span><span class="p">,</span> <span class="s2">&quot;Fade to Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Polestar Pilsner&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lefthand_beers</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;Black Jack Porter&quot;</span><span class="p">,</span> <span class="s2">&quot;Wake Up Dead Imperial Stout&quot;</span><span class="p">,</span><span class="s2">&quot;Warrior IPA&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -239,13 +242,21 @@
 </div>
 <div class="section" id="permutations">
 <h2>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h2>
-<p>Number of ways to choose things when order does matter.</p>
+<p><em>Permutations</em> counts the number of ways subsets can be chosen when
+<strong>order does matter</strong>. If you followed the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; thought exercise
+above then you won&#8217;t be surprised to learn that the number of ways to
+choose <cite>K</cite> things out of <cite>N</cite> things <strong>when order matters</strong> is</p>
+<blockquote>
+<div><span class="math">\(\displaystyle \frac{N!}{(N-K)!}\)</span></div></blockquote>
+<p>Explicitly writing out the formula makes it clear that permutations
+are just a slight variation on the factorial theme. And of
+course, once again, it&#8217;s easy to do permutations in Python:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 <span class="k">def</span> <span class="nf">permu</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">permutations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[(&#39;A&#39;, &#39;B&#39;), (&#39;A&#39;, &#39;C&#39;), (&#39;B&#39;, &#39;A&#39;), (&#39;B&#39;, &#39;C&#39;), (&#39;C&#39;, &#39;A&#39;), (&#39;C&#39;, &#39;B&#39;)]</span>
 </pre></div>
@@ -253,15 +264,16 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">On a baseball team with 12 players, how many different batting orders are there?
-(Hint: only 9 people can bat in a given order)</p>
+<p>On a baseball team with 12 players, how many different batting lineups are there?</p>
+<p class="last">Hint: there are 9 players in a lineup.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>QUICK DISCUSSION</strong></p>
-<p class="last">Explain to the person next to you the difference between
-permutations and combinations. Include in your explanation which
-one results in more possibilities.</p>
+<p><strong>PAIRED EXERCISE</strong></p>
+<p class="last">Face off against the person next to you, pitting permutations against
+combinations, and defending the dignity and honor of your position!
+No low blows are allowed, but don&#8217;t be afraid to bring size into
+the argument if you think it helps your case.</p>
 </div>
 </div>
 <div class="section" id="further-study">
@@ -276,15 +288,16 @@ one results in more possibilities.</p>
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probability.html" class="btn btn-neutral float-right" title="Probability">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probability.html" class="btn btn-neutral float-right" title="Probability" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="probability-concepts.html" class="btn btn-neutral" title="Probability Concepts"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="probability-concepts.html" class="btn btn-neutral" title="Probability Concepts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -294,12 +307,13 @@ one results in more possibilities.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Galvanize DSI.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 

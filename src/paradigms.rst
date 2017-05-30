@@ -3,188 +3,266 @@
 Bayesian Inference
 ====================================================
 
+
 Mini-objectives:
 
-1. Review Probability
-2. Discuss the philosophies
-3. Bayes Rule again
-4. Discuss Bayesian inference
+  1. Review Probability
+  2. Discuss Statistical Philosophies
+  3. Repurpose Bayes' Theorem for Distributions
+  4. Discuss Bayesian Inference
 
-Probability review	
-----------------------------
+Probability Review	
+------------------
 
-I think it is helpful to keep in mind the major types of probabilities
+Recall that we have learned about *three* probability estimands
 
-   * Joint - :math:`P(A, B)`
-   * Conditional - :math:`P(A | B)`
-   * Marginal - :math:`P(A)`
+* Joint: :math:`Pr(A, B) = Pr(A \cap B)`
+* Conditional: :math:`Pr(A | B)`
+* Marginal: :math:`Pr(A)`
      
-Check out `this nicely written page on the topic <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_
+These concepts are reviewed  `here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_ and some related practice problems are available `here <http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html>`_.
 
-Recall that
+.. note::
 
-   * :math:`P(A \cup B)` is the probability of A or B
-   * :math:`P(A \cap B)` is the probability of A and B
-
-`Try out these problems to get a better feel for things <http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html>`_
+   **QUESTION**
+   
+   What is the *conditional* probability specified in terms of 
+   *joint* and *marginal* probabilities?
      
 Conditional probability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:math:`\textrm{conditional} = \textrm{joint} / \textrm{marginal}`
-      
-:math:`P(B|A) = P(A, B) / P(A)`
-      
+Recall the exercise from yesterday
+
 .. note::
 
-   **FROM LAST CLASS**
+   **PREVIOUSLY**
 
-      * Three types of fair coins are in an urn: HH, HT, and TT
-      * You pull a coin out of the urn, flip it, and it comes up H
-      * Q: what is the probability it comes up H if you flip it a second time?
+   * Three types of fair coins are in an urn: HH, HT, and TT
+   * You pull a coin out of the urn, flip it, and it comes up H
+   * Q: what is the probability it comes up H if you flip it a second time?
 
-1. Figure out :math:`P(A \cap B)`
-2. Figure out :math:`P(A)`
-3. plug em in
+.. note::
+
+   **SOLUTION**
+
+   The way to solve this problem was to calculate
+
+   1. :math:`Pr(F_1=H, F_2=H)`
+   2. :math:`Pr(F_1=H)`
+   3. :math:`Pr(F_2=H|F_1=H) = \frac{Pr(F_1=H, F_2=H)}{Pr(F_1=H)}`
+
+   as 
+
+   :math:`\begin{eqnarray*}Pr(F_1=H \cap F_2=H) &=& \underset{c \in \{HH,HT,TT\}}{\sum}Pr(F_1=H \cap F_2=H | C=c) Pr(C=c)\\&=&1\times\frac{1}{3}+\frac{1}{4}\times\frac{1}{3}+0\times\frac{1}{3} = \frac{5}{12}\\\\\\Pr(F_1=H) &=& \underset{c \in \{HH,HT,TT\}}{\sum}Pr(F_1=H | C=c) Pr(C=c)\\&=&1\times\frac{1}{3}+\frac{1}{2}\times\frac{1}{3}+0\times\frac{1}{3} = \frac{1}{2}\\\\\\\Pr(F_2=H|F_1=H) &=& \frac{5/12}{1/2}=\frac{5}{6}\end{eqnarray*}`
    
-:math:`P(X_2 = H \cap X_1 = H)` is probability that :math:`X_1 = H` **and** :math:`X_2 = H`
-
-If you grab HH coin two head flips have probability: 1
-but you could also grab HT coin and flip heads twice, probability:
-:math:`\frac{1}{2} * \frac{1}{2} = \frac{1}{4}`
-
-Each of those has probability :math:`\frac{1}{3}`
-      
-So :math:`P(X_2 = H \cap X_1 = H) = \frac{1}{3} * (1 + \frac{1}{4}) = \frac{5}{12}`
-
-Finally :math:`P{X_1 = H}` is :math:`\frac{1}{2}`
-
-Therefore :math:`P(X_2 = H | X_1 = H) = \frac{\frac{5}{12}}{\frac{1}{2}} = \frac{5}{6}`
-
-Don't believe it? We can show this by simulation...
-
-.. code-block:: python
-
-   import random
-   import pandas as pd
-
-   coins = ['HH', 'HT', 'TT']
-   results = []
-   for i in range(10000):
-       coin = random.choice(coins)
-       results.append([random.choice(coin) for j in [1,2]])
-   df = pd.DataFrame(results, columns=['first', 'second']) == 'H'
-   df.groupby('first').mean()
-		     
-.. code-block:: none
-
-          second
-   first
-   False  0.168256
-   True   0.838502
+At this point you've seen this problem solved by *counting
+outcomes in events based on the sample space*, and now using
+the *law of total probability*. But if you're still skeptical,
+perhaps just *simulating* the experiment will help convince you:
 
 .. note::
 
-   **ANOTHER ONE**
+   **EXERCISE**
 
-   Given that it is a red card what is the probability that we draw a 4?
+   Figure out what the following code does and try it out!
+
+   .. code-block:: python
+
+     import random
+     import pandas as pd
+
+     coins = ['HH', 'HT', 'TT']
+     results = []
+     for i in range(10000):
+         coin = random.choice(coins)
+         results.append([random.choice(coin) for j in [1,2]])
+     df = pd.DataFrame(results, columns=['first', 'second']) == 'H'
+
+     # df.groupby('first').mean()
+     # 5./6
  
-   `Answer explained here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_
+More discussion about conditional probabilities can be found `here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_.
 
-A tale of two philosophies
------------------------------
-  
-* **Frequentist** - assumes that the probability of an event is result of a long-run frequency of events
-* **Bayesian** - assigns a degree of belief to an event
 
-.. note::
 
-   **DISCUSSION**
+Bayesian Inference
+------------------
 
-   Which one seems like a **better** choice for:
+**Bayesian inference** is based on the idea that *distributional parameters*
+:math:`\theta` can themselves be viewed as *random variables* with their
+own distributions.  This is distinct from the **Frequentist** perspective which
+views parameters as *known and fixed constants* to be estimated. E.g.,
+"If we measured everyone's height instantaneously, at that moment there would
+be *one true average height* in the population."  Regardless of one's philosophical
+perspective, both approaches have value in practice.
 
-      * Probability of a car accident given a city
-      * Predicting the result of an election
-      * Predicting user behavior (e.g. A/B testing)
-      * Identifying students with low test scores
-   
-* `Breast cancer subtype and ethnicity? <http://www.ncbi.nlm.nih.gov/pubmed/26454611>`_
-* *TO REMEMBER* -- Are we making conclusions about a population in nature or about an individual?
-* *TO REMEMBER* -- Neither of these philosophies are better in all cases
+The key computational step in the Bayesian framework is deriving the posterior
+distribution, which is done using the same formula as Bayes' theorem
 
-   "All models are wrong, but some are useful" --George Box
-   
-Bayes Theorem
-----------------
+.. math::
 
-   :math:`P(A|B) = \frac{P(B|A)P(A)}{P(B)}`    
+   P(\theta|X) = \frac{P(X|\theta)P(\theta)}{P(X)}
 
-   :math:`P(\theta|x) = \frac{P(x|\theta)P(\theta)}{P(x)}`    
+which is comprised of
 
-The **posterior** is proportional to the **likelihood** times the **prior** distribution
+* :math:`P(\theta|X)` -- the **posterior distribution**
+* :math:`P(X|\theta)` -- the **likelihood function**
+* :math:`P(\theta)` -- the **prior distribution**
+* :math:`P(X)` -- the **marginal likelihood**
 
-Bayesian inference works by combining information about parameters :math:`\theta` contained in the observed data :math:`x` as quantified in the likelihood function :math:`p(x|\theta)`.  Classical statistics works by making inference about a single point, while Bayesian inference works on the whole distribution.  Parameters through the Bayesian lens are treated as random variables described by distributions.
-  
-The Philosophy of Bayesian Inference
-----------------------------------------
+While the *posterior distribution* is the central estimand in Bayesian statistics,
+the likelihood function is the central piece of machinery in a Frequentist context.
+But as you can see from the formula, the posterior is simply a kind of
+"re-weighting" of the likelihood function.  The re-weighting is accomplished
+by striking a balance between the *likelihood function* and the
+*prior distribution*. The *prior* distribution represents our belief about the
+parameter prior to seeing the data, while the *likelihood function* tells us
+what the data implies about the parameter -- and then these two perspectives
+are reconciled.  The *marginal likelihood* turns out to just be a constant which
+ensures that the posterior is a *probability mass function* or a *probability
+density function* (i.e., sums to one or has area one).  As such, in many
+contexts the *marginal likelihood* simply represents a formality that is not
+crucial to the posterior calculation; however, sometimes it is required and
+can be difficult to obtain.  Interestingly, the *marginal likelihood* can be
+used for Bayesian model selection, so for some tasks it is an estimand of
+primary importance.
 
-You are a skilled programmer, but bugs still slip into your code. After a particularly difficult implementation of an algorithm, you decide to test your code on a trivial example. It passes. You test the code on a harder problem. It passes once again. And it passes the next, *even more difficult*, test too! You are starting to believe that there may be no bugs in this code...
-
-But why?
--------------
-
-* **Numerical Tractability** - can make hard problems *easier*
-* **Absence of Asymptotics** - What *really* is a large number?
-* **Ease of Error Propagation** - Dealing in uncertainty
-* **Formal framework for combining information** - prior
-* **Intuitive appeal** - interpretation is more intuitive
-* **Everything is probabilities**
-
-Then why isn't everyone a Bayesian?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* **Subjective** by nature
-* **Great for complex models, but** is the overhead necessary?
-* **Accessibility** - Many of the books out there are difficult reads
-* Requires a deeper understanding of your model
-* Implementations can quickly get hairy
-
-Is the Bayesian paradigm more naturally aligned with the way we think?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Flip a coin, but I saw how it was going to land
-* Code has a bug or not---are you certain?
-* A doctor has a **belief** about a diagnosis based on symptoms and experience
-
-The pieces
+Statistical Paradigms
 ---------------------
 
-* **prior** - :math:`P(\theta)` - one's beliefs about a quantity before presented with evidence 
-* **posterior** - :math:`P(\theta|x)` - probability of the parameters given the evidence
-* **likelihood** - :math:`P(x|\theta)`  - probability of the evidence given the parameters
-* **normalizing constant** - :math:`P(x)`
+**Bayesian inference** works by updating the belief about the parameters 
+:math:`\theta` encoded in the *prior distribution* with the information 
+contained in the observed
+data :math:`x` about the parameters as quantified in the *likelihood function*.
+This updated belief -- called the *posterior distribution -- 
+can serve as the next "prior" for the subsequent collection
+of additional data, and can itself be updated, and so on.
+The updated belief is always encoded as a probability distribution,
+so statements of belief about parameters are made using probability
+statements. In contrast, **Classical** (or **Frequentist**) **statistics** 
+instead focusses 
+on characterizing uncertainty in parameter estimation procedures that 
+results from random sampling variation. I.e., *Frequentist statistics*
+statistics never makes statements about *parameters*, but instead makes
+statements about probabilities (long-run frequency rates) of
+*estimation procedures*.  
+
+Arguments for Bayesian Analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **Ease of Interpretation:**  
+  making probability statements about parameters of interest 
+  is much simpler than trying to perform hypothesis* testing
+  by interpreting p-values* and 
+  confidence intervals* *(*to be discussed later).*
+
+..
+
+* **No "Large Sample" Requirements**:
+  the accuracy of many Frequentist results rely upon asymptotic distributional
+  results that require a "large sample size" -- the actual quantity 
+  of which often remains unclear -- whereas Bayesian analysis 
+  is a fully coherant probabilistic framework regardless of sample size.
+
+..
+
+* **Integrated Probabilistic Framework:**
+  Bayesian analysis provides a hierarchical modeling framework that 
+  definitionally characterizes and propagates all the
+  modeled uncertainty into parameter estimation. 
+
+..
+
+* **Ability to Utilize Prior Information:** 
+  the Bayesian framework naturally provides a way to 
+  combine information, or *learn*; **however,
+  the ability to input (potentially) arbitrary information
+  into analysis via the prior means objectivity can be sacrificed for
+  subjectivity.** 
+
+..
+
+* **Natural Framework for Regularization:**
+  the prior distribution of a Bayesian specification can 
+  be used to perform *regularization*, i.e., stabilize 
+  model fitting procedures so that they are less prone to 
+  overfitting data.
+
+.. 
+
+* **Complex Data Modeling:**
+  Bayesian analysis provides -- via computational techniques -- 
+  the ability to develop and use 
+  more complicated modeling specifications than
+  can be evaluated and use with classical statistical techniques;
+  however, such approaches can be computationally demanding.  
+  
+  *In general, Bayesian computation is more expensive than Frequentist
+  computation as there tends to be a lot of overhead. Also, complex
+  models are not always preferable: (a) they require practitioners
+  with more advanced skill sets, (b) they will be more difficult to implement 
+  correctly, and (c) simple solutions can outperform complex solutions
+  at a fraction of total development and computational costs*
+
+ 
+
+.. note::
+
+   **CLASS DISCUSSION**
+
+   What do you appreciate most about the *Bayesian philosophy*?
+
+   What do you appreciate about the *Frequentist philosophy*?
+
+   
+
+Are YOU a Bayesian?
+-------------------
+
+.. note::
+
+   **CLASS DISCUSSION**
+
+  * You're playing poker to win (like your life depends on it), and the
+    person you're bidding against just tipped his hand a little too low and
+    you've seen his cards...
+
+  * You're a skilled programmer, but bugs still slip into your code. After a 
+    particularly difficult implementation of an algorithm, you decide to test 
+    your code on a trivial example. It passes. You test the code on a harder 
+    problem. It passes once again. And it passes the next, *even more difficult*, 
+    test too! You are starting to believe that there may be no bugs in this code...
+
+  * You're a doctor who as a **belief** about a diagnosis based on symptoms 
+    and experience..
+
+
 
 .. note::
      
-   **EXERCISE**
+   **Are yOU SURE you're a Bayesian?**
 
    Without looking...
 
-   Write Bayes formula and talk about the pieces in terms of parameters and evidence
+   Write Bayes' theorem and talk about the different components 
+   that comprise the theorem with respect to parameters and evidence.
 
-Don't forget about the :doc:`Bayes example in the previous section <probability>`
    
 Further study
 ------------------
 
-There is a lot so try not to get overwhelmed.  I feel that these two
-resources are excellent entry points.  The thrid resource is a good
-place to start if you want to start working with Bayesian models.
-
-* `Probabilistic Programming and Bayesian Methods for Hackers <https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers>`_ by `Cameron Davidson-Pilon <https://github.com/CamDavidsonPilon>`_
+If *you do* actually want to be a Bayesian -- fear not -- you can!
+Programming in the Bayesian landscape has become incredibly easy
+though the use of *probabilistic programming*.
+Here are several outstanding resources available 
+that you can use to start learning more about Bayesian analysis: 
 
 * `Entry level intro posted through kdnuggets <http://www.kdnuggets.com/2016/12/datascience-introduction-bayesian-inference.html>`_
 
-Programming in the Bayesian landscape has become easier as a result of the use of probabilistic programming.
+* `Probabilistic Programming and Bayesian Methods for Hackers <https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers>`_ by `Cameron Davidson-Pilon <https://github.com/CamDavidsonPilon>`_
 
 * `A repository introducing probabilistic programming in Python <https://github.com/GalvanizeOpenSource/probabilistic-programming-intro>`_
+
+
+

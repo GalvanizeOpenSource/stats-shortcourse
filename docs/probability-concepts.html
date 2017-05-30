@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Probability Concepts &mdash; stats-shortcourse 1.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -35,7 +35,7 @@
         <link rel="prev" title="Getting started" href="getting-started.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,11 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> stats-shortcourse</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stats-shortcourse
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,104 +73,47 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#where-are-we-going">Where are we going?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installing-python">Installing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installing-an-editor">Installing an editor</a></li>
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Probability Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#experiments">Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-operations">Set Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#demorgan-s-laws">DeMorgan&#8217;s Laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#random-variables">Random Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#putting-it-all-together">Putting It All Together</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Probability Concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sets">Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="combinatorics.html#factorials">Factorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="combinatorics.html#id1">Combinatorics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="combinatorics.html#permutations">Permutations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="combinatorics.html#further-study">Further study</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#formalization">Formalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#independence">Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#a-problem">A problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#conditional-probability">Conditional probability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#probability-chain-rule">Probability Chain Rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#law-of-total-probability">Law of Total Probability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#bayes-rule">Bayes Rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#bayesian-statistics">Bayesian statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability.html#further-resources">Further resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability distributions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#properties-of-distributions">Properties of distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#rules-for-choosing-a-good-distribution">Rules for choosing a good distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#essential-distributions">Essential distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#less-essential-distributions">Less essential distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probability-distributions.html#distributions-are-related">Distributions are related</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability Distributions</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#probability-review">Probability review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#a-tale-of-two-philosophies">A tale of two philosophies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#bayes-theorem">Bayes Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#the-philosophy-of-bayesian-inference">The Philosophy of Bayesian Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#but-why">But why?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#the-pieces">The pieces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paradigms.html#further-study">Further study</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#pdfs-and-cdfs">PDFs and CDFs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#expectation">Expectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#variance">Variance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#id1">Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#marginal-distributions">Marginal Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics-concepts.html#further-study">Further study</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistical-inference.html#a-motivating-example">A motivating example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#objectives">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#many-ways-to-say-the-same-thing">Many ways to say the same thing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#two-main-types-of-machine-learning-models">Two main types of machine learning models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#size-of-data">Size of data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#notation">Notation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression-classification-metrics.html#assumptions">Assumptions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concluding-remarks.html#typical-day">Typical day</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concluding-remarks.html#throughout-the-cohort">Throughout the cohort</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="helpful-math.html#algebra">Algebra</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -169,94 +128,169 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Probability Concepts</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/probability-concepts.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/probability-concepts.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="probability-concepts">
 <h1>Probability Concepts<a class="headerlink" href="#probability-concepts" title="Permalink to this headline">¶</a></h1>
-<p>Probability is the discipline of mathematics designed to deal with random pheonomena.</p>
+<p>Probability is a discipline of mathematics that studies analytical formulations
+of uncertainty that can be used characterize random phenomenon.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>EXERCISE</strong></p>
-<p>Think of an example of a random phenomenon.</p>
-<p class="last">Talk with somebody next to you about whether it&#8217;s possible to predict a
-random phenomenon?</p>
+<p><strong>PAIRED EXERCISE</strong></p>
+<p class="last">Team up with the person next to you and come up with examples of two
+kinds of random phenomenon &#8211; one that seems like it could be predicted
+and one that seems like it would be difficult to predict.</p>
 </div>
-<div class="section" id="sets">
-<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="sample-space">
-<h3>Sample space<a class="headerlink" href="#sample-space" title="Permalink to this headline">¶</a></h3>
-<p>A set containing the range of all possible outcomes or events, also called the <strong>sample space</strong>.</p>
+<div class="section" id="experiments">
+<h2>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>sample space</strong> <span class="math">\(S\)</span> is a collection, specified as a mathematical set</p>
+<div class="math">
+\[\{x_1, x_2, \cdots, x_p\}\]</div>
+<p>of all possible <strong>outcomes</strong></p>
+<div class="math">
+\[x_j, \; j= 1, 2 \cdots, p\]</div>
+<p>that might be realized by some <strong>experiment</strong> measuring a random phenomenon.</p>
+<p>An <strong>event</strong> <span class="math">\(E\)</span> is a meaningful subset of potential outcomes
+of the experiment <span class="math">\(E \subseteq S\)</span> that is said to <em>have occured</em> for a realized outcome of the experiment <span class="math">\(x^*\)</span>
+if <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)</span>, i.e.,</p>
+<div class="math">
+\[x^* \in E\]</div>
+<p><strong>Experiments</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>Coin flips, die rolls, cards in deck</li>
-<li>Cookies, jelly beans, teachers, meetups</li>
-<li>Heights, weights, volumes, temperatures, distances</li>
-<li>Number of cups of coffee consumed before before 10 am</li>
-<li>Number of beers...</li>
+<li>flip ten coins, roll two dice, draw a card from a deck</li>
+<li>take a cookie from a cook jar, evalute an instructor, attend a meetup</li>
+<li>measure heights, weights, volumes, temperatures, or distances</li>
+<li>count the number of cups of coffee consumed before before 10 am</li>
+<li>count the number of beers consumed on the Friday before a stats workshop</li>
+</ul>
+</div></blockquote>
+<p><strong>Outcomes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>ten sequential coin flips, two die rolls, a card from a deck</li>
+<li>a cookies, an instructor evaluation, teachers, the name of an attended meetup</li>
+<li>A heights, a weight, a volumes, a temperature, or a distance</li>
+<li>a number</li>
+<li>hopfully a number</li>
+</ul>
+</div></blockquote>
+<p><strong>Events</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;Half heads&#8221;, &#8220;Odds&#8221;, &#8220;Spades&#8221;</li>
+<li>&#8220;With Chips&#8221;, &#8220;Boring&#8221;, &#8220;Data Science related meetup&#8221;</li>
+<li>&#8220;Tall people&#8221; (&gt;6 ft), &#8220;Small people&#8221; (&lt;100 lbs), &#8220;Not full milk&#8221; (&lt;1 G), &#8220;Frozen water (&lt;32 F)&#8221;, &#8220;close&#8221; (&lt;2 mi)</li>
+<li>&#8220;&lt;2 cups of coffee before before 10 am&#8221;</li>
+<li>&#8220;NA&#8221;</li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>EXERCISE</strong></p>
-<p class="last">Talk with someone next to you about possible sample spaces for the
-above examples</p>
+<p><strong>TEAM EXERCISE</strong></p>
+<p class="last">Work with your neighbors to list out possible sample spaces for the
+above examples.</p>
 </div>
 </div>
 <div class="section" id="set-operations">
-<h3>Set Operations<a class="headerlink" href="#set-operations" title="Permalink to this headline">¶</a></h3>
-<p>Union: <span class="math">\(A \cup B = \{x: x \in A \vee x\in B\}\)</span></p>
-<blockquote>
-<div>It is the event that <strong>either</strong> <span class="math">\(A\)</span> or <span class="math">\(B\)</span> or both occurs.</div></blockquote>
-<p>Intersection: <span class="math">\(A \cap B = \{x: x \in A \wedge x\in B\}\)</span></p>
-<blockquote>
-<div>It is the event that <strong>both</strong> <span class="math">\(A\)</span> and <span class="math">\(B\)</span> simultaneously.</div></blockquote>
-<p>Difference: <span class="math">\(A \setminus B = \{x: x \in A \wedge x \notin B\}\)</span></p>
-<p>Complement: <span class="math">\(A^C = \{x: x\notin A\}\)</span></p>
-<p>The null (empty) set: <span class="math">\(\emptyset\)</span></p>
+<h2>Set Operations<a class="headerlink" href="#set-operations" title="Permalink to this headline">¶</a></h2>
+<p>For events <span class="math">\(A\)</span> and <span class="math">\(B\)</span>
+defined on the sample space <span class="math">\(S\)</span> of an experiment</p>
+<ul>
+<li><p class="first">Union: <span class="math">\(A \cup B = \{x: x \in A \text{ or } x\in B\}\)</span></p>
+<p>is the event where  <strong>either</strong> event <span class="math">\(A\)</span> or event <span class="math">\(B\)</span> or both occur</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Intersection: <span class="math">\(A \cap B = \{x: x \in A \text{ and } x\in B\}\)</span></p>
+<p>is the event where <strong>both</strong> the event <span class="math">\(A\)</span> and the event <span class="math">\(B\)</span> occur</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Difference: <span class="math">\(A \setminus B = \{x: x \in A \text{ and } x \notin B\}\)</span></p>
+<p>is the event where <strong>only</strong> the event <span class="math">\(A\)</span> occurs <strong>but not</strong> the event <span class="math">\(B\)</span></p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Complement: <span class="math">\(\overline A = A^C = \{x: x\notin A\}\)</span></p>
+<p>is the event that event <span class="math">\(A\)</span> <strong>does not</strong> occur</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">The Null (Empty) Set: <span class="math">\(\emptyset\)</span></p>
+<p>is the event that contains no outcomes, which can&#8217;t happen
+if the experiment is run</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>TEAM EXERCISE</strong></p>
+<p class="last">Team up with your neighbors and have each person give an example
+event (for a hypothetical experiment) based a <em>Union</em>, <em>Intersection</em>,
+<em>Difference</em>, or <em>Complement</em>. As a group, respond with an
+experimental outcome under which the example event occured.</p>
 </div>
-<div class="section" id="demorgan-s-law-s">
-<h3>DeMorgan&#8217;s Law&#8217;s<a class="headerlink" href="#demorgan-s-law-s" title="Permalink to this headline">¶</a></h3>
-<p>De Morgan&#8217;s laws says:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>The complement of the union of two sets is the same as the intersection of their complements</li>
-<li>The complement of the intersection of two sets is the same as the union of their complements</li>
-</ol>
-</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>QUESTION</strong></p>
+<p class="last">How does the <em>Null Set</em> relate to <em>Unions</em>, <em>Intersections</em>,
+<em>Differences</em>, and <em>Complements</em>?</p>
+</div>
+</div>
+<div class="section" id="demorgan-s-laws">
+<h2>DeMorgan&#8217;s Laws<a class="headerlink" href="#demorgan-s-laws" title="Permalink to this headline">¶</a></h2>
+<p>(The next best thing to Bayes&#8217; rule and rum)</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/De_Morgan's_laws">De Morgan&#8217;s laws</a> are tautologies that say for events <span class="math">\(A\)</span> and <span class="math">\(B\)</span>:</p>
+<p>1. The complement of the union of two sets is the same as
+the intersection of their complements:</p>
+<div class="math">
+\[\neg (A \vee B) \iff \neg A \wedge \neg B\]</div>
+<p>2. The complement of the intersection of two sets is the same as
+the union of their complements:</p>
+<div class="math">
+\[\neg (A \wedge B) \iff \neg A \vee \neg B\]</div>
+<p>where the expressions utilize the standard logic notation
+of <span class="math">\(\vee\)</span> and <span class="math">\(\wedge\)</span> for the
+<cite>or</cite> and <cite>and</cite> operators, respectively,
+and <span class="math">\(\neg\)</span> for the negation operator (&#8220;not&#8221;).</p>
+<p>The truthfulness of DeMorgan&#8217;s laws can be examined using a
+<strong>Venn diagram</strong>:</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/Demorganlaws.png"><img alt="demorgans-laws" src="_images/Demorganlaws.png" style="width: 450.0px; height: 600.0px;" /></a>
 </div>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/De_Morgan's_laws">https://en.wikipedia.org/wiki/De_Morgan&#8217;s_laws</a></p>
-<p><span class="math">\(\neg (A \vee B) \iff \neg A \wedge \neg B\)</span></p>
-<p><span class="math">\(\neg (A \wedge B) \iff \neg A \vee \neg B\)</span></p>
-<p>The <span class="math">\(\vee\)</span> and <span class="math">\(\wedge\)</span> refers to the logical
-<cite>or</cite> and the logical <cite>and</cite>.  Also <span class="math">\(\neg\)</span> is the
-negation logic operator (NOT)</p>
-<p>Another useful notation is <span class="math">\(\mathbf{card}(A)\)</span> which is the <em>cardinality</em> or number of elements in <cite>A</cite></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p>Copy the following 3 lines into a python interpreter, ipython session or script.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">])</span>
+<p>Copy the following 3 lines into a python interpreter, ipython session or script</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample_space</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="s2">&quot;G&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>This is how you perform set operations in Python</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<p>and try out these set operations</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="go">set([&#39;C&#39;, &#39;D&#39;])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="go">set([&#39;A&#39;, &#39;B&#39;])</span>
@@ -265,37 +299,23 @@ negation logic operator (NOT)</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">complement_a</span> <span class="o">=</span> <span class="n">sample_space</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="last">Can you show that De Morgan&#8217;s laws work in Python?</p>
+<p class="last">Can you give an example of De Morgan&#8217;s laws in Python?</p>
 </div>
 </div>
 <div class="section" id="random-variables">
-<h3>Random variables<a class="headerlink" href="#random-variables" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul>
-<li><p class="first">Random variables map events from our sample space into real numbers.</p>
-</li>
-<li><dl class="first docutils">
-<dt>The set for a random variable occurs in real space</dt>
-<dd><p class="first last"><span class="math">\(X(s) : S\Rightarrow \Re\)</span></p>
-</dd>
-</dl>
-</li>
-<li><p class="first">Capital letters refer to random variables.</p>
-</li>
-<li><dl class="first docutils">
-<dt>Lowercase to refer to specific realization.</dt>
-<dd><p class="first last"><span class="math">\(P(X=x) = P(\{s\in S : X(s) = x\})\)</span></p>
-</dd>
-</dl>
-</li>
-<li><p class="first"><span class="math">\(X \sim XYZ(\alpha, \beta, ...)\)</span> means X is distributed as, XYZ with parameters.</p>
-</li>
-<li><p class="first">&#8220;i.i.d.&#8221;</p>
-</li>
-<li><p class="first">We denote the probability of X as P(X)</p>
-</li>
-</ul>
-</div></blockquote>
+<h2>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this headline">¶</a></h2>
+<p>A random variable <span class="math">\(X\)</span> is a function that maps outcomes <span class="math">\(s\)</span> from its sample space <span class="math">\(S\)</span> onto the real numbers <span class="math">\(x \in \mathbb{R}\)</span>, i.e.,</p>
+<div class="math">
+\[X(s) : S\rightarrow \in \mathbb{R}\]</div>
+<p>where standard notation utilizes capital letters for random variables,
+and lowercase letters for actualized observations (realizations) of
+random variables.</p>
+<p>The realizations <span class="math">\(x\)</span> of a random random variable <span class="math">\(X\)</span> are
+dictated by the probabilities assigned to the outcomes comprising the
+sample space <span class="math">\(S\)</span>. I.e., for some event <span class="math">\(E \subseteq \mathbb{R}\)</span>
+defined with respect to the random variable <span class="math">\(X\)</span></p>
+<div class="math">
+\[Pr(X=x \in E) = Pr(\{s\in S : X(s) \in E\})\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>QUESTION</strong></p>
@@ -303,50 +323,62 @@ negation logic operator (NOT)</p>
 algebraic expression?</p>
 </div>
 <p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/random-variables">Random variables (Khan academy)</a></p>
-<div class="section" id="putting-it-together">
-<h4>Putting it together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h4>
-<p>Lets see how well we can put these concepts together by doing some exercises using the concepts we&#8217;ve learned.  This exercise also introduce the idea of mutual exclusivity.  If outcomes A and B cannot happen at the same time then <span class="math">\(P (A \cup B) = P (A) + P (B)\)</span>.</p>
+<div class="section" id="putting-it-all-together">
+<h3>Putting It All Together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s challenge our understanding by using the
+concepts we&#8217;ve learned along with a new idea
+called <strong>mutual exclusivity</strong>:
+two events <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are said to be <em>mutually exclusive</em> if</p>
+<div class="math">
+\[Pr (X=x \in A \cup B) = Pr(X=x \in A) + Pr(X=x \in B)\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p>Lets use cholesterol ranges as an example.  Given that,</p>
+<p>Let <span class="math">\(X\)</span> be a random variable which measures cholesterol
+and <span class="math">\(x\)</span> an actual cholesterol measurement and define
+the following three events</p>
 <div class="math">
-\[A = (250 \leq chol \leq 299)\]</div>
+\[A = \{chol: 250 \leq chol \leq 300\}\]</div>
 <div class="math">
-\[B = (chol \geq 300)\]</div>
+\[B = \{chol: chol &gt; 300\}\]</div>
 <div class="math">
-\[C = (chol \leq 280)\]</div>
-<p><span class="math">\(A\)</span> and <span class="math">\(B\)</span> are <strong>mutually exclusive</strong>, but <span class="math">\(A\)</span> and <span class="math">\(C\)</span> are not.</p>
-<ol class="last arabic simple">
-<li>Discuss what it means to be mutually exclusive</li>
-<li>What is the union of sets <span class="math">\(A\)</span> and <span class="math">\(C\)</span>?
-<span class="math">\((A \cup B)\)</span> = ?</li>
-<li>If <span class="math">\(P(A) = 0.2\)</span>, and <span class="math">\(P(B) = 0.1\)</span> then <span class="math">\(P(chol \geq 250)\)</span> = ?</li>
-<li>If <span class="math">\(P(A) = .3\)</span> and <span class="math">\(P(C)=.2\)</span> then what would you need to know to calculate <span class="math">\(P(chol \leq 299)\)</span>?</li>
+\[C = \{chol: chol \leq 280\}\]</div>
+<p>where <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are <em>mutually exclusive</em>, but <span class="math">\(A\)</span> and <span class="math">\(C\)</span> are not.</p>
+<ol class="arabic simple">
+<li>Discuss what it means to be mutually exclusive.</li>
 </ol>
-</div>
+<ol class="arabic simple" start="2">
+<li>What is the union of sets <span class="math">\(A\)</span> and <span class="math">\(C\)</span>?
+And how about <span class="math">\((A \cup B)\)</span> = ?</li>
+</ol>
+<p>3. If <span class="math">\(Pr(X=x\in A) = 0.2\)</span> and <span class="math">\(Pr(X=x\in B) = 0.1\)</span>,
+then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</p>
+<ol class="last arabic simple" start="4">
+<li>If <span class="math">\(P(X=x\in A) = .3\)</span> and <span class="math">\(P(X=x\in C)=.2\)</span>, then what would you need to know to calculate <span class="math">\(P(X=x \leq 300)\)</span>?</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="section" id="further-study">
 <h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
-<p>If you want to learn more about working with sets in Python</p>
+<p>If you want to learn more about working with sets in Python, see:</p>
 <p><a class="reference external" href="https://www.programiz.com/python-programming/set">https://www.programiz.com/python-programming/set</a></p>
-<p>If you want more about sets and set operations in general then check out the Khan academy video series on sets</p>
+<p>If you want more about sets and set operations in general then check out the Khan academy video series on sets, see:</p>
 <p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/v/intersection-and-union-of-sets">https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/v/intersection-and-union-of-sets</a></p>
 </div>
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="combinatorics.html" class="btn btn-neutral float-right" title="Combinatorics">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="combinatorics.html" class="btn btn-neutral float-right" title="Combinatorics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting-started.html" class="btn btn-neutral" title="Getting started"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting-started.html" class="btn btn-neutral" title="Getting started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -356,12 +388,13 @@ algebraic expression?</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Galvanize DSI.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 

@@ -4,44 +4,94 @@
 Combinatorics
 ====================
 
-   * The mathematics of counting, ordering, choosing sets, etc.
-   * Useful for counting events in your sample space.
+Combinatorics is a branch of mathematics dedicated to figuring out how to count
+things! Specifically, the number of elements contained 
+in -- i.e., the **cardinality** -- of event :math:`A`:
 
-Counting is not only fundamental to probability, but also to Data Science, so our interest in counting things will never go away. For a good industry perspective on the importance and challenge of counting in data science see: `Counting in Data Science <http://daynebatten.com/2016/06/counting-hard-data-science/>`_
+.. math::
+   \mathbf{card}(A) = |A|
+
+Counting's not so hard, you say? Think again: when it comes to ordering and 
+choosing sets in complicated and clever ways things can get tricky in heartbeat.
+Be that as it may, combinatorics plays a fundamental and foundational role 
+in probability as it forms the basis for assigning probabilities to events
+in many contexts. Beyond that, the need to count
+carefully and correctly is obviously a hugely important part of Data Science,
+and it's important to have few of the "standard counting tricks" handy or 
+you might make something a whole lot harder than it needs to be.  
+For a good "industry perspective" on the importance and challenge of counting 
+in data science check out 
+`Counting in Data Science <http://daynebatten.com/2016/06/counting-hard-data-science/>`_.  
+
+
      
 Factorials
 --------------
 
-Count the number of ways to order a set of objects. 
+**Factorials** count the number of ways to order a set of objects. 
 
-If there are 10 lottery balls and we want draw them all, how many possible orderings are there?
+E.g., if there are 10 lottery balls (labeled 1-10) and we draw them all, 
+how many possible orderings could be drawn? The answer to this question is
+
+* there are 10 choices for the first ball
+* 9 choices for the second ball (because we've already drawn the first lottery ball)
+* 8 choices for the third ball (because we've already drawn the first two lottery balls)
+* and so on...
+
+until there is only one ball left and we must pick it.
+That is, there are :math:`10*9*8*\cdots*1 = 10!`, i.e.
+*10 factorial*, possible orderings.
+
+The number *10 factorial* can be calculated in Python, but watch out: factorials get really big really fast...
 
 >>> import math
 >>> math.factorial(10)
 3628800
 
-Combinatorics
+Combinations
 --------------------------------
 
-Number of ways to choose things when **order does not matter**
+**Combinations** count the number of ways to choose things when 
+**order does not matter**.  Here's an example of all the two character
+*combinations* that can be made from the letters `A`, `B`, and `C`:
 
 >>> from itertools import combinations
 >>> list(combinations("ABC",2))
 [('A', 'B'), ('A', 'C'), ('B', 'C')]
 
-This is also know as `N` choose `K`
+The "number of combinations" problem -- i.e., 
+counting the number of all possible 
+unordered collections of size `K` from a pool of `N` objects --- 
+is often referred to as the "`N` choose `K`" problem, and the 
+solution to the problem is commonly notated as  
 
-It is the number of ways to select `k` objects from a pool of `n` objects
+.. math::
+    \left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}
 
-.. code-block:: python
+.. note:: 
 
-   from math import factorial		
-   def comb(n, k):
-       return factorial(n) / (factorial(k) * factorial(n - k))
+   **EXERCISE**
+
+   If you think about the "`N` choose `K`" solution carefully, 
+   you can actually see that it makes
+   sense: the :math:`K!` in the denominator is the number of ways to order a list 
+   of length :math:`K`, whereas the :math:`\frac{N!}{(N-K)!}` is all possible
+   lists of length :math:`K` where order matters.  With that in mind, see if you
+   can think through why the formula counts the right thing.
+
+If you're still a little confused about how the counting actually works,
+don't worry, it's really easy to calculate combinations Python:
+
+>>> from math import factorial		
+>>> def comb(n, k):
+... 	return factorial(n) / (factorial(k) * factorial(n - k))
 
 >>> from scipy.misc import comb
 >>> comb(3,2)
 3.0
+
+
+
 
 .. note:: 
 
@@ -58,7 +108,16 @@ Source: `<lefthandbrewing.com/beers>`_
 Permutations
 ----------------
 
-Number of ways to choose things when order does matter.
+*Permutations* counts the number of ways subsets can be chosen when 
+**order does matter**. If you followed the "`N` choose `K`" thought exercise 
+above then you won't be surprised to learn that the number of ways to 
+choose `K` things out of `N` things **when order matters** is 
+
+    :math:`\displaystyle \frac{N!}{(N-K)!}`
+
+Explicitly writing out the formula makes it clear that permutations 
+are just a slight variation on the factorial theme. And of
+course, once again, it's easy to do permutations in Python:
 
 .. code-block:: python
 		
@@ -74,19 +133,27 @@ Number of ways to choose things when order does matter.
 
    **EXERCISE**
 
-   On a baseball team with 12 players, how many different batting orders are there?
-   (Hint: only 9 people can bat in a given order)
+   On a baseball team with 12 players, how many different batting lineups are there?
+   
+   Hint: there are 9 players in a lineup.
 
 .. note::
 
-   **QUICK DISCUSSION**
+   **PAIRED EXERCISE**
 
-   Explain to the person next to you the difference between
-   permutations and combinations. Include in your explanation which
-   one results in more possibilities.
+   Face off against the person next to you, pitting permutations against 
+   combinations, and defending the dignity and honor of your position!
+   No low blows are allowed, but don't be afraid to bring size into
+   the argument if you think it helps your case.
+
+
+
+.. Explain to the person next to you the difference between
+.. permutations and combinations. Include in your explanation which
+.. one results in more possibilities.
    
 Further study
-------------------
+-------------
 
    * `Khan academy video <https://www.khanacademy.org/math/precalculus/prob-comb/combinations/v/introduction-to-combinations>`_
    * `Khan academy practice <https://www.khanacademy.org/math/precalculus/prob-comb/combinations/e/permutations_and_combinations_2>`_

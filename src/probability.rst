@@ -3,200 +3,300 @@
 Probability
 =============
 
-Probability provides the mathematical tools we use to model randomness:
+Probability provides the mathematical tools we use to model 
+and describe randomness. The likeliness of a random event is 
+characterized either in terms of 
 
-   * Probability tells us how likely an event (Frequentist) or what
-     our degree of beliefs in an event is (Bayesian)
-   * Provides the foundation for statistics and machine learning
-   * Often our intuitions about randomness are incorrect because we live
-     only one realization
-   * Enumerating all possible outcomes (using combinatorics) can help us
-     compute the probability of an event
+   * Long term frequency behavior, 
+     if viewed from a *Frequentist* perspective
+   * Our degree of belief expressed as a probability, 
+     if viewed from a *Bayesian* perspective
+
+*(We will return to a discussion between these two paradigms later).*
+
+Naturally, probability provides the foundation for statistics and machine learning
+as all (good) data analyses seek to identifiy patterns in data 
+*while accounting for* the random sampling and measurement variation 
+present in data populations under consideration. 
+Perhaps counterintuitively, while probability statements seem easy to express and
+interpret, our intuitions about randomness are often incorrect. This is because in
+actual life we only live one realization of the randomness and don't experience
+all the *counterfactual* outcomes that actually could have occured 
+(but didn't actualize in our timeline).  To protect ourselves against faulty 
+intuition, we need to approach probability problems using a methodical and 
+objective framework that computes event probabilities by enumerating all 
+possible outcomes (using combinatorics).
+
+.. note::
+	 
+   **EXERCISE**
+
+   1. What is the probability of a Queen in a 52 card deck?
+   2. What is the probability of a Queen or a King?
+   3. What is the probability of a Queen or a spade?
+
 
 Formalization
 ---------------
 
-Lets lay out some rules.
+There are three *axioms of probability*.
 
-For some sample space `S`, a probability function `P` has three properties:
+For some sample space :math:`S` with 
+events :math:`A \subseteq S` and :math:`B \subseteq S`, 
+a probability function `Pr` has these properties:
 
-   1. The probability is positive and less than or equal to 1.
+  1. The probability of any event is positive and less than or equal to 1, i.e.,
 
-   2. The probability of a sure event is 1   
+  .. math::
+      0 \leq Pr(s \in A) = Pr(A) \leq 1
+
+  where :math:`Pr(A)` is a common shorthand notational convenience
+
+  2. The probability of a sure event is 1, i.e.,
+
+  .. math::
+      Pr(S) = 1
       
-   3. If A and B are mutually exclusive, then:
+  3. If A and B are mutually exclusive, then:
 
-      :math:`P(A \cup B) = P(A) + P(B)`
+  .. math::
+      Pr(A \cup B) = Pr(A) + Pr(B)
 
-   4. The sum of the probabilities of an event and its complement is 1
-     	    
-   5. The probability of an impossible event is zero.
+  *(Remember that two events are mutually exclusive if they cannot both be true at the same time -- i.e., the two event sets are disjoint).*
 
-NOTE: Two events are **mutually exclusive** or disjoint if they cannot both be true
-      
-.. note::
-	 
-   **QUESTION**
+From these three axioms all other familiar probability properties can be proven.
+E.g.,
 
-   1. What is the probability of a Queen in a 52 card deck?
-   2. What is the probability of a Queen or a spade?
+  a. The sum of the probabilities of an event and its complement is 1
+
+  .. math::     	    
+      Pr(A) + Pr\left(A^C\right) = Pr(S) = 1
+
+  b. The probability of an impossible event is zero.
+
+  .. math::
+      Pr\left(S^C\right) = 0
+
+
+
+
       
 Independence
 --------------
 
-Events are independent (notation :math:`A\bot B`) if:
+Two events are **independent** (notated as :math:`A\bot B`) if
 
 .. math::
    
-   P(A\cap B) = P(A)P(B)
+   Pr(A\cap B) = Pr(A, B) = Pr(A)\times Pr(B)
 
 or
 
 .. math::
       
-   P(A|B) = P(A)
+   Pr(A|B) = Pr(A)
    
-The above is known as **conditional probability**.
+where :math:`Pr(A|B)` denotes a **conditional probability** which gives
+gives the probability of an event occuring *given the knowledge that* another 
+event as occured.
+When considering the independence of two events, ask yourself: "Does knowing 
+somethign about event :math:`A` provide increased information about the 
+likelihood of event :math:`B`?
 
-With respect to independence ask yourself---**Does it it provides information about A**
+.. note::
+	 
+   **PAIRED EXERCISE**
 
-   * How could we use the definition of independence to test whether two events are independent?
-   * What does knowing that B has occurred tell us about the likelihood of A?
-   * Under independence?
-   * Without independence?
+   Discuss with your neighbor what "knowing that :math:`A` has occurred" tells 
+   us about the likelihood of :math:`B` occuring
 
-The :math:`P(A\cap B) = P(A)P(B)` is known as the multiplication rule
+   a. Under independence?
 
-A problem
----------------
+   b. Without independence?
+
+   How you go about testing if two events were indeed independent?
+
+.. note::
+	 
+   **QUESTION**
+
+   What is the relationship between **independence** and **mutually exclusivity**?
 
 .. note::
 
-   **HOMEWORK**
+     
+Conditional Probability	
+----------------------------
+
+It turns out that it is always true that 
+
+.. math::
+   Pr(A \cap B) = Pr(A, B) = Pr(A|B) \times Pr(B)
+
+where :math:`Pr(A, B)` is the standard way not specify *intersection* 
+in statistical notation.  This rule is known as the **chain rule**, 
+and we shall generalize it to more than two events shortly.  
+But for now, rearranging this equation gives us 
+
+.. math::
+   Pr(A|B) = \frac{Pr(A, B)}{Pr(B)}
+
+which is the definition of **conditional probability**.
+
+.. note::
+
+   **EXERCISE**
    
-   Take a moment to *think about* this question:
+   Draw a Venn diagram for sample space :math:`S` with intersecting events 
+   :math:`A` and :math:`B` to demonstrate the *Conditional Probability* formula.
+
+.. note::
+
+   **EXERCISE**
+
+   Take a moment to think about this question:
 
       * Three types of fair coins are in an urn: HH, HT, and TT
       * You pull a coin out of the urn, flip it, and it comes up H
       * Q: what is the probability it comes up H if you flip it a second time?
 
-If you expect that this event provides information then a conditional
-probability may be appropriate.
-     
-Conditional probability	
-----------------------------
+   *Hint: write out the sample space!*
 
-:math:`P(B|A) = P(A, B) / P(A)`
-
-Probability Chain Rule
---------------------------
-
-In probability theory, the chain rule (also called the general product
-rule) permits the calculation of any member of the joint distribution
-of a set of random variables using only conditional probabilities.
-
-We can rearrange the formula for conditional probability to get the product rule:
+   When you're ready, compare your solution to those around you.
 
 
-   :math:`P(A,B) = P(A|B)P(B)`
+Chain Rule
+----------
 
-We can extend this for three or more variables:
+In probability theory, the **chain rule** provides a way to calculate 
+probabilities sequentially for any number of events according
+to the pattern of conditional probabilities
 
-   :math:`P(A,B,C) = P(A| B,C) P(B,C) = P(A|B,C) P(B|C) P(C)`
+.. math::
 
-More generally:
+   Pr(A, B, C) = Pr(A| B,C) \times Pr(B,C) = Pr(A|B,C) \times Pr(B|C) \times Pr(C)
 
-   :math:`P(\cap_{i}^nX_i) = \prod_i^n P(X_i | \cap_k^{i-1} X_k)`
-      
+where :math:`Pr(A)` is a shorthand notational convencience specifying
+:math:`Pr(X=x \in A)`.
+
+
+
+.. note::
+
+   **EXERCISE**
+   
+   Calculate the probability of getting a Queen and a King if you draw
+   two cards from a standard 52-card deck. 
+
+
 
 Law of Total Probability
 ----------------------------
 
-If :math:`\{B_n\}` is a partition of a sample space B, meaning :math:`B_i \cap B_j=\emptyset \forall i, j` and :math:`\cap_i B_i = B`
+For a partition :math:`\{A_1, A_2, \cdots A_n\}` of a sample space `S`, i.e.,
+a set of events such that :math:`\underset{i=1}{\overset{n}{\cup}} 
+A_i = S` and :math:`A_i \cap A_j=\emptyset` for all :math:`i` and :math:`j`
+such that :math:`1 \leq i \not = j \leq n`, and an event :math:`B \subseteq S`, 
+the **Law of Total Probability** guarantees that
 
-Then
+.. math::
+   \displaystyle Pr(B) = \sum^n_{i=1} Pr(B\cap A_i) = \sum^n_{i=1} Pr(B|A_i) Pr(A_i)
 
-:math:`P(A) = \sum P(A\cap B_i)`
+.. note::
 
-or
+   **EXERCISE**
+   
+   Draw a Venn diagram for sample space :math:`S` partitioned 
+   into :math:`\{A_1, A_2, \cdots A_n\}` and :math:`B \subseteq S`
+   to demonstrates the *Law of Total Probability*.
 
-:math:`P(A) = \sum P(A|B_i) P(B_i)`
-      
-And we call A the **marginal distribution** of B
-     
-Bayes Rule
+
+Bayes' Theorem
 ---------------
 
-Use Bayes’s Rule when you need to compute conditional probability for :math:`A|B`
-but only have probability for :math:`B|A`:
+**Bayes' theorem** is a formula for computing the conditional probability 
+(or distribution) of
+:math:`A|B` based on the reverse conditional probability (or distribution) of
+:math:`B|A`.  Bayes’s theorem follows directly from a re-expression and a 
+subsequent re-application of the chain rule:
 
-:math:`P(A|B) = \frac{P(B|A)P(A)}{P(B)}`
+.. math::
 
-:math:`P(\theta|x) = \frac{P(x|\theta)P(\theta)}{P(x)}`
+   P(B|A) = \frac{P(A, B)}{P(A)} = \frac{P(A|B)P(B)}{P(A)}
 
-Proof: use the definition of conditional probability
+.. note::
 
-Recall that
-
-   :math:`P(A,B) = P(B,A)`
-
-Lets start with the conditional probability 
-      
-   :math:`P(A|B) = \frac{P(A \cap B)}{P(B)}`
-
-If we write the reverse of that	 
-	 
-   :math:`P(B|A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)}`
-
-Then multiply by :math:`P(A)`
-      
-   :math:`P(A \cap B) = P(B|A)P(A)`
-
-Then plug this back into the conditional probability.
-
-Bayesian statistics
-----------------------
-
-Bayesian inference works by combining information about parameters :math:`\theta` contained in the observed data :math:`x` as quantified in the likelihood function :math:`p(x|\theta)`.  Classical statistics works by making inference about a single point for our parameter, while Bayesian inference works on the whole distribution of that parameter. Parameters through the Bayesian lens are treated as random variables described by distributions.
-
-Lets put Bayesian inference on hold and first look at and example of Bayes Rule.
-
-**Predictive value positive** - Prob. person has disease given the test was positive.
-   :math:`PV^{+} = P (D^{+} |T^{+})`
-
-**Predicitve value negative** - Prob. person does not have diease given test was negative 
-   :math:`PV^{-} = P (D^{-} |T^{-} )`    
-
-**Sensitivity** - Prob. that test positive given person has disease 
-   :math:`P (T^{+} |D^{+})`
+   **EXERCISE**
    
-**Specificity** - Prob. that test negative given person does not have disease 
-   :math:`P (T^{-} |D^{-})`
+   1. Prove *Bayes' theorem* using the *Chain Rule*.
+   2. Use the *Law of Total Probability* to express :math:`P(A)` in terms of :math:`P(A|B_i)P(B_i)`, where :math:`B_i` is a partition of the sample space in question.
 
-**Prevalance** - :math:`d = P(D^{+})`
+*(We will discuss a generalization of Bayes' theorem that results in an entire 
+branch of statistics known as Bayesian statistics tomorrow).*
+
+
+Medical Testing
+^^^^^^^^^^^^^^^
+
+Suppose we are interested in screening a population 
+for some condition :math:`C` and have 
+a test :math:`T` which predicts if the condition is present or not.
+
+* The **positive predictive value** of the test is the probability that an individual who tested positive (i.e., :math:`i.e., T^{+}`) truly *does* have the condition (i.e., :math:`C^{+}`):
+
+   :math:`PV^{+} = Pr(C^{+} |T^{+})`
+
+* The **negative predicitve value** of the test is the probability that an individual who tested negative (i.e., :math:`T^{-}`) truly *does not* have the condition (i.e., :math:`C^{-}`):
+
+   :math:`PV^{-} = Pr(D^{-} |T^{-} )`    
+
+* The **sensitivity** of the test is the probability the test detects the condition (i.e., :math:`T^{+}`) when it should (i.e., when :math:`C^{+}` is true):
+
+   :math:`Pr(T^{+} |C^{+})`
    
-Note that: :math:`P (T + |D - ) = 1 - \textrm{specificity}`
+* The **specificity** of the test is the probability the test *does not* detect the condition (i.e., :math:`T^{-}`) when it shouldn't (i.e., when :math:`C^{-}` is true):
 
-Lets say we wanted to know :math:`PV^{+}`.
+   :math:`Pr(T^{-} |C^{-})`
+
+* And **prevalance** here refers to the overall rate at which the condition presentsitself in the poplulation being tested:
+
+   :math:`Pr(C^{+})`
+   
+* And finally, note that :math:`Pr(T^{+} |C^{-} ) = 1 - \textrm{specificity}`
+
+A common measure of the usefulness of a test is its *positive predictive value*
+:math:`PV^{+}`:
    
    .. math::
       :nowrap:
 
       \begin{eqnarray}
-      P (D^{+} |T^{+}) &=& \frac{P(T^{+}|D^{+}) P(D^{+})}{P(D^{+})P(T^{+}|D{+})+P(D^{-})P(T^{+}|D^{-})} \\
-                       &=& \frac{d \times \textrm{sensitivity}}{d \times \textrm{sensitivity}+(1-d) \times (1-\textrm{specificity})} 
+      P (C^{+} |T^{+}) &=& \frac{P(T^{+}|C^{+}) P(C^{+})}{P(C^{+})P(T^{+}|C{+})+P(C^{-})P(T^{+}|C^{-})} \\
+                       &=& \frac{Pr(C^{+}) \times \textrm{sensitivity}}{Pr(C^{+}) \times \textrm{sensitivity}+(1-Pr(C^{+})) \times (1-\textrm{specificity})} 
       \end{eqnarray}
+
+which is just an example of *Bayes' theorem*.  
       
-So if we were given
-
-Sensitivity = 0.84, specificity = 0.77, prevalence = 0.20
-
-Then
+So, if we were given a test with sensitivity of 0.84 and specificity of 0.77
+and apply the test to condition with with a prevalence of 0.20 in the 
+population under examination, then
 
    .. math::
     
-      PV^{+} = \frac{(0.2)(0.84)}{(0.2)(0.84)+(0.8)(0.23)}  = 0.48 \\
+      PV^{+} = \frac{(0.2)(0.84)}{(0.2)(0.84)+(0.8)(0.23)}  = 0.48
+
+and  
+
+   .. math::
+
       PV^{-} = \frac{(0.8)(0.77)}{(0.8)(0.77)+(0.2)(0.16)}  = 0.95
+
+.. note::
+
+   **EXERCISE**
+   
+   Verify the that the answer given for :math:`PV^{-}` above is correct.
+
 
 Further resources
 -----------------
