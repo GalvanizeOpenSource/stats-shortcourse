@@ -20,7 +20,7 @@ Recall that we have learned about *three* probability estimands
 * Conditional: :math:`Pr(A | B)`
 * Marginal: :math:`Pr(A)`
      
-These concepts are reviewed  `here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_ and some related practice problems are available `here <http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html>`_.
+These concepts `are reviewed here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_ and some related practice problems `are available here <http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html>`_.
 
 .. note::
 

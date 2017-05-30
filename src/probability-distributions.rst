@@ -72,7 +72,7 @@ of a distribution that are often evoked to describe the distribution:
 
 
 Essential Discrete Distributions:
---------------------------------
+------------------------------------
      
 Bernoulli
 ^^^^^^^^^^^

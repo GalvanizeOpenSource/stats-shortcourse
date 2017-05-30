@@ -34,7 +34,6 @@ sys.path.insert(0, os.path.abspath('.'))
 # ones.
 #extensions = []
 
-sys.path.append(os.path.abspath('sphinxext'))
 extensions = [
     'sphinxcontrib.bibtex',
     'sphinx.ext.mathjax',

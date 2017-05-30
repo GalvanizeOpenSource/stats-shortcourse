@@ -122,8 +122,6 @@ likelihood of event :math:`B`?
 
    What is the relationship between **independence** and **mutually exclusivity**?
 
-.. note::
-
      
 Conditional Probability	
 ----------------------------
