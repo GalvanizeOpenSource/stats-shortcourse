@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -30,8 +32,11 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Statistical inference" href="statistical-inference.html"/>
+        <link rel="next" title="Statistical Inference" href="statistical-inference.html"/>
         <link rel="prev" title="Bayesian Inference" href="paradigms.html"/> 
 
   
@@ -41,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -81,7 +87,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -101,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
@@ -120,8 +129,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">stats-shortcourse</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">stats-shortcourse</a>
+        
       </nav>
 
 
@@ -130,23 +141,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Statistics Concepts</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Statistics Concepts</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/statistics-concepts.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/statistics-concepts.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -174,7 +202,7 @@ the term <strong>Statistics</strong> is an approriate name for the discipline.</
 <li><p class="first"><strong>Continuous distributions</strong> on the other hand (perhaps unexpectedly and paradoxically) define <span class="math">\(Pr(X=x) = 0\)</span> for every potential outcome <span class="math">\(x\)</span> of a <em>continuous-valued</em> random variable <span class="math">\(X\)</span> but define postive probabilities for <span class="math">\(Pr(X=x \in E \subseteq \mathbb{R})\)</span> according to the area under the <strong>probability density function (PDF)</strong> <span class="math">\(\; f_X(X=x)\)</span> over the set <span class="math">\(E\)</span>, i.e.,</p>
 <div class="math">
 \[Pr(X=x \in E) = \underset{E}{\int} f(X=x)\; dx\]</div>
-<p>so that a <em>PDF</em> defines outcome prevalence in a relative (rather than absolute, i.e. probability) manner. For example, if <span class="math">\(f(X=x_1) = 2f(X=x_2)\)</span> then in the long-run <span class="math">\(x_2\)</span> will occur <em>twice as frequently</em> as <span class="math">\(x_1\)</span>. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/probability-density-functions">this PDF video from Khan academy</a>.</p>
+<p>so that a <em>PDF</em> defines outcome prevalence in a relative (rather than absolute, i.e. probability) manner. For example, if <span class="math">\(f(X=x_1) = 2f(X=x_2)\)</span> then in the long-run <span class="math">\(x_2\)</span> will occur <em>twice as frequently</em> as <span class="math">\(x_1\)</span>. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/probability-density-functions">this video about PDFs from Khan academy</a>.</p>
 </li>
 </ul>
 <div class="admonition note">
@@ -243,7 +271,7 @@ satisfy the <em>axioms of probability</em>, e.g.,</p>
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>Recall the <em>first through fourth distributional moments</em> mentioned previously.
 The first moments is the <strong>expectation</strong> <span class="math">\(E[X]\)</span> or <strong>mean</strong> of the
-distribution and is a measures the central tendecy of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this PDF video from Khan academy</a>.</p>
+distribution and is a measures the central tendecy of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this video about random variables from Khan academy</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -385,15 +413,18 @@ for example <a class="reference external" href="https://statweb.stanford.edu/~ti
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical Inference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="paradigms.html" class="btn btn-neutral" title="Bayesian Inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="paradigms.html" class="btn btn-neutral" title="Bayesian Inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -427,13 +458,14 @@ for example <a class="reference external" href="https://statweb.stanford.edu/~ti
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -30,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Combinatorics" href="combinatorics.html"/>
         <link rel="prev" title="Getting started" href="getting-started.html"/> 
@@ -41,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -81,7 +87,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Probability Concepts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#experiments">Experiments</a></li>
@@ -100,8 +109,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
@@ -120,8 +129,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">stats-shortcourse</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">stats-shortcourse</a>
+        
       </nav>
 
 
@@ -130,23 +141,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Probability Concepts</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Probability Concepts</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/probability-concepts.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/probability-concepts.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -184,17 +212,17 @@ if <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)
 <li>take a cookie from a cook jar, evalute an instructor, attend a meetup</li>
 <li>measure heights, weights, volumes, temperatures, or distances</li>
 <li>count the number of cups of coffee consumed before before 10 am</li>
-<li>count the number of beers consumed on the Friday before a stats workshop</li>
+<li>count the number of beers consumed right after this stats workshop</li>
 </ul>
 </div></blockquote>
 <p><strong>Outcomes</strong></p>
 <blockquote>
 <div><ul class="simple">
 <li>ten sequential coin flips, two die rolls, a card from a deck</li>
-<li>a cookies, an instructor evaluation, teachers, the name of an attended meetup</li>
-<li>A heights, a weight, a volumes, a temperature, or a distance</li>
+<li>a cookie, an instructor evaluation, teachers, the name of an attended meetup</li>
+<li>a height, a weight, a volume, a temperature, or a distance</li>
 <li>a number</li>
-<li>hopfully a number</li>
+<li>hopfully not too many</li>
 </ul>
 </div></blockquote>
 <p><strong>Events</strong></p>
@@ -251,12 +279,6 @@ if the experiment is run</p>
 event (for a hypothetical experiment) based a <em>Union</em>, <em>Intersection</em>,
 <em>Difference</em>, or <em>Complement</em>. As a group, respond with an
 experimental outcome under which the example event occured.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p><strong>QUESTION</strong></p>
-<p class="last">How does the <em>Null Set</em> relate to <em>Unions</em>, <em>Intersections</em>,
-<em>Differences</em>, and <em>Complements</em>?</p>
 </div>
 </div>
 <div class="section" id="demorgan-s-laws">
@@ -370,15 +392,18 @@ then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="combinatorics.html" class="btn btn-neutral float-right" title="Combinatorics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="combinatorics.html" class="btn btn-neutral float-right" title="Combinatorics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting-started.html" class="btn btn-neutral" title="Getting started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting-started.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -412,13 +437,14 @@ then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

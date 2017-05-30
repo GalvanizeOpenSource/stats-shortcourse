@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -30,8 +32,11 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Statistics concepts" href="statistics-concepts.html"/>
+        <link rel="next" title="Statistics Concepts" href="statistics-concepts.html"/>
         <link rel="prev" title="Probability Distributions" href="probability-distributions.html"/> 
 
   
@@ -41,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -81,7 +87,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -94,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#conditional-probability">Conditional probability</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Bayesian Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Bayesian Inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#statistical-paradigms">Statistical Paradigms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#arguments-for-bayesian-analysis">Arguments for Bayesian Analysis</a></li>
 </ul>
@@ -103,8 +112,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
@@ -123,8 +132,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">stats-shortcourse</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">stats-shortcourse</a>
+        
       </nav>
 
 
@@ -133,23 +144,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Bayesian Inference</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Bayesian Inference</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/paradigms.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/paradigms.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -174,7 +202,7 @@
 <li>Conditional: <span class="math">\(Pr(A | B)\)</span></li>
 <li>Marginal: <span class="math">\(Pr(A)\)</span></li>
 </ul>
-<p>These concepts are reviewed  <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">here</a> and some related practice problems are available <a class="reference external" href="http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html">here</a>.</p>
+<p>These concepts <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">are reviewed here</a> and some related practice problems <a class="reference external" href="http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html">are available here</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>QUESTION</strong></p>
@@ -231,8 +259,8 @@ perhaps just <em>simulating</em> the experiment will help convince you:</p>
 <p>More discussion about conditional probabilities can be found <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">here</a>.</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>Bayesian Inference<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>Bayesian Inference<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p><strong>Bayesian inference</strong> is based on the idea that <em>distributional parameters</em>
 <span class="math">\(\theta\)</span> can themselves be viewed as <em>random variables</em> with their
 own distributions.  This is distinct from the <strong>Frequentist</strong> perspective which
@@ -390,15 +418,18 @@ that you can use to start learning more about Bayesian analysis:</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistics-concepts.html" class="btn btn-neutral float-right" title="Statistics concepts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="statistics-concepts.html" class="btn btn-neutral float-right" title="Statistics Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="probability-distributions.html" class="btn btn-neutral" title="Probability Distributions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="probability-distributions.html" class="btn btn-neutral" title="Probability Distributions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -432,13 +463,14 @@ that you can use to start learning more about Bayesian analysis:</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

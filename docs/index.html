@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -30,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="#"/>
         <link rel="next" title="Getting started" href="getting-started.html"/> 
 
@@ -40,6 +45,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -80,7 +86,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -89,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
@@ -109,8 +118,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">stats-shortcourse</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">stats-shortcourse</a>
+        
       </nav>
 
 
@@ -119,30 +130,47 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Statistics Short Course</li>
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Statistics Short Course</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/galvanize-logo.png"><img alt="galvanize-logo" src="_images/galvanize-logo.png" style="width: 669.55px; height: 167.65px;" /></a>
+<a class="reference internal image-reference" href="_images/galvanize-logo.png"><img alt="galvanize-logo" src="_images/galvanize-logo.png" style="width: 669.55px; height: 167.64999999999998px;" /></a>
 </div>
 <div class="section" id="statistics-short-course">
 <h1>Statistics Short Course<a class="headerlink" href="#statistics-short-course" title="Permalink to this headline">¶</a></h1>
@@ -155,23 +183,21 @@
 <li><strong>Unsupervised learning</strong> - given only <span class="math">\(x\)</span>, learn interesting patterns in <span class="math">\(x\)</span></li>
 </ul>
 </div></blockquote>
-<p>These tasks are a form of artificial intelligence that endow a computer
-with the capability represent a general class of patterns,
-and to then determine what the specific
-instance of the general class of patterns is actually present in a given data set.
-Note that this is different than explicitly hardcoding some data relationship
-into a computer as though the specific relationship was already known
-beforehand.</p>
+<p>These tasks are a form of artificial intelligence that endow a
+computer with the capability to represent a general class of patterns.</p>
+<p>Then through that representation they have the ability to <strong>predict
+outputs</strong> and <strong>identify patterns</strong>.  Note that this is different than
+explicitly hardcoding some data relationship into a computer as though
+the specific relationship was already known beforehand.</p>
 <p>In order to identify which specific patterns (out of a general class
-of patterns) is present in the data, machine learning makes extensive use
+of patterns) are present in the data, machine learning makes extensive use
 of <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a>&#8212;the
 branch of mathematics that works directly with matrices&#8212;in conjunction numerical
-optimization procedures.
-This process of identifying a specific instance (out of a general class
+optimization procedures.</p>
+<p>This process of identifying a specific instance (out of a general class
 of patterns) that looks as similar to the data as possible
-is called &#8220;model fitting&#8221;.
-Once a machine has such a model representation of the data,
-then it has &#8220;learned&#8221; the pattern in the data and can use it as a part of
+is called &#8220;model fitting&#8221;.  Once a machine has such a model representation of the data,
+then it has <em>learned</em> the pattern in the data and can use it as a part of
 other programatic instructions designed to accomplish some objective.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -204,7 +230,7 @@ the traditional domains and expertise claimed by each discipline can be made:</p
 <div><ul class="simple">
 <li>utilizes nonparametric and complex models harnessed via regularization</li>
 <li>places paramount importance on &#8220;out of sample&#8221; generalizability/performance</li>
-<li>bases methodological development ons empirical and computational techniques</li>
+<li>bases methodological development on empirical and computational techniques</li>
 </ul>
 </div></blockquote>
 </div>
@@ -261,8 +287,8 @@ statistics.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
@@ -272,7 +298,7 @@ the frequentist and Bayesian paradigms (or philosophies) on which today&#8217;s 
 statistical analyses are based. Then we&#8217;ll dive a bit deeper into how to make
 use of probability distributions for inference and hypothesis testing. Then
 we&#8217;ll introduce regression and classification and explore these
-methodologies some example applications.
+methodologies with some example applications.
 And finally we&#8217;ll conclude by discussing some of the commonly
 used methods for evaluating how useful a model actually is.
 After that, if you want to stay around to hear a little bit more about the
@@ -309,12 +335,15 @@ Data Science Immersive, you&#8217;re welcome to &#8211; but you don&#8217;t have
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -349,13 +378,14 @@ Data Science Immersive, you&#8217;re welcome to &#8211; but you don&#8217;t have
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
