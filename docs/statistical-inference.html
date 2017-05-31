@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Regression, Classification, Evaluation metrics" href="regression-classification-metrics.html"/>
+        <link rel="next" title="Regression, Classification, and Evaluation" href="regression-classification-metrics.html"/>
         <link rel="prev" title="Statistics Concepts" href="statistics-concepts.html"/> 
 
   
@@ -95,12 +95,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#is-my-coin-fair">Is my coin fair?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hypothesis-testing">Hypothesis testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#maximum-likelihood-estimation-mle">Maximum Likelihood Estimation (MLE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bayesian-estimation">Bayesian estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bayesian-estamition">Bayesian Estamition</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, and Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -156,14 +156,14 @@
 <ul class="simple">
 <li><strong>Hypothesis Testing</strong>: how well does the data match some assumed (null) distribution?</li>
 <li><strong>Point Estimation</strong>: if not well, what instance of some distributional class does it match well?</li>
-<li><strong>Uncertainty Estmiation</strong>: are there reasonable competitors to that best guess distribution?</li>
+<li><strong>Uncertainty Estimation</strong>: are there reasonable competitors to that best guess distribution?</li>
 <li><strong>Distribution Estimation</strong>: how heavily do our results relying on distributional assumptions?</li>
 </ul>
 <p>These questions are addressed through various statistical/computational
 methodologies:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Least squeares</li>
+<li>Least squares</li>
 <li>Numerical optimization</li>
 <li>maximum likelihood</li>
 <li>Numerical optimization</li>
@@ -207,7 +207,7 @@ methodologies:</p>
 <li>Specify the <em>null hypothesis</em> (&#8220;The chance of heads is 50%&#8221;)</li>
 <li>Choose <em>test statistic</em> (&#8220;The number of heads observed&#8221;)</li>
 <li>Collect data (&#8220;Flip the coin a few times&#8221;)</li>
-<li>Calculate the test statistics (&#8220;Count the total heads fliped&#8221;)</li>
+<li>Calculate the test statistics (&#8220;Count the total heads flipped&#8221;)</li>
 <li><em>Reject</em> the null hypothesis if the test statistic looks &#8220;strange&#8221;
 compared to its <em>sampling distribution</em> under the null hypothesis;
 otherwise, <em>fail to reject</em> the null hypothesis</li>
@@ -218,7 +218,7 @@ otherwise, <em>fail to reject</em> the null hypothesis</li>
 <span class="n">binomial</span> <span class="n">test</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="p">:</span> <span class="mf">0.000873719836912</span>
 </pre></div>
 </div>
-<p><strong>Z-Test</strong> (with continnuity correction)</p>
+<p><strong>Z-Test</strong> (with continuity correction)</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="mf">0.5</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">sd</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;normal approximation p-value: - </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">z</span><span class="p">))))</span>
 
@@ -232,6 +232,15 @@ otherwise, <em>fail to reject</em> the null hypothesis</li>
 
 <span class="n">simulation</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.00062</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p>Does anyone know what a <strong>p-value</strong> is?</p>
+<ul class="last simple">
+<li>Hint: it is <em>not</em> the probability that the null hypothesis is false.</li>
+<li>Hint: it is <em>not</em> the probability that the test wrongly rejected the null.</li>
+</ul>
 </div>
 </div>
 <div class="section" id="maximum-likelihood-estimation-mle">
@@ -248,8 +257,8 @@ otherwise, <em>fail to reject</em> the null hypothesis</li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="bayesian-estimation">
-<h3>Bayesian estimation<a class="headerlink" href="#bayesian-estimation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="bayesian-estamition">
+<h3>Bayesian Estamition<a class="headerlink" href="#bayesian-estamition" title="Permalink to this headline">¶</a></h3>
 <p>The Bayesian approach directly estimates the posterior
 distribution, from which all other point/interval statistics can be
 estimated.
@@ -282,6 +291,14 @@ methods.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p class="last">Use the Python code above to play around with the <em>prior specification</em>
+a little bit.  Does it seem to influence the results of the analysis
+(i.e., the resulting posterior distribution)? If so, how? How do you
+feel about that?</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p><strong>CLASS DISCUSSION</strong></p>
 <ol class="last arabic simple">
 <li>How were the Bernoulli and binomial distributions used here?</li>
@@ -304,7 +321,7 @@ what you have learned here?</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="regression-classification-metrics.html" class="btn btn-neutral float-right" title="Regression, Classification, Evaluation metrics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="regression-classification-metrics.html" class="btn btn-neutral float-right" title="Regression, Classification, and Evaluation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="statistics-concepts.html" class="btn btn-neutral" title="Statistics Concepts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

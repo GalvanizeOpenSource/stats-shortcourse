@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Statistical inference" href="statistical-inference.html"/>
+        <link rel="next" title="Statistical Inference" href="statistical-inference.html"/>
         <link rel="prev" title="Bayesian Inference" href="paradigms.html"/> 
 
   
@@ -101,8 +101,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, and Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -157,11 +157,11 @@
 <p>Statistics is the sister discipline to probability in mathematics.
 Statistics addresses the <em>inverse problem</em>
 of learning about probability distributions from data,
-as oppsosed to the <em>forward problem</em> of generating data from probability
+as opposed to the <em>forward problem</em> of generating data from probability
 distributions. The term <strong>statistic</strong> is also a definition &#8211; a
 <em>statistic</em> is a &#8220;mathematical calculation of some data&#8221;.  Since
 inference on probability distribution parameters relies upon <em>statistics</em>,
-the term <strong>Statistics</strong> is an approriate name for the discipline.</p>
+the term <strong>Statistics</strong> is an appropriate name for the discipline.</p>
 <div class="section" id="pdfs-and-cdfs">
 <h2>PDFs and CDFs<a class="headerlink" href="#pdfs-and-cdfs" title="Permalink to this headline">¶</a></h2>
 <p>As we have seen, there are two types of probability distributions:</p>
@@ -171,7 +171,7 @@ the term <strong>Statistics</strong> is an approriate name for the discipline.</
 <div class="math">
 \[Pr(X=x)\]</div>
 <ul>
-<li><p class="first"><strong>Continuous distributions</strong> on the other hand (perhaps unexpectedly and paradoxically) define <span class="math">\(Pr(X=x) = 0\)</span> for every potential outcome <span class="math">\(x\)</span> of a <em>continuous-valued</em> random variable <span class="math">\(X\)</span> but define postive probabilities for <span class="math">\(Pr(X=x \in E \subseteq \mathbb{R})\)</span> according to the area under the <strong>probability density function (PDF)</strong> <span class="math">\(\; f_X(X=x)\)</span> over the set <span class="math">\(E\)</span>, i.e.,</p>
+<li><p class="first"><strong>Continuous distributions</strong> on the other hand (perhaps unexpectedly and paradoxically) define <span class="math">\(Pr(X=x) = 0\)</span> for every potential outcome <span class="math">\(x\)</span> of a <em>continuous-valued</em> random variable <span class="math">\(X\)</span> but define positive probabilities for <span class="math">\(Pr(X=x \in E \subseteq \mathbb{R})\)</span> according to the area under the <strong>probability density function (PDF)</strong> <span class="math">\(\; f_X(X=x)\)</span> over the set <span class="math">\(E\)</span>, i.e.,</p>
 <div class="math">
 \[Pr(X=x \in E) = \underset{E}{\int} f(X=x)\; dx\]</div>
 <p>so that a <em>PDF</em> defines outcome prevalence in a relative (rather than absolute, i.e. probability) manner. For example, if <span class="math">\(f(X=x_1) = 2f(X=x_2)\)</span> then in the long-run <span class="math">\(x_2\)</span> will occur <em>twice as frequently</em> as <span class="math">\(x_1\)</span>. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/probability-density-functions">this PDF video from Khan academy</a>.</p>
@@ -243,7 +243,7 @@ satisfy the <em>axioms of probability</em>, e.g.,</p>
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>Recall the <em>first through fourth distributional moments</em> mentioned previously.
 The first moments is the <strong>expectation</strong> <span class="math">\(E[X]\)</span> or <strong>mean</strong> of the
-distribution and is a measures the central tendecy of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this PDF video from Khan academy</a>.</p>
+distribution and is a measures the central tendency of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this PDF video from Khan academy</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -290,7 +290,7 @@ unit &#8211; to describe the strength of a linear relationship:</p>
 <p>Recasting the <em>Law of Total Probability</em> in terms of random variables
 <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, we have for</p>
 <ul class="simple">
-<li><strong>discete distributions</strong></li>
+<li><strong>discrete distributions</strong></li>
 </ul>
 <div class="math">
 \[\displaystyle Pr(X=x) = \sum_{y \in S_Y} Pr(X=x, Y=y) = \sum_{y \in S_Y} Pr(X=x|Y=y) Pr(Y=y)\]</div>
@@ -313,16 +313,16 @@ Marginal distributions allow us to unpack joint distributions.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Draw the above plot, labeling it with all the concepts we&#8217;ve coverved so far.</p>
+<p class="last">Draw the above plot, labeling it with all the concepts we&#8217;ve covered so far.</p>
 </div>
 </div>
 <div class="section" id="statistics">
 <h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <p><strong>Statistics</strong> often correspond to distributional <em>parameters</em> as they
 are typically used to estimate specific distributional parameters.  It&#8217;s important
-to always remember the distiction between <em>statistics</em> and <em>parameters</em>,
+to always remember the distinction between <em>statistics</em> and <em>parameters</em>,
 however:
-statstics are numerical calcuations that are planned to be executed using
+statistics are numerical calculations that are planned to be executed using
 sample data, while parameters are mathematical manipulations carried out on
 distributional forms.</p>
 <p>The statistic that corresponds to expectation is the <strong>sample mean</strong>:</p>
@@ -362,7 +362,7 @@ but have a relationship due to a common <strong>confounding factor</strong>.</p>
 dealt with in real data. When you actually begin working with
 real data you&#8217;ll see that things can be quite messy.  In fact, messy
 would be an understatement for some <strong>outliers</strong> that will be present in
-your data.  These outliers can drastically affect your calculated statstics
+your data.  These outliers can drastically affect your calculated statistics
 and hence your conclusions. Weary and vigilant attention is required to
 suss out these influential data points and decide what is to be done about
 them.  And what if you have <strong>missing data</strong> that&#8217;s not even available to
@@ -390,7 +390,7 @@ for example <a class="reference external" href="https://statweb.stanford.edu/~ti
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical Inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="paradigms.html" class="btn btn-neutral" title="Bayesian Inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
