@@ -145,14 +145,12 @@ Day 2
    concluding-remarks
 
 
-We'll kick off the second day a concept-driven explanation of 
+We'll kick off the second day a comparison of 
 the frequentist and Bayesian paradigms (or philosophies) on which today's modern 
-statistical analyses are based. Then we'll dive a bit deeper into how to make
-use of probability distributions for inference and hypothesis testing. Then
-we'll introduce regression and classification and explore these 
-methodologies some example applications.
-And finally we'll conclude by discussing some of the commonly 
-used methods for evaluating how useful a model actually is. 
+statistical analyses are based. Then we'll dive a bit deeper into 
+probability distribution theory, followed by some hypothesis testing and inference examples. 
+Then we'll introduce regression, classification, and some evaluation
+metrics for these methodologies.
 After that, if you want to stay around to hear a little bit more about the 
 Data Science Immersive, you're welcome to -- but you don't have to.
 
