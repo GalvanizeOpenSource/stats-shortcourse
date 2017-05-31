@@ -30,7 +30,7 @@ As we have seen, there are two types of probability distributions:
   .. math::
        Pr(X=x \in E) = \underset{E}{\int} f(X=x)\; dx
 
-  so that a *PDF* defines outcome prevalence in a relative (rather than absolute, i.e. probability) manner. For example, if :math:`f(X=x_1) = 2f(X=x_2)` then in the long-run :math:`x_2` will occur *twice as frequently* as :math:`x_1`. For more explanation, see `this PDF video from Khan academy <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/probability-density-functions>`_.
+  so that a *PDF* defines outcome prevalence in a relative (rather than absolute, i.e. probability) manner. For example, if :math:`f(X=x_1) = 2f(X=x_2)` then in the long-run :math:`x_2` will occur *twice as frequently* as :math:`x_1`. For more explanation, see `this video about PDFs from Khan academy <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/probability-density-functions>`_.
 
 
 .. note::
@@ -115,7 +115,7 @@ Parameters
 
 Recall the *first through fourth distributional moments* mentioned previously.
 The first moments is the **expectation** :math:`E[X]` or **mean** of the 
-distribution and is a measures the central tendency of the distribution. For more explanation, see `this PDF video from Khan academy <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability>`_.
+distribution and is a measures the central tendecy of the distribution. For more explanation, see `this video about random variables from Khan academy <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability>`_.
 
 
 .. note::

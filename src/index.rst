@@ -1,7 +1,4 @@
-.. stats-shortcourse documentation master file, created by
-   sphinx-quickstart on Tue Oct 11 15:24:00 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. stats-shortcourse documentation master file
 
 .. figure:: galvanize-logo.png
    :scale: 35%
@@ -21,24 +18,24 @@ Within data science (and perhaps at its core) is the field of `Machine learning 
   * **Supervised learning** - learn a mapping from inputs :math:`x` to outputs :math:`y`
   * **Unsupervised learning** - given only :math:`x`, learn interesting patterns in :math:`x`
      
-These tasks are a form of artificial intelligence that endow a computer 
-with the capability represent a general class of patterns, 
-and to then determine what the specific 
-instance of the general class of patterns is actually present in a given data set.
-Note that this is different than explicitly hardcoding some data relationship 
-into a computer as though the specific relationship was already known 
-beforehand. 
+These tasks are a form of artificial intelligence that endow a
+computer with the capability to represent a general class of patterns.
+
+Then through that representation they have the ability to **predict
+outputs** and **identify patterns**.  Note that this is different than
+explicitly hardcoding some data relationship into a computer as though
+the specific relationship was already known beforehand.
 
 In order to identify which specific patterns (out of a general class
-of patterns) is present in the data, machine learning makes extensive use 
+of patterns) are present in the data, machine learning makes extensive use 
 of `linear algebra <https://en.wikipedia.org/wiki/Linear_algebra>`_---the 
 branch of mathematics that works directly with matrices---in conjunction numerical 
 optimization procedures.  
+
 This process of identifying a specific instance (out of a general class
 of patterns) that looks as similar to the data as possible
-is called "model fitting". 
-Once a machine has such a model representation of the data, 
-then it has "learned" the pattern in the data and can use it as a part of
+is called "model fitting".  Once a machine has such a model representation of the data, 
+then it has *learned* the pattern in the data and can use it as a part of
 other programatic instructions designed to accomplish some objective. 
 
 .. note::
@@ -74,9 +71,8 @@ the traditional domains and expertise claimed by each discipline can be made:
 
   * utilizes nonparametric and complex models harnessed via regularization  
   * places paramount importance on "out of sample" generalizability/performance
-  * bases methodological development ons empirical and computational techniques 
-
-
+  * bases methodological development on empirical and computational techniques 
+    
 Objectives
 ^^^^^^^^^^
 
