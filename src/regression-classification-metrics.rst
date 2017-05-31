@@ -221,6 +221,7 @@ and the predictions from the model are
    **EXERCISE**
 
    Try out the above code.  Play around with the different parameter choices.
+   Can you make the above model plot also include the model fit line?
 
 
 Assumptions
