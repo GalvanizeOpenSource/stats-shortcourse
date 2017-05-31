@@ -6,11 +6,11 @@ Statistics Concepts
 Statistics is the sister discipline to probability in mathematics. 
 Statistics addresses the *inverse problem* 
 of learning about probability distributions from data,
-as oppsosed to the *forward problem* of generating data from probability
+as opposed to the *forward problem* of generating data from probability
 distributions. The term **statistic** is also a definition -- a 
 *statistic* is a "mathematical calculation of some data".  Since 
 inference on probability distribution parameters relies upon *statistics*,
-the term **Statistics** is an approriate name for the discipline. 
+the term **Statistics** is an appropriate name for the discipline. 
 
      
 PDFs and CDFs
@@ -25,7 +25,7 @@ As we have seen, there are two types of probability distributions:
 
 ..
 
-* **Continuous distributions** on the other hand (perhaps unexpectedly and paradoxically) define :math:`Pr(X=x) = 0` for every potential outcome :math:`x` of a *continuous-valued* random variable :math:`X` but define postive probabilities for :math:`Pr(X=x \in E \subseteq \mathbb{R})` according to the area under the **probability density function (PDF)** :math:`\; f_X(X=x)` over the set :math:`E`, i.e., 
+* **Continuous distributions** on the other hand (perhaps unexpectedly and paradoxically) define :math:`Pr(X=x) = 0` for every potential outcome :math:`x` of a *continuous-valued* random variable :math:`X` but define positive probabilities for :math:`Pr(X=x \in E \subseteq \mathbb{R})` according to the area under the **probability density function (PDF)** :math:`\; f_X(X=x)` over the set :math:`E`, i.e., 
 
   .. math::
        Pr(X=x \in E) = \underset{E}{\int} f(X=x)\; dx
@@ -183,7 +183,7 @@ Marginal Distributions
 Recasting the *Law of Total Probability* in terms of random variables
 :math:`X` and :math:`Y`, we have for
 
-* **discete distributions**
+* **discrete distributions**
 
 .. math::
    \displaystyle Pr(X=x) = \sum_{y \in S_Y} Pr(X=x, Y=y) = \sum_{y \in S_Y} Pr(X=x|Y=y) Pr(Y=y)
@@ -216,7 +216,7 @@ Marginal distributions allow us to unpack joint distributions.
    
    **EXERCISE**
 
-   Draw the above plot, labeling it with all the concepts we've coverved so far.
+   Draw the above plot, labeling it with all the concepts we've covered so far.
 
 
 
@@ -225,9 +225,9 @@ Statistics
 
 **Statistics** often correspond to distributional *parameters* as they 
 are typically used to estimate specific distributional parameters.  It's important 
-to always remember the distiction between *statistics* and *parameters*,
+to always remember the distinction between *statistics* and *parameters*,
 however: 
-statstics are numerical calcuations that are planned to be executed using 
+statistics are numerical calculations that are planned to be executed using 
 sample data, while parameters are mathematical manipulations carried out on 
 distributional forms. 
 
@@ -277,7 +277,7 @@ but have a relationship due to a common **confounding factor**.
 dealt with in real data. When you actually begin working with 
 real data you'll see that things can be quite messy.  In fact, messy
 would be an understatement for some **outliers** that will be present in 
-your data.  These outliers can drastically affect your calculated statstics 
+your data.  These outliers can drastically affect your calculated statistics 
 and hence your conclusions. Weary and vigilant attention is required to 
 suss out these influential data points and decide what is to be done about 
 them.  And what if you have **missing data** that's not even available to

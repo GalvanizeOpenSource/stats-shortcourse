@@ -163,7 +163,7 @@ Arguments for Bayesian Analysis
   the accuracy of many Frequentist results rely upon asymptotic distributional
   results that require a "large sample size" -- the actual quantity 
   of which often remains unclear -- whereas Bayesian analysis 
-  is a fully coherant probabilistic framework regardless of sample size.
+  is a fully coherent probabilistic framework regardless of sample size.
 
 ..
 
@@ -241,7 +241,7 @@ Are YOU a Bayesian?
 
 .. note::
      
-   **Are yOU SURE you're a Bayesian?**
+   **Are YOU SURE you're a Bayesian?**
 
    Without looking...
 
