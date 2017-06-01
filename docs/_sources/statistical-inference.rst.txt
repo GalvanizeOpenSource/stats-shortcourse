@@ -9,14 +9,14 @@ Statistics looks at some data, and asks the following questions:
 
 * **Point Estimation**: if not well, what instance of some distributional class does it match well?
 
-* **Uncertainty Estmiation**: are there reasonable competitors to that best guess distribution?
+* **Uncertainty Estimation**: are there reasonable competitors to that best guess distribution?
 
 * **Distribution Estimation**: how heavily do our results relying on distributional assumptions?
 
 These questions are addressed through various statistical/computational
 methodologies:
 
-  * Least squeares
+  * Least squares
   * Numerical optimization
   * maximum likelihood
   * Numerical optimization
@@ -66,7 +66,7 @@ Hypothesis testing
 2. Specify the *null hypothesis* ("The chance of heads is 50%") 
 3. Choose *test statistic* ("The number of heads observed")
 4. Collect data ("Flip the coin a few times")
-5. Calculate the test statistics ("Count the total heads fliped")
+5. Calculate the test statistics ("Count the total heads flipped")
 6. *Reject* the null hypothesis if the test statistic looks "strange"
    compared to its *sampling distribution* under the null hypothesis;
    otherwise, *fail to reject* the null hypothesis
@@ -80,7 +80,7 @@ Hypothesis testing
    binomial test p-value: 0.000873719836912
    
 
-**Z-Test** (with continnuity correction)
+**Z-Test** (with continuity correction)
 
 .. code-block:: python
 
@@ -99,6 +99,16 @@ Hypothesis testing
 
    simulation p-value - 0.00062
 
+.. note::
+
+   **EXERCISE**
+
+   Does anyone know what a **p-value** is?
+
+   * Hint: it is *not* the probability that the null hypothesis is false.
+   * Hint: it is *not* the probability that the test wrongly rejected the null.
+
+
 Maximum Likelihood Estimation (MLE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -115,7 +125,7 @@ Maximum Likelihood Estimation (MLE)
    Maximum likelihood 0.67
    Bootstrap CI: (0.5800, 0.7600)
 
-Bayesian estimation
+Bayesian Estamition
 ^^^^^^^^^^^^^^^^^^^
    
 The Bayesian approach directly estimates the posterior
@@ -154,7 +164,14 @@ methods.
    :alt: coin-toss
    :figclass: align-center
 
+.. note::
 
+   **EXERCISE**
+
+   Use the Python code above to play around with the *prior specification* 
+   a little bit.  Does it seem to influence the results of the analysis 
+   (i.e., the resulting posterior distribution)? If so, how? How do you 
+   feel about that?
 
 
 .. note::

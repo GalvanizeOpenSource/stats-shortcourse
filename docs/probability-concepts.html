@@ -30,6 +30,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -111,7 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -275,10 +277,9 @@ if the experiment is run</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>TEAM EXERCISE</strong></p>
-<p class="last">Team up with your neighbors and have each person give an example
-event (for a hypothetical experiment) based a <em>Union</em>, <em>Intersection</em>,
-<em>Difference</em>, or <em>Complement</em>. As a group, respond with an
-experimental outcome under which the example event occured.</p>
+<p class="last">Come up with couple of example sets and have each member of the
+team give explain the following concepts using your example:
+<em>Union</em>, <em>Intersection</em>, <em>Difference</em>, or <em>Complement</em>.</p>
 </div>
 </div>
 <div class="section" id="demorgan-s-laws">
@@ -366,17 +367,15 @@ the following three events</p>
 <div class="math">
 \[C = \{chol: chol \leq 280\}\]</div>
 <p>where <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are <em>mutually exclusive</em>, but <span class="math">\(A\)</span> and <span class="math">\(C\)</span> are not.</p>
-<ol class="arabic simple">
+<ol class="last arabic simple">
 <li>Discuss what it means to be mutually exclusive.</li>
-</ol>
-<ol class="arabic simple" start="2">
 <li>What is the union of sets <span class="math">\(A\)</span> and <span class="math">\(C\)</span>?
 And how about <span class="math">\((A \cup B)\)</span> = ?</li>
-</ol>
-<p>3. If <span class="math">\(Pr(X=x\in A) = 0.2\)</span> and <span class="math">\(Pr(X=x\in B) = 0.1\)</span>,
-then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</p>
-<ol class="last arabic simple" start="4">
-<li>If <span class="math">\(P(X=x\in A) = .3\)</span> and <span class="math">\(P(X=x\in C)=.2\)</span>, then what would you need to know to calculate <span class="math">\(P(X=x \leq 300)\)</span>?</li>
+<li>If <span class="math">\(Pr(X=x\in A) = 0.2\)</span> and <span class="math">\(Pr(X=x\in B) = 0.1\)</span>,
+then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</li>
+<li>[Extra] If <span class="math">\(P(X=x\in A) = .3\)</span> and <span class="math">\(P(X=x\in C)=.2\)</span>,
+then what would you need to know to calculate <span class="math">\(P(X=x \leq
+300)\)</span>?</li>
 </ol>
 </div>
 </div>
@@ -460,7 +459,18 @@ then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</p>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>

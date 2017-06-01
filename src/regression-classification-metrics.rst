@@ -10,8 +10,8 @@ Regression, Classification, Evaluation
   3. Evaluate a linear regression model
 
 
-Lot of Data
------------
+What you need to know about your data
+----------------------------------------
 
 1. **Continuous**:
 
@@ -171,9 +171,7 @@ We can easily simulate some data under an instance of this set of models as foll
 
   **QUESTION**
 
-  What picture would you draw to explains the above model?
-
-  Hint: try adding more data into the plot above.
+  If you added data into the plot above where could you add them that might be a cause for concern?
 
 Now of course in real life you *first* get your data *and then* you estimate your model:
 

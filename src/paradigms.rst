@@ -20,7 +20,10 @@ Recall that we have learned about *three* probability estimands
 * Conditional: :math:`Pr(A | B)`
 * Marginal: :math:`Pr(A)`
      
-These concepts `are reviewed here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_ and some related practice problems `are available here <http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html>`_.
+These concepts `are reviewed here
+<http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_ and
+some related practice problems `are available here
+<http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html>`_.
 
 .. note::
 
@@ -82,10 +85,31 @@ perhaps just *simulating* the experiment will help convince you:
      # df.groupby('first').mean()
      # 5./6
  
+
+If you are not familiar with pandas here is another way of simulating the conditional probability.
+
+.. code-block:: python
+
+   import numpy as np
+
+   n = 10000
+   coins = ['HH', 'HT', 'TT']
+   coins_selected = np.random.choice(coins,n)
+   first_side_shown = np.array([c[np.random.random_integers(0,1,1)[0]] for c in coins_selected])
+   coins_with_heads = coins_selected[np.where(first_side_shown == 'H')[0]]
+   second_side_shown = np.array([c[np.random.random_integers(0,1,1)[0]] for c in coins_with_heads])
+   print("%s/%s"%(np.where(second_side_shown=='H')[0].size,second_side_shown.size))
+   print(np.where(second_side_shown=='H')[0].size/second_side_shown.size)  
+
+.. code-block:: python
+     
+   4096/4938
+   0.8295
+
+
+
 More discussion about conditional probabilities can be found `here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_.
-
-
-
+   
 Bayesian Inference
 ------------------
 

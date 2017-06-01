@@ -1,0 +1,11 @@
+    display: block;
+        clear: both;
+	}
+
+.toggle .header:after {
+    content: " ▼";
+    }
+
+.toggle .header.open:after {
+    content: " ▲";
+    }1;4402;0c

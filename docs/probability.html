@@ -30,6 +30,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -113,7 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -516,7 +518,18 @@ population under examination, then</p>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>
