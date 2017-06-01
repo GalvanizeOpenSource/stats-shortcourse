@@ -48,6 +48,7 @@ nosetests.xml
 src/_build
 src/_static
 
+
 ## latex
 *.bak
 *.bbl

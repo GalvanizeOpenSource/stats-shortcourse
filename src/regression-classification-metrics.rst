@@ -8,7 +8,7 @@ Regression, Classification, Evaluation
   1. State assumptions of linear regression model
   2. Estimate a linear regression model
   3. Evaluate a linear regression model
-.. 4. Look at the R and Bayesian ways of implementing linear regression
+
 
 Lot of Data
 -----------
