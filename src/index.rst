@@ -26,18 +26,26 @@ outputs** and **identify patterns**.  Note that this is different than
 explicitly hardcoding some data relationship into a computer as though
 the specific relationship was already known beforehand.
 
-In order to identify which specific patterns (out of a general class
-of patterns) are present in the data, machine learning makes extensive use 
-of `linear algebra <https://en.wikipedia.org/wiki/Linear_algebra>`_---the 
-branch of mathematics that works directly with matrices---in conjunction numerical 
-optimization procedures.  
+.. container:: toggle
 
-This process of identifying a specific instance (out of a general class
-of patterns) that looks as similar to the data as possible
-is called "model fitting".  Once a machine has such a model representation of the data, 
-then it has *learned* the pattern in the data and can use it as a part of
-other programatic instructions designed to accomplish some objective. 
+   .. container:: header
 
+      **Show More**
+
+   In order to identify which specific patterns (out of a general class
+   of patterns) are present in the data, machine learning makes extensive use 
+   of `linear algebra <https://en.wikipedia.org/wiki/Linear_algebra>`_---the 
+   branch of mathematics that works directly with matrices---in conjunction numerical 
+   optimization procedures.  
+
+   This process of identifying a specific instance (out of a general class
+   of patterns) that looks as similar to the data as possible
+   is called "model fitting".  Once a machine has such a model representation of the data, 
+   then it has *learned* the pattern in the data and can use it as a part of
+   other programatic instructions designed to accomplish some objective. 
+
+|
+		  
 .. note::
 
    Advanced linear algebra and computation topics are not a part of this

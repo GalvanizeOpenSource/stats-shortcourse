@@ -30,6 +30,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -114,7 +116,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -202,7 +204,8 @@
 <li>Conditional: <span class="math">\(Pr(A | B)\)</span></li>
 <li>Marginal: <span class="math">\(Pr(A)\)</span></li>
 </ul>
-<p>These concepts <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">are reviewed here</a> and some related practice problems <a class="reference external" href="http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html">are available here</a>.</p>
+<p>These concepts <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">are reviewed here</a> and
+some related practice problems <a class="reference external" href="http://cecs.wright.edu/~gdong/mining03/tuto1/lesson_1.html">are available here</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>QUESTION</strong></p>
@@ -255,6 +258,23 @@ perhaps just <em>simulating</em> the experiment will help convince you:</p>
 <span class="c1"># 5./6</span>
 </pre></div>
 </div>
+</div>
+<p>If you are not familiar with pandas here is another way of simulating the conditional probability.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">coins</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HH&#39;</span><span class="p">,</span> <span class="s1">&#39;HT&#39;</span><span class="p">,</span> <span class="s1">&#39;TT&#39;</span><span class="p">]</span>
+<span class="n">coins_selected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">first_side_shown</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coins_selected</span><span class="p">])</span>
+<span class="n">coins_with_heads</span> <span class="o">=</span> <span class="n">coins_selected</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">first_side_shown</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">second_side_shown</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coins_with_heads</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">second_side_shown</span><span class="o">==</span><span class="s1">&#39;H&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="n">second_side_shown</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">second_side_shown</span><span class="o">==</span><span class="s1">&#39;H&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="n">second_side_shown</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">4096</span><span class="o">/</span><span class="mi">4938</span>
+<span class="mf">0.8295</span>
+</pre></div>
 </div>
 <p>More discussion about conditional probabilities can be found <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">here</a>.</p>
 </div>
@@ -426,7 +446,7 @@ that you can use to start learning more about Bayesian analysis:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistics-concepts.html" class="btn btn-neutral float-right" title="Statistics Concepts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="statistics-concepts.html" class="btn btn-neutral float-right" title="Statistics Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="probability-distributions.html" class="btn btn-neutral" title="Probability Distributions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -486,7 +506,18 @@ that you can use to start learning more about Bayesian analysis:</p>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>

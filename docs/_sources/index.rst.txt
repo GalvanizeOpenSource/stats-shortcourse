@@ -26,18 +26,26 @@ outputs** and **identify patterns**.  Note that this is different than
 explicitly hardcoding some data relationship into a computer as though
 the specific relationship was already known beforehand.
 
-In order to identify which specific patterns (out of a general class
-of patterns) are present in the data, machine learning makes extensive use 
-of `linear algebra <https://en.wikipedia.org/wiki/Linear_algebra>`_---the 
-branch of mathematics that works directly with matrices---in conjunction numerical 
-optimization procedures.  
+.. container:: toggle
 
-This process of identifying a specific instance (out of a general class
-of patterns) that looks as similar to the data as possible
-is called "model fitting".  Once a machine has such a model representation of the data, 
-then it has *learned* the pattern in the data and can use it as a part of
-other programatic instructions designed to accomplish some objective. 
+   .. container:: header
 
+      **Show More**
+
+   In order to identify which specific patterns (out of a general class
+   of patterns) are present in the data, machine learning makes extensive use 
+   of `linear algebra <https://en.wikipedia.org/wiki/Linear_algebra>`_---the 
+   branch of mathematics that works directly with matrices---in conjunction numerical 
+   optimization procedures.  
+
+   This process of identifying a specific instance (out of a general class
+   of patterns) that looks as similar to the data as possible
+   is called "model fitting".  Once a machine has such a model representation of the data, 
+   then it has *learned* the pattern in the data and can use it as a part of
+   other programatic instructions designed to accomplish some objective. 
+
+|
+		  
 .. note::
 
    Advanced linear algebra and computation topics are not a part of this
@@ -141,14 +149,12 @@ Day 2
    concluding-remarks
 
 
-We'll kick off the second day a concept-driven explanation of 
+We'll kick off the second day a comparison of 
 the frequentist and Bayesian paradigms (or philosophies) on which today's modern 
-statistical analyses are based. Then we'll dive a bit deeper into how to make
-use of probability distributions for inference and hypothesis testing. Then
-we'll introduce regression and classification and explore these 
-methodologies with some example applications.
-And finally we'll conclude by discussing some of the commonly 
-used methods for evaluating how useful a model actually is. 
+statistical analyses are based. Then we'll dive a bit deeper into 
+probability distribution theory, followed by some hypothesis testing and inference examples. 
+Then we'll introduce regression, classification, and some evaluation
+metrics for these methodologies.
 After that, if you want to stay around to hear a little bit more about the 
 Data Science Immersive, you're welcome to -- but you don't have to.
 

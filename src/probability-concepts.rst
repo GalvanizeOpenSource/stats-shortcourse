@@ -112,11 +112,9 @@ defined on the sample space :math:`S` of an experiment
 
    **TEAM EXERCISE**
    
-   Team up with your neighbors and have each person give an example
-   event (for a hypothetical experiment) based a *Union*, *Intersection*, 
-   *Difference*, or *Complement*. As a group, respond with an 
-   experimental outcome under which the example event occured.  
-
+   Come up with couple of example sets and have each member of the
+   team give explain the following concepts using your example:
+   *Union*, *Intersection*, *Difference*, or *Complement*.
 
 DeMorgan's Laws 
 ---------------
@@ -152,10 +150,6 @@ The truthfulness of DeMorgan's laws can be examined using a
    :alt: demorgans-laws
    :figclass: align-center
      
-
-
-
-
 .. note::
 
    **EXERCISE**
@@ -179,11 +173,8 @@ The truthfulness of DeMorgan's laws can be examined using a
    Can you give an example of De Morgan's laws in Python?
 
 
-
-
 Random Variables
 ----------------
-
    
 A random variable :math:`X` is a function that maps outcomes :math:`s` from its sample space :math:`S` onto the real numbers :math:`x \in \mathbb{R}`, i.e.,
 
@@ -201,9 +192,6 @@ defined with respect to the random variable :math:`X`
 
 .. math::
         Pr(X=x \in E) = Pr(\{s\in S : X(s) \in E\})
-
-
-
 
 .. note::
 
@@ -225,7 +213,6 @@ two events :math:`A` and :math:`B` are said to be *mutually exclusive* if
 .. math::
    Pr (X=x \in A \cup B) = Pr(X=x \in A) + Pr(X=x \in B)
 
-..
 
 .. note::
 
@@ -246,19 +233,17 @@ two events :math:`A` and :math:`B` are said to be *mutually exclusive* if
 
    where :math:`A` and :math:`B` are *mutually exclusive*, but :math:`A` and :math:`C` are not.
 
-   1. Discuss what it means to be mutually exclusive.  
-	 
-   ..
+   1. Discuss what it means to be mutually exclusive.
 
    2. What is the union of sets :math:`A` and :math:`C`?
       And how about :math:`(A \cup B)` = ?
  
    3. If :math:`Pr(X=x\in A) = 0.2` and :math:`Pr(X=x\in B) = 0.1`, 
-   then :math:`Pr(X=x \geq 250)` = ?
+      then :math:`Pr(X=x \geq 250)` = ?
 
-   4. If :math:`P(X=x\in A) = .3` and :math:`P(X=x\in C)=.2`, then what would you need to know to calculate :math:`P(X=x \leq 300)`?
-
-
+   4. [Extra] If :math:`P(X=x\in A) = .3` and :math:`P(X=x\in C)=.2`,
+      then what would you need to know to calculate :math:`P(X=x \leq
+      300)`?
 
       
 Further study

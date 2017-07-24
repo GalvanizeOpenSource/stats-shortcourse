@@ -83,8 +83,6 @@ and both can be represented as a
 .. plot:: pdf-cdf-plot.py
 
 
-
-
 Notice that for *continuous distributions* 
 
 .. math::
@@ -165,8 +163,13 @@ Linear association is encoded in a joint distribution of two variables
 as **covariance** 
 
 .. math::
-   Cov[X,Y] = E[(x - E[X])(y - E[Y])] = \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]
+     
+   Cov[X,Y] &= E[(x - E[X])(y - E[Y])]
+   
+            &= \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]
+  
 
+   
 Much like with standard deviation, it can be helpful to be on a more natural
 scale, so we often use **correlation** -- which varies from -1 to +1 with 0 --
 rather than covariance -- which is measured on the product of the two variables 

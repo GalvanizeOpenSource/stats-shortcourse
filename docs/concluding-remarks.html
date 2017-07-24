@@ -30,6 +30,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -87,7 +89,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -141,6 +146,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -152,9 +167,8 @@
     
       <li class="wy-breadcrumbs-aside">
         
-
-          
-            <a href="_sources/concluding-remarks.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/concluding-remarks.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -318,15 +332,18 @@ you need to have a very strong handle on the following material:</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="helpful-math.html" class="btn btn-neutral float-right" title="Helpful math" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="helpful-math.html" class="btn btn-neutral float-right" title="Helpful math" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="regression-classification-metrics.html" class="btn btn-neutral" title="Regression, Classification, Evaluation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="regression-classification-metrics.html" class="btn btn-neutral" title="Regression, Classification, Evaluation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -383,7 +400,18 @@ you need to have a very strong handle on the following material:</p>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>

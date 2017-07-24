@@ -30,13 +30,15 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Regression, Classification, and Evaluation" href="regression-classification-metrics.html"/>
+        <link rel="next" title="Regression, Classification, Evaluation" href="regression-classification-metrics.html"/>
         <link rel="prev" title="Statistics Concepts" href="statistics-concepts.html"/> 
 
   
@@ -109,7 +111,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -352,7 +354,7 @@ what you have learned here?</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="regression-classification-metrics.html" class="btn btn-neutral float-right" title="Regression, Classification, and Evaluation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="regression-classification-metrics.html" class="btn btn-neutral float-right" title="Regression, Classification, Evaluation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="statistics-concepts.html" class="btn btn-neutral" title="Statistics Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -412,7 +414,18 @@ what you have learned here?</li>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>

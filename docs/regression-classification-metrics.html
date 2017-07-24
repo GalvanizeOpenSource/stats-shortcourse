@@ -30,6 +30,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -87,7 +89,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -99,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regression, Classification, Evaluation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#lot-of-data">Lot of Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-you-need-to-know-about-your-data">What you need to know about your data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#predictive-modeling">Predictive Modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supervised-learning">Supervised Learning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#data-size">Data Size</a></li>
@@ -112,7 +117,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#evaluation-metrics">Evaluation Metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further Study</a></li>
-
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
@@ -146,16 +150,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Regression, Classification, Evaluation</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Regression, Classification, Evaluation</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/regression-classification-metrics.txt" rel="nofollow"> View page source</a>
-
+            
+            <a href="_sources/regression-classification-metrics.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -178,8 +197,8 @@
 <li>Evaluate a linear regression model</li>
 </ol>
 </div></blockquote>
-<div class="section" id="lot-of-data">
-<h2>Lot of Data<a class="headerlink" href="#lot-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-you-need-to-know-about-your-data">
+<h2>What you need to know about your data<a class="headerlink" href="#what-you-need-to-know-about-your-data" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><strong>Continuous</strong>:<ul>
 <li>Price, Quantity, Sales, Tenure</li>
@@ -351,10 +370,10 @@ learning are</p>
 <div class="figure">
 <img alt="_images/linear-regression_00_00.png" src="_images/linear-regression_00_00.png" />
 </div>
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>QUESTION</strong></p>
-<p>What picture would you draw to explains the above model?</p>
-<p class="last">Hint: try adding more data into the plot above.</p>
+<p class="last">If you added data into the plot above where could you add them that might be a cause for concern?</p>
 </div>
 <p>Now of course in real life you <em>first</em> get your data <em>and then</em> you estimate your model:</p>
 <div class="math">
@@ -458,7 +477,7 @@ There are many ways to evaluate the confusion matrix:</p>
 <col width="45%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">&nbsp;</th>
+<tr class="row-odd"><th class="head">&#160;</th>
 <th class="head">Predicted False <span class="math">\((\hat Y = 0)\)</span></th>
 <th class="head">Predicted Ture <span class="math">\((\hat Y = 1)\)</span></th>
 </tr>
@@ -507,15 +526,18 @@ There are many ways to evaluate the confusion matrix:</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="concluding-remarks.html" class="btn btn-neutral float-right" title="Data Science Immersive" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="concluding-remarks.html" class="btn btn-neutral float-right" title="Data Science Immersive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="statistical-inference.html" class="btn btn-neutral" title="Statistical Inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="statistical-inference.html" class="btn btn-neutral" title="Statistical Inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -572,7 +594,18 @@ There are many ways to evaluate the confusion matrix:</p>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>

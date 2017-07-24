@@ -30,6 +30,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -111,7 +113,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concluding-remarks.html">Data Science Immersive</a></li>
 </ul>
 <ul>
@@ -271,7 +273,7 @@ satisfy the <em>axioms of probability</em>, e.g.,</p>
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>Recall the <em>first through fourth distributional moments</em> mentioned previously.
 The first moments is the <strong>expectation</strong> <span class="math">\(E[X]\)</span> or <strong>mean</strong> of the
-distribution and is a measures the central tendency of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this PDF video from Khan academy</a>.</p>
+distribution and is a measures the central tendecy of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this video about random variables from Khan academy</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -305,7 +307,7 @@ if the <span class="math">\(X_i\)</span> are <em>independent</em> of each other,
 <p>Linear association is encoded in a joint distribution of two variables
 as <strong>covariance</strong></p>
 <div class="math">
-\[Cov[X,Y] = E[(x - E[X])(y - E[Y])] = \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]\]</div>
+\[ \begin{align}\begin{aligned}Cov[X,Y] &amp;= E[(x - E[X])(y - E[Y])]\\         &amp;= \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]\end{aligned}\end{align} \]</div>
 <p>Much like with standard deviation, it can be helpful to be on a more natural
 scale, so we often use <strong>correlation</strong> &#8211; which varies from -1 to +1 with 0 &#8211;
 rather than covariance &#8211; which is measured on the product of the two variables
@@ -421,7 +423,7 @@ for example <a class="reference external" href="https://statweb.stanford.edu/~ti
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical Inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical Inference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="paradigms.html" class="btn btn-neutral" title="Bayesian Inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -481,7 +483,18 @@ for example <a class="reference external" href="https://statweb.stanford.edu/~ti
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
 
 </body>
 </html>
