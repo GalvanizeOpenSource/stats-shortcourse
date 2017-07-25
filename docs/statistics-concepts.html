@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Statistical Inference" href="statistical-inference.html"/>
         <link rel="prev" title="Bayesian Inference" href="paradigms.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -109,6 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#linear-association">Linear Association</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#marginal-distributions">Marginal Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#statistics">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-warning">A Warning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#further-study">Further study</a></li>
 </ul>
 </li>
@@ -131,10 +123,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -143,40 +133,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Statistics Concepts</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Statistics Concepts</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/statistics-concepts.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/statistics-concepts.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -228,7 +201,9 @@ outcome:</p>
 <p class="last">Once you&#8217;ve gotten the hang of this for the gamma distribution,
 try to generate analogous values for a <em>Poisson</em> distribution.
 If you&#8217;re running into trouble, consider what method of a
-<cite>poisson_rv</cite> object you should be calling. Once you&#8217;ve got that
+<cite>poisson_rv</cite> object you should be calling. (Hint:
+should a Poisson random variable have a probability <em>density</em>
+function?). Once you&#8217;ve got that
 working, what would you say is the biggest difference between
 these values as associated with the gamma distribution
 compared to the Poisson distribution?</p>
@@ -244,7 +219,7 @@ satisfy the <em>axioms of probability</em>, e.g.,</p>
 </ol>
 </div></blockquote>
 <p>and both can be represented as a
-<strong>cumulative distribution functions (CDF)</strong> which is defined as</p>
+<strong>cumulative distribution functions (CDF)</strong>, which is defined as</p>
 <div class="math">
 \[F_X(X=x) = Pr(X=x\leq x_0)\]</div>
 <p>(<a class="reference external" href=".//pdf-cdf-plot.py">Source code</a>, <a class="reference external" href=".//pdf-cdf-plot.png">png</a>, <a class="reference external" href=".//pdf-cdf-plot.hires.png">hires.png</a>, <a class="reference external" href=".//pdf-cdf-plot.pdf">pdf</a>)</p>
@@ -256,23 +231,31 @@ satisfy the <em>axioms of probability</em>, e.g.,</p>
 \[F_X(X=x_0) = \underset{x&lt;x_0}{\int} f(X=x)\; dx\]</div>
 <p>which means that the derivative of the CDF is the the PDF</p>
 <div class="math">
-\[\frac{d F_X}{X} f(X) = F_X(X)\]</div>
+\[\frac{d}{dX}F_X(X) = f(X)\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>QUESTION</strong></p>
+<p class="last">Are you surprised that discrete and continuous distributions can <em>BOTH</em>
+be defined in terms of a <em>CDF</em> even though discrete distributions
+only have <em>PMF</em> and not a <em>PDF</em> and continuous distributions only have a
+<em>PDF</em> and not a <em>PMF</em>?</p>
+</div>
 </div>
 <div class="section" id="expectation">
 <h2>Expectation<a class="headerlink" href="#expectation" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>expectation operator</strong> for a random variable <span class="math">\(X\)</span> is defined as</p>
 <ul class="simple">
-<li><span class="math">\(E[X] = \sum_{x\in S_X} s Pr(X=x)\)</span></li>
+<li><span class="math">\(E[X] = \displaystyle \sum_{x\in S_X} x Pr(X=x)\)</span></li>
 </ul>
 <ul class="simple">
-<li><span class="math">\(E[X] = \int_{-\infty}^{\infty}X(s) f_X(s)ds\)</span></li>
+<li><span class="math">\(E[X] = \displaystyle \int_{-\infty}^{\infty}x f_X(x)dx\)</span></li>
 </ul>
 <p>for discrete and continuous distributions, respectively.</p>
 </div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>Recall the <em>first through fourth distributional moments</em> mentioned previously.
-The first moments is the <strong>expectation</strong> <span class="math">\(E[X]\)</span> or <strong>mean</strong> of the
+The first moments is the above <strong>expectation</strong> <span class="math">\(E[X]\)</span> or <strong>mean</strong> of the
 distribution and is a measures the central tendecy of the distribution. For more explanation, see <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability">this video about random variables from Khan academy</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -284,40 +267,58 @@ a measure of spread of the distribution and is defined as</p>
 <p>and the <strong>standard deviation</strong>, which is defined on the original units
 of the random variable is defined as <span class="math">\(\sigma_X = \sqrt{Var[X]}\)</span>.</p>
 <p>How would you actually calculate the standard deviation
-of a random variable with a given discrete distribution?</p>
+of a random variable with a given discrete distribution, <span class="math">\(Pr(X=x)\)</span>?</p>
 <p class="last">For more information, see: <a class="reference external" href="https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/v/range-variance-and-standard-deviation-as-measures-of-dispersion">Measures of spread (Khan academy)</a>.</p>
 </div>
 </div>
 <div class="section" id="joint-distributions">
 <h2>Joint Distributions<a class="headerlink" href="#joint-distributions" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>joint distribution</strong> of two or more random variables is
-defined by the distributional form of the <em>chain rule</em>, i.e.,
-the joint distribution of
+<p>When we&#8217;re talking about random variables, we don&#8217;t use the <em>set</em> notation
+that we did for events, e.g., <span class="math">\(A \cap B\)</span>. Instead, we specify the
+distribution associated with two random variables <span class="math">\(X_1\)</span> and <span class="math">\(X_2\)</span>
+as <span class="math">\(P(X_1, X_2)\)</span> where <span class="math">\(P\)</span> specifies either a PMF or a PDF.
+A distribution such as this that is specified for two or more random variables is
+called a <strong>joint distribution</strong>.
+And further, the <em>joint distribution</em> of
 a collection of random variables <span class="math">\(X_i, \; i = 1, \cdots, n\)</span> is
-given as</p>
+defined by the distributional form of the <em>chain rule</em> which is</p>
 <div class="math">
-\[\displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i | \underset{i=1}{\overset{n}{\cap}} X_i\right)\]</div>
-<p>where <span class="math">\(P\)</span> specifies either a PMF or a PDF.  Further, notice that
-if the <span class="math">\(X_i\)</span> are <em>independent</em> of each other, then</p>
+\[\displaystyle P\left(X_1, X_2, \cdots X_n\right) = \left(\prod_{i=n}^{2} P\left(X_i | X_{i-1}, \cdots X_1 \right)\right) \times P\left(X_1\right)\]</div>
+<p>Further, just as with <em>events</em>, if the <span class="math">\(X_i\)</span> are <em>independent</em> of each other then</p>
 <div class="math">
-\[\displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i\right)\]</div>
+\[\displaystyle P\left(X_1, X_2, \cdots X_n\right) = \prod_{i=1}^n P\left(X_i\right)\]</div>
+<p>Note that the the mathematical <em>multiplication notation</em> <span class="math">\(\displaystyle \prod_{i=1}^{n} c_i\)</span> for numbers <span class="math">\(c_i, i = 1, \cdots, n\)</span> is
+just like the mathematical <em>summation notation</em> <span class="math">\(\displaystyle \sum_{i=1}^{n} c_i\)</span> except that the <span class="math">\(c_i\)</span> are <em>multiplied</em>
+together instead of being <em>added</em> together.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>EXERCISE</strong></p>
+<p class="last">Write out the distributional chain rule defining
+<span class="math">\(P\left(X_1, X_2, X_3, X_4, X_5\right)\)</span> and give an account of how
+it might be interpreted.  E.g., &#8220;First we caclulate the probability of <span class="math">\(X_1\)</span>...&#8221;</p>
+</div>
 </div>
 <div class="section" id="linear-association">
 <h2>Linear Association<a class="headerlink" href="#linear-association" title="Permalink to this headline">¶</a></h2>
-<p>Linear association is encoded in a joint distribution of two variables
-as <strong>covariance</strong></p>
+<p>Linear association between two variables is encoded as the
+<strong>covariance</strong> of the joint distribution of those two variables</p>
 <div class="math">
 \[ \begin{align}\begin{aligned}Cov[X,Y] &amp;= E[(x - E[X])(y - E[Y])]\\         &amp;= \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]\end{aligned}\end{align} \]</div>
+<p>where the brackets simply indicate appropriate notational usage
+depending on if we&#8217;re talking about discrete or continuous random variables.</p>
 <p>Much like with standard deviation, it can be helpful to be on a more natural
-scale, so we often use <strong>correlation</strong> &#8211; which varies from -1 to +1 with 0 &#8211;
-rather than covariance &#8211; which is measured on the product of the two variables
-unit &#8211; to describe the strength of a linear relationship:</p>
+scale, so we often use <strong>correlation</strong> (which varies from -1 to +1 with
+0 indicating &#8220;no linear association&#8221;)
+rather than covariance (which is measured on the product of the two variables
+unit) &#8211; to describe the strength of a linear relationship:</p>
 <div class="math">
 \[Corr[X,Y] = \frac{E[(x - E[X])(y - E[Y])]}{\sigma_X\sigma_Y} = \frac{Cov[X,Y]}{\sigma_X\sigma_Y}\]</div>
 </div>
 <div class="section" id="marginal-distributions">
 <h2>Marginal Distributions<a class="headerlink" href="#marginal-distributions" title="Permalink to this headline">¶</a></h2>
-<p>Recasting the <em>Law of Total Probability</em> in terms of random variables
+<p>We have seen <em>marginal distributions</em> already &#8211; they are simply
+distributions of a single random variable.
+However, recasting the <em>Law of Total Probability</em> in terms of random variables
 <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, we have for</p>
 <ul class="simple">
 <li><strong>discrete distributions</strong></li>
@@ -329,16 +330,20 @@ unit &#8211; to describe the strength of a linear relationship:</p>
 </ul>
 <div class="math">
 \[\displaystyle f(X=x) = \int_{y \in S_Y} f(X=x, Y=y) \;dy = \int_{y \in S_Y} f(X=x|Y=y) f(Y=y) \;dy\]</div>
-<p>The distributions
-<span class="math">\(Pr(X=x)\)</span> and <span class="math">\(f(X=x)\)</span> are called <strong>marginal distributions</strong>
-of their respective <strong>joint distributions</strong>, <span class="math">\(Pr(X, Y)\)</span> and
-<span class="math">\(f(X, Y)\)</span>, respectively. Thus, a <strong>marginal distribution</strong> of a
+<p>which shows how <strong>marginal distributions</strong>
+<span class="math">\(Pr(X=x)\)</span> and <span class="math">\(f(X=x)\)</span> can be derived from their
+higher order <strong>joint distributions</strong> <span class="math">\(Pr(X, Y)\)</span> and
+<span class="math">\(f(X, Y)\)</span>, respectively.
+Thus, a <strong>marginal distribution</strong> of a
 (possibly not independent) <em>multivariate (joint) distribution</em> is just the
 distribution of a
 single dimension (random variable) of the multivariate (joint) random variable.
-Marginal distributions allow us to unpack joint distributions.</p>
+Marginal distributions are the unpacked variables of joint distributions.</p>
+<p>So, while the <em>chain rule</em> allows us to build up joint distributions from
+conditional (&#8220;marginal&#8221;) distributions, the <em>law of total probability</em> allows
+us to unpack joing distributions into marginal distributions.</p>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/MultivariateNormal.png"><img alt="coin-toss" src="_images/MultivariateNormal.png" style="width: 631.5px; height: 477.75px;" /></a>
+<a class="reference internal image-reference" href="_images/MultivariateNormal.png"><img alt="joint-distribution" src="_images/MultivariateNormal.png" style="width: 631.5px; height: 477.75px;" /></a>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -348,21 +353,27 @@ Marginal distributions allow us to unpack joint distributions.</p>
 </div>
 <div class="section" id="statistics">
 <h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
-<p><strong>Statistics</strong> often correspond to distributional <em>parameters</em> as they
-are typically used to estimate specific distributional parameters.  It&#8217;s important
+<p><strong>Statistics</strong> are often chosen for their correspondence to
+specific distributional <em>parameters</em> for the purposes of estimating those
+parameters.  It&#8217;s important
 to always remember the distinction between <em>statistics</em> and <em>parameters</em>,
-however:
-statistics are numerical calculations that are planned to be executed using
-sample data, while parameters are mathematical manipulations carried out on
+though:
+statistics are numerical calculations that use sample data for their
+calculation, while parameters are mathematical manipulations carried out on
 distributional forms.</p>
-<p>The statistic that corresponds to expectation is the <strong>sample mean</strong>:</p>
+<p>A statistic that corresponds to the <em>population
+mean</em> is, unsurprisingly, the <strong>sample mean</strong>:</p>
 <div class="math">
 \[\bar{x} = \frac{1}{n}\sum_j^n x_j\]</div>
-<p>Common alternative statistics for measuring centrality are the <strong>sample median</strong>
-and the <strong>sample mode</strong>.
-The statistic that corresponds to variance is the <strong>sample variance</strong>:</p>
+<p>However, alternative statistics with different robustness and behavior profiles,
+such as <strong>sample median</strong> and the <strong>sample mode</strong>, are available for
+measuring centrality.
+The statistic that corresponds to the <em>population variance</em> is the <strong>sample variance</strong>:</p>
 <div class="math">
 \[s^2 = \frac{1}{n-1} \sum_j^n (x_j - \bar{x})^2\]</div>
+<p>But again, alternative statistics such as the <strong>range</strong> and <strong>inter-quartile range</strong>
+are available for measuring spead.  And of course, the sample <em>standard deviation</em>
+<span class="math">\(s = \sqrt{s^2}\)</span> is much easier to interpret than the <em>sample variance</em>.</p>
 <p>There are a couple common choices for
 statistics that correspond to linear associations parameters.
 The <strong>Pearson correlation</strong> coefficient measures the linear relationship
@@ -388,6 +399,9 @@ assumptions and as such are, unsurprisingly, different.
 A <strong>spurious relationship</strong> is a relationship is said to exist between
 two or more random variables that are not causally related to each other
 but have a relationship due to a common <strong>confounding factor</strong>.</p>
+</div>
+<div class="section" id="a-warning">
+<h2>A Warning<a class="headerlink" href="#a-warning" title="Permalink to this headline">¶</a></h2>
 <p><strong>Confounding</strong> is just one of the many difficulties that will need to be
 dealt with in real data. When you actually begin working with
 real data you&#8217;ll see that things can be quite messy.  In fact, messy
@@ -396,9 +410,9 @@ your data.  These outliers can drastically affect your calculated statistics
 and hence your conclusions. Weary and vigilant attention is required to
 suss out these influential data points and decide what is to be done about
 them.  And what if you have <strong>missing data</strong> that&#8217;s not even available to
-look at? Will you impute the missing data? With how much sophistication?
-Will you simply disregard samples with missing entires? As you can see,
-there are many questions and, unfortunately, too few answers.</p>
+look at? Will you impute the missing data? If so, with how much sophistication?
+Or will you simply disregard samples with missing entires? As you can see,
+there are many questions and, unfortunately, very often too few answers...</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -409,24 +423,22 @@ above plot that you drew.</p>
 <div class="section" id="further-study">
 <h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
 <p>Most major statistical textbooks,
-for example <a class="reference external" href="https://statweb.stanford.edu/~tibs/ElemStatLearn/">Elements of Statistical Learning</a> (Free), will begin with an overview of these topics.</p>
+for example (the free) <a class="reference external" href="https://statweb.stanford.edu/~tibs/ElemStatLearn/">Elements of Statistical Learning</a>
+will begin with an overview of the topics in this section.</p>
 </div>
 </div>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical Inference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="statistical-inference.html" class="btn btn-neutral float-right" title="Statistical Inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="paradigms.html" class="btn btn-neutral" title="Bayesian Inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="paradigms.html" class="btn btn-neutral" title="Bayesian Inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -460,14 +472,13 @@ for example <a class="reference external" href="https://statweb.stanford.edu/~ti
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

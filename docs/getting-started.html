@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Probability Concepts" href="probability-concepts.html"/>
         <link rel="prev" title="Statistics Short Course" href="index.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#where-are-we-going">Where are we going?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#industry-leading-tools">Industry Leading Tools</a></li>
@@ -127,10 +118,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -139,40 +128,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Getting started</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting started</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/getting-started.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/getting-started.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -182,19 +154,19 @@
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="where-are-we-going">
 <h2>Where are we going?<a class="headerlink" href="#where-are-we-going" title="Permalink to this headline">¶</a></h2>
-<p>We mentioned machine learning&#8212;here&#8217;s a figure that provides a little more perspective.
+<p>We mentioned <strong>Machine Learning</strong> on the workshop land page &#8212;here&#8217;s a figure that provides a little more perspective.
 Note the emphasis on sample size &#8220;rules of thumb&#8221;.  This is a characteristic of the
 empirical and computational nature of machine learning that enables the use of
 complex and sensitive models which subsequently require large amounts of data to actualize
-meaningful as opposed to spurious model fits.  The figure also gives an indication of
+meaningful (as opposed to spurious) model fits.  The figure also gives an indication of
 the vast and diverse set of tools and tasks that make up the machine learning world.
-Now, if you&#8217;re interested in exploring this fascinating space of methodologies and learning
-how to leverage and apply these methodologies (which you probably are, since you&#8217;re here), then
-you&#8217;re going to need a fundamental understanding and serviceable skill set in programming and
-probability and statistics. And if you&#8217;re just starting your journey &#8211; congratulations! &#8211;
-you&#8217;ve come to the right place!</p>
+If you&#8217;re interested in exploring this fascinating methodology space and learning
+how to leverage and apply these powerful tools (which, since you&#8217;re here, you probably are), then
+you&#8217;re going to need a fundamental understanding and serviceable skill set in programming,
+probability and statistics. And if you&#8217;re just starting your journey (congratulations!!)
+you&#8217;re in the right place!</p>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/sklearn-map.png"><img alt="galvanize-logo" src="_images/sklearn-map.png" style="width: 742.6999999999999px; height: 463.04999999999995px;" /></a>
+<a class="reference internal image-reference" href="_images/sklearn-map.png"><img alt="galvanize-logo" src="_images/sklearn-map.png" style="width: 742.7px; height: 463.05px;" /></a>
 </div>
 <p><a class="reference external" href="http://scikit-learn.org/stable/tutorial/machine_learning_map">http://scikit-learn.org/stable/tutorial/machine_learning_map</a></p>
 </div>
@@ -204,49 +176,51 @@ you&#8217;ve come to the right place!</p>
 extensive documentation and tutorial collection. Scikit-Learn is the leading open source
 collection of machine learning tools. There are some competitors (notably R, which has
 seen an increase in machine learning capabilities, but is still tailored more towards
-the more traditional statistics and data analysis communities), but it is safe to say that
+the more historical statistics and traditional data analysis communities),
+but it is safe to say that
 Scikit-Learn is the industry standard bearer. Scikit-Learn is a library in the python
-programming language, another industry standard that has seen widespread adoption and
-established an incredibly vast and diverse ecosystem. Python is, and has been for quite some
-time now, the hottest most generally useful program language on the market. If you&#8217;re
+programming language &#8211; another industry standard in terms of programming languages &#8211;
+which has seen widespread adoption and the establishment of an incredibly vast
+and diverse ecosystem. Python is, and has been for quite some
+time now, the hottest most generally useful program language around. If you&#8217;re
 looking to build up your programming skill set, you cannot go wrong Python.
 One final industry leader is the Anaconda framework from Continuum Analytics.
 Anaconda is a platform that simplifies package management and deployment of open source
-data science capabilities.</p>
+data science capabilities.  Data Scientists Love Anaconda.</p>
 </div>
 <div class="section" id="installing-python">
 <h2>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h2>
-<p>If (a) you want to follow along with the examples and (b) since Python is
-the working language of the Data Science Immersive, we encourage you to
-install Python.</p>
+<p>Because (a) Python is the working language of the Data Science Immersive, and because (b)
+you&#8217;ll need to have a installation of Python on your computer if you want to follow
+along with the examples in this work shop, we encourage you to install Anaconda
+(which comes with a working installation of Python out of the box).</p>
 <p><a class="reference external" href="https://docs.continuum.io/anaconda/install">https://docs.continuum.io/anaconda/install</a></p>
 </div>
 <div class="section" id="installing-an-editor">
 <h2>Installing an Editor<a class="headerlink" href="#installing-an-editor" title="Permalink to this headline">¶</a></h2>
-<p>There are many editors to choose from...
-Unless you have a programming editor that you are already comfortable with try using Atom.</p>
+<p>Data Scientists script and code data analysis pipelines, and so they use text editors!
+There are many editors to choose from...
+But unless you have a programming editor that you are already comfortable with
+we recommend that you try using Atom!</p>
 <p><a class="reference external" href="https://flight-manual.atom.io/getting-started/sections/installing-atom">https://flight-manual.atom.io/getting-started/sections/installing-atom</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">programming practices, editors, version control, software engineering, and other related topics are not part of the scope of this short course</p>
+<p class="last">Programming practices, editors, version control, software engineering, and other related topics are not part of the scope of this short course.</p>
 </div>
 </div>
 </div>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probability-concepts.html" class="btn btn-neutral float-right" title="Probability Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probability-concepts.html" class="btn btn-neutral float-right" title="Probability Concepts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Statistics Short Course" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Statistics Short Course" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -280,14 +254,13 @@ Unless you have a programming editor that you are already comfortable with try u
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

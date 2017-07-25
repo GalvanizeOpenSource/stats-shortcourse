@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Probability" href="probability.html"/>
         <link rel="prev" title="Probability Concepts" href="probability-concepts.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Combinatorics</a><ul>
@@ -127,10 +118,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -139,40 +128,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Combinatorics</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Combinatorics</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/combinatorics.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/combinatorics.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -182,11 +154,11 @@
 <h1>Combinatorics<a class="headerlink" href="#combinatorics" title="Permalink to this headline">¶</a></h1>
 <p>Combinatorics is a branch of mathematics dedicated to figuring out how to count
 things! Specifically, the number of elements contained
-in &#8211; i.e., the <strong>cardinality</strong> &#8211; of event <span class="math">\(A\)</span>:</p>
+in &#8211; i.e., the <strong>cardinality</strong> of &#8211; event <span class="math">\(A\)</span>:</p>
 <div class="math">
 \[\mathbf{card}(A) = |A|\]</div>
 <p>Counting&#8217;s not so hard, you say? Think again: when it comes to ordering and
-choosing sets in complicated and clever ways things can get tricky in heartbeat.
+choosing sets in complicated and clever ways counting can get tricky in heartbeat.
 Be that as it may, combinatorics plays a fundamental and foundational role
 in probability as it forms the basis for assigning probabilities to events
 in many contexts. Beyond that, the need to count
@@ -209,8 +181,12 @@ how many possible orderings could be drawn? The answer to this question is</p>
 </ul>
 <p>until there is only one ball left and we must pick it.
 That is, there are <span class="math">\(10*9*8*\cdots*1 = 10!\)</span>, i.e.
-<em>10 factorial</em>, possible orderings.</p>
-<p>The number <em>10 factorial</em> can be calculated in Python, but watch out: factorials get really big really fast...</p>
+<em>10 factorial</em>, possible orderings.  This is a demonstration of the
+so-called _product <a href="#id1"><span class="problematic" id="id2">rule_</span></a> for counting things, and it forshadows the
+incredibly fundamental rule in probability known as the _chain <a href="#id3"><span class="problematic" id="id4">rule_</span></a>
+(which we will return to later).</p>
+<p>The number <em>10 factorial</em> can be calculated in Python,
+but watch out: factorials get really big really fast...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">3628800</span>
@@ -237,15 +213,15 @@ solution to the problem is commonly notated as</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">If you think about the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; solution carefully,
+<p class="last">If you think about the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; formula carefully
 you can actually see that it makes
 sense: the <span class="math">\(K!\)</span> in the denominator is the number of ways to order a list
-of length <span class="math">\(K\)</span>, whereas the <span class="math">\(\frac{N!}{(N-K)!}\)</span> is all possible
-lists of length <span class="math">\(K\)</span> where order matters.  With that in mind, see if you
-can think through why the formula counts the right thing.</p>
+of length <span class="math">\(K\)</span>, and the <span class="math">\(\frac{N!}{(N-K)!}\)</span> is all possible
+lists of length <span class="math">\(K\)</span> where order matters.  Do you see why?
+Knowing this, can you articulate why the complete formula counts the right thing?</p>
 </div>
-<p>If you&#8217;re still a little confused about how the counting actually works,
-don&#8217;t worry, it&#8217;s really easy to calculate combinations Python:</p>
+<p>If you&#8217;re feeling like this seems like an awful lot of multiplication and division,
+don&#8217;t worry, Python can do all the necessary calculations for you:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">factorial</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
@@ -274,13 +250,15 @@ don&#8217;t worry, it&#8217;s really easy to calculate combinations Python:</p>
 <h2>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h2>
 <p><em>Permutations</em> counts the number of ways subsets can be chosen when
 <strong>order does matter</strong>. If you followed the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; thought exercise
-above then you won&#8217;t be surprised to learn that the number of ways to
+above then you won&#8217;t be surprised to learn (i.e., be reminded) that the number of ways to
 choose <cite>K</cite> things out of <cite>N</cite> things <strong>when order matters</strong> is</p>
-<blockquote>
-<div><span class="math">\(\displaystyle \frac{N!}{(N-K)!}\)</span></div></blockquote>
+<div class="math">
+\[\displaystyle \frac{N!}{(N-K)!}\]</div>
 <p>Explicitly writing out the formula makes it clear that permutations
-are just a slight variation on the factorial theme. And of
-course, once again, it&#8217;s easy to do permutations in Python:</p>
+are just a slight variation on what we did for the product rule above.
+I.e., they are just a special case of factorial multiplication. And of
+course, once again, it&#8217;s easy to Python take care of
+the permutation calculations for you.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 <span class="k">def</span> <span class="nf">permu</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span>
@@ -301,8 +279,9 @@ course, once again, it&#8217;s easy to do permutations in Python:</p>
 <p class="first admonition-title">Note</p>
 <p><strong>PAIRED EXERCISE</strong></p>
 <p class="last">Face off against the person next to you, pitting permutations against
-combinations, and defending the dignity and honor of your position!
-No low blows are allowed, but don&#8217;t be afraid to bring size into
+combinations, and defend the dignity and honor of your cause!
+Which is your favorite and why, when it really comes down to it?
+No low blows allowed, but don&#8217;t be afraid to bring size into
 the argument if you think it helps your case.</p>
 </div>
 </div>
@@ -319,18 +298,15 @@ the argument if you think it helps your case.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probability.html" class="btn btn-neutral float-right" title="Probability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probability.html" class="btn btn-neutral float-right" title="Probability" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="probability-concepts.html" class="btn btn-neutral" title="Probability Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="probability-concepts.html" class="btn btn-neutral" title="Probability Concepts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -364,14 +340,13 @@ the argument if you think it helps your case.</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
