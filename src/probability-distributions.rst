@@ -316,7 +316,7 @@ the *probability mass function* for a *hypergeometric* random variable :math:`X`
 is defined as
 
 .. math::
-   Pr(X=k) = \frac{{K \choose k} {{N - K} \choose {n - k}}}{N \choose N}
+   Pr(X=k) = \frac{{K \choose k} {{N - K} \choose {n - k}}}{N \choose n}
    
 where :math:`N, K`, and :math:`n` are the parameters of the geometric distribution
 specifying the size of the population, the total number of individuals in the 

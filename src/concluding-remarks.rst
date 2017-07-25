@@ -105,15 +105,13 @@ you need to have a very strong handle on the following material:
   * `Galvanize self study resources <https://github.com/zipfian/self-study-resources>`_
   * Chapters 1-4 of `Introduction to Statistical Learning <http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf>`_
   * Chapters 1-4 of `15 hours of machine learning videos <http://www.dataschool.io/15-hours-of-expert-machine-learning-videos>`_
-
+  * `Visualizing probability and statistics <http://students.brown.edu/seeing-theory/index.html>`_
 
 If you need to start a little slower as you begin learning these topics, you may want to have a look here:
 
   * `Khan Academy - statistics and probability <https://www.khanacademy.org/math/statistics-probability>`_
   * `Hypothesis testing <https://www.youtube.com/watch?v=J6AdoiNUyWI&list=PL5-da3qGB5IBSSCPANhTgrw82ws7w_or9>`_
   * `Useful flashcards <http://www.cram.com/flashcards/probability-for-data-science-8215075>`_
-
-
 
 
 

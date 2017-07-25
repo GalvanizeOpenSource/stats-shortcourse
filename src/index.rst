@@ -158,10 +158,6 @@ metrics for these methodologies.
 After that, if you want to stay around to hear a little bit more about the 
 Data Science Immersive, you're welcome to -- but you don't have to.
 
-
-
-
-
 	      
 Resources for further study
 -----------------------------
@@ -170,7 +166,8 @@ Resources for further study
   * `Useful flashcards <http://www.cram.com/flashcards/probability-for-data-science-8215075>`_
   * `Khan Academy - statistics and probability <https://www.khanacademy.org/math/statistics-probability>`_
   * `15 hours of machine learning videos <http://www.dataschool.io/15-hours-of-expert-machine-learning-videos>`_
-  
+  * `Visualizing probability and statistics <http://students.brown.edu/seeing-theory/index.html>`_
+
 Reference materials
 ^^^^^^^^^^^^^^^^^^^^^^
 
