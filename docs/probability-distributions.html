@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Bayesian Inference" href="paradigms.html"/>
         <link rel="prev" title="Probability" href="probability.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -143,10 +134,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -155,40 +144,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Probability Distributions</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Probability Distributions</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/probability-distributions.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/probability-distributions.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -200,40 +172,43 @@
 particular type of random process.</p>
 <div class="section" id="properties-of-distributions">
 <h2>Properties of Distributions<a class="headerlink" href="#properties-of-distributions" title="Permalink to this headline">¶</a></h2>
-<p>Distributions are classified into two categories:</p>
+<p>Probability Distributions are classified into two categories:</p>
 <ul class="simple">
 <li><strong>discrete</strong> &#8211; producing outcomes that can be mapped to the <em>integers</em> (such as 1, 2, ...)</li>
 <li><strong>continuous</strong> &#8211; producing <em>real-valued</em> outcomes (such as 3.14... or 2.71...)</li>
 </ul>
 <p><strong>Discrete distributions</strong> are specified using
-<strong>probability mass functions</strong> and
+<strong>probability mass functions</strong>
 often indicated as <span class="math">\(Pr(X=x)\)</span>
 while <strong>continuous distributions</strong>
 are specified using <strong>probability density functions</strong>
-often indicated <span class="math">\(f(X=x)\)</span> and which specify
-the behavior of realizations <span class="math">\(x\)</span> of a random random variable <span class="math">\(X\)</span>
+often indicated as <span class="math">\(f(X=x)\)</span>.</p>
+<p><strong>Discrete distributions</strong> specify probabilities of observing outcome <span class="math">\(x\)</span>
+from a <strong>discrete</strong> random variable <span class="math">\(X\)</span> directly,
+while <strong>continuous distributions</strong> specify
+the behavior of realizations <span class="math">\(x\)</span> of a <strong>continuous</strong> random variable <span class="math">\(X\)</span>
 in a retaliative rather than absolute manner.
 For example,
 if <span class="math">\(f(X=x_1) = 2f(X=x_2)\)</span> then in the long-run
-<span class="math">\(x_2\)</span> will occur <em>twice as frequently</em> as <span class="math">\(x_1\)</span>.
-If a random variable <span class="math">\(X\)</span> is distributed according to a
-distribution named <span class="math">\(XYZ\)</span> with
+<span class="math">\(x_2\)</span> will occur <em>twice as frequently</em> as <span class="math">\(x_1\)</span>.</p>
+<p>Regardless of whether or not a
+random variable <span class="math">\(X\)</span> is discete or continuous,
+if it is distributed according to a distribution named <span class="math">\(XYZ\)</span> with
 parameters <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span>, and so on,
-then we indicate that as</p>
+then we write</p>
 <div class="math">
 \[X \sim XYZ(\alpha, \beta, ...)\]</div>
 <p>and if
-a set of <span class="math">\(n\)</span> random variables <span class="math">\(X_i, \; i=1, 2, \cdots n\)</span>
+a collection of <span class="math">\(n\)</span> random variables <span class="math">\(X_i, \; i=1, 2, \cdots n\)</span>
 are <strong>identically and independently distributed (i.i.d)</strong>
-&#8211; i.e., the random variables have <em>the same distribution</em>
+&#8212;i.e., the random variables have <em>the same distribution</em>
 and the realization of one <em>does not influence</em> the
-realization of another &#8211; then we indicate that as</p>
+realization of another&#8212; then we write</p>
 <div class="math">
 \[X_i \overset{\small i.i.d.}{\sim} XYZ(\alpha, \beta, ...), \; i=1,2,\cdots n\]</div>
-<p>For both continuous and discrete distributions
-there are four properties &#8211;
-<em>the first through fourth moments</em> &#8211;
-of a distribution that are often evoked to describe the distribution:</p>
+<p>For both continuous and discrete distributions,
+there are four properties &#8211; <em>the first through fourth moments</em> &#8211;
+that are often used to describe a distribution:</p>
 <ul class="simple">
 <li><strong>Expectation</strong> (or <strong>Mean</strong>) characterizes the <em>location</em> of a distribution</li>
 <li><strong>Variance</strong> or <strong>Standard Deviation</strong> (square root of the <em>variance</em>) characterizes the <em>spread</em> of a distribution</li>
@@ -247,12 +222,12 @@ of a distribution that are often evoked to describe the distribution:</p>
 <h3>Bernoulli<a class="headerlink" href="#bernoulli" title="Permalink to this headline">¶</a></h3>
 <p>A <strong>Bernoulli distribution</strong> is a <em>discrete probability distribution</em>
 modeling a one chance attempt that results in either a success
-of a failure.  Such an attempt is called a <strong>Bernoulli trial</strong>, and
-typically an outcome of a success is recorded as a <span class="math">\(1\)</span> while an
-and outcome of failure is recorded as a <span class="math">\(0\)</span>.  The most commonly
+of a failure.  Such an attempt is called a <strong>Bernoulli trial</strong>, with
+a success typically recorded as a <span class="math">\(1\)</span> and a failure
+typically recorded as a <span class="math">\(0\)</span>.  The most commonly
 cited example of a Bernoulli trial is getting a heads on a coin flip,
-where the chance of getting a heads is <span class="math">\(50%\)</span> if the coin is fair,
-but some other probability otherwise.  The <em>probability mass function</em> for a
+where the chance of getting a heads is <span class="math">\(50\%\)</span> if the coin is fair
+(but another probability otherwise).  The <em>probability mass function</em> for a
 <em>Bernoulli</em> random variable <span class="math">\(X\)</span> is defined as</p>
 <div class="math">
 \[Pr(X=1) = p, \text{ and } Pr(X=0) = 1-p\]</div>
@@ -279,7 +254,7 @@ answers could be modeled with a Bernoulli model. What are some other examples?</
 </div>
 <div class="section" id="binomial">
 <h3>Binomial<a class="headerlink" href="#binomial" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>Binomial distribution</strong> is a <em>discrete probability distribution</em>
+<p>The <strong>binomial distribution</strong> is a <em>discrete probability distribution</em>
 that defines the probability of observing exactly <span class="math">\(k\)</span> successes out of
 <span class="math">\(n\)</span> identical Bernoulli trials.
 The <em>probability mass function</em> for a <em>Binomial</em> random variable <span class="math">\(X\)</span>
@@ -310,12 +285,15 @@ that might be modeled with a binomial distribution?</p>
 <div class="section" id="poisson">
 <h3>Poisson<a class="headerlink" href="#poisson" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>Poisson distribution</strong> is a <em>discrete probability distribution</em>
-that can be used to models the number of times an event
+that can be used to model the number of times an event
 occurs within a given fixed time interval; specifically, it exactly defines a
 probability model for the number of arrivals of a sequential process of
 <em>exponentially distributed</em> time intervals in that window.
 <em>(We will discuss the exponential distribution further below).</em>
-The <em>probability mass function</em> for a <em>Poisson</em> random variable <span class="math">\(X\)</span>
+<em>(If all of that sequential process process stuff didn&#8217;t make any sense,
+don&#8217;t sweat it for now)</em>.  The relationship of the <em>Poisson distribution</em>
+to the <em>exponential distribution</em> notwithstanding,
+the <em>probability mass function</em> for a <em>Poisson</em> random variable <span class="math">\(X\)</span>
 is defined as</p>
 <div class="math">
 \[Pr(X=k) = \frac{\lambda^k e^{-\lambda}}{k!},\text{ for } k \in \{0,1,2,...\}\]</div>
@@ -339,7 +317,7 @@ What are some other examples of random variables that could
 be modeled as using a Poisson distribution.</p>
 <p class="last">Bonus: Can any of these these examples be modeled using a binomial distribution?</p>
 </div>
-<p>Check out this <a class="reference external" href="https://www.youtube.com/watch?v=3z-M6sbGIZ0">How the Binomial and Poisson Distribution are Related (khan academy) video</a> if you&#8217;re interested in learning a little bit more about the second question in the above exercise. Check out the <a class="reference external" href="https://www.youtube.com/watch?v=Jkr4FSrNEVY">Poisson distribution example (khan academy) video</a> if you need some more intuition about Poisson distributions. And finally, some further <a class="reference external" href="https://www.umass.edu/wsp/resources/poisson">example applications of the Poisson model are discussed here</a></p>
+<p>Check out this <a class="reference external" href="https://www.youtube.com/watch?v=3z-M6sbGIZ0">How the Binomial and Poisson Distribution are Related (khan academy) video</a> if you&#8217;re interested in learning a little bit more about the second question in the above exercise. Check out the <a class="reference external" href="https://www.youtube.com/watch?v=Jkr4FSrNEVY">Poisson distribution example (khan academy) video</a> if you need some more intuition about Poisson distributions. And finally, some further <a class="reference external" href="https://www.umass.edu/wsp/resources/poisson">example applications of the Poisson model are discussed here</a>.</p>
 </div>
 </div>
 <div class="section" id="essential-continuous-distributions">
@@ -376,13 +354,12 @@ distribution and the <em>mean</em> and <em>variance</em> of the random variable
 <li><span class="math">\(Var(X) = \sigma^2\)</span></li>
 </ul>
 <p>The normal or Gaussian distribution
-is likely the most frequently encountered distribution
+is the distribution most frequently encountered
 in statistics.  This is because there is a theorem (<a class="reference external" href="https://en.wikipedia.org/wiki/Central_limit_theorem">The Central Limit Theorem</a>,
 or <strong>CLT</strong>)
-that (approximately) says that random variables made up of sums of other
-random variables
+that, loosely speaking, says that random variables made up of sums of other random variables
 tend to be normally distributed. And since many random variables in our world
-are in some regard composite variables, many of the variables in our world
+are in some regard composite variables in this manner, many of the variables in our world
 do appear to be (approximately) normally distributed.  Another reason we come
 across the normal distribution so much in statistics is because the CLT
 phenomenon can be leveraged as part of hypothesis testing. <em>(We will cover
@@ -404,11 +381,12 @@ normally distributed. Are you surprised to learn this?</p>
 choice. I.e., there many ways way in which the parameters of a distribution
 could be be specified.
 For example, the inverse of the variance <span class="math">\(\tau = 1/\sigma^{2}\)</span>
-is known as the <strong>precision</strong> and we could easily specify the
+is known as the <strong>precision</strong> in a normal distribution context
+and we could easily specify the
 Gaussian probability density function using the <em>precision</em> <span class="math">\(\tau\)</span> rather
 than the <em>variance</em>  <span class="math">\(\sigma^{2}\)</span>.
-For that matter, is the the Gaussian probability density
-function specified in terms of the variance <span class="math">\(\sigma^{2}\)</span>,
+For that matter, would you say that the Gaussian probability density
+function is specified in terms of the variance <span class="math">\(\sigma^{2}\)</span>,
 or the standard deviation <span class="math">\(\sigma\)</span>?</p>
 </div>
 </div>
@@ -416,7 +394,7 @@ or the standard deviation <span class="math">\(\sigma\)</span>?</p>
 <h2>Less Essential distributions:<a class="headerlink" href="#less-essential-distributions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="geometric">
 <h3>Geometric<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>Geometric distribution</strong> is a <em>discrete probability distribution</em>
+<p>The <strong>geometric distribution</strong> is a <em>discrete probability distribution</em>
 that defines the probability of needing to perform <span class="math">\(k-1\)</span>
 identical Bernoulli trials before a success is observed on the <span class="math">\(k^{th}\)</span>
 trial.
@@ -431,13 +409,16 @@ and the <em>mean</em> and <em>variance</em> of the random variable
 <li><span class="math">\(E[X] = \frac{1}{p}\)</span></li>
 <li><span class="math">\(Var(X) = \frac{1-p}{p^2}\)</span></li>
 </ul>
+<p>Sometimes probabilities of the geometric distribution are given in terms of the
+number of failures (<span class="math">\(k-1\)</span>) as opposed to the total tries
+(<span class="math">\(k\)</span>, as done above) involved in finally observing a success.</p>
 </div>
 <div class="section" id="hypergeometric">
 <h3>Hypergeometric<a class="headerlink" href="#hypergeometric" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>Hypergeometric distribution</strong> is a <em>discrete probability distribution</em>
+<p>The <strong>hypergeometric distribution</strong> is a <em>discrete probability distribution</em>
 that defines the probability of <span class="math">\(k\)</span> successes from a population of
 size <span class="math">\(n\)</span> when sampling <em>without replacement</em>.
-To visualize this, think of an urn (stats speak for a &#8220;jar&#8221;) containing two types
+To visualize this, think of an urn (&#8220;stats speak&#8221; for &#8220;jar&#8221;) containing two types
 of marbles &#8211; say, red and green &#8211;
 and define drawing a green marble as a success and drawing a red
 marble as a failure. The hypergeometric distribution then defines the
@@ -455,6 +436,9 @@ is defined as</p>
 specifying the size of the population, the total number of individuals in the
 population, and the number of individuals to be sampled for a given
 random variable experiment <span class="math">\(X\)</span>, respectively.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/urns.PNG"><img alt="urns" src="_images/urns.PNG" style="width: 244.3px; height: 114.8px;" /></a>
+</div>
 <p>The hypergeometric distribution is very interesting because it allows the
 mean and variance
 of the random variable <span class="math">\(X\)</span> to be independently specified through
@@ -462,9 +446,11 @@ the parameters <span class="math">\(N, K\)</span>, and <span class="math">\(n\)<
 binomial distribution which only allows one to specify
 a deterministic relationship between the mean and variance.
 Thus, the clear probabilistic interpretation notwithstanding,
-the hypergeometric distribution can instead be used in a purely
-pragmatic manner to flexibly model different types of count data.
-The hypergeometric distribution can essentially be viewed as the
+the hypergeometric distribution can also be used in a purely
+pragmatic manner to flexibly model count data
+that has a different mean and variance combination from those
+allowed by the binomial distribution.
+Thus, the hypergeometric distribution can essentially be viewed as the
 discrete distribution alternative to the normal distribution
 in contexts where you want to model <em>counts</em> rather than continuous
 values.</p>
@@ -472,9 +458,9 @@ values.</p>
 <p class="first admonition-title">Note</p>
 <p><strong>CLASS DISCUSSION</strong></p>
 <p class="last">Is there a fundamental difference in the deterministic relationships
-between the mean and variance specified in the binomial distribution
-versus the Poisson distribution, or are
-they in some sense a similar type of restriction?</p>
+between the mean and variance as specified in the binomial distribution
+versus the Poisson distribution? Or are the relationships
+in some sense a similar type of restriction?</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -489,14 +475,14 @@ they in some sense a similar type of restriction?</p>
 that has proven to be a useful
 model (with some deep theoretical justifications) for the
 distribution of &#8220;time to arrival&#8221; outcomes. Specifically,
-(as we have previously implicitly state), the exponential distribution
+(as we have previously implicitly stated), the exponential distribution
 is the distribution of time to arrival outcomes for a so called
-<em>Poisson process</em>.
-The <em>probability density function</em> for a <em>Geometric</em> random variable <span class="math">\(X\)</span>
+<em>Poisson process</em>.  Regardless,
+the <em>probability density function</em> for a <em>Geometric</em> random variable <span class="math">\(X\)</span>
 is defined as</p>
 <div class="math">
 \[Pr(X=x) = \lambda e^{-\lambda x}, \text{ for } x \in (0, \infty)\]</div>
-<p>where <span class="math">\(\lambda\)</span> is the (learning rate) <em>parameter</em> of the
+<p>where <span class="math">\(\lambda\)</span> is the <em>parameter</em> of the
 exponential distribution
 and the <em>mean</em> and <em>variance</em> of the random variable
 <span class="math">\(X\)</span> modeled using an exponential distribution are, respectively</p>
@@ -504,6 +490,12 @@ and the <em>mean</em> and <em>variance</em> of the random variable
 <li><span class="math">\(E[X] = \frac{1}{\lambda}\)</span></li>
 <li><span class="math">\(Var(X) = \frac{1}{\lambda^2}\)</span></li>
 </ul>
+<p>The exponential distribution has an interesting &#8220;memoryless&#8221; property; namely,
+<span class="math">\(Pr(X \geq x+c |X \geq c) = Pr(X \geq x)\)</span>.
+What this actually means is that for any
+cutpoint <span class="math">\(X \geq c\)</span>, the re-normalized distribution looks exactly the
+same as an exponential distribution; only, it&#8217;s been shifted to the right
+by <span class="math">\(c\)</span>.</p>
 <p>(<a class="reference external" href=".//exponential-distn.py">Source code</a>, <a class="reference external" href=".//exponential-distn.png">png</a>, <a class="reference external" href=".//exponential-distn.hires.png">hires.png</a>, <a class="reference external" href=".//exponential-distn.pdf">pdf</a>)</p>
 <div class="figure">
 <img alt="_images/exponential-distn.png" src="_images/exponential-distn.png" />
@@ -558,10 +550,10 @@ exist between different distributions
 Actually, there are many
 examples of such relationships that exist between probability
 distributions.  And, unsurprisingly, there are many, many more distributions
-than the ones we covered here.   Here is an illustration from
-<em>Casella and Berger</em> that suggests the scope of things here.</p>
+than the ones we covered here.   Here is a diagram
+that suggests the scope of things here.</p>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/statistical-inference-distns.jpg"><img alt="distns" src="_images/statistical-inference-distns.jpg" style="width: 1029.35px; height: 1235.85px;" /></a>
+<a class="reference internal image-reference" href="_images/relationships.jpg"><img alt="distns" src="_images/relationships.jpg" style="width: 672.0px; height: 354.9px;" /></a>
 </div>
 </div>
 <div class="section" id="data-modeling-considerations">
@@ -584,18 +576,15 @@ data model:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="paradigms.html" class="btn btn-neutral float-right" title="Bayesian Inference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="paradigms.html" class="btn btn-neutral float-right" title="Bayesian Inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="probability.html" class="btn btn-neutral" title="Probability" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="probability.html" class="btn btn-neutral" title="Probability" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -629,14 +618,13 @@ data model:</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

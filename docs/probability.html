@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Probability Distributions" href="probability-distributions.html"/>
         <link rel="prev" title="Combinatorics" href="combinatorics.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -102,7 +93,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#conditional-probability">Conditional Probability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chain-rule">Chain Rule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#law-of-total-probability">Law of Total Probability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bayes-theorem">Bayes&#8217; Theorem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bayes-rule">Bayes&#8217; Rule</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#medical-testing">Medical Testing</a></li>
 </ul>
 </li>
@@ -133,10 +124,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -145,40 +134,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Probability</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Probability</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/probability.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/probability.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -200,8 +172,8 @@ if viewed from a <em>Bayesian</em> perspective</li>
 <p><em>(We will return to a discussion between these two paradigms later).</em></p>
 <p>Naturally, probability provides the foundation for statistics and machine learning
 as all (good) data analyses seek to identifiy patterns in data
-<em>while accounting for</em> the random sampling and measurement variation
-present in data populations under consideration.
+<em>while accounting for the random sampling variation and measurement error</em>
+present in the data (populations) under consideration.
 Perhaps counterintuitively, while probability statements seem easy to express and
 interpret, our intuitions about randomness are often incorrect. This is because in
 actual life we only live one realization of the randomness and don&#8217;t experience
@@ -224,16 +196,17 @@ possible outcomes (using combinatorics).</p>
 <p>There are three <em>axioms of probability</em>.</p>
 <p>For some sample space <span class="math">\(S\)</span> with
 events <span class="math">\(A \subseteq S\)</span> and <span class="math">\(B \subseteq S\)</span>,
-a probability function <cite>Pr</cite> has these properties:</p>
+a probability function <cite>Pr</cite> satisfies the three <em>axioms of probability</em>:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li>The probability of any event is positive and less than or equal to 1, i.e.,</li>
 </ol>
 <div class="math">
 \[0 \leq Pr(s \in A) = Pr(A) \leq 1\]</div>
-<p>where <span class="math">\(Pr(A)\)</span> is a common shorthand notational convenience</p>
+<p>where <span class="math">\(s \in S\)</span> is an outcome in the sample spaceand <span class="math">\(Pr(A)\)</span>
+is a common shorthand notational convenience</p>
 <ol class="arabic simple" start="2">
-<li>The probability of a sure event is 1, i.e.,</li>
+<li>The probability of a _sure_ event (that will absolutely happen)` is 1, i.e.,</li>
 </ol>
 <div class="math">
 \[Pr(S) = 1\]</div>
@@ -242,10 +215,13 @@ a probability function <cite>Pr</cite> has these properties:</p>
 </ol>
 <div class="math">
 \[Pr(A \cup B) = Pr(A) + Pr(B)\]</div>
-<p><em>(Remember that two events are mutually exclusive if they cannot both be true at the same time &#8211; i.e., the two event sets are disjoint).</em></p>
+<p><em>(Remember that two events are mutually exclusive if they cannot both be
+true at the same time &#8211; i.e., the two event sets are disjoint).</em></p>
 </div></blockquote>
-<p>From these three axioms all other familiar probability properties can be proven.
-E.g.,</p>
+<p>It&#8217;s amazing that it&#8217;s so simple, isn&#8217;t it?
+But as simple as these three axioms might be,
+every other property of probability that you&#8217;re familiar
+with can be derived from just these.  E.g.,</p>
 <blockquote>
 <div><ol class="loweralpha simple">
 <li>The sum of the probabilities of an event and its complement is 1</li>
@@ -263,15 +239,15 @@ E.g.,</p>
 <h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
 <p>Two events are <strong>independent</strong> (notated as <span class="math">\(A\bot B\)</span>) if</p>
 <div class="math">
-\[Pr(A\cap B) = Pr(A, B) = Pr(A)\times Pr(B)\]</div>
+\[Pr(A\cap B) = Pr(A)\times Pr(B)\]</div>
 <p>or</p>
 <div class="math">
 \[Pr(A|B) = Pr(A)\]</div>
 <p>where <span class="math">\(Pr(A|B)\)</span> denotes a <strong>conditional probability</strong> which gives
 gives the probability of an event occuring <em>given the knowledge that</em> another
-event as occured.
+event has occured.
 When considering the independence of two events, ask yourself: &#8220;Does knowing
-somethign about event <span class="math">\(A\)</span> provide increased information about the
+something about event <span class="math">\(A\)</span> provide increased information about the
 likelihood of event <span class="math">\(B\)</span>?</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -294,14 +270,17 @@ us about the likelihood of <span class="math">\(B\)</span> occuring</p>
 <h2>Conditional Probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h2>
 <p>It turns out that it is always true that</p>
 <div class="math">
-\[Pr(A \cap B) = Pr(A, B) = Pr(A|B) \times Pr(B)\]</div>
-<p>where <span class="math">\(Pr(A, B)\)</span> is the standard way not specify <em>intersection</em>
-in statistical notation.  This rule is known as the <strong>chain rule</strong>,
+\[Pr(A \cap B) = Pr(A|B) \times Pr(B)\]</div>
+<p>This rule is known as the <strong>chain rule</strong>,
 and we shall generalize it to more than two events shortly.
 But for now, rearranging this equation gives us</p>
 <div class="math">
-\[Pr(A|B) = \frac{Pr(A, B)}{Pr(B)}\]</div>
-<p>which is the definition of <strong>conditional probability</strong>.</p>
+\[Pr(A|B) = \frac{Pr(A \cap B)}{Pr(B)}\]</div>
+<p>which is the definition of <strong>conditional probability</strong>.  Conditional probability
+is kind of of the opposite of independence in the since that it
+is meaningful in situations when two events <em>are not independent</em>.
+On the other hand, if two events are independent we just write <span class="math">\(Pr(A|B) = Pr(A)\)</span>
+and we don&#8217;t have conditional probabilities.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -329,9 +308,14 @@ But for now, rearranging this equation gives us</p>
 probabilities sequentially for any number of events according
 to the pattern of conditional probabilities</p>
 <div class="math">
-\[Pr(A, B, C) = Pr(A| B,C) \times Pr(B,C) = Pr(A|B,C) \times Pr(B|C) \times Pr(C)\]</div>
+\[Pr(A \cap B \cap C) = Pr(A| B \cap C) \times Pr(B \cap C) = Pr(A|B \cap C) \times Pr(B|C) \times Pr(C)\]</div>
 <p>where <span class="math">\(Pr(A)\)</span> is a shorthand notational convencience specifying
 <span class="math">\(Pr(X=x \in A)\)</span>.</p>
+<p>The interesting thing about the chain rule is that the order of the
+events <span class="math">\(A\)</span> and <span class="math">\(B\)</span> doesn&#8217;t matter for the probability calculation
+since <span class="math">\(Pr(A \cap B) = Pr(B|A) \times Pr(A) = Pr(A|B) \times Pr(B)\)</span>.
+So you can use whatever order feels more natural or intuitive for any given problem.
+In this sense, probabilities are sort of agnostic about the &#8220;direction of time&#8221;.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -341,11 +325,17 @@ two cards from a standard 52-card deck.</p>
 </div>
 <div class="section" id="law-of-total-probability">
 <h2>Law of Total Probability<a class="headerlink" href="#law-of-total-probability" title="Permalink to this headline">¶</a></h2>
-<p>For a partition <span class="math">\(\{A_1, A_2, \cdots A_n\}\)</span> of a sample space <cite>S</cite>, i.e.,
-a set of events such that <span class="math">\(\underset{i=1}{\overset{n}{\cup}}
+<p>The <strong>Law of Total Probability</strong> is a pretty intuitive idea,
+but it&#8217;s somewhat complex to express using mathematical notation.
+It will look especially challenging if you&#8217;re not familiar
+with <em>mathematical summation notation</em> which expresses the sum
+of <span class="math">\(n\)</span> numbers as <span class="math">\(x_i, i = 1, \cdots, n\)</span> as <span class="math">\(\displaystyle \sum^n_{i=1} x_i\)</span>.</p>
+<p>Keep this simple formula in mind, the <strong>Law of Total Probability</strong> guarantees that
+for a partition <span class="math">\(\{A_1, A_2, \cdots A_n\}\)</span> of a sample space <cite>S</cite>
+(i.e., a set of events such that <span class="math">\(\underset{i=1}{\overset{n}{\cup}}
 A_i = S\)</span> and <span class="math">\(A_i \cap A_j=\emptyset\)</span> for all <span class="math">\(i\)</span> and <span class="math">\(j\)</span>
-such that <span class="math">\(1 \leq i \not = j \leq n\)</span>, and an event <span class="math">\(B \subseteq S\)</span>,
-the <strong>Law of Total Probability</strong> guarantees that</p>
+such that <span class="math">\(1 \leq i \not = j \leq n\)</span>)
+and an event <span class="math">\(B \subseteq S\)</span>, we have that</p>
 <div class="math">
 \[\displaystyle Pr(B) = \sum^n_{i=1} Pr(B\cap A_i) = \sum^n_{i=1} Pr(B|A_i) Pr(A_i)\]</div>
 <div class="admonition note">
@@ -356,24 +346,23 @@ into <span class="math">\(\{A_1, A_2, \cdots A_n\}\)</span> and <span class="mat
 to demonstrates the <em>Law of Total Probability</em>.</p>
 </div>
 </div>
-<div class="section" id="bayes-theorem">
-<h2>Bayes&#8217; Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
-<p><strong>Bayes&#8217; theorem</strong> is a formula for computing the conditional probability
-(or distribution) of
-<span class="math">\(A|B\)</span> based on the reverse conditional probability (or distribution) of
-<span class="math">\(B|A\)</span>.  Bayes’s theorem follows directly from a re-expression and a
+<div class="section" id="bayes-rule">
+<h2>Bayes&#8217; Rule<a class="headerlink" href="#bayes-rule" title="Permalink to this headline">¶</a></h2>
+<p><strong>Bayes&#8217; rule</strong> is a formula for computing the conditional probability
+of <span class="math">\(A|B\)</span> based on the reverse conditional probability of
+<span class="math">\(B|A\)</span>.  Bayes’s rule follows directly from a re-expression and a
 subsequent re-application of the chain rule:</p>
 <div class="math">
-\[P(B|A) = \frac{P(A, B)}{P(A)} = \frac{P(A|B)P(B)}{P(A)}\]</div>
+\[P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(A|B)P(B)}{P(A)}\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
 <ol class="last arabic simple">
-<li>Prove <em>Bayes&#8217; theorem</em> using the <em>Chain Rule</em>.</li>
-<li>Use the <em>Law of Total Probability</em> to express <span class="math">\(P(A)\)</span> in terms of <span class="math">\(P(A|B_i)P(B_i)\)</span>, where <span class="math">\(B_i\)</span> is a partition of the sample space in question.</li>
+<li>Prove <em>Bayes&#8217; rule</em> using the <em>Chain Rule</em>.</li>
+<li>Use the <em>Law of Total Probability</em> to express <span class="math">\(P(A)\)</span> in terms of <span class="math">\(P(A|B_i)P(B_i)\)</span>, where <span class="math">\(B_i\)</span> is a member of a partition of the sample space in question.</li>
 </ol>
 </div>
-<p><em>(We will discuss a generalization of Bayes&#8217; theorem that results in an entire
+<p><em>(We will discuss a generalization of Bayes&#8217; rule that results in an entire
 branch of statistics known as Bayesian statistics tomorrow).</em></p>
 <div class="section" id="medical-testing">
 <h3>Medical Testing<a class="headerlink" href="#medical-testing" title="Permalink to this headline">¶</a></h3>
@@ -388,7 +377,7 @@ a test <span class="math">\(T\)</span> which predicts if the condition is presen
 </li>
 <li><p class="first">The <strong>negative predicitve value</strong> of the test is the probability that an individual who tested negative (i.e., <span class="math">\(T^{-}\)</span>) truly <em>does not</em> have the condition (i.e., <span class="math">\(C^{-}\)</span>):</p>
 <blockquote>
-<div><p><span class="math">\(PV^{-} = Pr(D^{-} |T^{-} )\)</span></p>
+<div><p><span class="math">\(PV^{-} = Pr(C^{-} |T^{-} )\)</span></p>
 </div></blockquote>
 </li>
 <li><p class="first">The <strong>sensitivity</strong> of the test is the probability the test detects the condition (i.e., <span class="math">\(T^{+}\)</span>) when it should (i.e., when <span class="math">\(C^{+}\)</span> is true):</p>
@@ -409,15 +398,15 @@ a test <span class="math">\(T\)</span> which predicts if the condition is presen
 <li><p class="first">And finally, note that <span class="math">\(Pr(T^{+} |C^{-} ) = 1 - \textrm{specificity}\)</span></p>
 </li>
 </ul>
-<p>A common measure of the usefulness of a test is its <em>positive predictive value</em>
-<span class="math">\(PV^{+}\)</span>:</p>
+<p>Suppose we would like to know how much to trust a postive result <span class="math">\((T^+)\)</span>.  I.e.,
+we are interested in the <em>positive predictive value</em> <span class="math">\(PV^{+}\)</span> of the test <span class="math">\((T)\)</span>.
+Using Bayes&#8217; rule, we can calculate this as follows:</p>
 <blockquote>
 <div><div class="math">
-\begin{eqnarray}
-P (C^{+} |T^{+}) &amp;=&amp; \frac{P(T^{+}|C^{+}) P(C^{+})}{P(C^{+})P(T^{+}|C{+})+P(C^{-})P(T^{+}|C^{-})} \\
+\[\begin{eqnarray}
+Pr(C^{+} |T^{+}) &amp;=&amp; \frac{Pr(T^{+}|C^{+}) Pr(C^{+})}{Pr(C^{+})Pr(T^{+}|C{+})+Pr(C^{-})Pr(T^{+}|C^{-})} \\
                  &amp;=&amp; \frac{Pr(C^{+}) \times \textrm{sensitivity}}{Pr(C^{+}) \times \textrm{sensitivity}+(1-Pr(C^{+})) \times (1-\textrm{specificity})}
-\end{eqnarray}</div></div></blockquote>
-<p>which is just an example of <em>Bayes&#8217; theorem</em>.</p>
+\end{eqnarray}\]</div></div></blockquote>
 <p>So, if we were given a test with sensitivity of 0.84 and specificity of 0.77
 and apply the test to condition with with a prevalence of 0.20 in the
 population under examination, then</p>
@@ -433,7 +422,8 @@ population under examination, then</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Verify the that the answer given for <span class="math">\(PV^{-}\)</span> above is correct.</p>
+<p class="last">Verify the that the answer given for <span class="math">\(PV^{-}\)</span> above is correct by deriving
+<span class="math">\(Pr(C^{+} |T^{+})\)</span> using Bayes&#8217; rule and calculating the resulting formula.</p>
 </div>
 </div>
 </div>
@@ -450,18 +440,15 @@ population under examination, then</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probability-distributions.html" class="btn btn-neutral float-right" title="Probability Distributions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probability-distributions.html" class="btn btn-neutral float-right" title="Probability Distributions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="combinatorics.html" class="btn btn-neutral" title="Combinatorics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="combinatorics.html" class="btn btn-neutral" title="Combinatorics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -495,14 +482,13 @@ population under examination, then</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

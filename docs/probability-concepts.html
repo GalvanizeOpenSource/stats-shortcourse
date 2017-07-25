@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Combinatorics" href="combinatorics.html"/>
         <link rel="prev" title="Getting started" href="getting-started.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,15 +83,12 @@
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Probability Concepts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#experiments">Experiments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-operations">Set Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#demorgan-s-laws">DeMorgan&#8217;s Laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#de-morgan-s-laws">De Morgan&#8217;s Laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#random-variables">Random Variables</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#putting-it-all-together">Putting It All Together</a></li>
 </ul>
@@ -131,10 +122,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -143,40 +132,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Probability Concepts</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Probability Concepts</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/probability-concepts.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/probability-concepts.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -204,10 +176,10 @@ and one that seems like it would be difficult to predict.</p>
 <p>that might be realized by some <strong>experiment</strong> measuring a random phenomenon.</p>
 <p>An <strong>event</strong> <span class="math">\(E\)</span> is a meaningful subset of potential outcomes
 of the experiment <span class="math">\(E \subseteq S\)</span> that is said to <em>have occured</em> for a realized outcome of the experiment <span class="math">\(x^*\)</span>
-if <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)</span>, i.e.,</p>
+where <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)</span>, i.e.,</p>
 <div class="math">
 \[x^* \in E\]</div>
-<p><strong>Experiments</strong></p>
+<p><strong>Examples of Experiments</strong></p>
 <blockquote>
 <div><ul class="simple">
 <li>flip ten coins, roll two dice, draw a card from a deck</li>
@@ -217,7 +189,7 @@ if <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)
 <li>count the number of beers consumed right after this stats workshop</li>
 </ul>
 </div></blockquote>
-<p><strong>Outcomes</strong></p>
+<p><strong>Examples of Outcomes</strong></p>
 <blockquote>
 <div><ul class="simple">
 <li>ten sequential coin flips, two die rolls, a card from a deck</li>
@@ -227,7 +199,7 @@ if <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)
 <li>hopfully not too many</li>
 </ul>
 </div></blockquote>
-<p><strong>Events</strong></p>
+<p><strong>Examples of Events</strong></p>
 <blockquote>
 <div><ul class="simple">
 <li>&#8220;Half heads&#8221;, &#8220;Odds&#8221;, &#8220;Spades&#8221;</li>
@@ -241,7 +213,7 @@ if <span class="math">\(x^*\)</span> is a member of set <span class="math">\(E\)
 <p class="first admonition-title">Note</p>
 <p><strong>TEAM EXERCISE</strong></p>
 <p class="last">Work with your neighbors to list out possible sample spaces for the
-above examples.</p>
+above experiments.</p>
 </div>
 </div>
 <div class="section" id="set-operations">
@@ -249,41 +221,43 @@ above examples.</p>
 <p>For events <span class="math">\(A\)</span> and <span class="math">\(B\)</span>
 defined on the sample space <span class="math">\(S\)</span> of an experiment</p>
 <ul>
-<li><p class="first">Union: <span class="math">\(A \cup B = \{x: x \in A \text{ or } x\in B\}\)</span></p>
-<p>is the event where  <strong>either</strong> event <span class="math">\(A\)</span> or event <span class="math">\(B\)</span> or both occur</p>
+<li><p class="first"><strong>Union:</strong> <span class="math">\(A \cup B = \{x: x \in A \text{ or } x\in B\}\)</span></p>
+<p>is the event where <strong>either</strong> event <span class="math">\(A\)</span> or event <span class="math">\(B\)</span> or both occur</p>
 </li>
 </ul>
 <ul>
-<li><p class="first">Intersection: <span class="math">\(A \cap B = \{x: x \in A \text{ and } x\in B\}\)</span></p>
+<li><p class="first"><strong>Intersection:</strong> <span class="math">\(A \cap B = \{x: x \in A \text{ and } x\in B\}\)</span></p>
 <p>is the event where <strong>both</strong> the event <span class="math">\(A\)</span> and the event <span class="math">\(B\)</span> occur</p>
 </li>
 </ul>
 <ul>
-<li><p class="first">Difference: <span class="math">\(A \setminus B = \{x: x \in A \text{ and } x \notin B\}\)</span></p>
+<li><p class="first"><strong>Difference:</strong> <span class="math">\(A \setminus B = \{x: x \in A \text{ and } x \notin B\}\)</span></p>
 <p>is the event where <strong>only</strong> the event <span class="math">\(A\)</span> occurs <strong>but not</strong> the event <span class="math">\(B\)</span></p>
 </li>
 </ul>
 <ul>
-<li><p class="first">Complement: <span class="math">\(\overline A = A^C = \{x: x\notin A\}\)</span></p>
+<li><p class="first"><strong>Complement:</strong> <span class="math">\(\overline A = A^C = \{x: x\notin A\}\)</span></p>
 <p>is the event that event <span class="math">\(A\)</span> <strong>does not</strong> occur</p>
 </li>
 </ul>
 <ul>
-<li><p class="first">The Null (Empty) Set: <span class="math">\(\emptyset\)</span></p>
+<li><p class="first"><strong>The Null (Empty) Set:</strong> <span class="math">\(\emptyset\)</span></p>
 <p>is the event that contains no outcomes, which can&#8217;t happen
-if the experiment is run</p>
+if the experiment is run.
+Sometimes intersections and differences result in empty sets.</p>
 </li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>TEAM EXERCISE</strong></p>
-<p class="last">Come up with couple of example sets and have each member of the
-team give explain the following concepts using your example:
-<em>Union</em>, <em>Intersection</em>, <em>Difference</em>, or <em>Complement</em>.</p>
+<p class="last">Come up with couple examples of events (meaningful sets of possible outcomes)
+from an experiment and have each member on your team contribute an explaination
+of <em>Union</em>, <em>Intersection</em>, <em>Difference</em>, or <em>Complement</em> using
+the examples.</p>
 </div>
 </div>
-<div class="section" id="demorgan-s-laws">
-<h2>DeMorgan&#8217;s Laws<a class="headerlink" href="#demorgan-s-laws" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="de-morgan-s-laws">
+<h2>De Morgan&#8217;s Laws<a class="headerlink" href="#de-morgan-s-laws" title="Permalink to this headline">¶</a></h2>
 <p>(The next best thing to Bayes&#8217; rule and rum)</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/De_Morgan's_laws">De Morgan&#8217;s laws</a> are tautologies that say for events <span class="math">\(A\)</span> and <span class="math">\(B\)</span>:</p>
 <p>1. The complement of the union of two sets is the same as
@@ -298,7 +272,7 @@ the union of their complements:</p>
 of <span class="math">\(\vee\)</span> and <span class="math">\(\wedge\)</span> for the
 <cite>or</cite> and <cite>and</cite> operators, respectively,
 and <span class="math">\(\neg\)</span> for the negation operator (&#8220;not&#8221;).</p>
-<p>The truthfulness of DeMorgan&#8217;s laws can be examined using a
+<p>The truthfulness of De Morgan&#8217;s laws can be examined using a
 <strong>Venn diagram</strong>:</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/Demorganlaws.png"><img alt="demorgans-laws" src="_images/Demorganlaws.png" style="width: 450.0px; height: 600.0px;" /></a>
@@ -322,7 +296,7 @@ and <span class="math">\(\neg\)</span> for the negation operator (&#8220;not&#82
 <span class="gp">&gt;&gt;&gt; </span><span class="n">complement_a</span> <span class="o">=</span> <span class="n">sample_space</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="last">Can you give an example of De Morgan&#8217;s laws in Python?</p>
+<p class="last">Can you demonstrate De Morgan&#8217;s laws in Python?</p>
 </div>
 </div>
 <div class="section" id="random-variables">
@@ -348,17 +322,17 @@ algebraic expression?</p>
 <p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/discrete-and-continuous-random-variables/v/random-variables">Random variables (Khan academy)</a></p>
 <div class="section" id="putting-it-all-together">
 <h3>Putting It All Together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h3>
-<p>Let&#8217;s challenge our understanding by using the
-concepts we&#8217;ve learned along with a new idea
-called <strong>mutual exclusivity</strong>:
-two events <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are said to be <em>mutually exclusive</em> if</p>
+<p>If you&#8217;re feeling ready, let&#8217;s challenge your understanding of the
+concepts you&#8217;ve learned thus by introducing a new concept
+called <strong>mutual exclusivity</strong>.</p>
+<p>Two events <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are said to be <em>mutually exclusive</em> if</p>
 <div class="math">
 \[Pr (X=x \in A \cup B) = Pr(X=x \in A) + Pr(X=x \in B)\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p>Let <span class="math">\(X\)</span> be a random variable which measures cholesterol
-and <span class="math">\(x\)</span> an actual cholesterol measurement and define
+<p>Let <span class="math">\(X\)</span> be a random variable which actualizes a cholesterol measurement
+and let <span class="math">\(x\)</span> an actual cholesterol measurement and define
 the following three events</p>
 <div class="math">
 \[A = \{chol: 250 \leq chol \leq 300\}\]</div>
@@ -373,6 +347,8 @@ the following three events</p>
 And how about <span class="math">\((A \cup B)\)</span> = ?</li>
 <li>If <span class="math">\(Pr(X=x\in A) = 0.2\)</span> and <span class="math">\(Pr(X=x\in B) = 0.1\)</span>,
 then <span class="math">\(Pr(X=x \geq 250)\)</span> = ?</li>
+<li>How would you specify the above probability using <span class="math">\(A\)</span>,
+<span class="math">\(B\)</span>, <span class="math">\(\cup\)</span>, and <span class="math">\(Pr()\)</span>?</li>
 <li>[Extra] If <span class="math">\(P(X=x\in A) = .3\)</span> and <span class="math">\(P(X=x\in C)=.2\)</span>,
 then what would you need to know to calculate <span class="math">\(P(X=x \leq
 300)\)</span>?</li>
@@ -384,25 +360,22 @@ then what would you need to know to calculate <span class="math">\(P(X=x \leq
 <h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
 <p>If you want to learn more about working with sets in Python, see:</p>
 <p><a class="reference external" href="https://www.programiz.com/python-programming/set">https://www.programiz.com/python-programming/set</a></p>
-<p>If you want more about sets and set operations in general then check out the Khan academy video series on sets, see:</p>
+<p>If you want to know more about sets and set operations in general then check out the Khan academy video series on sets, see:</p>
 <p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/v/intersection-and-union-of-sets">https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/v/intersection-and-union-of-sets</a></p>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="combinatorics.html" class="btn btn-neutral float-right" title="Combinatorics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="combinatorics.html" class="btn btn-neutral float-right" title="Combinatorics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting-started.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting-started.html" class="btn btn-neutral" title="Getting started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -436,14 +409,13 @@ then what would you need to know to calculate <span class="math">\(P(X=x \leq
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -6,13 +6,13 @@ Combinatorics
 
 Combinatorics is a branch of mathematics dedicated to figuring out how to count
 things! Specifically, the number of elements contained 
-in -- i.e., the **cardinality** -- of event :math:`A`:
+in -- i.e., the **cardinality** of -- event :math:`A`:
 
 .. math::
    \mathbf{card}(A) = |A|
 
 Counting's not so hard, you say? Think again: when it comes to ordering and 
-choosing sets in complicated and clever ways things can get tricky in heartbeat.
+choosing sets in complicated and clever ways counting can get tricky in heartbeat.
 Be that as it may, combinatorics plays a fundamental and foundational role 
 in probability as it forms the basis for assigning probabilities to events
 in many contexts. Beyond that, the need to count
@@ -40,9 +40,13 @@ how many possible orderings could be drawn? The answer to this question is
 
 until there is only one ball left and we must pick it.
 That is, there are :math:`10*9*8*\cdots*1 = 10!`, i.e.
-*10 factorial*, possible orderings.
+*10 factorial*, possible orderings.  This is a demonstration of the
+so-called _product rule_ for counting things, and it forshadows the 
+incredibly fundamental rule in probability known as the _chain rule_
+(which we will return to later).
 
-The number *10 factorial* can be calculated in Python, but watch out: factorials get really big really fast...
+The number *10 factorial* can be calculated in Python, 
+but watch out: factorials get really big really fast...
 
 >>> import math
 >>> math.factorial(10)
@@ -72,15 +76,15 @@ solution to the problem is commonly notated as
 
    **EXERCISE**
 
-   If you think about the "`N` choose `K`" solution carefully, 
+   If you think about the "`N` choose `K`" formula carefully 
    you can actually see that it makes
    sense: the :math:`K!` in the denominator is the number of ways to order a list 
-   of length :math:`K`, whereas the :math:`\frac{N!}{(N-K)!}` is all possible
-   lists of length :math:`K` where order matters.  With that in mind, see if you
-   can think through why the formula counts the right thing.
+   of length :math:`K`, and the :math:`\frac{N!}{(N-K)!}` is all possible
+   lists of length :math:`K` where order matters.  Do you see why?
+   Knowing this, can you articulate why the complete formula counts the right thing?
 
-If you're still a little confused about how the counting actually works,
-don't worry, it's really easy to calculate combinations Python:
+If you're feeling like this seems like an awful lot of multiplication and division, 
+don't worry, Python can do all the necessary calculations for you: 
 
 >>> from math import factorial		
 >>> def comb(n, k):
@@ -110,14 +114,17 @@ Permutations
 
 *Permutations* counts the number of ways subsets can be chosen when 
 **order does matter**. If you followed the "`N` choose `K`" thought exercise 
-above then you won't be surprised to learn that the number of ways to 
+above then you won't be surprised to learn (i.e., be reminded) that the number of ways to 
 choose `K` things out of `N` things **when order matters** is 
 
-    :math:`\displaystyle \frac{N!}{(N-K)!}`
+.. math::
+    \displaystyle \frac{N!}{(N-K)!}
 
 Explicitly writing out the formula makes it clear that permutations 
-are just a slight variation on the factorial theme. And of
-course, once again, it's easy to do permutations in Python:
+are just a slight variation on what we did for the product rule above. 
+I.e., they are just a special case of factorial multiplication. And of
+course, once again, it's easy to Python take care of 
+the permutation calculations for you.
 
 .. code-block:: python
 		
@@ -142,10 +149,10 @@ course, once again, it's easy to do permutations in Python:
    **PAIRED EXERCISE**
 
    Face off against the person next to you, pitting permutations against 
-   combinations, and defending the dignity and honor of your position!
-   No low blows are allowed, but don't be afraid to bring size into
+   combinations, and defend the dignity and honor of your cause!
+   Which is your favorite and why, when it really comes down to it? 
+   No low blows allowed, but don't be afraid to bring size into
    the argument if you think it helps your case.
-
 
 
 .. Explain to the person next to you the difference between

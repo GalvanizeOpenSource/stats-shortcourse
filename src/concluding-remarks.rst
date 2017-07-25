@@ -6,7 +6,7 @@ Data Science Immersive
 +------+-----------------------------------+
 | week | topic(s)                          |
 +======+===================================+
-| 0    | Python fundamental                |
+| 0    | Python fundamentals               |
 +------+-----------------------------------+
 | 1    | Programming and SQL               |
 +------+-----------------------------------+
@@ -48,10 +48,10 @@ Typical day
 
 Throughout the cohort
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  * career services
-  * case studies
-  * industry speakers
-  * industry projects
+  * Career Services
+  * Case Studies
+  * Industry Speakers
+  * Industry Projects
 
 Where do we want to be with machine learning algorithms
 --------------------------------------------------------
@@ -60,10 +60,10 @@ Where do we want to be with machine learning algorithms
 
   * Know when is it appropriate to use the algorithms/tools
   * Provide enough resources so that:
-     * Can you explain what the algorithm is doing in plain English?
-     * Can you implement a simple version from the ground up?
+     * You explain what the algorithm is doing in plain English
+     * You implement a simple version from the ground up
 	    
-.. note:: the last point may be more difficult for some algorithms, but we will provide you with the resources to follow up on this.
+.. note:: The last point may be more difficult for some algorithms, but we provide you with the necessary resources to follow up on such topics should you wish to.
 	      
 Data Science Careers and Galvanize Placement Rates
 --------------------------------------------------
@@ -76,18 +76,24 @@ than it is about us.  We absolutely have amazingly passionate, caring, dedicated
 your learning experience as productive and enjoyable as possible. No question about it: our instructional staff is world-class
 and you will not feel otherwise.  And we work out of an amazing co-working space that deeply embeds us into the  
 tech industry -- we're connected to everyone from the biggest established players, 
-the midsize startups solidifying their market space, all the way down to the brand new 
-entrepreneurial startups creating the next big thing.  But there's no job just "lined up and waiting for you"
-when you finish. Because the data science career is so rewarding on so many levels, it is an extremely competitive job market.
+the midsize startups solidifying their market space, all the way down to incredibly driven 
+entrepreneurs who are passionate about creating the next big thing.  
+
+But there's no job just "lined up and waiting for you" when you finish. You have to make it happen and go get it -- 
+although we'll be there to help you every step of the way as you make your transition: Galvanize is deeply committed to the  
+the career services component of our immersive.   
+The data science career is so rewarding on so many levels (e.g., Growth/Recognition, Creativity/Independence, Community/Status -- 
+i.e. the three factors identified in the psychology literature as contributing to job satisfaction) 
+which makes it an extremely competitive job market.
 So your effort and learning won't stop with Galvanize.  You're gonna have to hussle and grind 
 and seek out opportunities for career growth and "always be getting better".  And if that's who you are,
 then Galvanize is a program for you. 
 
-At the end of every cohort, there's always several students who attend a data science lecture and then come back
+At the end of every cohort, there's always several students who attend a public data science lecture and then come back
 and say, "Yeah, I totally get what they're talking about -- I'm not hearing anything I don't understand anymore -- I
 know what's going on now". 
-And that's basically what the Galvanize DSI program is: a jump start to get you appraised to everything that's
-going on in data science and equip you with the skill set you need to be able to keep developing your expertise 
+And that's basically what the Galvanize DSI program is: a jump start to get you familiarized with everything that's
+going on in the data science community and equip you with the skill set you need to be able to keep developing your expertise 
 as you grow and develop your career trajectory.  
 
 
@@ -97,7 +103,7 @@ Resources for further study
 -----------------------------
 
 If you want to get through the interview process and enroll in the Data Science Immersive,
-you're on your way, but not there just yet. The "Statistics/Machine Learning" evaluates 
+you're on your way, but not there just yet. The "Statistics/Machine Learning" interview evaluates 
 your mastery of the content covered here. But it also begins to assess your familiarity 
 and comfort with modern predictive methodologies.  To ace the "Statistics/Machine Learning" interview
 you need to have a very strong handle on the following material:
@@ -113,6 +119,9 @@ If you need to start a little slower as you begin learning these topics, you may
   * `Hypothesis testing <https://www.youtube.com/watch?v=J6AdoiNUyWI&list=PL5-da3qGB5IBSSCPANhTgrw82ws7w_or9>`_
   * `Useful flashcards <http://www.cram.com/flashcards/probability-for-data-science-8215075>`_
 
+Happy Travels!! 
+
+-- The Galvanize DSI Instructional Team
 
 
 

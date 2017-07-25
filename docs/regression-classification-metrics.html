@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -34,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Data Science Immersive" href="concluding-remarks.html"/>
         <link rel="prev" title="Statistical Inference" href="statistical-inference.html"/> 
@@ -48,7 +43,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -89,10 +83,7 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
@@ -104,8 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regression, Classification, Evaluation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-you-need-to-know-about-your-data">What you need to know about your data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#predictive-modeling">Predictive Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types-of-data">Types of Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supervised-learning">Supervised Learning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#data-size">Data Size</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unupervised-learning">Unupervised Learning</a></li>
@@ -136,10 +127,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">stats-shortcourse</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">stats-shortcourse</a>
       </nav>
 
 
@@ -148,40 +137,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Regression, Classification, Evaluation</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Regression, Classification, Evaluation</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/regression-classification-metrics.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/regression-classification-metrics.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -197,30 +169,6 @@
 <li>Evaluate a linear regression model</li>
 </ol>
 </div></blockquote>
-<div class="section" id="what-you-need-to-know-about-your-data">
-<h2>What you need to know about your data<a class="headerlink" href="#what-you-need-to-know-about-your-data" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><strong>Continuous</strong>:<ul>
-<li>Price, Quantity, Sales, Tenure</li>
-<li>Sometimes it makes since to map to discrete variables</li>
-</ul>
-</li>
-<li><strong>Categorical</strong>:<ul>
-<li>Yes/No, 0/1, Treated/Control, High/Medium/Low</li>
-<li>Also called a factor</li>
-</ul>
-</li>
-<li><strong>Missing Values</strong><ul>
-<li>May require estimation</li>
-</ul>
-</li>
-<li><strong>&#8220;Non-numeric&#8221;</strong><ul>
-<li>Text, Audio, Images, Signals, Graphs</li>
-<li>Requires transformation into meaningful quantitative features</li>
-</ul>
-</li>
-</ol>
-</div>
 <div class="section" id="predictive-modeling">
 <h2>Predictive Modeling<a class="headerlink" href="#predictive-modeling" title="Permalink to this headline">¶</a></h2>
 <p>There are many circumstances in which we are interested in predicting some outcome <span class="math">\(Y\)</span>.
@@ -241,9 +189,34 @@ features <span class="math">\(\textbf{X}\)</span> and and the outcome <span clas
 <li>What is <span class="math">\(\epsilon\)</span>?</li>
 <li>How could we model <span class="math">\(\epsilon\)</span>?</li>
 <li>How about <span class="math">\(f\)</span>?</li>
-<li>Does <em>Statistics and Probability</em> seem to speak <span class="math">\(\epsilon\)</span> or <span class="math">\(f\)</span>?</li>
+<li>Based on what you&#8217;ve seen so far, is <em>Statistics and Probability</em> more suited to describe <span class="math">\(\epsilon\)</span> or <span class="math">\(f\)</span>?</li>
 </ul>
 </div>
+</div>
+<div class="section" id="types-of-data">
+<h2>Types of Data<a class="headerlink" href="#types-of-data" title="Permalink to this headline">¶</a></h2>
+<p>The data <span class="math">\(\textbf{X}\)</span> that we use to predict <span class="math">\(Y\)</span> can come in many varieties, i.e.</p>
+<ol class="arabic simple">
+<li><strong>Continuous</strong>:<ul>
+<li>Price, Quantity, Sales, Tenure</li>
+<li>Sometimes it makes sense to map to discrete variables</li>
+</ul>
+</li>
+<li><strong>Categorical</strong>:<ul>
+<li>Yes/No, 0/1, Treated/Control, High/Medium/Low</li>
+<li>Also called a factor</li>
+</ul>
+</li>
+<li><strong>Missing Values</strong><ul>
+<li>May require estimation</li>
+</ul>
+</li>
+<li><strong>&#8220;Non-numeric&#8221;</strong><ul>
+<li>Text, Audio, Images, Signals, Graphs</li>
+<li>Requires transformation into meaningful quantitative features</li>
+</ul>
+</li>
+</ol>
 </div>
 <div class="section" id="supervised-learning">
 <h2>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h2>
@@ -253,9 +226,9 @@ is known as <strong>model fitting</strong>. Actually, different disciplines have
 different nomenclatures for this process.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="36%" />
-<col width="46%" />
+<col width="17%" />
+<col width="34%" />
+<col width="49%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Machine Learning</th>
@@ -266,7 +239,7 @@ different nomenclatures for this process.</p>
 <tbody valign="top">
 <tr class="row-even"><td><strong>Features</strong></td>
 <td><span class="math">\(\textbf{X}_{(n \times p)}\)</span></td>
-<td>covariates, Independent Variables, or Regressors</td>
+<td>Covariates, Independent Variables, or Regressors</td>
 </tr>
 <tr class="row-odd"><td><strong>Targets</strong></td>
 <td><span class="math">\(Y_{(n \times 1)}\)</span></td>
@@ -304,7 +277,7 @@ the <em>supervised learning</em> problem is referred to as either</p>
 <div><ul class="simple">
 <li><strong>Associative Studies</strong>: test hypotheses<ul>
 <li>Association <em>is</em> causality under carefully controlled conditions</li>
-<li>The <strong>power</strong> and asymptotic accuracy of a test is a function of <span class="math">\(N\)</span></li>
+<li>The <strong>power</strong> and accuracy of a test is an asymptotic function of <span class="math">\(N\)</span></li>
 </ul>
 </li>
 </ul>
@@ -318,7 +291,7 @@ the <em>supervised learning</em> problem is referred to as either</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>QUESTION</strong></p>
+<p><strong>CLASS DISCUSSION</strong></p>
 <p class="last">How would you differentiate <em>Statistics</em> and <em>Machine Learning</em>, if at all?</p>
 </div>
 </div>
@@ -327,7 +300,7 @@ the <em>supervised learning</em> problem is referred to as either</p>
 <p>When you&#8217;re not trying to predict a target <span class="math">\(Y\)</span>,
 but just seeking to uncover patterns and structures
 between the features <span class="math">\(\mathbf{X}\)</span>, the problem is referred to
-as <strong>Unsupervised learning</strong>. Two primary areas of unsupervised
+as <strong>Unsupervised Learning</strong>. The two primary areas of unsupervised
 learning are</p>
 <blockquote>
 <div><ul class="simple">
@@ -342,7 +315,8 @@ learning are</p>
 <p>Suppose that <span class="math">\(Y_i\)</span> depends on <span class="math">\(X_i\)</span> according to</p>
 <div class="math">
 \[Y_i = \beta_{0} + \beta_{1} X_i + \epsilon_i, \text{ where } \epsilon_i \overset{\small i.i.d.}{\sim}N\left(0, \sigma^2\right)\]</div>
-<p>where <span class="math">\(\beta_{0}\)</span>, <span class="math">\(\beta_{1}\)</span>, and <span class="math">\(\sigma^2\)</span> are the parameters of the model (coefficients and variance, respectively).</p>
+<p>where <span class="math">\(\beta_{0}\)</span>, <span class="math">\(\beta_{1}\)</span>, and <span class="math">\(\sigma^2\)</span> are the parameters of the model
+(intercept, coefficient and variance, respectively).</p>
 <p>We can easily simulate some data under an instance of this set of models as follows:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -375,16 +349,22 @@ learning are</p>
 <p><strong>QUESTION</strong></p>
 <p class="last">If you added data into the plot above where could you add them that might be a cause for concern?</p>
 </div>
-<p>Now of course in real life you <em>first</em> get your data <em>and then</em> you estimate your model:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>CLASS DISCUSSION</strong></p>
+<p class="last">If you increased to total number of data points generated by this model, how would the density of points in this picture look?</p>
+</div>
+<p>Now of course in real life you <em>first</em> get your data and <em>then</em> you estimate your model:</p>
 <div class="math">
 \[\mathbf{y} = \mathbf{X}\mathbf{\hat \beta} + \mathbf{\hat \epsilon}\]</div>
-<p>where <span class="math">\(\mathbf{y} = \left[\begin{array}{c}y_1\\y_2\\\vdots\\y_n\end{array}\right]_, \;\;\mathbf{X} = \left[\begin{array}{c}1&amp;x_1\\1&amp;x_2\\\vdots\\1&amp;x_n\end{array}\right]_,  \;\;  \mathbf{\hat \beta} = \left[\begin{array}{c}\beta_0\\\beta_1 \end{array}\right]\text{ and } \mathbf{\hat \epsilon} = \left[\begin{array}{c}\hat \epsilon_1\\\hat \epsilon_2\\\vdots\\ \hat \epsilon_n\end{array}\right]_.\)</span></p>
-<p>The <strong>residuals</strong> <span class="math">\(\hat \epsilon_i\)</span> are used to estimate the model <strong>mean squared error (MSE)</strong></p>
-<div class="math">
-\[\displaystyle \frac{n}{n-p-1} \hat \sigma^2 = \sum_{i=1}^n \frac{\epsilon_i^2}{n}\]</div>
+<p>where <span class="math">\(\mathbf{y} = \left[\begin{array}{c}y_1\\y_2\\\vdots\\y_n\end{array}\right]_, \;\;\mathbf{X} = \left[\begin{array}{c}1&amp;x_1\\1&amp;x_2\\\vdots\\1&amp;x_n\end{array}\right]_,  \;\;  \mathbf{\hat \beta} = \left[\begin{array}{c} \hat \beta_0\\ \hat \beta_1 \end{array}\right]\text{ and } \mathbf{\hat \epsilon} = \left[\begin{array}{c}\hat \epsilon_1\\\hat \epsilon_2\\\vdots\\ \hat \epsilon_n\end{array}\right]\)</span></p>
 <p>and the predictions from the model are</p>
 <div class="math">
 \[\mathbf{\hat Y_0} = \mathbf{X_0}\mathbf{\hat \beta}\]</div>
+<p>The <strong>residuals</strong> <span class="math">\(\hat \epsilon_i\)</span> are used to estimate the model <strong>mean squared error (MSE)</strong></p>
+<div class="math">
+\[\displaystyle \frac{n-p-1}{n} \hat \sigma^2 = \sum_{i=1}^n \frac{\epsilon_i^2}{n}\]</div>
+<p>where <span class="math">\(p\)</span> is the number of <em>coefficients</em> in the model (here, 1).</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 
@@ -408,8 +388,9 @@ learning are</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Try out the above code.  Play around with the different parameter choices.
-Can you make the above model plot also include the model fit line?</p>
+<p class="last">Try out the above code.  If it&#8217;s making sense to you, try seeing what happends when you change the sample size <span class="math">\(n\)</span>,
+or the model intercept <span class="math">\(\beta_0\)</span> and coefficient <span class="math">\(\beta_1\)</span> used to generate the sample.
+See if you are able to add the model fit line to the plot of the actual model line itself (from the plot above).</p>
 </div>
 <div class="section" id="assumptions">
 <h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h3>
@@ -420,38 +401,42 @@ Can you make the above model plot also include the model fit line?</p>
 </li>
 </ol>
 <ol class="arabic" start="2">
-<li><p class="first"><strong>Linearity in the Coefficients</strong></p>
-<p>Only linear relationships between the outcome and the features will be captured.
-<em>But any features (e.g., non-linear functions of features like polynomials or splines)
-can be used...</em></p>
+<li><p class="first"><strong>Independent Errors/Outcomes</strong> <span class="math">\(\epsilon/Y\)</span></p>
+<p>The final value for any <span class="math">\(Y_i\)</span> (or equivalently, <span class="math">\(\epsilon_i\)</span>) can not be
+dependent on any other <span class="math">\(Y_j\)</span> or <span class="math">\(\epsilon_j\)</span>, <span class="math">\(j \not = i\)</span></p>
 </li>
 </ol>
 <ol class="arabic" start="3">
-<li><p class="first"><strong>Normal Errors</strong></p>
-<p>The errors around <span class="math">\(\mathbf{X}\beta\)</span> are normally distributed.</p>
+<li><p class="first"><strong>Linear Model Form</strong></p>
+<p>The linear relationships as specified by the model are correct.
+This is equivalent to having <strong>Unbiased Errors</strong>. I.e., the expected value of the error
+<span class="math">\(\epsilon_i\)</span> is 0 for all levels of <span class="math">\(\mathbf{X}\)</span>.</p>
+<p>While only linear forms are allowed, the forms are only linear in the model coefficients (not the features).
+I.e., any features (e.g., non-linear functions of features like polynomials or spline basis functions)
+are permissible.</p>
 </li>
 </ol>
 <ol class="arabic" start="4">
-<li><p class="first"><strong>Homoscedastic Errors</strong></p>
-<p>The errors have constant variance, <span class="math">\(\sigma^2\)</span></p>
+<li><p class="first"><strong>Normal Errors</strong></p>
+<p>The errors <span class="math">\(\epsilon_i\)</span> around <span class="math">\(\mathbf{X}\beta\)</span> are normally distributed</p>
 </li>
 </ol>
 <ol class="arabic" start="5">
-<li><p class="first"><strong>Unbiased Errors</strong></p>
-<p>The expected value of the error <span class="math">\(\epsilon_i\)</span> is 0 for all levels of <span class="math">\(X\)</span></p>
+<li><p class="first"><strong>Homoscedastic Errors</strong></p>
+<p>The errors <span class="math">\(\epsilon_i\)</span> have constant variance, <span class="math">\(\sigma^2\)</span>, for all levels of <span class="math">\(\mathbf{X}\)</span>.</p>
 </li>
 </ol>
-<ol class="arabic" start="6">
+<ol class="upperalpha" start="24">
 <li><p class="first"><strong>Full Rank of</strong> <span class="math">\(X\)</span></p>
-<p>The features most not be &#8220;redundant&#8221;; and, being nearly so hurts model performance.</p>
+<p>The features are not &#8220;redundant&#8221;; and, being nearly so hurts model performance.</p>
 </li>
 </ol>
 <p>Fortunately, this model can still be effective when some of the assumptions
 do not fully hold.  In addition, there are methods available to help address
-and correct failures of the assumptions.
-Assumptions play a major statistical inference problems (i.e., association studies),
-but less relevant in prediction contexts where it doesn&#8217;t matter how or why it works &#8211;
-just whether or not the prediction is effective. As a result, <em>machine learning</em>
+and correct failures of the assumptions.</p>
+<p>Assumptions play a major statistical inference problems (i.e., association studies),
+but are less relevant in prediction contexts where it doesn&#8217;t matter how or why it works &#8211;
+just whether or not it does. As a result, <em>machine learning</em>
 has been able to produce creative and powerful alternatives to the
 <em>linear regression model</em> shown above. E.g., k-nearest neighbors, random forests,
 gradient boosting, support vector machines, and neural networks.</p>
@@ -459,7 +444,8 @@ gradient boosting, support vector machines, and neural networks.</p>
 </div>
 <div class="section" id="evaluation-metrics">
 <h2>Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permalink to this headline">¶</a></h2>
-<p>In <em>regression</em> contexts he fit of the model to the data can be assessed using the <em>MSE</em>, from above,
+<p><strong>Regression</strong></p>
+<p>In <em>regression</em> contexts the fit of the model to the data can be assessed using the <em>MSE</em>, from above,
 or the <strong>root mean squared error (RMSE)</strong></p>
 <div class="math">
 \[\displaystyle \sqrt{\sum_{i=1}^n \frac{(y_i-\hat y_i)^2}{n}}\]</div>
@@ -468,8 +454,8 @@ or the <strong>root mean squared error (RMSE)</strong></p>
 <p><strong>EXERCISE</strong></p>
 <p class="last">Calculate the RMSE for the data and prediction in the code above.</p>
 </div>
-<p>In classification contexts, performance is assess using a <strong>confusion matrix</strong>.
-There are many ways to evaluate the confusion matrix:</p>
+<p><strong>Classification</strong></p>
+<p>In <em>classification</em> contexts, performance is assessed using a <strong>confusion matrix</strong>:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
@@ -477,7 +463,7 @@ There are many ways to evaluate the confusion matrix:</p>
 <col width="45%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
+<tr class="row-odd"><th class="head">&nbsp;</th>
 <th class="head">Predicted False <span class="math">\((\hat Y = 0)\)</span></th>
 <th class="head">Predicted Ture <span class="math">\((\hat Y = 1)\)</span></th>
 </tr>
@@ -493,19 +479,20 @@ There are many ways to evaluate the confusion matrix:</p>
 </tr>
 </tbody>
 </table>
+<p>There are many ways to evaluate the confusion matrix:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Accuracy = <span class="math">\(\frac{TN+TP}{FP+FP+TN+TP}\)</span>: proportion correct</li>
+<li>Accuracy = <span class="math">\(\frac{TN+TP}{FP+FP+TN+TP}\)</span>: overall proportion correct</li>
 </ul>
 </div></blockquote>
 <blockquote>
 <div><ul class="simple">
-<li>Precision = <span class="math">\(\frac{TP}{TP+FP}\)</span>: proportion called true correct</li>
+<li>Precision = <span class="math">\(\frac{TP}{TP+FP}\)</span>: proportion called true that are correct</li>
 </ul>
 </div></blockquote>
 <blockquote>
 <div><ul class="simple">
-<li>Recall =  <span class="math">\(\frac{TP}{TP+FN}\)</span>: proportion true called correct</li>
+<li>Recall =  <span class="math">\(\frac{TP}{TP+FN}\)</span>: proportion of true that are called correctly</li>
 </ul>
 </div></blockquote>
 <blockquote>
@@ -526,18 +513,15 @@ There are many ways to evaluate the confusion matrix:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="concluding-remarks.html" class="btn btn-neutral float-right" title="Data Science Immersive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="concluding-remarks.html" class="btn btn-neutral float-right" title="Data Science Immersive" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="statistical-inference.html" class="btn btn-neutral" title="Statistical Inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="statistical-inference.html" class="btn btn-neutral" title="Statistical Inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -571,14 +555,13 @@ There are many ways to evaluate the confusion matrix:</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
