@@ -10,27 +10,6 @@ Regression, Classification, Evaluation
   3. Evaluate a linear regression model
 
 
-What you need to know about your data
-----------------------------------------
-
-1. **Continuous**:
-
-   * Price, Quantity, Sales, Tenure
-   * Sometimes it makes since to map to discrete variables
-     
-2. **Categorical**:
-
-   * Yes/No, 0/1, Treated/Control, High/Medium/Low
-   * Also called a factor
-
-3. **Missing Values**
-
-   * May require estimation
-
-4. **"Non-numeric"**
-  
-   * Text, Audio, Images, Signals, Graphs
-   * Requires transformation into meaningful quantitative features
 
 
 Predictive Modeling
@@ -55,7 +34,32 @@ where :math:`f` explicitly describes the precise relationship between
    * What is :math:`\epsilon`?  
    * How could we model :math:`\epsilon`?
    * How about :math:`f`? 
-   * Does *Statistics and Probability* seem to speak :math:`\epsilon` or :math:`f`?
+   * Based on what you've seen so far, is *Statistics and Probability* more suited to describe :math:`\epsilon` or :math:`f`?
+
+Types of Data
+-------------
+
+The data :math:`\textbf{X}` that we use to predict :math:`Y` can come in many varieties, i.e.
+
+1. **Continuous**:
+
+   * Price, Quantity, Sales, Tenure
+   * Sometimes it makes sense to map to discrete variables
+     
+2. **Categorical**:
+
+   * Yes/No, 0/1, Treated/Control, High/Medium/Low
+   * Also called a factor
+
+3. **Missing Values**
+
+   * May require estimation
+
+4. **"Non-numeric"**
+  
+   * Text, Audio, Images, Signals, Graphs
+   * Requires transformation into meaningful quantitative features
+
 
 
 Supervised Learning
@@ -67,15 +71,15 @@ in the face of noisy data (as a result of :math:`\epsilon`)
 is known as **model fitting**. Actually, different disciplines have adopted 
 different nomenclatures for this process. 
 
-+---------------------+----------------------------------------+---------------------------------------------------+
-| Machine Learning    | Notation                               | Other Fields                                      |
-+=====================+========================================+===================================================+
-| **Features**        | :math:`\textbf{X}_{(n \times p)}`      | covariates, Independent Variables, or Regressors  |
-+---------------------+----------------------------------------+---------------------------------------------------+
-| **Targets**         | :math:`Y_{(n \times 1)}`               | Outcome, Dependent or Endogenous Variable         |
-+---------------------+----------------------------------------+---------------------------------------------------+
-| **Training**        | :math:`\hat{f}`                        | Learning, Estimation, or Model Fitting            |
-+---------------------+----------------------------------------+---------------------------------------------------+
++------------------+-----------------------------------+---------------------------------------------------+
+| Machine Learning | Notation                          | Other Fields                                      |
++==================+===================================+===================================================+
+| **Features**     | :math:`\textbf{X}_{(n \times p)}` | Covariates, Independent Variables, or Regressors  |
++------------------+-----------------------------------+---------------------------------------------------+
+| **Targets**      | :math:`Y_{(n \times 1)}`          | Outcome, Dependent or Endogenous Variable         |
++------------------+-----------------------------------+---------------------------------------------------+
+| **Training**     | :math:`\hat{f}`                   | Learning, Estimation, or Model Fitting            |
++------------------+-----------------------------------+---------------------------------------------------+
 
 Depending on the data type of the target,
 the *supervised learning* problem is referred to as either
@@ -96,7 +100,7 @@ Data Size
    * **Associative Studies**: test hypotheses 
    
      * Association *is* causality under carefully controlled conditions
-     * The **power** and asymptotic accuracy of a test is a function of :math:`N` 
+     * The **power** and accuracy of a test is an asymptotic function of :math:`N` 
 
    ..
 
@@ -108,7 +112,7 @@ Data Size
 
 .. note::
 
-   **QUESTION**
+   **CLASS DISCUSSION**
 
    How would you differentiate *Statistics* and *Machine Learning*, if at all?
 
@@ -120,7 +124,7 @@ Unupervised Learning
 When you're not trying to predict a target :math:`Y`, 
 but just seeking to uncover patterns and structures
 between the features :math:`\mathbf{X}`, the problem is referred to 
-as **Unsupervised learning**. Two primary areas of unsupervised 
+as **Unsupervised Learning**. The two primary areas of unsupervised 
 learning are 
 
    * **Clustering**: e.g., hierarchical, k-means
@@ -138,7 +142,8 @@ Suppose that :math:`Y_i` depends on :math:`X_i` according to
 .. math::
    Y_i = \beta_{0} + \beta_{1} X_i + \epsilon_i, \text{ where } \epsilon_i \overset{\small i.i.d.}{\sim}N\left(0, \sigma^2\right)
 
-where :math:`\beta_{0}`, :math:`\beta_{1}`, and :math:`\sigma^2` are the parameters of the model (coefficients and variance, respectively).
+where :math:`\beta_{0}`, :math:`\beta_{1}`, and :math:`\sigma^2` are the parameters of the model 
+(intercept, coefficient and variance, respectively).
 
 We can easily simulate some data under an instance of this set of models as follows:
 
@@ -173,24 +178,33 @@ We can easily simulate some data under an instance of this set of models as foll
 
   If you added data into the plot above where could you add them that might be a cause for concern?
 
-Now of course in real life you *first* get your data *and then* you estimate your model:
+.. note::
+
+  **CLASS DISCUSSION**
+
+  If you increased to total number of data points generated by this model, how would the density of points in this picture look?
+
+Now of course in real life you *first* get your data and *then* you estimate your model:
 
 .. math::
    \mathbf{y} = \mathbf{X}\mathbf{\hat \beta} + \mathbf{\hat \epsilon}
    
-where :math:`\mathbf{y} = \left[\begin{array}{c}y_1\\y_2\\\vdots\\y_n\end{array}\right]_, \;\;\mathbf{X} = \left[\begin{array}{c}1&x_1\\1&x_2\\\vdots\\1&x_n\end{array}\right]_,  \;\;  \mathbf{\hat \beta} = \left[\begin{array}{c}\beta_0\\\beta_1 \end{array}\right]\text{ and } \mathbf{\hat \epsilon} = \left[\begin{array}{c}\hat \epsilon_1\\\hat \epsilon_2\\\vdots\\ \hat \epsilon_n\end{array}\right]_.`
-
-
-The **residuals** :math:`\hat \epsilon_i` are used to estimate the model **mean squared error (MSE)**  
-
-.. math::
-
-   \displaystyle \frac{n}{n-p-1} \hat \sigma^2 = \sum_{i=1}^n \frac{\epsilon_i^2}{n}
+where :math:`\mathbf{y} = \left[\begin{array}{c}y_1\\y_2\\\vdots\\y_n\end{array}\right]_, \;\;\mathbf{X} = \left[\begin{array}{c}1&x_1\\1&x_2\\\vdots\\1&x_n\end{array}\right]_,  \;\;  \mathbf{\hat \beta} = \left[\begin{array}{c} \hat \beta_0\\ \hat \beta_1 \end{array}\right]\text{ and } \mathbf{\hat \epsilon} = \left[\begin{array}{c}\hat \epsilon_1\\\hat \epsilon_2\\\vdots\\ \hat \epsilon_n\end{array}\right]`
 
 and the predictions from the model are
 
 .. math::
    \mathbf{\hat Y_0} = \mathbf{X_0}\mathbf{\hat \beta}
+
+The **residuals** :math:`\hat \epsilon_i` are used to estimate the model **mean squared error (MSE)**  
+
+.. math::
+
+   \displaystyle \frac{n-p-1}{n} \hat \sigma^2 = \sum_{i=1}^n \frac{\epsilon_i^2}{n}
+
+where :math:`p` is the number of *coefficients* in the model (here, 1).
+
+
  
 
 .. code-block:: python
@@ -218,8 +232,9 @@ and the predictions from the model are
 
    **EXERCISE**
 
-   Try out the above code.  Play around with the different parameter choices.
-   Can you make the above model plot also include the model fit line?
+   Try out the above code.  If it's making sense to you, try seeing what happends when you change the sample size :math:`n`,
+   or the model intercept :math:`\beta_0` and coefficient :math:`\beta_1` used to generate the sample. 
+   See if you are able to add the model fit line to the plot of the actual model line itself (from the plot above). 
 
 
 Assumptions
@@ -229,50 +244,56 @@ The specification here actually entails many assumptions:
 
 1. **Fixed and Constant** :math:`\mathbf{X}`
    
-   The :math:`\mathbf{X}` are assumed to be measured exactly without error   
+   The :math:`\mathbf{X}` are assumed to be measured exactly without error 
 
 ..
 
-2. **Linearity in the Coefficients**
+2. **Independent Errors/Outcomes** :math:`\epsilon/Y`
 
-   Only linear relationships between the outcome and the features will be captured.   
-   *But any features (e.g., non-linear functions of features like polynomials or splines)
-   can be used...*
+   The final value for any :math:`Y_i` (or equivalently, :math:`\epsilon_i`) can not be
+   dependent on any other :math:`Y_j` or :math:`\epsilon_j`, :math:`j \not = i`
+
+..
+
+3. **Linear Model Form** 
+
+   The linear relationships as specified by the model are correct.
+   This is equivalent to having **Unbiased Errors**. I.e., the expected value of the error 
+   :math:`\epsilon_i` is 0 for all levels of :math:`\mathbf{X}`.
+
+   While only linear forms are allowed, the forms are only linear in the model coefficients (not the features).
+   I.e., any features (e.g., non-linear functions of features like polynomials or spline basis functions)
+   are permissible. 
 
 
 ..
 
-3. **Normal Errors**
+4. **Normal Errors**
    
-   The errors around :math:`\mathbf{X}\beta` are normally distributed.
+   The errors :math:`\epsilon_i` around :math:`\mathbf{X}\beta` are normally distributed 
 
 ..
 
-4. **Homoscedastic Errors**
+5. **Homoscedastic Errors**
 
-   The errors have constant variance, :math:`\sigma^2`
+   The errors :math:`\epsilon_i` have constant variance, :math:`\sigma^2`, for all levels of :math:`\mathbf{X}`.
 
 ..
 
-5. **Unbiased Errors**
 
-   The expected value of the error :math:`\epsilon_i` is 0 for all levels of :math:`X`
+X. **Full Rank of** :math:`X`
 
-   
-..
-
-6. **Full Rank of** :math:`X`
-
-   The features most not be "redundant"; and, being nearly so hurts model performance.
+   The features are not "redundant"; and, being nearly so hurts model performance.
 
 ..
 
 Fortunately, this model can still be effective when some of the assumptions 
 do not fully hold.  In addition, there are methods available to help address
 and correct failures of the assumptions.  
+
 Assumptions play a major statistical inference problems (i.e., association studies),
-but less relevant in prediction contexts where it doesn't matter how or why it works --
-just whether or not the prediction is effective. As a result, *machine learning* 
+but are less relevant in prediction contexts where it doesn't matter how or why it works --
+just whether or not it does. As a result, *machine learning* 
 has been able to produce creative and powerful alternatives to the 
 *linear regression model* shown above. E.g., k-nearest neighbors, random forests, 
 gradient boosting, support vector machines, and neural networks. 
@@ -283,7 +304,9 @@ gradient boosting, support vector machines, and neural networks.
 Evaluation Metrics
 ------------------
 
-In *regression* contexts he fit of the model to the data can be assessed using the *MSE*, from above,
+**Regression**
+
+In *regression* contexts the fit of the model to the data can be assessed using the *MSE*, from above,
 or the **root mean squared error (RMSE)**
 
 .. math::
@@ -296,10 +319,9 @@ or the **root mean squared error (RMSE)**
 
    Calculate the RMSE for the data and prediction in the code above.
 
+**Classification**
 
-
-In classification contexts, performance is assess using a **confusion matrix**.
-There are many ways to evaluate the confusion matrix:
+In *classification* contexts, performance is assessed using a **confusion matrix**:
 
 +----------------------+---------------------------------------+--------------------------------------------------+
 |                      | Predicted False :math:`(\hat Y = 0)`  | Predicted Ture :math:`(\hat Y = 1)`              |
@@ -309,15 +331,17 @@ There are many ways to evaluate the confusion matrix:
 | True :math:`(Y = 1)` | False Negatives :math:`(TN)`          | True Positives :math:`(TP)`                      |
 +----------------------+---------------------------------------+--------------------------------------------------+
 
-   * Accuracy = :math:`\frac{TN+TP}{FP+FP+TN+TP}`: proportion correct
+There are many ways to evaluate the confusion matrix:
+
+   * Accuracy = :math:`\frac{TN+TP}{FP+FP+TN+TP}`: overall proportion correct
 
 ..
 
-   * Precision = :math:`\frac{TP}{TP+FP}`: proportion called true correct
+   * Precision = :math:`\frac{TP}{TP+FP}`: proportion called true that are correct
 
 ..
 
-   * Recall =  :math:`\frac{TP}{TP+FN}`: proportion true called correct
+   * Recall =  :math:`\frac{TP}{TP+FN}`: proportion of true that are called correctly
 
 ..
 

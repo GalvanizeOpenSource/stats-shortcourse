@@ -55,7 +55,9 @@ As we have seen, there are two types of probability distributions:
    Once you've gotten the hang of this for the gamma distribution,
    try to generate analogous values for a *Poisson* distribution.  
    If you're running into trouble, consider what method of a 
-   `poisson_rv` object you should be calling. Once you've got that 
+   `poisson_rv` object you should be calling. (Hint: 
+   should a Poisson random variable have a probability *density*
+   function?). Once you've got that 
    working, what would you say is the biggest difference between 
    these values as associated with the gamma distribution 
    compared to the Poisson distribution?
@@ -74,7 +76,7 @@ satisfy the *axioms of probability*, e.g.,
   2. :math:`\sum_{x \in S_X} Pr(X_i=x) = 1` and :math:`\int_{-\infty}^{\infty} f(X_i=x) \; dx = 1`
 
 and both can be represented as a
-**cumulative distribution functions (CDF)** which is defined as 
+**cumulative distribution functions (CDF)**, which is defined as 
 
 .. math::
        F_X(X=x) = Pr(X=x\leq x_0)
@@ -91,7 +93,17 @@ Notice that for *continuous distributions*
 which means that the derivative of the CDF is the the PDF
 
 .. math::
-      \frac{d F_X}{X} f(X) = F_X(X)
+      \frac{d}{dX}F_X(X) = f(X) 
+
+
+.. note::
+  
+  **QUESTION**
+
+  Are you surprised that discrete and continuous distributions can *BOTH* 
+  be defined in terms of a *CDF* even though discrete distributions 
+  only have *PMF* and not a *PDF* and continuous distributions only have a 
+  *PDF* and not a *PMF*? 
 
 
 Expectation
@@ -99,11 +111,11 @@ Expectation
 
 The **expectation operator** for a random variable :math:`X` is defined as
 
-* :math:`E[X] = \sum_{x\in S_X} s Pr(X=x)`
+* :math:`E[X] = \displaystyle \sum_{x\in S_X} x Pr(X=x)`
 
 ..
 
-* :math:`E[X] = \int_{-\infty}^{\infty}X(s) f_X(s)ds`
+* :math:`E[X] = \displaystyle \int_{-\infty}^{\infty}x f_X(x)dx`
 
 for discrete and continuous distributions, respectively. 
 
@@ -112,7 +124,7 @@ Parameters
 ----------
 
 Recall the *first through fourth distributional moments* mentioned previously.
-The first moments is the **expectation** :math:`E[X]` or **mean** of the 
+The first moments is the above **expectation** :math:`E[X]` or **mean** of the 
 distribution and is a measures the central tendecy of the distribution. For more explanation, see `this video about random variables from Khan academy <https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/term-life-insurance-and-death-probability>`_.
 
 
@@ -131,7 +143,7 @@ distribution and is a measures the central tendecy of the distribution. For more
   of the random variable is defined as :math:`\sigma_X = \sqrt{Var[X]}`.
 
   How would you actually calculate the standard deviation 
-  of a random variable with a given discrete distribution?
+  of a random variable with a given discrete distribution, :math:`Pr(X=x)`?
 
   For more information, see: `Measures of spread (Khan academy) <https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/v/range-variance-and-standard-deviation-as-measures-of-dispersion>`_.
 
@@ -139,28 +151,46 @@ distribution and is a measures the central tendecy of the distribution. For more
 Joint Distributions
 -------------------
 
-
-The **joint distribution** of two or more random variables is 
-defined by the distributional form of the *chain rule*, i.e., 
-the joint distribution of 
+When we're talking about random variables, we don't use the *set* notation
+that we did for events, e.g., :math:`A \cap B`. Instead, we specify the 
+distribution associated with two random variables :math:`X_1` and :math:`X_2`
+as :math:`P(X_1, X_2)` where :math:`P` specifies either a PMF or a PDF.  
+A distribution such as this that is specified for two or more random variables is
+called a **joint distribution**.
+And further, the *joint distribution* of 
 a collection of random variables :math:`X_i, \; i = 1, \cdots, n` is
-given as 
+defined by the distributional form of the *chain rule* which is
 
 .. math::
-   \displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i | \underset{i=1}{\overset{n}{\cap}} X_i\right)
+   \displaystyle P\left(X_1, X_2, \cdots X_n\right) = \left(\prod_{i=n}^{2} P\left(X_i | X_{i-1}, \cdots X_1 \right)\right) \times P\left(X_1\right)
 
-where :math:`P` specifies either a PMF or a PDF.  Further, notice that
-if the :math:`X_i` are *independent* of each other, then
+
+Further, just as with *events*, if the :math:`X_i` are *independent* of each other then
 
 .. math::
-   \displaystyle P\left(\underset{i=1}{\overset{n}{\cap}}X_i\right) = \prod_i^n P\left(X_i\right)
+   \displaystyle P\left(X_1, X_2, \cdots X_n\right) = \prod_{i=1}^n P\left(X_i\right)
+
+
+Note that the the mathematical *multiplication notation* :math:`\displaystyle \prod_{i=1}^{n} c_i` for numbers :math:`c_i, i = 1, \cdots, n` is
+just like the mathematical *summation notation* :math:`\displaystyle \sum_{i=1}^{n} c_i` except that the :math:`c_i` are *multiplied*
+together instead of being *added* together. 
+
+.. note::
+
+  **EXERCISE**
+
+  Write out the distributional chain rule defining 
+  :math:`P\left(X_1, X_2, X_3, X_4, X_5\right)` and give an account of how 
+  it might be interpreted.  E.g., "First we caclulate the probability of :math:`X_1`..."
+  
 
 
 Linear Association
 ------------------
 
-Linear association is encoded in a joint distribution of two variables 
-as **covariance** 
+Linear association between two variables is encoded as the 
+**covariance** of the joint distribution of those two variables 
+
 
 .. math::
      
@@ -168,12 +198,14 @@ as **covariance**
    
             &= \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]
   
-
+where the brackets simply indicate appropriate notational usage 
+depending on if we're talking about discrete or continuous random variables. 
    
 Much like with standard deviation, it can be helpful to be on a more natural
-scale, so we often use **correlation** -- which varies from -1 to +1 with 0 --
-rather than covariance -- which is measured on the product of the two variables 
-unit -- to describe the strength of a linear relationship:
+scale, so we often use **correlation** (which varies from -1 to +1 with
+0 indicating "no linear association") 
+rather than covariance (which is measured on the product of the two variables 
+unit) -- to describe the strength of a linear relationship:
 
 .. math::
    Corr[X,Y] = \frac{E[(x - E[X])(y - E[Y])]}{\sigma_X\sigma_Y} = \frac{Cov[X,Y]}{\sigma_X\sigma_Y}
@@ -181,9 +213,11 @@ unit -- to describe the strength of a linear relationship:
 
 
 Marginal Distributions
---------------------------
+----------------------
 
-Recasting the *Law of Total Probability* in terms of random variables
+We have seen *marginal distributions* already -- they are simply 
+distributions of a single random variable. 
+However, recasting the *Law of Total Probability* in terms of random variables
 :math:`X` and :math:`Y`, we have for
 
 * **discrete distributions**
@@ -196,22 +230,24 @@ Recasting the *Law of Total Probability* in terms of random variables
 .. math::
    \displaystyle f(X=x) = \int_{y \in S_Y} f(X=x, Y=y) \;dy = \int_{y \in S_Y} f(X=x|Y=y) f(Y=y) \;dy
 
-
-The distributions
-:math:`Pr(X=x)` and :math:`f(X=x)` are called **marginal distributions**
-of their respective **joint distributions**, :math:`Pr(X, Y)` and
-:math:`f(X, Y)`, respectively. Thus, a **marginal distribution** of a 
+which shows how **marginal distributions** 
+:math:`Pr(X=x)` and :math:`f(X=x)` can be derived from their
+higher order **joint distributions** :math:`Pr(X, Y)` and
+:math:`f(X, Y)`, respectively. 
+Thus, a **marginal distribution** of a 
 (possibly not independent) *multivariate (joint) distribution* is just the 
 distribution of a 
 single dimension (random variable) of the multivariate (joint) random variable.
-Marginal distributions allow us to unpack joint distributions. 
+Marginal distributions are the unpacked variables of joint distributions. 
 
-
+So, while the *chain rule* allows us to build up joint distributions from
+conditional ("marginal") distributions, the *law of total probability* allows 
+us to unpack joing distributions into marginal distributions. 
 
 .. figure:: MultivariateNormal.png
    :scale: 75%
    :align: center
-   :alt: coin-toss
+   :alt: joint-distribution
    :figclass: align-center
 
 
@@ -226,28 +262,34 @@ Marginal distributions allow us to unpack joint distributions.
 Statistics
 ----------	    
 
-**Statistics** often correspond to distributional *parameters* as they 
-are typically used to estimate specific distributional parameters.  It's important 
+**Statistics** are often chosen for their correspondence to 
+specific distributional *parameters* for the purposes of estimating those 
+parameters.  It's important 
 to always remember the distinction between *statistics* and *parameters*,
-however: 
-statistics are numerical calculations that are planned to be executed using 
-sample data, while parameters are mathematical manipulations carried out on 
+though: 
+statistics are numerical calculations that use sample data for their
+calculation, while parameters are mathematical manipulations carried out on 
 distributional forms. 
 
-
-
-The statistic that corresponds to expectation is the **sample mean**:
+A statistic that corresponds to the *population
+mean* is, unsurprisingly, the **sample mean**:
 
 .. math::
    \bar{x} = \frac{1}{n}\sum_j^n x_j
 
-Common alternative statistics for measuring centrality are the **sample median**
-and the **sample mode**.
-The statistic that corresponds to variance is the **sample variance**:
+However, alternative statistics with different robustness and behavior profiles,
+such as **sample median** and the **sample mode**, are available for 
+measuring centrality.  
+The statistic that corresponds to the *population variance* is the **sample variance**:
 
 .. math::
 
    s^2 = \frac{1}{n-1} \sum_j^n (x_j - \bar{x})^2
+
+But again, alternative statistics such as the **range** and **inter-quartile range**
+are available for measuring spead.  And of course, the sample *standard deviation* 
+:math:`s = \sqrt{s^2}` is much easier to interpret than the *sample variance*. 
+
 
 There are a couple common choices for 
 statistics that correspond to linear associations parameters.  
@@ -275,6 +317,8 @@ A **spurious relationship** is a relationship is said to exist between
 two or more random variables that are not causally related to each other 
 but have a relationship due to a common **confounding factor**.
 
+A Warning
+---------
 
 **Confounding** is just one of the many difficulties that will need to be 
 dealt with in real data. When you actually begin working with 
@@ -284,9 +328,9 @@ your data.  These outliers can drastically affect your calculated statistics
 and hence your conclusions. Weary and vigilant attention is required to 
 suss out these influential data points and decide what is to be done about 
 them.  And what if you have **missing data** that's not even available to
-look at? Will you impute the missing data? With how much sophistication?
-Will you simply disregard samples with missing entires? As you can see,
-there are many questions and, unfortunately, too few answers. 
+look at? Will you impute the missing data? If so, with how much sophistication?
+Or will you simply disregard samples with missing entires? As you can see,
+there are many questions and, unfortunately, very often too few answers... 
 
 
 .. note::
@@ -301,7 +345,8 @@ Further study
 -----------------
 
 Most major statistical textbooks,
-for example `Elements of Statistical Learning <https://statweb.stanford.edu/~tibs/ElemStatLearn/>`_ (Free), will begin with an overview of these topics.
+for example (the free) `Elements of Statistical Learning <https://statweb.stanford.edu/~tibs/ElemStatLearn/>`_ 
+will begin with an overview of the topics in this section. 
 
 
 

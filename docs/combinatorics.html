@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -32,6 +34,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="stats-shortcourse 1.0 documentation" href="index.html"/>
         <link rel="next" title="Probability" href="probability.html"/>
         <link rel="prev" title="Probability Concepts" href="probability-concepts.html"/> 
@@ -43,6 +48,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -83,7 +89,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Combinatorics</a><ul>
@@ -118,8 +127,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">stats-shortcourse</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">stats-shortcourse</a>
+        
       </nav>
 
 
@@ -128,23 +139,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Combinatorics</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Combinatorics</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/combinatorics.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/combinatorics.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -182,8 +210,8 @@ how many possible orderings could be drawn? The answer to this question is</p>
 <p>until there is only one ball left and we must pick it.
 That is, there are <span class="math">\(10*9*8*\cdots*1 = 10!\)</span>, i.e.
 <em>10 factorial</em>, possible orderings.  This is a demonstration of the
-so-called _product <a href="#id1"><span class="problematic" id="id2">rule_</span></a> for counting things, and it forshadows the
-incredibly fundamental rule in probability known as the _chain <a href="#id3"><span class="problematic" id="id4">rule_</span></a>
+so-called <cite>product rule</cite> for counting things, and it forshadows the
+incredibly fundamental rule in probability known as the <cite>chain rule</cite>
 (which we will return to later).</p>
 <p>The number <em>10 factorial</em> can be calculated in Python,
 but watch out: factorials get really big really fast...</p>
@@ -298,15 +326,18 @@ the argument if you think it helps your case.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probability.html" class="btn btn-neutral float-right" title="Probability" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probability.html" class="btn btn-neutral float-right" title="Probability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="probability-concepts.html" class="btn btn-neutral" title="Probability Concepts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="probability-concepts.html" class="btn btn-neutral" title="Probability Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -340,13 +371,14 @@ the argument if you think it helps your case.</p>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

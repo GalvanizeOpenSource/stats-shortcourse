@@ -58,14 +58,14 @@ Machine Learning versus Statistics
 
 `What is the difference between statistics and machine learning? <https://www.quora.com/What-is-the-difference-between-statistics-and-machine-learning>`_
 
-Statistics and Machine Learning represent distinct quantitative analysis 
-methodology traditions that developed towards distinctive objectives that 
-suited their idiosyncratic access to different (primarily in terms of 
-computational) problem solving methodologies and philosophies; 
+**Statistics** and **Machine Learning** represent distinct quantitative analysis 
+traditions that developed towards distinctive objectives that 
+suited their idiosyncratic access to (primarily computationally) different 
+problem solving methodologies and philosophies; 
 however, both disciplines are rooted in the common enterprise of 
 "data analysis" and so have found common ground on which to reconcile and 
 merge methodologies, leading to the current situation in which the line between 
-the two is increasingly blurry. Nonetheless, some general statements related to 
+the two has become increasingly blurred. Nonetheless, some general statements related to 
 the traditional domains and expertise claimed by each discipline can be made:
 
 
@@ -85,15 +85,15 @@ Objectives
 ^^^^^^^^^^
 
 The purpose of this short course is to (a) equip you with actual quantitative 
-techniques that you can apply to more effectively tackle problems you're 
+tools that you can apply to more effectively tackle problems you're 
 interested in using data, and (b) to provide you with a appropriate foundation 
-on which you can effectively build a synergistic data science skill set 
-leveraging 
+on which you can effectively build a synergistic data science skill set that
+leverages
     
   * `Descriptive statistics <https://en.wikipedia.org/wiki/Descriptive_statistics>`_ - mean, median, skewness... 
   * `Inferential statistics <https://en.wikipedia.org/wiki/Statistical_inference>`_  - hypothesis testing, interval estimation...
   * `Predictive analytics <https://en.wikipedia.org/wiki/Predictive_analytics>`_ - supervised learning: regression, classification...
-  * `Prescriptive analytics <https://en.wikipedia.org/wiki/Prescriptive_analytics>`_ - unsupervised learning and recommender systems...
+  * `Prescriptive analytics <https://en.wikipedia.org/wiki/Prescriptive_analytics>`_ - unsupervised learning, recommender systems...
 
 
 
@@ -112,7 +112,7 @@ for statistics, machine learning, data science, or any other analytical and
 data-oriented discipline. 
 And if you are interested in pursuing data science through the 
 `Galvanize Data Science Immersive <https://www.galvanize.com/pick-a-locatoin?page=%2Fdata-science>`_, 
-mastery of all this material will help make your Galvanize admission process -- rather than impossible -- a breeze.
+mastery of all this material will help make your Galvanize admission process -- rather than a daunting scary prospect -- a breeze.
 
 Day 1
 ^^^^^

@@ -41,8 +41,8 @@ how many possible orderings could be drawn? The answer to this question is
 until there is only one ball left and we must pick it.
 That is, there are :math:`10*9*8*\cdots*1 = 10!`, i.e.
 *10 factorial*, possible orderings.  This is a demonstration of the
-so-called _product rule_ for counting things, and it forshadows the 
-incredibly fundamental rule in probability known as the _chain rule_
+so-called `product rule` for counting things, and it forshadows the 
+incredibly fundamental rule in probability known as the `chain rule`
 (which we will return to later).
 
 The number *10 factorial* can be calculated in Python, 

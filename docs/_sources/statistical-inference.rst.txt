@@ -11,25 +11,42 @@ Statistics looks at some data, and asks the following questions:
 
 * **Uncertainty Estimation**: are there reasonable competitors to that best guess distribution?
 
-* **Distribution Estimation**: how heavily do our results relying on distributional assumptions?
+* **Sensitivity Analysis**: do our results rely heavily on our distributional assumptions?
 
 These questions are addressed through various statistical/computational
-methodologies:
+methodologies, e.g.,
 
-  * Least squares
-  * Numerical optimization
-  * maximum likelihood
-  * Numerical optimization
-  * Expectation maximization (EM)
-  * Monte Carlo methods
-  * Variational methods
-  * Simulation of null distribution (bootstrap, permutation)
-  * Estimation of posterior density (Monte Carlo integration, MCMC, EM)
 
+     * Numerical Optimization
+           * Maximum Likelihood
+    	   * Least Squares
+	   * Expectation Maximization (EM)
+     * Simulation of Null Distributions 
+    	   * Bootstrapping 
+	   * Permutation Testing
+	   * Monte Carlo Methods
+     * Estimation of Posterior Distributions
+    	   * Markov Chain Monte Carlo (MCMC)
+	   * Variational Methods
+     * Nonparametric Estimation 
+           * Bayesian Nonparametrics
 
 
 Is my coin fair?
 ----------------
+
+Hypothesis testing
+^^^^^^^^^^^^^^^^^^
+
+0. Pose your question ("Is this coin fair?")
+1. Find the relevant *population* ("'Flip results' from this coin")
+2. Specify a *null hypothesis* :math:`H_0` ("The chance of heads is 50%") 
+3. Choose *test statistic* informing :math:`H_0` ("The number of heads observed")
+4. Collect data ("Flip the coin :math:`n` times")
+5. Calculate the test statistics ("Count the total heads flipped")
+6. *Reject the null hypothesis* if the test statistic looks "strange"
+   compared to its *sampling distribution* under the null hypothesis;
+   otherwise, *fail to reject the null hypothesis* 
 
 **Simulating Data**
     
@@ -59,17 +76,7 @@ Is my coin fair?
 
    The expected distribution for a fair coin is mu=50.0, sd=5.0
 
-Hypothesis testing
-^^^^^^^^^^^^^^^^^^
 
-1. Identify target question ("Is this coin fair?")
-2. Specify the *null hypothesis* ("The chance of heads is 50%") 
-3. Choose *test statistic* ("The number of heads observed")
-4. Collect data ("Flip the coin a few times")
-5. Calculate the test statistics ("Count the total heads flipped")
-6. *Reject* the null hypothesis if the test statistic looks "strange"
-   compared to its *sampling distribution* under the null hypothesis;
-   otherwise, *fail to reject* the null hypothesis
 
 **Binomial Test**
 
@@ -89,7 +96,7 @@ Hypothesis testing
 
    normal approximation p-value: 0.000966848284768
 
-**Simulation**
+**Permutation (Simulation) Test**
 
 .. code-block:: python
 
@@ -105,8 +112,9 @@ Hypothesis testing
 
    Does anyone know what a **p-value** is?
 
-   * Hint: it is *not* the probability that the null hypothesis is false.
-   * Hint: it is *not* the probability that the test wrongly rejected the null.
+   * Hint: it is *not* the probability that the null hypothesis is false. (Why?)
+   * Hint: it is *not* the probability that the test wrongly rejected the null
+     hypothesis. (Why?)
 
 
 Maximum Likelihood Estimation (MLE)
@@ -119,7 +127,7 @@ Maximum Likelihood Estimation (MLE)
    bs_ps = np.mean(bs_samples, axis=1)
    bs_ps.sort()
 
-   print("Maximum likelihood %s"%(np.sum(results)/float(len(results))))
+   print("Maximum Likelihood Estimate: %s"%(np.sum(results)/float(len(results))))
    print("Bootstrap CI: (%.4f, %.4f)" % (bs_ps[int(0.025*nsamples)], bs_ps[int(0.975*nsamples)]))
 
    Maximum likelihood 0.67
@@ -128,14 +136,15 @@ Maximum Likelihood Estimation (MLE)
 Bayesian Estamition
 ^^^^^^^^^^^^^^^^^^^
    
-The Bayesian approach directly estimates the posterior
-distribution, from which all other point/interval statistics can be
-estimated.
-The calculations here have `analytic solutions
+The Bayesian approach estimates the posterior
+distribution (i.e., the updated belief about the parameters given the prior
+belief and the observed data) and uses it 
+to make point and interval estimates about the parameters. 
+The calculations we demonstrate here have `analytic solutions
 <https://en.wikipedia.org/wiki/Closed-form_expression>`_. For most
-real life problems an appropriate model is generally 
-a more statistically complex and makes use of advanced numerical simulation
-methods. 
+real life problems the necessary statistical models are more complex 
+and estimation makes use of advanced numerical simulation methods. 
+
  
 .. code-block:: python
 		
@@ -178,11 +187,10 @@ methods.
 
    **CLASS DISCUSSION**
 
-   1. How were the Bernoulli and binomial distributions used here?
-   2. Explain the underlying hypothesis and the tests used to investigate it.
-   3. Can you interpret the p-values based on this level of 
-      significance (assuming :math:`\alpha=0.05`)?
-   4. Compare and contrast the Bayesian and Frequentist paradigms for estimation.
-   5. Are there any other examples besides the coin-flip where you might apply 
-      what you have learned here?
+   1. Describe the role of Bernoulli and binomial distributions in our above example.
+   2. Describe the underlying hypothesis and the character of the tests assessing it.
+   3. Describe how the p-values are used to assess :math:`H_0`.  
+      (Hint: assume a **significance level** of :math:`\alpha=0.05`).
+   4. Compare and contrast the Bayesian and Frequentist estimation paradigms. 
+   5. Does anyone have other examples (not coin-flipping) where these tools might be applied?
    

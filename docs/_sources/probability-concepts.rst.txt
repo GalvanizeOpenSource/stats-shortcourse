@@ -33,13 +33,13 @@ that might be realized by some **experiment** measuring a random phenomenon.
 
 An **event** :math:`E` is a meaningful subset of potential outcomes
 of the experiment :math:`E \subseteq S` that is said to *have occured* for a realized outcome of the experiment :math:`x^*` 
-if :math:`x^*` is a member of set :math:`E`, i.e.,
+where :math:`x^*` is a member of set :math:`E`, i.e.,
 
 .. math::
    x^* \in E
 
 
-**Experiments**
+**Examples of Experiments**
 
    * flip ten coins, roll two dice, draw a card from a deck
    * take a cookie from a cook jar, evalute an instructor, attend a meetup 
@@ -47,7 +47,7 @@ if :math:`x^*` is a member of set :math:`E`, i.e.,
    * count the number of cups of coffee consumed before before 10 am
    * count the number of beers consumed right after this stats workshop
 
-**Outcomes**
+**Examples of Outcomes**
 
    * ten sequential coin flips, two die rolls, a card from a deck
    * a cookie, an instructor evaluation, teachers, the name of an attended meetup 
@@ -55,7 +55,7 @@ if :math:`x^*` is a member of set :math:`E`, i.e.,
    * a number
    * hopfully not too many
 
-**Events**
+**Examples of Events**
 
    * "Half heads", "Odds", "Spades"
    * "With Chips", "Boring", "Data Science related meetup"
@@ -68,7 +68,7 @@ if :math:`x^*` is a member of set :math:`E`, i.e.,
    **TEAM EXERCISE**
    
    Work with your neighbors to list out possible sample spaces for the
-   above examples.
+   above experiments.
   
 Set Operations
 --------------
@@ -76,48 +76,51 @@ Set Operations
 For events :math:`A` and :math:`B`
 defined on the sample space :math:`S` of an experiment
 
-* Union: :math:`A \cup B = \{x: x \in A \text{ or } x\in B\}`
+* **Union:** :math:`A \cup B = \{x: x \in A \text{ or } x\in B\}`
 
-  is the event where  **either** event :math:`A` or event :math:`B` or both occur
+  is the event where **either** event :math:`A` or event :math:`B` or both occur
 
 ..
 
 
-* Intersection: :math:`A \cap B = \{x: x \in A \text{ and } x\in B\}`
+* **Intersection:** :math:`A \cap B = \{x: x \in A \text{ and } x\in B\}`
 
   is the event where **both** the event :math:`A` and the event :math:`B` occur
 
 ..
 
 
-* Difference: :math:`A \setminus B = \{x: x \in A \text{ and } x \notin B\}`
+* **Difference:** :math:`A \setminus B = \{x: x \in A \text{ and } x \notin B\}`
 
   is the event where **only** the event :math:`A` occurs **but not** the event :math:`B`
 
 ..
 
-* Complement: :math:`\overline A = A^C = \{x: x\notin A\}`
+* **Complement:** :math:`\overline A = A^C = \{x: x\notin A\}`
 
   is the event that event :math:`A` **does not** occur
 
 ..
 
 
-* The Null (Empty) Set: :math:`\emptyset`
+* **The Null (Empty) Set:** :math:`\emptyset`
 
   is the event that contains no outcomes, which can't happen 
-  if the experiment is run
+  if the experiment is run.
+  Sometimes intersections and differences result in empty sets.
 
 .. note:: 
 
    **TEAM EXERCISE**
    
-   Come up with couple of example sets and have each member of the
-   team give explain the following concepts using your example:
-   *Union*, *Intersection*, *Difference*, or *Complement*.
+   Come up with couple examples of events (meaningful sets of possible outcomes) 
+   from an experiment and have each member on your team contribute an explaination 
+   of *Union*, *Intersection*, *Difference*, or *Complement* using 
+   the examples.
+   
 
-DeMorgan's Laws 
----------------
+De Morgan's Laws 
+----------------
 (The next best thing to Bayes' rule and rum)
 
 `De Morgan's laws <https://en.wikipedia.org/wiki/De_Morgan's_laws>`_ are tautologies that say for events :math:`A` and :math:`B`:
@@ -141,7 +144,7 @@ of :math:`\vee` and :math:`\wedge` for the
 `or` and `and` operators, respectively, 
 and :math:`\neg` for the negation operator ("not").
 
-The truthfulness of DeMorgan's laws can be examined using a 
+The truthfulness of De Morgan's laws can be examined using a 
 **Venn diagram**:
 
 .. figure:: Demorganlaws.png
@@ -170,7 +173,7 @@ The truthfulness of DeMorgan's laws can be examined using a
    set(['A', 'B', 'C', 'D', 'E', 'F'])
    >>> complement_a = sample_space.difference(a)
    
-   Can you give an example of De Morgan's laws in Python?
+   Can you demonstrate De Morgan's laws in Python?
 
 
 Random Variables
@@ -205,10 +208,11 @@ defined with respect to the random variable :math:`X`
 Putting It All Together
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's challenge our understanding by using the 
-concepts we've learned along with a new idea 
-called **mutual exclusivity**: 
-two events :math:`A` and :math:`B` are said to be *mutually exclusive* if 
+If you're feeling ready, let's challenge your understanding of the 
+concepts you've learned thus by introducing a new concept 
+called **mutual exclusivity**.
+
+Two events :math:`A` and :math:`B` are said to be *mutually exclusive* if 
 
 .. math::
    Pr (X=x \in A \cup B) = Pr(X=x \in A) + Pr(X=x \in B)
@@ -218,8 +222,8 @@ two events :math:`A` and :math:`B` are said to be *mutually exclusive* if
 
    **EXERCISE**
 
-   Let :math:`X` be a random variable which measures cholesterol 
-   and :math:`x` an actual cholesterol measurement and define
+   Let :math:`X` be a random variable which actualizes a cholesterol measurement  
+   and let :math:`x` an actual cholesterol measurement and define
    the following three events  
 
    .. math::
@@ -241,7 +245,10 @@ two events :math:`A` and :math:`B` are said to be *mutually exclusive* if
    3. If :math:`Pr(X=x\in A) = 0.2` and :math:`Pr(X=x\in B) = 0.1`, 
       then :math:`Pr(X=x \geq 250)` = ?
 
-   4. [Extra] If :math:`P(X=x\in A) = .3` and :math:`P(X=x\in C)=.2`,
+   4. How would you specify the above probability using :math:`A`, 
+      :math:`B`, :math:`\cup`, and :math:`Pr()`?
+
+   5. [Extra] If :math:`P(X=x\in A) = .3` and :math:`P(X=x\in C)=.2`,
       then what would you need to know to calculate :math:`P(X=x \leq
       300)`?
 
@@ -253,7 +260,7 @@ If you want to learn more about working with sets in Python, see:
 
 `<https://www.programiz.com/python-programming/set>`_
 
-If you want more about sets and set operations in general then check out the Khan academy video series on sets, see:
+If you want to know more about sets and set operations in general then check out the Khan academy video series on sets, see:
 
 `<https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/v/intersection-and-union-of-sets>`_
 	       

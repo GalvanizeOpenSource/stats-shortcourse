@@ -335,7 +335,7 @@ population, and the number of individuals to be sampled for a given
 random variable experiment :math:`X`, respectively.
 
 
-.. figure:: urns.PNG
+.. figure:: urns.png
    :scale: 35%
    :align: center
    :alt: urns
