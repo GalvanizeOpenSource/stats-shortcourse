@@ -491,4 +491,9 @@ data model:
    * Would my data reasonably look like a random sample from this distribution?
 
 
+Further Resources
+-----------------------
+
+   * `Really nice interactive version of distributions and their relationships <http://www.math.wm.edu/~leemis/chart/UDR/UDR.html>`_
+
 
