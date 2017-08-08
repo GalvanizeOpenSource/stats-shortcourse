@@ -99,26 +99,34 @@ down your understanding of a problem.
 If you are not familiar with pandas,
 here is another way of simulating the conditional probability.
 
-.. code-block:: python
 
-   import numpy as np
+.. container:: toggle
 
-   n = 10000
-   coins = ['HH', 'HT', 'TT']
-   coins_selected = np.random.choice(coins,n)
-   first_side_shown = np.array([c[np.random.random_integers(0,1,1)[0]] for c in coins_selected])
-   coins_with_heads = coins_selected[np.where(first_side_shown == 'H')[0]]
-   second_side_shown = np.array([c[np.random.random_integers(0,1,1)[0]] for c in coins_with_heads])
-   print("%s/%s"%(np.where(second_side_shown=='H')[0].size,second_side_shown.size))
-   print(np.where(second_side_shown=='H')[0].size/second_side_shown.size)  
+   .. container:: header
 
-.. code-block:: python
+      **Show Numpy Code**
+
+
+   .. code-block:: python
+
+      import numpy as np
+
+      n = 10000
+      coins = ['HH', 'HT', 'TT']
+      coins_selected = np.random.choice(coins,n)
+      first_side_shown = np.array([c[np.random.random_integers(0,1,1)[0]] for c in coins_selected])
+      coins_with_heads = coins_selected[np.where(first_side_shown == 'H')[0]]
+      second_side_shown = np.array([c[np.random.random_integers(0,1,1)[0]] for c in coins_with_heads])
+      print("%s/%s"%(np.where(second_side_shown=='H')[0].size,second_side_shown.size))
+      print(np.where(second_side_shown=='H')[0].size/second_side_shown.size)  
+
+      .. code-block:: python
      
-   4096/4938
-   0.8295
+      4096/4938
+      0.8295
 
-
-
+|
+      
 More discussion about conditional probabilities can be found `here <http://sites.nicholas.duke.edu/statsreview/probability/jmc/>`_.
    
 Bayesian Inference
@@ -245,7 +253,7 @@ Arguments for Bayesian Analysis
 
   *Occam's razor* says that the simplest answer is often correct one.
   And *Murphy's law* says that if something can go wrong, it will go wrong.
-  These are very good considerations to keep in my as you contruct your 
+  These are very good considerations to keep in mind as you contruct your 
   data analysis pipelines. 
 
  

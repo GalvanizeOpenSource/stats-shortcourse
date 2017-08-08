@@ -271,6 +271,9 @@ Just even the process of creating the simulation can be helpful to nail
 down your understanding of a problem.</p>
 <p>If you are not familiar with pandas,
 here is another way of simulating the conditional probability.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Show Numpy Code</strong></div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
@@ -281,11 +284,16 @@ here is another way of simulating the conditional probability.</p>
 <span class="n">second_side_shown</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coins_with_heads</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">second_side_shown</span><span class="o">==</span><span class="s1">&#39;H&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="n">second_side_shown</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">second_side_shown</span><span class="o">==</span><span class="s1">&#39;H&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="n">second_side_shown</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">4096</span><span class="o">/</span><span class="mi">4938</span>
+
+<span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+
+<span class="mi">4096</span><span class="o">/</span><span class="mi">4938</span>
 <span class="mf">0.8295</span>
 </pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
 <p>More discussion about conditional probabilities can be found <a class="reference external" href="http://sites.nicholas.duke.edu/statsreview/probability/jmc/">here</a>.</p>
 </div>
@@ -402,7 +410,7 @@ correctly, and (c) simple solutions can outperform complex solutions
 at a fraction of total development and computational costs</em>.</p>
 <p><em>Occam&#8217;s razor</em> says that the simplest answer is often correct one.
 And <em>Murphy&#8217;s law</em> says that if something can go wrong, it will go wrong.
-These are very good considerations to keep in my as you contruct your
+These are very good considerations to keep in mind as you contruct your
 data analysis pipelines.</p>
 </li>
 </ul>
