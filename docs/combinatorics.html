@@ -182,18 +182,18 @@
 <h1>Combinatorics<a class="headerlink" href="#combinatorics" title="Permalink to this headline">¶</a></h1>
 <p>Combinatorics is a branch of mathematics dedicated to figuring out how to count
 things! Specifically, the number of elements contained
-in &#8211; i.e., the <strong>cardinality</strong> of &#8211; event <span class="math">\(A\)</span>:</p>
+in – i.e., the <strong>cardinality</strong> of – event <span class="math">\(A\)</span>:</p>
 <div class="math">
 \[\mathbf{card}(A) = |A|\]</div>
-<p>Counting&#8217;s not so hard, you say? Think again: when it comes to ordering and
+<p>Counting’s not so hard, you say? Think again: when it comes to ordering and
 choosing sets in complicated and clever ways counting can get tricky in heartbeat.
 Be that as it may, combinatorics plays a fundamental and foundational role
 in probability as it forms the basis for assigning probabilities to events
 in many contexts. Beyond that, the need to count
 carefully and correctly is obviously a hugely important part of Data Science,
-and it&#8217;s important to have few of the &#8220;standard counting tricks&#8221; handy or
+and it’s important to have few of the “standard counting tricks” handy or
 you might make something a whole lot harder than it needs to be.
-For a good &#8220;industry perspective&#8221; on the importance and challenge of counting
+For a good “industry perspective” on the importance and challenge of counting
 in data science check out
 <a class="reference external" href="http://daynebatten.com/2016/06/counting-hard-data-science/">Counting in Data Science</a>.</p>
 <div class="section" id="factorials">
@@ -203,9 +203,9 @@ in data science check out
 how many possible orderings could be drawn? The answer to this question is</p>
 <ul class="simple">
 <li>there are 10 choices for the first ball</li>
-<li>9 choices for the second ball (because we&#8217;ve already drawn the first lottery ball)</li>
-<li>8 choices for the third ball (because we&#8217;ve already drawn the first two lottery balls)</li>
-<li>and so on...</li>
+<li>9 choices for the second ball (because we’ve already drawn the first lottery ball)</li>
+<li>8 choices for the third ball (because we’ve already drawn the first two lottery balls)</li>
+<li>and so on…</li>
 </ul>
 <p>until there is only one ball left and we must pick it.
 That is, there are <span class="math">\(10*9*8*\cdots*1 = 10!\)</span>, i.e.
@@ -214,7 +214,7 @@ so-called <cite>product rule</cite> for counting things, and it forshadows the
 incredibly fundamental rule in probability known as the <cite>chain rule</cite>
 (which we will return to later).</p>
 <p>The number <em>10 factorial</em> can be calculated in Python,
-but watch out: factorials get really big really fast...</p>
+but watch out: factorials get really big really fast…</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">3628800</span>
@@ -224,32 +224,32 @@ but watch out: factorials get really big really fast...</p>
 <div class="section" id="combinations">
 <h2>Combinations<a class="headerlink" href="#combinations" title="Permalink to this headline">¶</a></h2>
 <p><strong>Combinations</strong> count the number of ways to choose things when
-<strong>order does not matter</strong>.  Here&#8217;s an example of all the two character
+<strong>order does not matter</strong>.  Here’s an example of all the two character
 <em>combinations</em> that can be made from the letters <cite>A</cite>, <cite>B</cite>, and <cite>C</cite>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">combinations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[(&#39;A&#39;, &#39;B&#39;), (&#39;A&#39;, &#39;C&#39;), (&#39;B&#39;, &#39;C&#39;)]</span>
 </pre></div>
 </div>
-<p>The &#8220;number of combinations&#8221; problem &#8211; i.e.,
+<p>The “number of combinations” problem – i.e.,
 counting the number of all possible
-unordered collections of size <cite>K</cite> from a pool of <cite>N</cite> objects &#8212;
-is often referred to as the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; problem, and the
+unordered collections of size <cite>K</cite> from a pool of <cite>N</cite> objects —
+is often referred to as the “<cite>N</cite> choose <cite>K</cite>” problem, and the
 solution to the problem is commonly notated as</p>
 <div class="math">
 \[\begin{split}\left(\begin{array}{c}N\\K\end{array}\right) = \displaystyle \frac{N!}{(N-K)!K!}\end{split}\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">If you think about the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; formula carefully
+<p class="last">If you think about the “<cite>N</cite> choose <cite>K</cite>” formula carefully
 you can actually see that it makes
 sense: the <span class="math">\(K!\)</span> in the denominator is the number of ways to order a list
 of length <span class="math">\(K\)</span>, and the <span class="math">\(\frac{N!}{(N-K)!}\)</span> is all possible
 lists of length <span class="math">\(K\)</span> where order matters.  Do you see why?
 Knowing this, can you articulate why the complete formula counts the right thing?</p>
 </div>
-<p>If you&#8217;re feeling like this seems like an awful lot of multiplication and division,
-don&#8217;t worry, Python can do all the necessary calculations for you:</p>
+<p>If you’re feeling like this seems like an awful lot of multiplication and division,
+don’t worry, Python can do all the necessary calculations for you:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">factorial</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
@@ -277,15 +277,15 @@ don&#8217;t worry, Python can do all the necessary calculations for you:</p>
 <div class="section" id="permutations">
 <h2>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h2>
 <p><em>Permutations</em> counts the number of ways subsets can be chosen when
-<strong>order does matter</strong>. If you followed the &#8220;<cite>N</cite> choose <cite>K</cite>&#8221; thought exercise
-above then you won&#8217;t be surprised to learn (i.e., be reminded) that the number of ways to
+<strong>order does matter</strong>. If you followed the “<cite>N</cite> choose <cite>K</cite>” thought exercise
+above then you won’t be surprised to learn (i.e., be reminded) that the number of ways to
 choose <cite>K</cite> things out of <cite>N</cite> things <strong>when order matters</strong> is</p>
 <div class="math">
 \[\displaystyle \frac{N!}{(N-K)!}\]</div>
 <p>Explicitly writing out the formula makes it clear that permutations
 are just a slight variation on what we did for the product rule above.
 I.e., they are just a special case of factorial multiplication. And of
-course, once again, it&#8217;s easy to Python take care of
+course, once again, it’s easy to Python take care of
 the permutation calculations for you.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 <span class="k">def</span> <span class="nf">permu</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
@@ -309,7 +309,7 @@ the permutation calculations for you.</p>
 <p class="last">Face off against the person next to you, pitting permutations against
 combinations, and defend the dignity and honor of your cause!
 Which is your favorite and why, when it really comes down to it?
-No low blows allowed, but don&#8217;t be afraid to bring size into
+No low blows allowed, but don’t be afraid to bring size into
 the argument if you think it helps your case.</p>
 </div>
 </div>
@@ -378,7 +378,7 @@ the argument if you think it helps your case.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

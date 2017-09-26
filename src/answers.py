@@ -25,7 +25,6 @@ print(part1==part2)
     
 # `P(250 \leq chol \leq 299) + P(chol \geq 300) = 0.2 + 0.1 = 0.3`. chol \leq 280)
     
-
 ##########################################################################
 ## combinations and permutations
 ##########################################################################
@@ -44,6 +43,8 @@ def comb(n, k):
 
 print("There are %s combinations"%comb(n,k))
 
+print(comb(52,5))
+sys.exit()
 ## Print a list of these pairs so we can identify the bad ones?
 for c in combinations(lefthand_beers,4):
     print(c)

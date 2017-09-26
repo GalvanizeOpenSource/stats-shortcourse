@@ -10,8 +10,6 @@ Regression, Classification, Evaluation
   3. Evaluate a linear regression model
 
 
-
-
 Predictive Modeling
 -------------------
 
@@ -59,7 +57,6 @@ The data :math:`\textbf{X}` that we use to predict :math:`Y` can come in many va
   
    * Text, Audio, Images, Signals, Graphs
    * Requires transformation into meaningful quantitative features
-
 
 
 Supervised Learning
@@ -117,7 +114,6 @@ Data Size
    How would you differentiate *Statistics* and *Machine Learning*, if at all?
 
 
-
 Unupervised Learning
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -130,12 +126,8 @@ learning are
    * **Clustering**: e.g., hierarchical, k-means
    * **Dimension reduction**: e.g., PCA, SVD, NMF
 
-
-
-
 Linear Regression
 -----------------
-
 
 Suppose that :math:`Y_i` depends on :math:`X_i` according to 
 
@@ -205,8 +197,6 @@ The **residuals** :math:`\hat \epsilon_i` are used to estimate the model **mean 
 where :math:`p` is the number of *coefficients* in the model (here, 1).
 
 
- 
-
 .. code-block:: python
 
    import numpy as np
@@ -232,7 +222,7 @@ where :math:`p` is the number of *coefficients* in the model (here, 1).
 
    **EXERCISE**
 
-   Try out the above code.  If it's making sense to you, try seeing what happends when you change the sample size :math:`n`,
+   Try out the above code.  If it's making sense to you, try seeing what happens when you change the sample size :math:`n`,
    or the model intercept :math:`\beta_0` and coefficient :math:`\beta_1` used to generate the sample. 
    See if you are able to add the model fit line to the plot of the actual model line itself (from the plot above). 
 
@@ -299,8 +289,6 @@ has been able to produce creative and powerful alternatives to the
 gradient boosting, support vector machines, and neural networks. 
 
 
-
-     
 Evaluation Metrics
 ------------------
 
@@ -324,11 +312,11 @@ or the **root mean squared error (RMSE)**
 In *classification* contexts, performance is assessed using a **confusion matrix**:
 
 +----------------------+---------------------------------------+--------------------------------------------------+
-|                      | Predicted False :math:`(\hat Y = 0)`  | Predicted Ture :math:`(\hat Y = 1)`              |
+|                      | Predicted False :math:`(\hat Y = 0)`  | Predicted True :math:`(\hat Y = 1)`              |
 +======================+=======================================+==================================================+
-| True :math:`(Y = 0)` | True Negatives :math:`(TN)`           | False Negatives :math:`(FN)`                     |
+| True :math:`(Y = 0)` | True Negatives :math:`(TN)`           | False Positive :math:`(FP)`                      |
 +----------------------+---------------------------------------+--------------------------------------------------+
-| True :math:`(Y = 1)` | False Negatives :math:`(TN)`          | True Positives :math:`(TP)`                      |
+| True :math:`(Y = 1)` | False Negatives :math:`(FN)`          | True Positives :math:`(TP)`                      |
 +----------------------+---------------------------------------+--------------------------------------------------+
 
 There are many ways to evaluate the confusion matrix:

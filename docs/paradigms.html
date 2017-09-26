@@ -192,8 +192,8 @@
 <div><ol class="arabic simple">
 <li>Review Probability</li>
 <li>Discuss Statistical Philosophies</li>
-<li>Repurpose Bayes&#8217; rule for Distributions
-(and start callling it Bayes&#8217; Theorem)</li>
+<li>Repurpose Bayes’ rule for Distributions
+(and start callling it Bayes’ Theorem)</li>
 <li>Discuss Bayesian Inference</li>
 </ol>
 </div></blockquote>
@@ -243,7 +243,7 @@ To do so we calculate</p>
 <p>So we first answered this question
 <em>counting outcomes in events based on the sample space</em>, and
 now we answered it using the <em>law of total probability</em>.
-But if you&#8217;re still skeptical about our answer,
+But if you’re still skeptical about our answer,
 perhaps just <em>simulating</em> the experiment will help convince you:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -265,8 +265,8 @@ perhaps just <em>simulating</em> the experiment will help convince you:</p>
 </div>
 </div>
 <p>Simulation is a great way to confirm your answers to different problem.
-It&#8217;s a general purpose tool that you should always remember to keep at
-your disposal when you&#8217;re trying to figure out how something works.
+It’s a general purpose tool that you should always remember to keep at
+your disposal when you’re trying to figure out how something works.
 Just even the process of creating the simulation can be helpful to nail
 down your understanding of a problem.</p>
 <p>If you are not familiar with pandas,
@@ -304,33 +304,33 @@ here is another way of simulating the conditional probability.</p>
 <span class="math">\(\theta\)</span> can themselves be viewed as <em>random variables</em> with their
 own distributions.  This is distinct from the <strong>Frequentist</strong> perspective which
 views parameters as <em>known and fixed constants</em> to be estimated. E.g.,
-&#8220;If we measured everyone&#8217;s height instantaneously, at that moment there would
-be <em>one true average height</em> in the population.&#8221;  Regardless of one&#8217;s philosophical
+“If we measured everyone’s height instantaneously, at that moment there would
+be <em>one true average height</em> in the population.”  Regardless of one’s philosophical
 perspective, both approaches have value in practice.</p>
 <p>The key computational step in the Bayesian framework is deriving the posterior
 distribution, which is done using the a forumula we have already seen; namely
-Bayes&#8217; theorem:</p>
+Bayes’ theorem:</p>
 <div class="math">
 \[P(\theta|X) = \frac{P(X|\theta)P(\theta)}{P(X)}\]</div>
-<p>Bayes&#8217; theorem is comprised of</p>
+<p>Bayes’ theorem is comprised of</p>
 <blockquote>
 <div><ul class="simple">
-<li><span class="math">\(P(\theta|X)\)</span> &#8211; the <strong>posterior distribution</strong></li>
-<li><span class="math">\(P(X|\theta)\)</span> &#8211; the <strong>likelihood function</strong></li>
-<li><span class="math">\(P(\theta)\)</span> &#8211; the <strong>prior distribution</strong></li>
-<li><span class="math">\(P(X)\)</span> &#8211; the <strong>marginal likelihood</strong></li>
+<li><span class="math">\(P(\theta|X)\)</span> – the <strong>posterior distribution</strong></li>
+<li><span class="math">\(P(X|\theta)\)</span> – the <strong>likelihood function</strong></li>
+<li><span class="math">\(P(\theta)\)</span> – the <strong>prior distribution</strong></li>
+<li><span class="math">\(P(X)\)</span> – the <strong>marginal likelihood</strong></li>
 </ul>
 </div></blockquote>
 <p>Just as the <em>posterior distribution</em> is the central estimand in Bayesian statistics,
 the likelihood function is the central piece of machinery in a Frequentist context.
 But as you can see from the formula, the posterior is simply a kind of
-&#8220;re-weighting&#8221; of the likelihood function (so Bayesian and frequentist inference
-must not be completely at odds &#8211; they agree on at least <em>something</em>).
+“re-weighting” of the likelihood function (so Bayesian and frequentist inference
+must not be completely at odds – they agree on at least <em>something</em>).
 The re-weighting is accomplished
 by striking a balance between the <em>likelihood function</em> and the
 <em>prior distribution</em>. The <em>prior</em> distribution represents our belief about the
 parameter prior to seeing the data, while the <em>likelihood function</em> tells us
-what the data implies about the parameter &#8211; and then these two perspectives
+what the data implies about the parameter – and then these two perspectives
 are reconciled.  The <em>marginal likelihood</em> turns out to just be a constant which
 ensures that the posterior is a <em>probability mass function</em> or a <em>probability
 density function</em> (i.e., sums to one or has area one).  As such, in many
@@ -346,8 +346,8 @@ primary importance.</p>
 <span class="math">\(\theta\)</span> encoded in the <em>prior distribution</em> with the information
 contained in the observed
 data <span class="math">\(x\)</span> about the parameters as quantified in the <em>likelihood function</em>.
-This updated belief &#8211; called the <em>posterior distribution</em> &#8211;
-can serve as the next &#8220;prior&#8221; for the subsequent collection
+This updated belief – called the <em>posterior distribution</em> –
+can serve as the next “prior” for the subsequent collection
 of additional data, and can itself be updated, and so on.
 The updated belief is always encoded as a probability distribution,
 so statements of belief about parameters are made using probability
@@ -368,10 +368,10 @@ by $interpreting p-values* and
 <em>confidence intervals</em> <em>(*to be discussed later).</em></li>
 </ul>
 <ul class="simple">
-<li><strong>No &#8220;Large Sample&#8221; Requirements</strong>:
+<li><strong>No “Large Sample” Requirements</strong>:
 the accuracy of many Frequentist results rely upon asymptotic distributional
-results that require a &#8220;large sample size&#8221; &#8211; the actual quantity
-of which often remains unclear &#8211; whereas Bayesian analysis
+results that require a “large sample size” – the actual quantity
+of which often remains unclear – whereas Bayesian analysis
 is a fully coherent probabilistic framework regardless of sample size.</li>
 </ul>
 <ul class="simple">
@@ -397,7 +397,7 @@ overfitting data.</li>
 </ul>
 <ul>
 <li><p class="first"><strong>Complex Data Modeling:</strong>
-Bayesian analysis provides &#8211; via computational techniques &#8211;
+Bayesian analysis provides – via computational techniques –
 the ability to develop and use
 more complicated modeling specifications than
 can be evaluated and use with classical statistical techniques;
@@ -408,8 +408,8 @@ models are not always preferable: (a) they require practitioners
 with more advanced skill sets, (b) they will be more difficult to implement
 correctly, and (c) simple solutions can outperform complex solutions
 at a fraction of total development and computational costs</em>.</p>
-<p><em>Occam&#8217;s razor</em> says that the simplest answer is often correct one.
-And <em>Murphy&#8217;s law</em> says that if something can go wrong, it will go wrong.
+<p><em>Occam’s razor</em> says that the simplest answer is often correct one.
+And <em>Murphy’s law</em> says that if something can go wrong, it will go wrong.
 These are very good considerations to keep in mind as you contruct your
 data analysis pipelines.</p>
 </li>
@@ -429,30 +429,30 @@ data analysis pipelines.</p>
 <blockquote>
 <div><strong>CLASS DISCUSSION</strong></div></blockquote>
 <ul class="last simple">
-<li>You&#8217;re playing poker to win (like your life depends on it!), and the
-person you&#8217;re bidding against just tipped his hand a little too low and
-you&#8217;ve seen his cards...</li>
-<li>You&#8217;re a skilled programmer, but bugs still slip into your code. After a
+<li>You’re playing poker to win (like your life depends on it!), and the
+person you’re bidding against just tipped his hand a little too low and
+you’ve seen his cards…</li>
+<li>You’re a skilled programmer, but bugs still slip into your code. After a
 particularly difficult implementation of an algorithm, you decide to test
 your code on a trivial example. It passes. You test the code on a harder
 problem. It passes once again. And it passes the next, <em>even more difficult</em>,
-test too! You are starting to believe that there may be no bugs in this code...</li>
-<li>You&#8217;re a doctor who has some previous experience with the symptoms that are
-presenting for the current patient and you&#8217;ve diagnosed this sort of condition
-many times before...</li>
+test too! You are starting to believe that there may be no bugs in this code…</li>
+<li>You’re a doctor who has some previous experience with the symptoms that are
+presenting for the current patient and you’ve diagnosed this sort of condition
+many times before…</li>
 </ul>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>Are YOU SURE you&#8217;re a Bayesian?</strong></p>
-<p>Without looking...</p>
-<p class="last">Write Bayes&#8217; theorem and describe the function of the different components
+<p><strong>Are YOU SURE you’re a Bayesian?</strong></p>
+<p>Without looking…</p>
+<p class="last">Write Bayes’ theorem and describe the function of the different components
 that comprise the theorem, particularly with respect to parameters and evidence.</p>
 </div>
 </div>
 <div class="section" id="further-study">
 <h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
-<p>If <em>you do</em> actually want to be a Bayesian &#8211; fear not &#8211; you can!
+<p>If <em>you do</em> actually want to be a Bayesian – fear not – you can!
 Programming in the Bayesian landscape has become incredibly easy
 via the advent of <em>probabilistic programming</em>.
 Here are several outstanding resources available
@@ -519,7 +519,7 @@ that you can use to start learning more about Bayesian analysis:</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

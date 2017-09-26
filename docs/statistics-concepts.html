@@ -189,8 +189,8 @@
 Statistics addresses the <em>inverse problem</em>
 of learning about probability distributions from data,
 as opposed to the <em>forward problem</em> of generating data from probability
-distributions. The term <strong>statistic</strong> is also a definition &#8211; a
-<em>statistic</em> is a &#8220;mathematical calculation of some data&#8221;.  Since
+distributions. The term <strong>statistic</strong> is also a definition – a
+<em>statistic</em> is a “mathematical calculation of some data”.  Since
 inference on probability distribution parameters relies upon <em>statistics</em>,
 the term <strong>Statistics</strong> is an appropriate name for the discipline.</p>
 <div class="section" id="pdfs-and-cdfs">
@@ -215,8 +215,8 @@ the term <strong>Statistics</strong> is an appropriate name for the discipline.<
 functionality in SciPy</a>,
 which shows how to work with probability distributions using Python.
 Specifically, it shows how to use Python to evaluate
-<em>probability mass functions</em> and <em>probability density functions</em> &#8211;
-something we haven&#8217;t done yet.  For example, here&#8217;s how
+<em>probability mass functions</em> and <em>probability density functions</em> –
+something we haven’t done yet.  For example, here’s how
 to evaluate the <em>density</em> of the  <em>gamma distribution</em> for a given
 outcome:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
@@ -226,12 +226,12 @@ outcome:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_rv</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="last">Once you&#8217;ve gotten the hang of this for the gamma distribution,
+<p class="last">Once you’ve gotten the hang of this for the gamma distribution,
 try to generate analogous values for a <em>Poisson</em> distribution.
-If you&#8217;re running into trouble, consider what method of a
+If you’re running into trouble, consider what method of a
 <cite>poisson_rv</cite> object you should be calling. (Hint:
 should a Poisson random variable have a probability <em>density</em>
-function?). Once you&#8217;ve got that
+function?). Once you’ve got that
 working, what would you say is the biggest difference between
 these values as associated with the gamma distribution
 compared to the Poisson distribution?</p>
@@ -288,7 +288,7 @@ distribution and is a measures the central tendecy of the distribution. For more
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p>The second (central) moment of a distribution &#8211; the <strong>variance</strong> &#8211; is
+<p>The second (central) moment of a distribution – the <strong>variance</strong> – is
 a measure of spread of the distribution and is defined as</p>
 <div class="math">
 \[Var[X] = E\left[(X-E[X])^2\right]\]</div>
@@ -301,7 +301,7 @@ of a random variable with a given discrete distribution, <span class="math">\(Pr
 </div>
 <div class="section" id="joint-distributions">
 <h2>Joint Distributions<a class="headerlink" href="#joint-distributions" title="Permalink to this headline">¶</a></h2>
-<p>When we&#8217;re talking about random variables, we don&#8217;t use the <em>set</em> notation
+<p>When we’re talking about random variables, we don’t use the <em>set</em> notation
 that we did for events, e.g., <span class="math">\(A \cap B\)</span>. Instead, we specify the
 distribution associated with two random variables <span class="math">\(X_1\)</span> and <span class="math">\(X_2\)</span>
 as <span class="math">\(P(X_1, X_2)\)</span> where <span class="math">\(P\)</span> specifies either a PMF or a PDF.
@@ -323,7 +323,7 @@ together instead of being <em>added</em> together.</p>
 <p><strong>EXERCISE</strong></p>
 <p class="last">Write out the distributional chain rule defining
 <span class="math">\(P\left(X_1, X_2, X_3, X_4, X_5\right)\)</span> and give an account of how
-it might be interpreted.  E.g., &#8220;First we caclulate the probability of <span class="math">\(X_1\)</span>...&#8221;</p>
+it might be interpreted.  E.g., “First we caclulate the probability of <span class="math">\(X_1\)</span>…”</p>
 </div>
 </div>
 <div class="section" id="linear-association">
@@ -333,18 +333,18 @@ it might be interpreted.  E.g., &#8220;First we caclulate the probability of <sp
 <div class="math">
 \[ \begin{align}\begin{aligned}Cov[X,Y] &amp;= E[(x - E[X])(y - E[Y])]\\         &amp;= \left[\underset{x,y \in S_X,S_Y}{\sum or\int}\right] (x - E[X])(y - E[Y])P(X=x,Y=y) \left[dxdy\right]\end{aligned}\end{align} \]</div>
 <p>where the brackets simply indicate appropriate notational usage
-depending on if we&#8217;re talking about discrete or continuous random variables.</p>
+depending on if we’re talking about discrete or continuous random variables.</p>
 <p>Much like with standard deviation, it can be helpful to be on a more natural
 scale, so we often use <strong>correlation</strong> (which varies from -1 to +1 with
-0 indicating &#8220;no linear association&#8221;)
+0 indicating “no linear association”)
 rather than covariance (which is measured on the product of the two variables
-unit) &#8211; to describe the strength of a linear relationship:</p>
+unit) – to describe the strength of a linear relationship:</p>
 <div class="math">
 \[Corr[X,Y] = \frac{E[(x - E[X])(y - E[Y])]}{\sigma_X\sigma_Y} = \frac{Cov[X,Y]}{\sigma_X\sigma_Y}\]</div>
 </div>
 <div class="section" id="marginal-distributions">
 <h2>Marginal Distributions<a class="headerlink" href="#marginal-distributions" title="Permalink to this headline">¶</a></h2>
-<p>We have seen <em>marginal distributions</em> already &#8211; they are simply
+<p>We have seen <em>marginal distributions</em> already – they are simply
 distributions of a single random variable.
 However, recasting the <em>Law of Total Probability</em> in terms of random variables
 <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, we have for</p>
@@ -368,7 +368,7 @@ distribution of a
 single dimension (random variable) of the multivariate (joint) random variable.
 Marginal distributions are the unpacked variables of joint distributions.</p>
 <p>So, while the <em>chain rule</em> allows us to build up joint distributions from
-conditional (&#8220;marginal&#8221;) distributions, the <em>law of total probability</em> allows
+conditional (“marginal”) distributions, the <em>law of total probability</em> allows
 us to unpack joing distributions into marginal distributions.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/MultivariateNormal.png"><img alt="joint-distribution" src="_images/MultivariateNormal.png" style="width: 631.5px; height: 477.75px;" /></a>
@@ -376,14 +376,14 @@ us to unpack joing distributions into marginal distributions.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Draw the above plot, labeling it with all the concepts we&#8217;ve covered so far.</p>
+<p class="last">Draw the above plot, labeling it with all the concepts we’ve covered so far.</p>
 </div>
 </div>
 <div class="section" id="statistics">
 <h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <p><strong>Statistics</strong> are often chosen for their correspondence to
 specific distributional <em>parameters</em> for the purposes of estimating those
-parameters.  It&#8217;s important
+parameters.  It’s important
 to always remember the distinction between <em>statistics</em> and <em>parameters</em>,
 though:
 statistics are numerical calculations that use sample data for their
@@ -409,7 +409,7 @@ between two datasets.
 The alternative <strong>Spearman correlation</strong> is a nonparametric measure of the
 monotonicity of the relationship between two datasets, which is just a fancy
 way of saying that calculates the correlation on the <em>ranks</em> rather than
-original values. Here&#8217;s how you can calculate these statistics using Python:</p>
+original values. Here’s how you can calculate these statistics using Python:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">pearsonr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">spearmanr</span>
 <span class="go">&gt;&gt;&gt;</span>
@@ -432,15 +432,15 @@ but have a relationship due to a common <strong>confounding factor</strong>.</p>
 <h2>A Warning<a class="headerlink" href="#a-warning" title="Permalink to this headline">¶</a></h2>
 <p><strong>Confounding</strong> is just one of the many difficulties that will need to be
 dealt with in real data. When you actually begin working with
-real data you&#8217;ll see that things can be quite messy.  In fact, messy
+real data you’ll see that things can be quite messy.  In fact, messy
 would be an understatement for some <strong>outliers</strong> that will be present in
 your data.  These outliers can drastically affect your calculated statistics
 and hence your conclusions. Weary and vigilant attention is required to
 suss out these influential data points and decide what is to be done about
-them.  And what if you have <strong>missing data</strong> that&#8217;s not even available to
+them.  And what if you have <strong>missing data</strong> that’s not even available to
 look at? Will you impute the missing data? If so, with how much sophistication?
 Or will you simply disregard samples with missing entires? As you can see,
-there are many questions and, unfortunately, very often too few answers...</p>
+there are many questions and, unfortunately, very often too few answers…</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
@@ -510,7 +510,7 @@ will begin with an overview of the topics in this section.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -201,7 +201,7 @@
 <h2>Predictive Modeling<a class="headerlink" href="#predictive-modeling" title="Permalink to this headline">¶</a></h2>
 <p>There are many circumstances in which we are interested in predicting some outcome <span class="math">\(Y\)</span>.
 To accomplish this task we set about collecting, selecting, and constructing data
-&#8211; a process referred to as <strong>feature engineering</strong> &#8211; that we think would help predict <span class="math">\(Y\)</span>.
+– a process referred to as <strong>feature engineering</strong> – that we think would help predict <span class="math">\(Y\)</span>.
 Given our selected features <span class="math">\(\textbf{X}\)</span>, the association between the
 features <span class="math">\(\textbf{X}\)</span> and and the outcome <span class="math">\(Y\)</span> can be expressed as</p>
 <blockquote>
@@ -209,7 +209,7 @@ features <span class="math">\(\textbf{X}\)</span> and and the outcome <span clas
 \[Y = f(\mathbf{X}) + \epsilon\]</div>
 </div></blockquote>
 <p>where <span class="math">\(f\)</span> explicitly describes the precise relationship between
-<span class="math">\(\textbf{X}\)</span> and <span class="math">\(Y\)</span>, and <span class="math">\(\epsilon\)</span> is...</p>
+<span class="math">\(\textbf{X}\)</span> and <span class="math">\(Y\)</span>, and <span class="math">\(\epsilon\)</span> is…</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>CLASS DISCUSSION</strong></p>
@@ -217,7 +217,7 @@ features <span class="math">\(\textbf{X}\)</span> and and the outcome <span clas
 <li>What is <span class="math">\(\epsilon\)</span>?</li>
 <li>How could we model <span class="math">\(\epsilon\)</span>?</li>
 <li>How about <span class="math">\(f\)</span>?</li>
-<li>Based on what you&#8217;ve seen so far, is <em>Statistics and Probability</em> more suited to describe <span class="math">\(\epsilon\)</span> or <span class="math">\(f\)</span>?</li>
+<li>Based on what you’ve seen so far, is <em>Statistics and Probability</em> more suited to describe <span class="math">\(\epsilon\)</span> or <span class="math">\(f\)</span>?</li>
 </ul>
 </div>
 </div>
@@ -239,7 +239,7 @@ features <span class="math">\(\textbf{X}\)</span> and and the outcome <span clas
 <li>May require estimation</li>
 </ul>
 </li>
-<li><strong>&#8220;Non-numeric&#8221;</strong><ul>
+<li><strong>“Non-numeric”</strong><ul>
 <li>Text, Audio, Images, Signals, Graphs</li>
 <li>Requires transformation into meaningful quantitative features</li>
 </ul>
@@ -325,7 +325,7 @@ the <em>supervised learning</em> problem is referred to as either</p>
 </div>
 <div class="section" id="unupervised-learning">
 <h3>Unupervised Learning<a class="headerlink" href="#unupervised-learning" title="Permalink to this headline">¶</a></h3>
-<p>When you&#8217;re not trying to predict a target <span class="math">\(Y\)</span>,
+<p>When you’re not trying to predict a target <span class="math">\(Y\)</span>,
 but just seeking to uncover patterns and structures
 between the features <span class="math">\(\mathbf{X}\)</span>, the problem is referred to
 as <strong>Unsupervised Learning</strong>. The two primary areas of unsupervised
@@ -416,7 +416,7 @@ learning are</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>EXERCISE</strong></p>
-<p class="last">Try out the above code.  If it&#8217;s making sense to you, try seeing what happends when you change the sample size <span class="math">\(n\)</span>,
+<p class="last">Try out the above code.  If it’s making sense to you, try seeing what happens when you change the sample size <span class="math">\(n\)</span>,
 or the model intercept <span class="math">\(\beta_0\)</span> and coefficient <span class="math">\(\beta_1\)</span> used to generate the sample.
 See if you are able to add the model fit line to the plot of the actual model line itself (from the plot above).</p>
 </div>
@@ -456,14 +456,14 @@ are permissible.</p>
 </ol>
 <ol class="upperalpha" start="24">
 <li><p class="first"><strong>Full Rank of</strong> <span class="math">\(X\)</span></p>
-<p>The features are not &#8220;redundant&#8221;; and, being nearly so hurts model performance.</p>
+<p>The features are not “redundant”; and, being nearly so hurts model performance.</p>
 </li>
 </ol>
 <p>Fortunately, this model can still be effective when some of the assumptions
 do not fully hold.  In addition, there are methods available to help address
 and correct failures of the assumptions.</p>
 <p>Assumptions play a major statistical inference problems (i.e., association studies),
-but are less relevant in prediction contexts where it doesn&#8217;t matter how or why it works &#8211;
+but are less relevant in prediction contexts where it doesn’t matter how or why it works –
 just whether or not it does. As a result, <em>machine learning</em>
 has been able to produce creative and powerful alternatives to the
 <em>linear regression model</em> shown above. E.g., k-nearest neighbors, random forests,
@@ -493,16 +493,16 @@ or the <strong>root mean squared error (RMSE)</strong></p>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
 <th class="head">Predicted False <span class="math">\((\hat Y = 0)\)</span></th>
-<th class="head">Predicted Ture <span class="math">\((\hat Y = 1)\)</span></th>
+<th class="head">Predicted True <span class="math">\((\hat Y = 1)\)</span></th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>True <span class="math">\((Y = 0)\)</span></td>
 <td>True Negatives <span class="math">\((TN)\)</span></td>
-<td>False Negatives <span class="math">\((FN)\)</span></td>
+<td>False Positive <span class="math">\((FP)\)</span></td>
 </tr>
 <tr class="row-odd"><td>True <span class="math">\((Y = 1)\)</span></td>
-<td>False Negatives <span class="math">\((TN)\)</span></td>
+<td>False Negatives <span class="math">\((FN)\)</span></td>
 <td>True Positives <span class="math">\((TP)\)</span></td>
 </tr>
 </tbody>
@@ -593,7 +593,7 @@ or the <strong>root mean squared error (RMSE)</strong></p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
