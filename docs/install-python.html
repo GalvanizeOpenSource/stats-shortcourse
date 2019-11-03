@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Installation Guide &mdash; Statistics Essentials 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Works cited" href="references.html" />
+    <link rel="prev" title="Helpful math" href="helpful-math.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Essentials
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Statistics:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-stats.html">Statistics Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-concepts.html">Probability Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability-distributions.html">Probability Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paradigms.html">Bayesian Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics-concepts.html">Statistics Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical-inference.html">Statistical Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-classification-metrics.html">Regression, Classification, Evaluation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendices:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="helpful-math.html">Helpful math</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#on-ubuntu">On Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-osx">On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-windows">On Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#then-run-this-to-create-a-working-python-2-environment">Then run this to create a working python 2 environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#then-ensure-you-can-run-jupyter-with-py2">Then ensure you can run Jupyter with Py2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keeping-conda-up-to-date">Keeping conda up-to-date</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Works cited</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Python Installation Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install-python.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-installation-guide">
+<h1>Python Installation Guide<a class="headerlink" href="#python-installation-guide" title="Permalink to this headline">¶</a></h1>
+<p>The programming language Python has a number of packages associated
+with it and we recommend installing the <a class="reference external" href="https://conda.io/docs/">Conda</a> package management system to help maintain
+your Python environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>these install instructions will install a Python3 default environment with a Python2 backup.</p>
+</div>
+<p>If there is an old version of anaconda you can remove it with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ rm -rf ~/anaconda*
+</pre></div>
+</div>
+<p>Download the image or install script from <a class="reference external" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></p>
+<div class="section" id="on-ubuntu">
+<h2>On Ubuntu<a class="headerlink" href="#on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>install via the command line</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ bash ~/Downloads/Anaconda3-4.3.1-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Answer yes to the path adding question</p>
+<ol class="arabic simple" start="2">
+<li><p>Restart terminal</p></li>
+</ol>
+</div>
+<div class="section" id="on-osx">
+<h2>On OSX<a class="headerlink" href="#on-osx" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Run the installer on the downloaded image</p></li>
+</ol>
+<p>Answer yes to the path adding question</p>
+<ol class="arabic simple" start="2">
+<li><p>restart terminal</p></li>
+</ol>
+</div>
+<div class="section" id="on-windows">
+<h2>On Windows<a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Ensure that you install the <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">installer</span> <span class="pre">for</span> <span class="pre">Windows</span></code> for Python 3</p></li>
+<li><p>Double-click the .exe file</p></li>
+<li><p>Follow the instructions on the screen</p></li>
+</ol>
+<p>If you are unsure about any setting, accept the defaults. You can change them later.
+When installation is finished, from the Start menu, open the Anaconda Prompt.</p>
+<p><a class="reference external" href="https://conda.io/docs/user-guide/install/windows.html">https://conda.io/docs/user-guide/install/windows.html</a></p>
+<div class="section" id="then-run-this-to-create-a-working-python-2-environment">
+<h3>Then run this to create a working python 2 environment<a class="headerlink" href="#then-run-this-to-create-a-working-python-2-environment" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ conda create -n py2 <span class="nv">python</span><span class="o">=</span><span class="m">2</span> anaconda
+</pre></div>
+</div>
+<p>To activate the python 2 environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ <span class="nb">source</span> activate py2
+</pre></div>
+</div>
+<p>To toggle back to a Python3 environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ <span class="nb">source</span> deactivate py2
+</pre></div>
+</div>
+</div>
+<div class="section" id="then-ensure-you-can-run-jupyter-with-py2">
+<h3>Then ensure you can run Jupyter with Py2<a class="headerlink" href="#then-ensure-you-can-run-jupyter-with-py2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ <span class="nb">source</span> activate py2
+~$ conda install notebook ipykernel
+~$ ipython kernel install --user
+</pre></div>
+</div>
+</div>
+<div class="section" id="keeping-conda-up-to-date">
+<h3>Keeping conda up-to-date<a class="headerlink" href="#keeping-conda-up-to-date" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ conda update conda
+~$ conda update --all
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="references.html" class="btn btn-neutral float-right" title="Works cited" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="helpful-math.html" class="btn btn-neutral float-left" title="Helpful math" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Galvanize, Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
