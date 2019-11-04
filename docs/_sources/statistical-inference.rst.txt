@@ -133,7 +133,7 @@ Maximum Likelihood Estimation (MLE)
    Maximum likelihood 0.67
    Bootstrap CI: (0.5800, 0.7600)
 
-Bayesian Estamition
+Bayesian Estimation
 ^^^^^^^^^^^^^^^^^^^
    
 The Bayesian approach estimates the posterior

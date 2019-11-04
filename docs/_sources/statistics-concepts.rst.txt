@@ -162,7 +162,7 @@ a collection of random variables :math:`X_i, \; i = 1, \cdots, n` is
 defined by the distributional form of the *chain rule* which is
 
 .. math::
-   \displaystyle P\left(X_1, X_2, \cdots X_n\right) = \left(\prod_{i=n}^{2} P\left(X_i | X_{i-1}, \cdots X_1 \right)\right) \times P\left(X_1\right)
+   \displaystyle P\left(X_1, X_2, \cdots X_n\right) = \left(\prod_{i=2}^{n} P\left(X_i | X_{i-1}, \cdots X_1 \right)\right) \times P\left(X_1\right)
 
 
 Further, just as with *events*, if the :math:`X_i` are *independent* of each other then

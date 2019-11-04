@@ -59,12 +59,14 @@ along with the examples in this work shop, we encourage you to install Anaconda
 Installing an Editor
 -----------------------
 
-Data Scientists script and code data analysis pipelines, and so they use text editors!
-There are many editors to choose from... 
-But unless you have a programming editor that you are already comfortable with 
-we recommend that you try using Atom!
+Data scientists need to be proficient at programming.  To do this there is a
+`specific kind of editor <https://en.wikipedia.org/wiki/Source-code_editor>`_ that is commonly used.
+There are many editors to choose from... Unless you have a programming editor that you are already comfortable with 
+we recommend that you start with `VSCode <https://code.visualstudio.com/download>`_. 
 
-`<https://flight-manual.atom.io/getting-started/sections/installing-atom>`_
+Another alternative for a beginner level editor is Atom. 
+
+* `<https://flight-manual.atom.io/getting-started/sections/installing-atom>`_
 
 .. note:: Programming practices, editors, version control, software engineering, and other related topics are not part of the scope of this short course.
 
