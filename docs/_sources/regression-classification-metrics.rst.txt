@@ -346,21 +346,20 @@ A good place to start a review of the content here is:
 * `Hastie and Rob Tibshirani (Linear Regression) <https://www.youtube.com/watch?v=WjyuiK5taS8&list=PL5-da3qGB5IDvuFPNoSqheihPOQNJpzyy>`_
 
 
-.. admonition:: QUESTION 1
+.. admonition:: Check for understanding
 
-    PLACEHOLDER
+    Which of the following areas of machine learning contain the mentioned categories.
 
     .. container:: toggle
 
         .. container:: header
 
-            * **(A)**: Transformer, Estimator, Predictor
-            * **(B)**: Transformer, Estimator
-            * **(C)**: Estimator, Predictor
-            * **(D)**: Transformer
-            * **(E)**: Transformer, Predictor
+            * **(A)**: Supervised learning <- classification, regression
+            * **(B)**: Supervised learning <- regression, clustering
+            * **(C)**: Unsupervised learning <- dimension reduction, classification
+            * **(D)**: Unsupervised learning <- dimension reduction, clustering
+            * **(E)**: Unsupervised learning <- clustering, classification
 
         **ANSWER**:
 
-            **(B)** The ``.fit()`` method is used by the Estimator interface to train models often by estimating parameters.
-            The ``.transform()`` method is used by the Transformer interface.  The ``.fit_transform()`` combines the two.
+            **(A)** and **(D)**
